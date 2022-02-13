@@ -1,0 +1,497 @@
+{
+  "version": "",
+  "name": "nix",
+  "scopeName": "source.nix",
+  "fileTypes": [
+    "nix"
+  ],
+  "patterns": [
+    {
+      "include": "#variable_with_attributes"
+    },
+    {
+      "include": "#variable"
+    }
+  ],
+  "repository": {
+    "attribute_set": {
+      "patterns": [
+        {
+          "begin": "(?:(?<=\\w|;)(?:(?:\\s)+)?(\\{)|(?:(\\{)(?= *$)))",
+          "end": "\\}",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.dict.nix"
+            },
+            "2": {
+              "name": "punctuation.definition.dict.nix"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.dict.nix"
+            }
+          },
+          "name": "meta.dict.nix",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        }
+      ]
+    },
+    "boolean": {
+      "match": "(?<!\\w)true|false(?!\\w)",
+      "name": "constant.language.boolean.nix"
+    },
+    "decimal": {
+      "match": "(?<!\\w)[0-9]+\\.[0-9]+(?!\\w)",
+      "name": "constant.numeric.decimal.nix"
+    },
+    "empty_list": {
+      "match": "(?:(?:\\s)+)?(\\[)(?:(?:\\s)+)?(\\])",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "2": {
+          "name": "punctuation.definition.list.nix"
+        }
+      }
+    },
+    "empty_set": {
+      "match": "(?:(?:\\s)+)?(\\{)(?:(?:\\s)+)?(\\})",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.dict.nix"
+        },
+        "2": {
+          "name": "punctuation.definition.dict.nix"
+        }
+      }
+    },
+    "integer": {
+      "match": "(?<!\\w)[0-9]+(?!\\w)",
+      "name": "constant.numeric.integer.nix"
+    },
+    "list": {
+      "patterns": [
+        {
+          "begin": "\\[",
+          "end": "\\]",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.list.nix"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.list.nix"
+            }
+          },
+          "name": "meta.list.nix",
+          "patterns": [
+
+          ]
+        }
+      ]
+    },
+    "methods": {
+      "patterns": [
+        {
+          "match": "(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(,))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\?))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(\\.\\.\\.)|(,))*",
+          "captures": {
+            "0": {
+              "patterns": [
+                {
+                  "match": "(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(,))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\?))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(\\.\\.\\.)|(,))",
+                  "captures": {
+                    "1": {
+                      "name": "variable.parameter.function.nix"
+                    },
+                    "2": {
+                      "name": "punctuation.separator.nix"
+                    },
+                    "3": {
+                      "name": "variable.parameter.function.nix"
+                    },
+                    "4": {
+                      "name": "punctuation.separator.default.nix"
+                    },
+                    "5": {
+                      "name": "variable.parameter.function.nix"
+                    },
+                    "6": {
+                      "name": "punctuation.other.eplipsis.nix"
+                    },
+                    "7": {
+                      "name": "punctuation.separator.nix"
+                    }
+                  }
+                }
+              ]
+            },
+            "1": {
+              "name": "variable.parameter.function.nix"
+            },
+            "2": {
+              "name": "punctuation.separator.nix"
+            },
+            "3": {
+              "name": "variable.parameter.function.nix"
+            },
+            "4": {
+              "name": "punctuation.separator.default.nix"
+            },
+            "5": {
+              "name": "variable.parameter.function.nix"
+            },
+            "6": {
+              "name": "punctuation.other.eplipsis.nix"
+            },
+            "7": {
+              "name": "punctuation.separator.nix"
+            }
+          }
+        },
+        {
+          "begin": "(?:(?<=\\w|;)(?:(?:\\s)+)?(\\{)|(?:(\\{)(?= *$)))",
+          "end": "\\}",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.dict.nix"
+            },
+            "2": {
+              "name": "punctuation.definition.dict.nix"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.dict.nix"
+            }
+          },
+          "name": "meta.function.nix",
+          "patterns": [
+            {
+              "include": "$self"
+            },
+            {
+              "include": "#attribute_set"
+            }
+          ]
+        }
+      ]
+    },
+    "normal_path_literal": {
+      "match": "(\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)",
+      "captures": {
+        "1": {
+          "name": "punctuation.other.path.normal.nix"
+        },
+        "2": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.separator.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.separator.relative.nix"
+            }
+          ]
+        }
+      },
+      "name": "constant.path.normal.nix"
+    },
+    "null": {
+      "match": "(?<!\\w)null(?!\\w)",
+      "name": "constant.language.null.nix"
+    },
+    "path_literal_content": {
+      "match": "[\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+",
+      "captures": {
+        "0": {
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.separator.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.separator.relative.nix"
+            }
+          ]
+        }
+      },
+      "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix"
+    },
+    "system_path_literal": {
+      "match": "(<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "2": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.separator.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.separator.relative.nix"
+            }
+          ]
+        },
+        "3": {
+          "name": "punctuation.other.path.system.nix"
+        }
+      },
+      "name": "constant.path.system.nix"
+    },
+    "url": {
+      "match": "([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)",
+      "captures": {
+        "1": {
+          "name": "punctuation.other.url.protocol.nix"
+        },
+        "2": {
+          "name": "punctuation.other.url.address.nix"
+        }
+      },
+      "name": "constant.url.nix"
+    },
+    "value_base_case": {
+      "match": "(?:((?<!\\w)null(?!\\w))|((?<!\\w)true|false(?!\\w))|((?<!\\w)[0-9]+(?!\\w))|((?<!\\w)[0-9]+\\.[0-9]+(?!\\w))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)(?:(?:\\s)+)?(((?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?:(?:\\s)+)?\\.)*))((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)))|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+))|((<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>))|(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))|(?:(?:(?:\\s)+)?(\\[)(?:(?:\\s)+)?(\\]))|(?:(?:(?:\\s)+)?(\\{)(?:(?:\\s)+)?(\\})))",
+      "captures": {
+        "1": {
+          "name": "constant.language.null.nix"
+        },
+        "2": {
+          "name": "constant.language.boolean.nix"
+        },
+        "3": {
+          "name": "constant.numeric.integer.nix"
+        },
+        "4": {
+          "name": "constant.numeric.decimal.nix"
+        },
+        "5": {
+          "name": "variable.other.object.access.nix"
+        },
+        "6": {
+          "name": "punctuation.separator.dot-access.nix"
+        },
+        "7": {
+          "patterns": [
+            {
+              "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "punctuation.separator.dot-access.nix"
+                }
+              }
+            }
+          ]
+        },
+        "8": {
+          "patterns": [
+            {
+              "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "punctuation.separator.dot-access.nix"
+                }
+              }
+            }
+          ]
+        },
+        "9": {
+          "name": "variable.other.property.nix"
+        },
+        "10": {
+          "name": "variable.other.nix"
+        },
+        "11": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.separator.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.separator.relative.nix"
+            }
+          ]
+        },
+        "12": {
+          "name": "constant.path.normal.nix"
+        },
+        "13": {
+          "name": "punctuation.other.path.normal.nix"
+        },
+        "14": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.separator.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.separator.relative.nix"
+            }
+          ]
+        },
+        "15": {
+          "name": "constant.path.system.nix"
+        },
+        "16": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "17": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.separator.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.separator.relative.nix"
+            }
+          ]
+        },
+        "18": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "19": {
+          "name": "constant.url.nix"
+        },
+        "20": {
+          "name": "punctuation.other.url.protocol.nix"
+        },
+        "21": {
+          "name": "punctuation.other.url.address.nix"
+        },
+        "22": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "23": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "24": {
+          "name": "punctuation.definition.dict.nix"
+        },
+        "25": {
+          "name": "punctuation.definition.dict.nix"
+        }
+      }
+    },
+    "variable": {
+      "match": "(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)",
+      "name": "variable.other.nix"
+    },
+    "variable_entry": {
+      "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)(?:(?:\\s)+)?(((?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?:(?:\\s)+)?\\.)*))((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)))",
+      "captures": {
+        "1": {
+          "name": "variable.other.object.access.nix"
+        },
+        "2": {
+          "name": "punctuation.separator.dot-access.nix"
+        },
+        "3": {
+          "patterns": [
+            {
+              "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "punctuation.separator.dot-access.nix"
+                }
+              }
+            }
+          ]
+        },
+        "4": {
+          "patterns": [
+            {
+              "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "punctuation.separator.dot-access.nix"
+                }
+              }
+            }
+          ]
+        },
+        "5": {
+          "name": "variable.other.property.nix"
+        },
+        "6": {
+          "name": "variable.other.nix"
+        }
+      }
+    },
+    "variable_with_attributes": {
+      "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)(?:(?:\\s)+)?(((?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?:(?:\\s)+)?\\.)*))((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))",
+      "captures": {
+        "1": {
+          "name": "variable.other.object.access.nix"
+        },
+        "2": {
+          "name": "punctuation.separator.dot-access.nix"
+        },
+        "3": {
+          "patterns": [
+            {
+              "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "punctuation.separator.dot-access.nix"
+                }
+              }
+            }
+          ]
+        },
+        "4": {
+          "patterns": [
+            {
+              "match": "((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:(?:\\s)+)?(\\.)",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "punctuation.separator.dot-access.nix"
+                }
+              }
+            }
+          ]
+        },
+        "5": {
+          "name": "variable.other.property.nix"
+        }
+      }
+    }
+  }
+}
