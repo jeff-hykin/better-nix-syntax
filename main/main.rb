@@ -29,8 +29,7 @@ grammar = Grammar.new(
 #
 # 
     grammar[:$initial_context] = [
-        :variable_with_attributes,
-        :variable,
+        :value_base_case,
         # :attribute_set,
         # :method,
     ]
@@ -123,11 +122,11 @@ grammar = Grammar.new(
         includes: [
             Pattern.new(
                 match: /\//,
-                tag_as: "punctuation.separator.path",
+                tag_as: "punctuation.other.path",
             ),
             Pattern.new(
                 match: variableBounds[/\.\.|\./],
-                tag_as: "punctuation.separator.relative",
+                tag_as: "punctuation.other.relative",
             ),
         ],
     )
@@ -190,18 +189,76 @@ grammar = Grammar.new(
         ),
     )
     
+    grammar[:double_quote] = Pattern.new(
+        Pattern.new(
+            tag_as: "string.quoted.double punctuation.definition.string.double",
+            match: /"/,
+        ).then(
+            tag_as: "string.quoted.double",
+            match: zeroOrMoreOf(
+                match: Pattern.new(/\\./).or(lookAheadToAvoid(/$\{/).then(/[^"]/)),
+                atomic: true,
+            ),
+            includes: [
+                grammar[:escape_character_single_quote] = Pattern.new(
+                    tag_as: "constant.character.escape",
+                    match: /\\./,
+                ),
+            ]
+        ).then(
+            tag_as: "string.quoted.double punctuation.definition.string.double",
+            match: /"/,
+        )
+    )
+    
+    single_quote_end_pattern = Pattern.new(
+        tag_as: "punctuation.definition.string.single",
+        match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'|\\./), # I'm not exactly sure what this lookahead is for
+    )
+    grammar[:escape_character_single_quote] = Pattern.new(
+        tag_as: "constant.character.escape",
+        match: /\'\'(?:\$|\'|\\.)/,
+    )
+    grammar[:single_no_interpolation_string] = oneOf([
+        Pattern.new(
+            tag_as: "string.quoted.single",
+            match: Pattern.new(
+                Pattern.new(
+                    tag_as: "punctuation.definition.string.single",
+                    match: /''/,
+                ).then(
+                    tag_as: "string.quoted.single",
+                    match: zeroOrMoreOf(
+                        match: oneOf([
+                            grammar[:escape_character_single_quote],
+                            lookAheadToAvoid(/\$\{/).then(/./),
+                        ]),
+                        atomic: true,
+                    ),
+                    includes: [
+                        :escape_character_single_quote,
+                    ]
+                ).then(
+                    single_quote_end_pattern
+                )
+            ),
+        ),
+    ])
+    
     grammar[:value_base_case] = oneOf([
+        grammar[:url],
+        grammar[:normal_path_literal],
+        grammar[:path_literal_content],
+        grammar[:system_path_literal],
         grammar[:null],
         grammar[:boolean],
-        grammar[:integer],
         grammar[:decimal],
-        grammar[:variable_entry],
-        grammar[:path_literal_content],
-        grammar[:normal_path_literal],
-        grammar[:system_path_literal],
-        grammar[:url],
+        grammar[:integer],
+        grammar[:double_quote],
         grammar[:empty_list],
         grammar[:empty_set],
+        grammar[:single_no_interpolation_string],
+        grammar[:variable_entry],
     ])
 
 # 
