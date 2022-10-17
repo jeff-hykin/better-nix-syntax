@@ -29,6 +29,7 @@ grammar = Grammar.new(
 #
 # 
     grammar[:$initial_context] = [
+        :comment,
         :value_base_case,
         # :attribute_set,
         # :method,
@@ -241,6 +242,18 @@ grammar = Grammar.new(
                 ).then(
                     single_quote_end_pattern
                 )
+            ),
+        ),
+    ])
+    grammar[:comment] = oneOf([
+        Pattern.new(
+            tag_as: "string.quoted.single",
+            match: Pattern.new(/\s*+/).then(
+                match: /#/,
+                tag_as: "punctuation.definition.comment"
+            ).then(
+                match: /.*/,
+                tag_as: "comment.line",
             ),
         ),
     ])

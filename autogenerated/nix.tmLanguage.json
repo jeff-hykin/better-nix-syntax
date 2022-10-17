@@ -7,6 +7,9 @@
   ],
   "patterns": [
     {
+      "include": "#comment"
+    },
+    {
       "include": "#value_base_case"
     }
   ],
@@ -41,6 +44,20 @@
     "boolean": {
       "match": "(?<!\\w)true|false(?!\\w)",
       "name": "constant.language.boolean.nix"
+    },
+    "comment": {
+      "match": "(?:(\\s*+(#)(.*)))",
+      "captures": {
+        "1": {
+          "name": "string.quoted.single.nix"
+        },
+        "2": {
+          "name": "punctuation.definition.comment.nix"
+        },
+        "3": {
+          "name": "comment.line.nix"
+        }
+      }
     },
     "decimal": {
       "match": "(?<!\\w)[0-9]+\\.[0-9]+(?!\\w)",

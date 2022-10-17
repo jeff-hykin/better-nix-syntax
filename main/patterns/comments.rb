@@ -23,7 +23,7 @@ export.exports = [ # patterns that are exported
 export[:line_comment] = PatternRange.new(
     tag_as: "comment.line.double-slash",
     start_pattern: Pattern.new(/\s*+/).then(
-        match: /\/\//,
+        match: /#/,
         tag_as: "punctuation.definition.comment"
     ),
     # a newline that doesnt have a line continuation

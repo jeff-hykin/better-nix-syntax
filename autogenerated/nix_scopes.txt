@@ -1,3 +1,4 @@
+comment.line.nix
 constant.character.escape.nix
 constant.language.boolean.nix
 constant.language.null.nix
@@ -9,6 +10,7 @@ constant.url.nix
 meta.dict.nix
 meta.function.nix
 meta.list.nix
+punctuation.definition.comment.nix
 punctuation.definition.dict.nix
 punctuation.definition.list.nix
 punctuation.definition.string.double.nix
