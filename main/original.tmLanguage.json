@@ -1,0 +1,1200 @@
+{
+    "scopeName": "source.nix",
+    "fileTypes": [
+        "nix"
+    ],
+    "patterns": [
+        {
+            "include": "#expression"
+        }
+    ],
+    "repository": {
+        "function-header-close-brace-no-arg": {
+            "begin": "\\}",
+            "end": "(?=\\:)",
+            "patterns": [
+                {
+                    "include": "#others"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.entity.function.nix"
+                }
+            }
+        },
+        "comment-remark": {
+            "match": "(TODO|FIXME|BUG|\\!\\!\\!):?",
+            "captures": {
+                "1": {
+                    "name": "markup.bold.comment.nix"
+                }
+            }
+        },
+        "whitespace": {
+            "match": "\\s+"
+        },
+        "let": {
+            "begin": "(?=\\blet\\b)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "begin": "\\blet\\b",
+                    "end": "(?=([\\])};,]|\\b(in|else|then)\\b))",
+                    "patterns": [
+                        {
+                            "begin": "(?=\\{)",
+                            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                            "patterns": [
+                                {
+                                    "begin": "\\{",
+                                    "end": "\\}",
+                                    "patterns": [
+                                        {
+                                            "include": "#attrset-contents"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "begin": "(^|(?<=\\}))",
+                                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                                    "patterns": [
+                                        {
+                                            "include": "#expression-cont"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "include": "#others"
+                                }
+                            ]
+                        },
+                        {
+                            "include": "#attrset-contents"
+                        },
+                        {
+                            "include": "#others"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "\\bin\\b",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    }
+                }
+            ]
+        },
+        "parameter-name": {
+            "match": "\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*",
+            "captures": {
+                "0": {
+                    "name": "variable.parameter.name.nix"
+                }
+            }
+        },
+        "function-header-until-colon-no-arg": {
+            "begin": "(?=\\{)",
+            "end": "(?=\\:)",
+            "patterns": [
+                {
+                    "include": "#function-header-open-brace"
+                },
+                {
+                    "include": "#function-header-close-brace-no-arg"
+                }
+            ]
+        },
+        "if": {
+            "begin": "(?=\\bif\\b)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "begin": "\\bif\\b",
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    },
+                    "end": "\\bth(?=en\\b)",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "(?<=th)en\\b",
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    },
+                    "end": "\\bel(?=se\\b)",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "(?<=el)se\\b",
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    },
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.other.nix"
+                        }
+                    }
+                }
+            ]
+        },
+        "attrset-for-sure": {
+            "patterns": [
+                {
+                    "begin": "(?=\\brec\\b)",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "begin": "\\brec\\b",
+                            "end": "(?=\\{)",
+                            "patterns": [
+                                {
+                                    "include": "#others"
+                                }
+                            ],
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "keyword.other.nix"
+                                }
+                            }
+                        },
+                        {
+                            "include": "#attrset-definition"
+                        },
+                        {
+                            "include": "#others"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(?=\\{\\s*(\\}|[^,?]*(=|;)))",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#attrset-definition"
+                        },
+                        {
+                            "include": "#others"
+                        }
+                    ]
+                }
+            ]
+        },
+        "attrset-definition": {
+            "begin": "(?=\\{)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "begin": "(\\{)",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.attrset.nix"
+                        }
+                    },
+                    "end": "(\\})",
+                    "patterns": [
+                        {
+                            "include": "#attrset-contents"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.attrset.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "(?<=\\})",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ]
+                }
+            ]
+        },
+        "function-contents": {
+            "patterns": [
+                {
+                    "include": "#bad-reserved"
+                },
+                {
+                    "include": "#function-parameter"
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "parens": {
+            "begin": "\\(",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.expression.nix"
+                }
+            },
+            "end": "\\)",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.expression.nix"
+                }
+            }
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "begin": "\/\\*([^*]|\\*[^\\\/])*",
+                    "end": "\\*\\\/",
+                    "patterns": [
+                        {
+                            "include": "#comment-remark"
+                        }
+                    ],
+                    "name": "comment.block.nix"
+                },
+                {
+                    "begin": "\\#",
+                    "end": "$",
+                    "patterns": [
+                        {
+                            "include": "#comment-remark"
+                        }
+                    ],
+                    "name": "comment.line.number-sign.nix"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "(?=\\'\\')",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "begin": "\\'\\'",
+                            "endCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.string.other.end.nix"
+                                }
+                            },
+                            "end": "\\'\\'(?!\\$|\\'|\\\\.)",
+                            "patterns": [
+                                {
+                                    "match": "\\'\\'(\\$|\\'|\\\\.)",
+                                    "name": "constant.character.escape.nix"
+                                },
+                                {
+                                    "include": "#interpolation"
+                                }
+                            ],
+                            "name": "string.quoted.other.nix",
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.string.other.start.nix"
+                                }
+                            }
+                        },
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(?=\\\")",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#string-quoted"
+                        },
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ]
+                },
+                {
+                    "begin": "([a-zA-Z0-9\\.\\_\\-\\+]*(\\\/[a-zA-Z0-9\\.\\_\\-\\+]+)+)",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.unquoted.path.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "(\\<[a-zA-Z0-9\\.\\_\\-\\+]+(\\\/[a-zA-Z0-9\\.\\_\\-\\+]+)*\\>)",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.unquoted.spath.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "([a-zA-Z][a-zA-Z0-9\\+\\-\\.]*\\:[a-zA-Z0-9\\%\\\/\\?\\:\\@\\&\\=\\+\\$\\,\\-\\_\\.\\!\\~\\*\\']+)",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "string.unquoted.url.nix"
+                        }
+                    }
+                }
+            ]
+        },
+        "parameter-name-and-cont": {
+            "begin": "\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#expression-cont"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "variable.parameter.name.nix"
+                }
+            }
+        },
+        "expression": {
+            "patterns": [
+                {
+                    "include": "#parens-and-cont"
+                },
+                {
+                    "include": "#list-and-cont"
+                },
+                {
+                    "include": "#string"
+                },
+                {
+                    "include": "#interpolation"
+                },
+                {
+                    "include": "#with-assert"
+                },
+                {
+                    "include": "#function-for-sure"
+                },
+                {
+                    "include": "#attrset-for-sure"
+                },
+                {
+                    "include": "#attrset-or-function"
+                },
+                {
+                    "include": "#let"
+                },
+                {
+                    "include": "#if"
+                },
+                {
+                    "include": "#operator-unary"
+                },
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#bad-reserved"
+                },
+                {
+                    "include": "#parameter-name-and-cont"
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "attribute-inherit": {
+            "begin": "\\binherit\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.terminator.inherit.nix"
+                }
+            },
+            "end": "\\;",
+            "patterns": [
+                {
+                    "begin": "\\(",
+                    "end": "(?=\\;)",
+                    "patterns": [
+                        {
+                            "begin": "\\)",
+                            "end": "(?=\\;)",
+                            "patterns": [
+                                {
+                                    "include": "#bad-reserved"
+                                },
+                                {
+                                    "include": "#attribute-name-single"
+                                },
+                                {
+                                    "include": "#others"
+                                }
+                            ],
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.section.function.arguments.nix"
+                                }
+                            }
+                        },
+                        {
+                            "include": "#expression"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.function.arguments.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "(?=[a-zA-Z\\_])",
+                    "end": "(?=\\;)",
+                    "patterns": [
+                        {
+                            "include": "#bad-reserved"
+                        },
+                        {
+                            "include": "#attribute-name-single"
+                        },
+                        {
+                            "include": "#others"
+                        }
+                    ]
+                },
+                {
+                    "include": "#others"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.other.inherit.nix"
+                }
+            }
+        },
+        "with-assert": {
+            "begin": "\\b(with|assert)\\b",
+            "end": "\\;",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.other.nix"
+                }
+            }
+        },
+        "function-definition": {
+            "begin": "(?=.?)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#function-body-from-colon"
+                },
+                {
+                    "begin": "(?=.?)",
+                    "end": "(?=\\:)",
+                    "patterns": [
+                        {
+                            "begin": "(\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*)",
+                            "end": "(?=\\:)",
+                            "patterns": [
+                                {
+                                    "begin": "\\@",
+                                    "end": "(?=\\:)",
+                                    "patterns": [
+                                        {
+                                            "include": "#function-header-until-colon-no-arg"
+                                        },
+                                        {
+                                            "include": "#others"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "include": "#others"
+                                }
+                            ],
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "variable.parameter.function.4.nix"
+                                }
+                            }
+                        },
+                        {
+                            "begin": "(?=\\{)",
+                            "end": "(?=\\:)",
+                            "patterns": [
+                                {
+                                    "include": "#function-header-until-colon-with-arg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "list": {
+            "begin": "\\[",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.list.nix"
+                }
+            },
+            "end": "\\]",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.list.nix"
+                }
+            }
+        },
+        "attrset-contents": {
+            "patterns": [
+                {
+                    "include": "#attribute-inherit"
+                },
+                {
+                    "include": "#bad-reserved"
+                },
+                {
+                    "include": "#attribute-bind"
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "attribute-bind-from-equals": {
+            "begin": "\\=",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.terminator.bind.nix"
+                }
+            },
+            "end": "\\;",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.operator.bind.nix"
+                }
+            }
+        },
+        "function-body-from-colon": {
+            "begin": "(\\:)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.function.nix"
+                }
+            }
+        },
+        "function-header-close-brace-with-arg": {
+            "begin": "\\}",
+            "end": "(?=\\:)",
+            "patterns": [
+                {
+                    "include": "#function-header-terminal-arg"
+                },
+                {
+                    "include": "#others"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.entity.function.nix"
+                }
+            }
+        },
+        "function-header-open-brace": {
+            "begin": "\\{",
+            "end": "(?=\\})",
+            "patterns": [
+                {
+                    "include": "#function-contents"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.entity.function.2.nix"
+                }
+            }
+        },
+        "others": {
+            "patterns": [
+                {
+                    "include": "#whitespace"
+                },
+                {
+                    "include": "#comment"
+                },
+                {
+                    "include": "#illegal"
+                }
+            ]
+        },
+        "string-quoted": {
+            "begin": "\\\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.double.end.nix"
+                }
+            },
+            "end": "\\\"",
+            "patterns": [
+                {
+                    "match": "\\\\.",
+                    "name": "constant.character.escape.nix"
+                },
+                {
+                    "include": "#interpolation"
+                }
+            ],
+            "name": "string.quoted.double.nix",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.double.start.nix"
+                }
+            }
+        },
+        "attribute-bind": {
+            "patterns": [
+                {
+                    "include": "#attribute-name"
+                },
+                {
+                    "include": "#attribute-bind-from-equals"
+                }
+            ]
+        },
+        "expression-cont": {
+            "begin": "(?=.?)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#parens"
+                },
+                {
+                    "include": "#list"
+                },
+                {
+                    "include": "#string"
+                },
+                {
+                    "include": "#interpolation"
+                },
+                {
+                    "include": "#function-for-sure"
+                },
+                {
+                    "include": "#attrset-for-sure"
+                },
+                {
+                    "include": "#attrset-or-function"
+                },
+                {
+                    "match": "(\\bor\\b|\\.|==|!=|!|\\<\\=|\\<|\\>\\=|\\>|&&|\\|\\||-\\>|\/\/|\\?|\\+\\+|-|\\*|\/(?=([^*]|$))|\\+)",
+                    "name": "keyword.operator.nix"
+                },
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#bad-reserved"
+                },
+                {
+                    "include": "#parameter-name"
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "attrset-definition-brace-opened": {
+            "patterns": [
+                {
+                    "begin": "(?<=\\})",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(?=.?)",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.attrset.nix"
+                        }
+                    },
+                    "end": "\\}",
+                    "patterns": [
+                        {
+                            "include": "#attrset-contents"
+                        }
+                    ]
+                }
+            ]
+        },
+        "function-parameter": {
+            "patterns": [
+                {
+                    "begin": "(\\.\\.\\.)",
+                    "end": "(,|(?=\\}))",
+                    "patterns": [
+                        {
+                            "include": "#others"
+                        }
+                    ],
+                    "name": "keyword.operator.nix"
+                },
+                {
+                    "begin": "\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*",
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.operator.nix"
+                        }
+                    },
+                    "end": "(,|(?=\\}))",
+                    "patterns": [
+                        {
+                            "include": "#whitespace"
+                        },
+                        {
+                            "include": "#comment"
+                        },
+                        {
+                            "include": "#function-parameter-default"
+                        },
+                        {
+                            "include": "#expression"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "variable.parameter.function.1.nix"
+                        }
+                    }
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "attrset-or-function": {
+            "begin": "\\{",
+            "end": "(?=([\\])};]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "begin": "(?=(\\s*\\}|\\\"|\\binherit\\b|\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*(\\s*\\.|\\s*=[^=])))",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#attrset-definition-brace-opened"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(?=(\\.\\.\\.|\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*\\s*[,?]))",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#function-definition-brace-opened"
+                        }
+                    ]
+                },
+                {
+                    "include": "#bad-reserved"
+                },
+                {
+                    "begin": "\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*",
+                    "end": "(?=([\\])};]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "begin": "(?=\\.)",
+                            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                            "patterns": [
+                                {
+                                    "include": "#attrset-definition-brace-opened"
+                                }
+                            ]
+                        },
+                        {
+                            "begin": "\\s*(\\,)",
+                            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                            "patterns": [
+                                {
+                                    "include": "#function-definition-brace-opened"
+                                }
+                            ],
+                            "beginCaptures": {
+                                "1": {
+                                    "name": "keyword.operator.nix"
+                                }
+                            }
+                        },
+                        {
+                            "begin": "(?=\\=)",
+                            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                            "patterns": [
+                                {
+                                    "include": "#attribute-bind-from-equals"
+                                },
+                                {
+                                    "include": "#attrset-definition-brace-opened"
+                                }
+                            ]
+                        },
+                        {
+                            "begin": "(?=\\?)",
+                            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                            "patterns": [
+                                {
+                                    "include": "#function-parameter-default"
+                                },
+                                {
+                                    "begin": "\\,",
+                                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                                    "patterns": [
+                                        {
+                                            "include": "#function-definition-brace-opened"
+                                        }
+                                    ],
+                                    "beginCaptures": {
+                                        "0": {
+                                            "name": "keyword.operator.nix"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "include": "#others"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "variable.parameter.function.maybe.nix"
+                        }
+                    }
+                },
+                {
+                    "include": "#others"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.attrset-or-function.nix"
+                }
+            }
+        },
+        "function-definition-brace-opened": {
+            "begin": "(?=.?)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#function-body-from-colon"
+                },
+                {
+                    "begin": "(?=.?)",
+                    "end": "(?=\\:)",
+                    "patterns": [
+                        {
+                            "include": "#function-header-close-brace-with-arg"
+                        },
+                        {
+                            "begin": "(?=.?)",
+                            "end": "(?=\\})",
+                            "patterns": [
+                                {
+                                    "include": "#function-contents"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "begin": "\\b(builtins|true|false|null)\\b",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "constant.language.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "\\b(scopedImport|import|isNull|abort|throw|baseNameOf|dirOf|removeAttrs|map|toString|derivationStrict|derivation)\\b",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "support.function.nix"
+                        }
+                    }
+                },
+                {
+                    "begin": "\\b[0-9]+\\b",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#expression-cont"
+                        }
+                    ],
+                    "beginCaptures": {
+                        "0": {
+                            "name": "constant.numeric.nix"
+                        }
+                    }
+                }
+            ]
+        },
+        "function-body": {
+            "begin": "(@\\s*([a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*)\\s*)?(\\:)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        "attribute-name-single": {
+            "match": "\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*",
+            "name": "entity.other.attribute-name.single.nix"
+        },
+        "list-and-cont": {
+            "begin": "(?=\\[)",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#list"
+                },
+                {
+                    "include": "#expression-cont"
+                }
+            ]
+        },
+        "attribute-name": {
+            "patterns": [
+                {
+                    "match": "\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*",
+                    "name": "entity.other.attribute-name.multipart.nix"
+                },
+                {
+                    "match": "\\."
+                },
+                {
+                    "include": "#string-quoted"
+                },
+                {
+                    "include": "#interpolation"
+                }
+            ]
+        },
+        "function-header-terminal-arg": {
+            "begin": "(?=@)",
+            "end": "(?=\\:)",
+            "patterns": [
+                {
+                    "begin": "\\@",
+                    "end": "(?=\\:)",
+                    "patterns": [
+                        {
+                            "begin": "(\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*)",
+                            "end": "(?=\\:)",
+                            "name": "variable.parameter.function.3.nix"
+                        },
+                        {
+                            "include": "#others"
+                        }
+                    ]
+                },
+                {
+                    "include": "#others"
+                }
+            ]
+        },
+        "interpolation": {
+            "begin": "\\$\\{",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.end.nix"
+                }
+            },
+            "end": "\\}",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "name": "markup.italic",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.embedded.begin.nix"
+                }
+            }
+        },
+        "parens-and-cont": {
+            "begin": "(?=\\()",
+            "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+            "patterns": [
+                {
+                    "include": "#parens"
+                },
+                {
+                    "include": "#expression-cont"
+                }
+            ]
+        },
+        "function-parameter-default": {
+            "begin": "\\?",
+            "end": "(?=[,}])",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ],
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.operator.nix"
+                }
+            }
+        },
+        "function-header-until-colon-with-arg": {
+            "begin": "(?=\\{)",
+            "end": "(?=\\:)",
+            "patterns": [
+                {
+                    "include": "#function-header-open-brace"
+                },
+                {
+                    "include": "#function-header-close-brace-with-arg"
+                }
+            ]
+        },
+        "operator-unary": {
+            "match": "(!|-)",
+            "name": "keyword.operator.unary.nix"
+        },
+        "function-for-sure": {
+            "patterns": [
+                {
+                    "begin": "(?=(\\b[a-zA-Z\\_][a-zA-Z0-9\\_\\'\\-]*\\s*[:@]|\\{[^}]*\\}\\s*:|\\{[^#}\"'\/=]*[,\\?]))",
+                    "end": "(?=([\\])};,]|\\b(else|then)\\b))",
+                    "patterns": [
+                        {
+                            "include": "#function-definition"
+                        }
+                    ]
+                }
+            ]
+        },
+        "illegal": {
+            "match": ".",
+            "name": "invalid.illegal"
+        },
+        "bad-reserved": {
+            "match": "\\b(if|then|else|assert|with|let|in|rec|inherit)\\b",
+            "name": "invalid.illegal.reserved.nix"
+        }
+    },
+    "name": "Nix",
+    "uuid": "0514fd5f-acb6-436d-b42c-7643e6d36c8f"
+}
