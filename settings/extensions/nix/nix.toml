@@ -64,32 +64,38 @@ from = "860b56be91fb874d48e23a950815969a7b832fbc"
 # load = [ "nodejs-10_x",] 
 # from = "a765beccb52f30a30fee313fbae483693ffe200d" 
 
-[[packages]]
-load = [ "nodePackages", "pnpm", ]
-from = "860b56be91fb874d48e23a950815969a7b832fbc"
+# [[packages]]
+# load = [ "nodePackages", "pnpm", ]
+# from = "860b56be91fb874d48e23a950815969a7b832fbc"
 
 
 # 
 # Python (because node-gyp depends on python)
 # 
+[[packages]]
+load = [ "python38",]
 
 [[packages]]
-load = [ "python39",]
+load = [ "python38Packages", "setuptools",]
 
 [[packages]]
-load = [ "python39Packages", "setuptools",]
+load = [ "python38Packages", "pip",]
 
 [[packages]]
-load = [ "python39Packages", "pip",]
+load = [ "python38Packages", "virtualenv",]
 
 [[packages]]
-load = [ "python39Packages", "virtualenv",]
+load = [ "python38Packages", "wheel",]
 
 [[packages]]
-load = [ "python39Packages", "wheel",]
+load = [ "cmake",]
 
 [[packages]]
-load = [ "poetry",]
+load = [ "pkg-config",]
+
+[[packages]]
+load = [ "libffi",]
+
 
 
 # 
