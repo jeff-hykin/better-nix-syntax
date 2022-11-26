@@ -1,6 +1,7 @@
 comment.line.nix
 constant.character.escape.nix
-constant.language.boolean.nix
+constant.language.boolean.$0.nix
+constant.language.boolean.$13.nix
 constant.language.null.nix
 constant.numeric.decimal.nix
 constant.numeric.integer.nix
@@ -22,6 +23,7 @@ punctuation.other.path.system.nix
 punctuation.other.relative.nix
 punctuation.other.url.address.nix
 punctuation.other.url.protocol.nix
+punctuation.section.embedded.nix
 punctuation.section.path.nix
 punctuation.section.regexp.nix
 punctuation.separator.default.nix
