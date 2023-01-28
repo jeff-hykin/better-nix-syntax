@@ -350,7 +350,7 @@ grammar = Grammar.new(
     # 
     # variables
     # 
-        function_call_lookahead = std_space.then(lookAheadFor(/\{|"|'|\d|\w|-|\+|\.\/|\/|\(|\[/).or(lookAheadFor(grammar[:url])))
+        function_call_lookahead = std_space.then(lookAheadFor(/\{|"|'|\d|\w|-|\+|\.\/|\/|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         
         grammar[:standalone_variable] = Pattern.new(
             tag_as: "variable.other",
@@ -426,6 +426,44 @@ grammar = Grammar.new(
             grammar[:standalone_function_call_guess],
             grammar[:standalone_variable],
         ])
+        
+        # 
+        # namespace (which is really just a variable, but is nice to highlight different)
+        # 
+        standalone_namespace = Pattern.new(
+            tag_as: "entity.name.namespace",
+            match: variable,
+        )
+        
+        namespace_attribute = oneOf([
+            Pattern.new(
+                tag_as: "entity.name.namespace.object.property",
+                match: variable,
+            ),
+            grammar[:double_quote_inline],
+            grammar[:single_quote_inline],
+        ])
+        
+        namespace_with_attributes = Pattern.new(
+            Pattern.new(
+                tag_as: "entity.name.namespace.object.access",
+                match: variable,
+            ).then(std_space).then(
+                dot_access
+            ).then(std_space).then(
+                match: zeroOrMoreOf(
+                    middle_repeat_namespace = Pattern.new(
+                        namespace_attribute.then(std_space).then(dot_access).then(std_space),
+                    ),
+                ),
+                includes: [ middle_repeat_namespace ],
+            ).then(
+                tag_as: "entity.name.namespace.property",
+                match: namespace_attribute,
+            ),
+        )
+        
+        namespace = standalone_namespace.or(namespace_with_attributes)
     
     # 
     # keyworded values
@@ -435,8 +473,7 @@ grammar = Grammar.new(
                 tag_as: "keyword.operator.with",
                 match: variableBounds[/with/],
             ).then(std_space).then(
-                tag_as: "entity.name.namespace",
-                match: grammar[:variable],
+                namespace
             ).then(
                 std_space
             ).then(
@@ -444,7 +481,7 @@ grammar = Grammar.new(
                 tag_as: "punctuation.separator.with",
             ).then(std_space)
         )
-        # FIXME: "with", "include"
+        # FIXME: "include"
     
     # 
     # list
@@ -523,10 +560,20 @@ grammar = Grammar.new(
             ]
         )
         
-        parameter = Pattern.new(
+        grammar[:parameter] = Pattern.new(
             tag_as: "variable.parameter.function",
             match: variable,
         )
+        optional = Pattern.new(
+            match: "?",
+            tag_as: "punctuation.separator.default",
+        )
+        eplipsis = Pattern.new(
+            tag_as: "punctuation.vararg-ellipses",
+            match: "...",
+        )
+        
+        # FIXME: simple non-bracket function definition
                 
         grammar[:brackets] =  PatternRange.new(
             tag_as: "meta.punctuation.section.bracket",
@@ -564,27 +611,22 @@ grammar = Grammar.new(
                 # 
                 PatternRange.new(
                     tag_as: "punctuation.section.parameters",
-                    start_pattern: parameter.then(std_space).lookAheadFor(/$|\?|,/),
+                    start_pattern: grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,/),
                     end_pattern: Pattern.new(
                         Pattern.new(
                             match: "}",
                             tag_as: "punctuation.section.bracket",
-                        ).then(match: ":", tag_as: "punctuation.section.function")
+                        ).then(std_space).then(match: ":", tag_as: "punctuation.section.function")
                         # FIXME: add the {}@aldkfjadj: case
                     ),
                     includes: [
                         :comments,
-                        Pattern.new(
-                            tag_as: "variable.parameter.function",
-                            match: variable,
-                        ),
-                        Pattern.new(
-                            tag_as: "punctuation.separator.delimiter.comma",
-                            match: ",",
-                        ),
+                        grammar[:parameter],
+                        optional,
+                        eplipsis,
+                        :values,
                     ],
                 )
-                    # FIXME
             ]
         )
         # FIXME: inline function definition
@@ -593,6 +635,32 @@ grammar = Grammar.new(
     # keyworded statements
     # 
         # let in
+        grammar[:let_in_statement] =  PatternRange.new(
+            tag_as: "meta.punctuation.section.bracket",
+            start_pattern: Pattern.new(
+                match: variableBounds[/let/],
+                tag_as: "keyword.control.let",
+            ),
+            end_pattern: lookAheadFor(/\}|;/), # technically this is imperfect, but must be done cause of multi-line values
+            includes: [
+                :comments,
+                :assignment_statement,
+                # 
+                # attribute set
+                # 
+                PatternRange.new(
+                    start_pattern: Pattern.new(
+                        match: variableBounds[/in/],
+                        tag_as: "keyword.control.in",
+                    ),
+                    end_pattern: lookAheadFor(/\}|;/),
+                    includes: [
+                        :comments,
+                        :assignment_statement,
+                    ],
+                ),
+            ]
+        )
         
         grammar[:if_then_else] =  PatternRange.new(
             tag_as: "meta.punctuation.section.conditional",
@@ -651,7 +719,6 @@ grammar = Grammar.new(
                 :values,
             ]
         )
-        # FIXME: parentheses 
         
         grammar[:value_base_case] = maybe(value_prefix).oneOf([
             grammar[:double_quote_inline],
@@ -677,72 +744,14 @@ grammar = Grammar.new(
             :brackets,
             :parentheses,
             :if_then_else,
+            :let_in_statement,
             :value_base_case,
             # FIXME: functions
-            # FIXME: keyworded statements
         ]
     
     # 
     # other
     # 
-        # FIXME
-        parameter = Pattern.new(
-            tag_as: "variable.parameter.function",
-            match: variable,
-        )
-        comma = Pattern.new(
-            match: /,/,
-            tag_as: "punctuation.separator"
-        )
-        optional = Pattern.new(
-            match: "?",
-            tag_as: "punctuation.separator.default",
-        )
-        eplipsis = Pattern.new(
-            tag_as: "punctuation.vararg-ellipses",
-            match: "...",
-        )
-        parameter_entry = oneOf([
-            parameter.maybe(std_space).then(comma),
-            parameter.maybe(std_space).then(optional),
-            parameter,
-            eplipsis,
-            comma,
-        ])
-        grammar[:methods] = [
-            Pattern.new(
-                match: zeroOrMoreOf(parameter_entry),
-                includes: [ parameter_entry ],
-            ),
-            # Multi-line
-            PatternRange.new(
-                tag_as: "meta.function",
-                start_pattern: Pattern.new(
-                    oneOf([
-                        # word before hand
-                        lookBehindFor(/\w|;/).then(std_space).then(
-                            tag_as: "punctuation.definition.dict",
-                            match: "{",
-                        ),
-                        # newline after
-                        Pattern.new(
-                            tag_as: "punctuation.definition.dict",
-                            match: "{",
-                        ).lookAheadFor(/ *$/),
-                    ])
-                ),
-                end_pattern: Pattern.new(
-                    match: "}",
-                    tag_as: "punctuation.definition.dict",
-                ),
-                includes: [
-                    :$initial_context,
-                    :attribute_set,
-                ]
-            ),
-        ]
-    
-    
         # TODO: add shell support
     
     
