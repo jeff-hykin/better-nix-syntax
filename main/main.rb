@@ -29,8 +29,8 @@ grammar = Grammar.new(
 #
 # 
     grammar[:$initial_context] = [
-        :comment,
-        :value_base_case,
+        :comments,
+        :values,
         # :attribute_set,
         # :method,
     ]
@@ -61,6 +61,103 @@ grammar = Grammar.new(
 # 
 # patterns
 # 
+    # 
+    # comments
+    # 
+        grammar[:line_comment] = oneOf([
+            Pattern.new(
+                match: Pattern.new(/\s*+/).then(
+                    match: /#/,
+                    tag_as: "punctuation.definition.comment"
+                ).then(
+                    match: /.*/,
+                    tag_as: "comment.line",
+                ),
+            ),
+        ])
+        
+        # 
+        # /*comment*/
+        # 
+        # same as block_comment, but uses Pattern so it can be used inside other patterns
+        grammar[:inline_comment] = Pattern.new(
+            should_fully_match: [ "/* thing */", "/* thing *******/", "/* */", "/**/", "/***/" ],
+            match: Pattern.new(
+                Pattern.new(
+                    match: "/*",
+                    tag_as: "comment.block punctuation.definition.comment.begin",
+                ).then(
+                    # this pattern is complicated because its optimized to never backtrack
+                    match: Pattern.new(
+                        tag_as: "comment.block",
+                        match: zeroOrMoreOf(
+                            dont_back_track?: true,
+                            match: Pattern.new(
+                                Pattern.new(
+                                    /[^\*]++/
+                                ).or(
+                                    Pattern.new(/\*+/).lookAheadToAvoid(/\//)
+                                )
+                            ),
+                        ).then(
+                            match: "*/",
+                            tag_as: "comment.block punctuation.definition.comment.end",
+                        )
+                    )
+                )
+            )    
+        )
+        
+        # 
+        # /*comment*/
+        # 
+        # same as inline but uses PatternRange to cover multiple lines
+        grammar[:block_comment] = PatternRange.new(
+            tag_as: "comment.block",
+            start_pattern: Pattern.new(
+                Pattern.new(/\s*+/).then(
+                    match: /\/\*/,
+                    tag_as: "punctuation.definition.comment.begin"
+                )
+            ),
+            end_pattern: Pattern.new(
+                match: /\*\//,
+                tag_as: "punctuation.definition.comment.end"
+            )
+        )
+        
+        grammar[:comments] = [
+            :line_comment,
+            :block_comment,
+        ]
+    
+    # 
+    # space helper
+    # 
+        # efficiently match zero or more spaces that may contain inline comments
+        std_space = Pattern.new(
+            # NOTE: this pattern can match 0-spaces so long as its still a word boundary
+            # this is the intention, for example `int/*comment*/a = 10` would be valid
+            # this space pattern will match inline /**/ comments that do not contain newlines
+            match: oneOf([
+                oneOrMoreOf(
+                    Pattern.new(/\s*+/).then( 
+                        grammar[:inline_comment]
+                    ).then(/\s*+/)
+                ),
+                Pattern.new(/\s++/),
+                lookBehindFor(/\W/),
+                lookAheadFor(/\W/),
+                /^/,
+                /\n?$/,
+                @start_of_document,
+                @end_of_document,
+            ]),
+            includes: [
+                :inline_comment,
+            ],
+        )
+    
     # 
     # 
     # primitives
@@ -158,7 +255,7 @@ grammar = Grammar.new(
                         match: /"/,
                     ).then(
                         tag_as: "string.quoted.double",
-                        should_fully_match: [ "fakljflkdjfad", "fakljflkdjfad$", "fakljflkdjfad\\${testing}" ],
+                        should_fully_match: [ "fakljflkdjfad", "fakljflkdjfad$", "fakljflkdjfad\\${testing}", ],
                         match: zeroOrMoreOf(
                             match: Pattern.new(/\\./).or(lookAheadToAvoid(/\$\{/).then(/[^"]/)),
                             atomic: true,
@@ -223,12 +320,13 @@ grammar = Grammar.new(
                     ]
                 )
                 grammar[:double_quote] = PatternRange.new(
+                    tag_as: "string.quoted.double",
                     start_pattern: Pattern.new(
-                        tag_as: "string.quoted.double punctuation.definition.string.double",
+                        tag_as: "punctuation.definition.string.double",
                         match: /"/,
                     ),
                     end_pattern: Pattern.new(
-                        tag_as: "string.quoted.double punctuation.definition.string.double",
+                        tag_as: "punctuation.definition.string.double",
                         match: /"/,
                     ),
                     includes: [
@@ -237,6 +335,7 @@ grammar = Grammar.new(
                     ]
                 )
                 grammar[:single_quote] = PatternRange.new(
+                    tag_as: "string.quoted.double-singles",
                     start_pattern: Pattern.new(
                         tag_as: "string.quoted.single punctuation.definition.string.single",
                         match: /''/,
@@ -259,62 +358,58 @@ grammar = Grammar.new(
             match: variable,
         )
         
+        attribute = oneOf([
+            Pattern.new(
+                tag_as: "variable.other.object.property",
+                match: variable,
+            ),
+            grammar[:double_quote_inline],
+            grammar[:single_quote_inline],
+        ])
+        
         grammar[:variable_with_attributes] = Pattern.new(
             Pattern.new(
                 tag_as: "variable.other.object.access",
                 match: variable,
-            ).maybe(@spaces).then(
+            ).then(std_space).then(
                 tag_as: "punctuation.separator.dot-access",
                 match: ".",
-            ).maybe(@spaces).then(
+            ).then(std_space).then(
                 match: zeroOrMoreOf(
-                    middle_property = Pattern.new(
-                        Pattern.new(
-                            tag_as: "variable.other.object.property",
-                            match: variable,
-                        ).maybe(@spaces).then(
+                    middle_repeat = Pattern.new(
+                        attribute.then(std_space).then(
                             tag_as: "punctuation.separator.dot-access",
                             match: ".",
                         ),
                     ),
                 ),
-                includes: [ middle_property ],
+                includes: [ middle_repeat ],
             ).then(
                 tag_as: "variable.other.property",
-                match: variable,
+                match: attribute,
             ),
         )
         
         grammar[:variable] = grammar[:variable_with_attributes].or(grammar[:standalone_variable])
     
     # 
-    # function or attribute_set
+    # keyworded values
     # 
-        # FIXME
+        # FIXME: "with", "include"
     
     # 
-    # containers
+    # list
     # 
         grammar[:empty_list] = Pattern.new(
-            maybe(@spaces).then(
+            maybe(std_space).then(
                 match: "[",
                 tag_as: "punctuation.definition.list",
-            ).maybe(@spaces).then(
+            ).maybe(std_space).then(
                 match: "]",
                 tag_as: "punctuation.definition.list",
             ),
         )
         
-        grammar[:empty_set] = Pattern.new(
-            maybe(@spaces).then(
-                match: "{",
-                tag_as: "punctuation.definition.dict",
-            ).maybe(@spaces).then(
-                match: "}",
-                tag_as: "punctuation.definition.dict",
-            ),
-        )
-    
         grammar[:list] = [
             PatternRange.new(
                 tag_as: "meta.list",
@@ -327,48 +422,123 @@ grammar = Grammar.new(
                     tag_as: "punctuation.definition.list",
                 ),
                 includes: [
-                    
+                    :values,
                 ]
             ),
         ]
+    
+    # 
+    # attribute_set or function
+    # 
+        grammar[:empty_set] = Pattern.new(
+            maybe(std_space).then(
+                match: "{",
+                tag_as: "punctuation.definition.dict",
+            ).maybe(std_space).then(
+                match: "}",
+                tag_as: "punctuation.definition.dict",
+            ),
+        )
         
-        # FIXME: add rec
-        # FIXME: 
-        grammar[:attribute_set] = [
-            # Multi-line
-            PatternRange.new(
-                tag_as: "meta.dict",
-                start_pattern: Pattern.new(
-                    oneOf([
-                        # word before hand
-                        lookBehindFor(/\w|;/).maybe(@spaces).then(
-                            tag_as: "punctuation.definition.dict",
-                            match: "{",
-                        ),
-                        # newline after
-                        Pattern.new(
-                            tag_as: "punctuation.definition.dict",
-                            match: "{",
-                        ).lookAheadFor(/ *$/),
-                    ])
-                ),
-                end_pattern: Pattern.new(
-                    match: "}",
-                    tag_as: "punctuation.definition.dict",
-                ),
-                includes: [
-                    :$initial_context,
-                ]
+        attribute_key = Pattern.new(
+            tag_as: "meta.attribute-key",
+            match: attribute.zeroOrMoreOf(
+                maybe(std_space).then(
+                    tag_as: "punctuation.separator.dot-access",
+                    match: ".",
+                ).then(
+                    attribute
+                )
+            )
+        )
+        
+        # FIXME: "assert" keyword
+        # ex: assert assertMsg ("foo" == "bar") "foo is not bar, silly"; ""
+        assignment_start = attribute_key.then(std_space).then(
+            match: /=/,
+            tag_as: "keyword.operator.assignment",
+        )
+        
+        grammar[:assignment_statement] = PatternRange.new(
+            tag_as: "meta.statement",
+            start_pattern: assignment_start,
+            end_pattern: Pattern.new(
+                match: /;/,
+                tag_as: "punctuation.terminator.statement"
             ),
+            includes: [
+                :values,
+            ]
+        )
+        
+        grammar[:brackets] =  PatternRange.new(
+            tag_as: "meta.punctuation.section.bracket",
+            start_pattern: Pattern.new(
+                match: "{",
+                tag_as: "punctuation.section.bracket",
+            ),
+            end_pattern: Pattern.new(
+                match: "}",
+                tag_as: "punctuation.section.bracket",
+            ),
+            includes: [
+                # 
+                # attribute set
+                # 
+                PatternRange.new(
+                    tag_as: "meta.attribute-set",
+                    start_pattern: lookAheadFor(assignment_start),
+                    end_pattern: lookAheadFor(/}/),
+                    includes: [
+                        :comments,
+                        :assignment_statement,
+                    ],
+                )
+                # 
+                # function definition
+                # 
+                    # FIXME
+            ]
+        )
+        # FIXME: inline function definition
+    
+    # 
+    # keyworded statements
+    # 
+        # if then else
+        # let in
+    
+    # 
+    # values
+    # 
+        grammar[:value_base_case] = oneOf([
+            grammar[:double_quote_inline],
+            grammar[:single_quote_inline],
+            grammar[:url],
+            grammar[:normal_path_literal],
+            grammar[:path_literal_content],
+            grammar[:system_path_literal],
+            grammar[:null],
+            grammar[:boolean],
+            grammar[:decimal],
+            grammar[:integer],
+            grammar[:empty_list],
+            grammar[:empty_set],
+            grammar[:variable],
+        ])
+        
+        grammar[:values] = [
+            :double_quote,
+            :single_quote,
+            :value_base_case,
+            :list,
+            :brackets,
+            # FIXME: functions
+            # FIXME: keyworded statements
         ]
     
     # 
-    # operators
-    # 
-        # FIXME
-    
-    # 
-    # functions
+    # other
     # 
         # FIXME
         parameter = Pattern.new(
@@ -388,8 +558,8 @@ grammar = Grammar.new(
             match: "...",
         )
         parameter_entry = oneOf([
-            parameter.maybe(@spaces).then(comma),
-            parameter.maybe(@spaces).then(optional),
+            parameter.maybe(std_space).then(comma),
+            parameter.maybe(std_space).then(optional),
             parameter,
             eplipsis,
             comma,
@@ -405,7 +575,7 @@ grammar = Grammar.new(
                 start_pattern: Pattern.new(
                     oneOf([
                         # word before hand
-                        lookBehindFor(/\w|;/).maybe(@spaces).then(
+                        lookBehindFor(/\w|;/).then(std_space).then(
                             tag_as: "punctuation.definition.dict",
                             match: "{",
                         ),
@@ -427,58 +597,9 @@ grammar = Grammar.new(
             ),
         ]
     
-    # 
-    # statements
-    # 
-        # if then else
-        # let in
-        # with
-        # assert
-        # include
     
-    # 
-    # other
-    # 
-        grammar[:comment] = oneOf([
-            Pattern.new(
-                match: Pattern.new(/\s*+/).then(
-                    match: /#/,
-                    tag_as: "punctuation.definition.comment"
-                ).then(
-                    match: /.*/,
-                    tag_as: "comment.line",
-                ),
-            ),
-        ])
-        # FIXME: block comment
-            # {
-            #     "begin": "\/\\*([^*]|\\*[^\\\/])*",
-            #     "end": "\\*\\\/",
-            #     "patterns": [
-            #         {
-            #             "include": "#comment-remark"
-            #         }
-            #     ],
-            #     "name": "comment.block.nix"
-            # }
-        
         # TODO: add shell support
     
-    grammar[:value_base_case] = oneOf([
-        grammar[:url],
-        grammar[:normal_path_literal],
-        grammar[:path_literal_content],
-        grammar[:system_path_literal],
-        grammar[:null],
-        grammar[:boolean],
-        grammar[:decimal],
-        grammar[:integer],
-        grammar[:double_quote_inline],
-        grammar[:single_quote_inline],
-        grammar[:empty_list],
-        grammar[:empty_set],
-        grammar[:variable],
-    ])
     
     # grammar[:line_continuation_character] = Pattern.new(
     #     match: /\\\n/,

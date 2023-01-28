@@ -1,0 +1,595 @@
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' Experimental flake interface to Nixpkgs.'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' See https://github.com/NixOS/rfcs/pull/49 for details.'
+  scopes:
+    - comment.line
+- source: '{'
+- source: description
+  scopes:
+    - variable.other
+- source: ' = '
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: A collection of packages for the Nix package manager
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+- source: outputs
+  scopes:
+    - variable.other
+- source: ' = { '
+- source: self
+  scopes:
+    - variable.other
+- source: ' }:'
+- source: let
+  scopesBegin:
+    - variable.other
+- source: jobs
+  scopesEnd:
+    - variable.other
+- source: ' = '
+- source: import
+  scopes:
+    - variable.other
+- source: ./
+  scopes:
+    - constant.path.normal
+    - punctuation.other.path.normal
+- source: pkgs
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: top-level
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: release.nix
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ' {'
+- source: nixpkgs
+  scopes:
+    - variable.other
+- source: ' = '
+- source: self
+  scopes:
+    - variable.other
+- source: ;
+- source: '      };'
+- source: lib
+  scopes:
+    - variable.other
+- source: ' = '
+- source: import
+  scopes:
+    - variable.other
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.other.relative
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: lib
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ;
+- source: systems
+  scopes:
+    - variable.other
+- source: ' = '
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: systems
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: .
+- source: supported
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: hydra
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: forAllSystems
+  scopes:
+    - variable.other
+- source: ' = '
+- source: f
+  scopes:
+    - variable.other
+- source: ': '
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: genAttrs
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: systems
+  scopes:
+    - variable.other
+- source: ' ('
+- source: system
+  scopes:
+    - variable.other
+- source: ': '
+- source: f
+  scopesBegin:
+    - variable.other
+- source: system
+  scopesEnd:
+    - variable.other
+- source: );
+- source: in
+  scopes:
+    - variable.other
+- source: '    {'
+- source: lib
+  scopes:
+    - variable.other
+- source: ' = '
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: extend
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ' ('
+- source: final
+  scopes:
+    - variable.other
+- source: ': '
+- source: prev
+  scopes:
+    - variable.other
+- source: ': {'
+- source: nixos
+  scopes:
+    - variable.other
+- source: ' = '
+- source: import
+  scopes:
+    - variable.other
+- source: ./
+  scopes:
+    - constant.path.normal
+    - punctuation.other.path.normal
+- source: nixos
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: lib
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ' { '
+- source: lib
+  scopes:
+    - variable.other
+- source: ' = '
+- source: final
+  scopes:
+    - variable.other
+- source: '; };'
+- source: nixosSystem
+  scopes:
+    - variable.other
+- source: ' = '
+- source: args
+  scopes:
+    - variable.other
+- source: ':'
+- source: import
+  scopes:
+    - variable.other
+- source: ./
+  scopes:
+    - constant.path.normal
+    - punctuation.other.path.normal
+- source: nixos
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: lib
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: eval-config.nix
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ' ('
+- source: args
+  scopes:
+    - variable.other
+- source: ' // {'
+- source: modules
+  scopes:
+    - variable.other
+- source: ' = '
+- source: args
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: modules
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ' ++ [ {'
+- source: system
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixos
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: .
+- source: versionSuffix
+  scopes:
+    - variable.other
+- source: ' ='
+- source: '                ".${'
+- source: final
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: substring
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: '0'
+  scopesBegin:
+    - constant.numeric.integer
+- source: '8'
+  scopesEnd:
+    - constant.numeric.integer
+- source: ' ('
+- source: self
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: lastModifiedDate
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: or
+  scopes:
+    - variable.other
+- source: self
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: lastModified
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: or
+  scopes:
+    - variable.other
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '19700101'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ')}.${'
+- source: self
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: shortRev
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: or
+  scopes:
+    - variable.other
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: dirty
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '}";'
+- source: system
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixos
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: .
+- source: revision
+  scopes:
+    - variable.other
+- source: ' = '
+- source: final
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkIf
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ' ('
+- source: self
+  scopes:
+    - variable.other
+- source: ' ? '
+- source: rev
+  scopes:
+    - variable.other
+- source: ') '
+- source: self
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: rev
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: '            } ];'
+- source: '          });'
+- source: '      });'
+- source: checks
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: x86_64-linux
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: .
+- source: tarball
+  scopes:
+    - variable.other
+- source: ' = '
+- source: jobs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: tarball
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: htmlDocs
+  scopes:
+    - variable.other
+- source: ' = {'
+- source: nixpkgsManual
+  scopes:
+    - variable.other
+- source: ' = '
+- source: jobs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: manual
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: nixosManual
+  scopes:
+    - variable.other
+- source: ' = ('
+- source: import
+  scopes:
+    - variable.other
+- source: ./
+  scopes:
+    - constant.path.normal
+    - punctuation.other.path.normal
+- source: nixos
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: release-small.nix
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ' {'
+- source: nixpkgs
+  scopes:
+    - variable.other
+- source: ' = '
+- source: self
+  scopes:
+    - variable.other
+- source: ;
+- source: '        }).'
+- source: nixos
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: manual
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: .
+- source: x86_64-linux
+  scopes:
+    - variable.other
+- source: ;
+- source: '      };'
+- source: legacyPackages
+  scopes:
+    - variable.other
+- source: ' = '
+- source: forAllSystems
+  scopes:
+    - variable.other
+- source: ' ('
+- source: system
+  scopes:
+    - variable.other
+- source: ': '
+- source: import
+  scopes:
+    - variable.other
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.other.relative
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: .
+  scopes:
+    - punctuation.other.relative
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ' { '
+- source: inherit
+  scopesBegin:
+    - variable.other
+- source: system
+  scopesEnd:
+    - variable.other
+- source: '; });'
+- source: nixosModules
+  scopes:
+    - variable.other
+- source: ' = {'
+- source: notDetected
+  scopes:
+    - variable.other
+- source: ' = '
+- source: import
+  scopes:
+    - variable.other
+- source: ./
+  scopes:
+    - constant.path.normal
+    - punctuation.other.path.normal
+- source: nixos
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: modules
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: installer
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: scan
+- source: /
+  scopes:
+    - punctuation.other.path
+- source: not-detected.nix
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ;
+- source: '      };'
+- source: '    };'
+- source: '}'

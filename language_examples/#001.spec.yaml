@@ -1,0 +1,376 @@
+- source: '{ '
+- source: lib
+  scopes:
+    - variable.other
+- source: ', '
+- source: stdenv
+  scopes:
+    - variable.other
+- source: ', '
+- source: fetchurl
+  scopes:
+    - variable.other
+- source: ', '
+- source: nixos
+  scopes:
+    - variable.other
+- source: ', '
+- source: testVersion
+  scopes:
+    - variable.other
+- source: ', '
+- source: testEqualDerivation
+  scopes:
+    - variable.other
+- source: ', '
+- source: hello
+  scopes:
+    - variable.other
+- source: '}:'
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkDerivation
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: rec
+  scopes:
+    - variable.other
+- source: ' {'
+- source: pname
+  scopes:
+    - variable.other
+- source: ' = '
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: hello
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+- source: version
+  scopes:
+    - variable.other
+- source: ' = '
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '2.12'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+- source: src
+  scopes:
+    - variable.other
+- source: ' = '
+- source: fetchurl
+  scopes:
+    - variable.other
+- source: ' {'
+- source: url
+  scopes:
+    - variable.other
+- source: ' = "'
+- source: 'mirror:'
+  scopesBegin:
+    - constant.url
+  scopes:
+    - punctuation.other.url.protocol
+- source: //gnu/hello/$
+  scopes:
+    - punctuation.other.url.address
+  scopesEnd:
+    - constant.url
+- source: '{'
+- source: pname
+  scopes:
+    - variable.other
+- source: '}-${'
+- source: version
+  scopes:
+    - variable.other
+- source: '}.'
+- source: tar
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: gz
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: '";'
+- source: sha256
+  scopes:
+    - variable.other
+- source: ' = '
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 1ayhp9v4m4rdhjmnl2bq3cibrbqqkgjbl3s7yk2nhlh8vj3ay16g
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+- source: '  };'
+- source: doCheck
+  scopes:
+    - variable.other
+- source: ' = '
+- source: 'true'
+  scopes:
+    - constant.language.boolean.true
+- source: ;
+- source: passthru
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: tests
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ' = {'
+- source: version
+  scopes:
+    - variable.other
+- source: ' = '
+- source: testVersion
+  scopes:
+    - variable.other
+- source: ' { '
+- source: package
+  scopes:
+    - variable.other
+- source: ' = '
+- source: hello
+  scopes:
+    - variable.other
+- source: '; };'
+- source: invariant-under-noXlibs
+  scopes:
+    - variable.other
+- source: ' ='
+- source: testEqualDerivation
+  scopes:
+    - variable.other
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: hello must not be rebuilt when environment.noXlibs is set.
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: hello
+  scopes:
+    - variable.other
+- source: '        ('
+- source: nixos
+  scopes:
+    - variable.other
+- source: ' { '
+- source: environment
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: noXlibs
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ' = '
+- source: 'true'
+  scopes:
+    - constant.language.boolean.true
+- source: '; }).'
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: hello
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: '  };'
+- source: meta
+  scopes:
+    - variable.other
+- source: ' = '
+- source: with
+  scopesBegin:
+    - variable.other
+- source: lib
+  scopesEnd:
+    - variable.other
+- source: '; {'
+- source: description
+  scopes:
+    - variable.other
+- source: ' = '
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'A program that produces a familiar, friendly greeting'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+- source: longDescription
+  scopes:
+    - variable.other
+- source: ' = '''''
+- source: GNU
+  scopesBegin:
+    - variable.other
+- source: Hello
+- source: is
+- source: a
+- source: program
+- source: that
+- source: prints
+  scopesEnd:
+    - variable.other
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'Hello, world!'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: when
+  scopesBegin:
+    - variable.other
+- source: you
+- source: run
+- source: it
+  scopesEnd:
+    - variable.other
+- source: .
+- source: It
+  scopesBegin:
+    - variable.other
+- source: is
+- source: fully
+- source: customizable
+  scopesEnd:
+    - variable.other
+- source: .
+- source: '    '''';'
+- source: homepage
+  scopes:
+    - variable.other
+- source: ' = '
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'https://www.gnu.org/software/hello/manual/'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+- source: changelog
+  scopes:
+    - variable.other
+- source: ' = "'
+- source: 'https:'
+  scopesBegin:
+    - constant.url
+  scopes:
+    - punctuation.other.url.protocol
+- source: //git.savannah.gnu.org/cgit/hello.git/plain/NEWS?h=v$
+  scopes:
+    - punctuation.other.url.address
+  scopesEnd:
+    - constant.url
+- source: '{'
+- source: version
+  scopes:
+    - variable.other
+- source: '}";'
+- source: license
+  scopes:
+    - variable.other
+- source: ' = '
+- source: licenses
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: gpl3Plus
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: maintainers
+  scopes:
+    - variable.other
+- source: ' = [ '
+- source: maintainers
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: eelco
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ' ];'
+- source: platforms
+  scopes:
+    - variable.other
+- source: ' = '
+- source: platforms
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: all
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: ;
+- source: '  };'
+- source: '}'
