@@ -2,6 +2,7 @@ comment.block.nix
 comment.line.nix
 constant.character.escape.nix
 constant.language.boolean.$0.nix
+constant.language.boolean.$21.nix
 constant.language.boolean.$48.nix
 constant.language.null.nix
 constant.numeric.decimal.nix

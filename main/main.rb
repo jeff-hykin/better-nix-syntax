@@ -316,36 +316,47 @@ grammar = Grammar.new(
                         :$initial_context
                     ]
                 )
-                grammar[:double_quote] = PatternRange.new(
-                    tag_as: "string.quoted.double",
-                    start_pattern: Pattern.new(
-                        tag_as: "punctuation.definition.string.double",
-                        match: /"/,
-                    ),
-                    end_pattern: Pattern.new(
-                        tag_as: "punctuation.definition.string.double",
-                        match: /"/,
-                    ),
-                    includes: [
-                        :escape_character_double_quote,
-                        :interpolation,
+                
+                generateStringBlock = ->(additional_tag:"", includes:[]) do
+                    [
+                        PatternRange.new(
+                            tag_as: "string.quoted.double #{additional_tag}",
+                            start_pattern: Pattern.new(
+                                tag_as: "punctuation.definition.string.double",
+                                match: /"/,
+                            ),
+                            end_pattern: Pattern.new(
+                                tag_as: "punctuation.definition.string.double",
+                                match: /"/,
+                            ),
+                            includes: [
+                                :escape_character_double_quote,
+                                :interpolation,
+                                *includes,
+                            ],
+                        ),
+                        PatternRange.new(
+                            tag_as: "string.quoted.other #{additional_tag}",
+                            start_pattern: Pattern.new(
+                                tag_as: "string.quoted.single punctuation.definition.string.single",
+                                match: /''/,
+                            ),
+                            end_pattern: Pattern.new(
+                                tag_as: "string.quoted.single punctuation.definition.string.single",
+                                match: /''/,
+                            ),
+                            includes: [
+                                :escape_character_single_quote,
+                                :interpolation,
+                                *includes,
+                            ]
+                        )
                     ]
-                )
-                grammar[:single_quote] = PatternRange.new(
-                    tag_as: "string.quoted.other",
-                    start_pattern: Pattern.new(
-                        tag_as: "string.quoted.single punctuation.definition.string.single",
-                        match: /''/,
-                    ),
-                    end_pattern: Pattern.new(
-                        tag_as: "string.quoted.single punctuation.definition.string.single",
-                        match: /''/,
-                    ),
-                    includes: [
-                        :escape_character_single_quote,
-                        :interpolation,
-                    ]
-                )
+                end
+                
+                default_string_blocks = generateStringBlock[]
+                grammar[:double_quote] = default_string_blocks[0]
+                grammar[:single_quote] = default_string_blocks[1]
         
     # 
     # variables
@@ -425,11 +436,15 @@ grammar = Grammar.new(
             ).then(function_call_lookahead),
         )
         
-        grammar[:variable] = oneOf([
+        grammar[:variable_or_function] = oneOf([
             grammar[:variable_with_method],
             grammar[:variable_with_attributes],
             grammar[:standalone_function_call],
             grammar[:standalone_function_call_guess],
+            grammar[:standalone_variable],
+        ])
+        grammar[:variable] = oneOf([
+            grammar[:variable_with_attributes],
             grammar[:standalone_variable],
         ])
         
@@ -514,7 +529,7 @@ grammar = Grammar.new(
                     tag_as: "punctuation.definition.list",
                 ),
                 includes: [
-                    :values,
+                    :values_inside_list,
                 ]
             ),
         ]
@@ -773,7 +788,7 @@ grammar = Grammar.new(
             ]
         )
         
-        grammar[:value_base_case] = maybe(value_prefix).oneOf([
+        grammar[:value_normal_base] = oneOf([
             grammar[:double_quote_inline],
             grammar[:single_quote_inline],
             grammar[:url],
@@ -786,10 +801,17 @@ grammar = Grammar.new(
             grammar[:integer],
             grammar[:empty_list],
             grammar[:empty_set],
+        ])
+        grammar[:value_base] = maybe(value_prefix).oneOf([
+            grammar[:value_normal_base],
+            grammar[:variable_or_function],
+        ])
+        grammar[:list_value_base] = maybe(value_prefix).oneOf([
+            grammar[:value_normal_base],
             grammar[:variable],
         ])
         
-        grammar[:values] = [
+        grammar[:most_values] = [
             :comments, # comments are valid whereever values are
             :double_quote,
             :single_quote,
@@ -798,8 +820,15 @@ grammar = Grammar.new(
             :parentheses,
             :if_then_else,
             :let_in_statement,
-            :value_base_case,
             # FIXME: functions
+        ]
+        grammar[:values] = [
+            :most_values,
+            :value_base,
+        ]
+        grammar[:values_inside_list] = [
+            :most_values,
+            :list_value_base,
         ]
     # FIXME: builtins
 #

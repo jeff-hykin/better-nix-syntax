@@ -1847,9 +1847,873 @@
           "name": "meta.list.nix",
           "patterns": [
             {
-              "include": "#values"
+              "include": "#values_inside_list"
             }
           ]
+        }
+      ]
+    },
+    "list_value_base": {
+      "match": "(?:((?<!\\w)with(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(;)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))))?(?:(?:(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.))))|(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))|((\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+))|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>))|((?<!\\w)null(?!\\w))|((?<!\\w)true|false(?!\\w))|((?<!\\w)[0-9]+\\.[0-9]+(?!\\w))|((?<!\\w)[0-9]+(?!\\w))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\[)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\]))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\{)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\})))|(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))|((?<!\\.)(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?!\\.))))",
+      "captures": {
+        "1": {
+          "name": "keyword.operator.with.nix"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "3": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "4": {
+          "name": "entity.name.namespace.nix"
+        },
+        "5": {
+          "name": "entity.name.namespace.object.access.nix"
+        },
+        "6": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "7": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "8": {
+          "name": "punctuation.separator.dot-access.nix"
+        },
+        "9": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "10": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "11": {
+          "patterns": [
+            {
+              "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))",
+              "captures": {
+                "1": {
+                  "name": "entity.name.namespace.object.property.nix"
+                },
+                "2": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "3": {
+                  "name": "string.quoted.double.nix",
+                  "patterns": [
+                    {
+                      "match": "\\\\.",
+                      "name": "constant.character.escape.nix"
+                    }
+                  ]
+                },
+                "4": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "5": {
+                  "name": "string.quoted.single.nix"
+                },
+                "6": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "7": {
+                  "name": "string.quoted.single.nix",
+                  "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    }
+                  ]
+                },
+                "8": {
+                  "name": "constant.character.escape.nix"
+                },
+                "9": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "10": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "11": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "12": {
+                  "name": "comment.block.nix"
+                },
+                "13": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                },
+                "14": {
+                  "name": "punctuation.separator.dot-access.nix"
+                },
+                "15": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "16": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "17": {
+                  "name": "comment.block.nix"
+                },
+                "18": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "12": {
+          "patterns": [
+            {
+              "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))",
+              "captures": {
+                "1": {
+                  "name": "entity.name.namespace.object.property.nix"
+                },
+                "2": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "3": {
+                  "name": "string.quoted.double.nix",
+                  "patterns": [
+                    {
+                      "match": "\\\\.",
+                      "name": "constant.character.escape.nix"
+                    }
+                  ]
+                },
+                "4": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "5": {
+                  "name": "string.quoted.single.nix"
+                },
+                "6": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "7": {
+                  "name": "string.quoted.single.nix",
+                  "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    }
+                  ]
+                },
+                "8": {
+                  "name": "constant.character.escape.nix"
+                },
+                "9": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "10": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "11": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "12": {
+                  "name": "comment.block.nix"
+                },
+                "13": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                },
+                "14": {
+                  "name": "punctuation.separator.dot-access.nix"
+                },
+                "15": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "16": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "17": {
+                  "name": "comment.block.nix"
+                },
+                "18": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "13": {
+          "name": "entity.name.namespace.property.nix"
+        },
+        "14": {
+          "name": "entity.name.namespace.object.property.nix"
+        },
+        "15": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "16": {
+          "name": "string.quoted.double.nix",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.nix"
+            }
+          ]
+        },
+        "17": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "18": {
+          "name": "string.quoted.single.nix"
+        },
+        "19": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "20": {
+          "name": "string.quoted.single.nix",
+          "patterns": [
+            {
+              "include": "#escape_character_single_quote"
+            }
+          ]
+        },
+        "21": {
+          "name": "constant.character.escape.nix"
+        },
+        "22": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "23": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "24": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "25": {
+          "name": "punctuation.separator.with.nix"
+        },
+        "26": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "27": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "28": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "29": {
+          "name": "string.quoted.double.nix",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.nix"
+            }
+          ]
+        },
+        "30": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "31": {
+          "name": "string.quoted.single.nix"
+        },
+        "32": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "33": {
+          "name": "string.quoted.single.nix",
+          "patterns": [
+            {
+              "include": "#escape_character_single_quote"
+            }
+          ]
+        },
+        "34": {
+          "name": "constant.character.escape.nix"
+        },
+        "35": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "36": {
+          "name": "constant.url.nix"
+        },
+        "37": {
+          "name": "punctuation.other.url.protocol.nix"
+        },
+        "38": {
+          "name": "punctuation.other.url.address.nix"
+        },
+        "39": {
+          "name": "constant.path.normal.nix"
+        },
+        "40": {
+          "name": "punctuation.other.path.normal.nix"
+        },
+        "41": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.other.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.other.relative.nix"
+            }
+          ]
+        },
+        "42": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.other.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.other.relative.nix"
+            }
+          ]
+        },
+        "43": {
+          "name": "constant.path.system.nix"
+        },
+        "44": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "45": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.other.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.other.relative.nix"
+            }
+          ]
+        },
+        "46": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "47": {
+          "name": "constant.language.null.nix"
+        },
+        "48": {
+          "name": "constant.language.boolean.$48.nix"
+        },
+        "49": {
+          "name": "constant.numeric.decimal.nix"
+        },
+        "50": {
+          "name": "constant.numeric.integer.nix"
+        },
+        "51": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "52": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "53": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "54": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "55": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "56": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "57": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "58": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "59": {
+          "name": "punctuation.definition.dict.nix"
+        },
+        "60": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "61": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "62": {
+          "name": "punctuation.definition.dict.nix"
+        },
+        "63": {
+          "name": "variable.other.object.access.nix"
+        },
+        "64": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "65": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "66": {
+          "name": "punctuation.separator.dot-access.nix"
+        },
+        "67": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "68": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "69": {
+          "patterns": [
+            {
+              "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "3": {
+                  "name": "string.quoted.double.nix",
+                  "patterns": [
+                    {
+                      "match": "\\\\.",
+                      "name": "constant.character.escape.nix"
+                    }
+                  ]
+                },
+                "4": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "5": {
+                  "name": "string.quoted.single.nix"
+                },
+                "6": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "7": {
+                  "name": "string.quoted.single.nix",
+                  "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    }
+                  ]
+                },
+                "8": {
+                  "name": "constant.character.escape.nix"
+                },
+                "9": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "10": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "11": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "12": {
+                  "name": "comment.block.nix"
+                },
+                "13": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                },
+                "14": {
+                  "name": "punctuation.separator.dot-access.nix"
+                },
+                "15": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "16": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "17": {
+                  "name": "comment.block.nix"
+                },
+                "18": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "70": {
+          "patterns": [
+            {
+              "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "3": {
+                  "name": "string.quoted.double.nix",
+                  "patterns": [
+                    {
+                      "match": "\\\\.",
+                      "name": "constant.character.escape.nix"
+                    }
+                  ]
+                },
+                "4": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "5": {
+                  "name": "string.quoted.single.nix"
+                },
+                "6": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "7": {
+                  "name": "string.quoted.single.nix",
+                  "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    }
+                  ]
+                },
+                "8": {
+                  "name": "constant.character.escape.nix"
+                },
+                "9": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "10": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "11": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "12": {
+                  "name": "comment.block.nix"
+                },
+                "13": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                },
+                "14": {
+                  "name": "punctuation.separator.dot-access.nix"
+                },
+                "15": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "16": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "17": {
+                  "name": "comment.block.nix"
+                },
+                "18": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "71": {
+          "name": "variable.other.property.nix"
+        },
+        "72": {
+          "name": "variable.other.object.property.nix"
+        },
+        "73": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "74": {
+          "name": "string.quoted.double.nix",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.nix"
+            }
+          ]
+        },
+        "75": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "76": {
+          "name": "string.quoted.single.nix"
+        },
+        "77": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "78": {
+          "name": "string.quoted.single.nix",
+          "patterns": [
+            {
+              "include": "#escape_character_single_quote"
+            }
+          ]
+        },
+        "79": {
+          "name": "constant.character.escape.nix"
+        },
+        "80": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "81": {
+          "name": "variable.other.nix"
+        }
+      }
+    },
+    "most_values": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#double_quote"
+        },
+        {
+          "include": "#single_quote"
+        },
+        {
+          "include": "#list"
+        },
+        {
+          "include": "#brackets"
+        },
+        {
+          "include": "#parentheses"
+        },
+        {
+          "include": "#if_then_else"
+        },
+        {
+          "include": "#let_in_statement"
         }
       ]
     },
@@ -2344,8 +3208,8 @@
       },
       "name": "constant.url.nix"
     },
-    "value_base_case": {
-      "match": "(?:((?<!\\w)with(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(;)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))))?(?:(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.))))|(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))|((\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+))|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>))|((?<!\\w)null(?!\\w))|((?<!\\w)true|false(?!\\w))|((?<!\\w)[0-9]+\\.[0-9]+(?!\\w))|((?<!\\w)[0-9]+(?!\\w))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\[)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\]))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\{)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\}))|(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?<=\\()((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))|((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))$)|((?<!\\.)(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?!\\.))))",
+    "value_base": {
+      "match": "(?:((?<!\\w)with(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(;)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))))?(?:(?:(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.))))|(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))|((\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+))|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>))|((?<!\\w)null(?!\\w))|((?<!\\w)true|false(?!\\w))|((?<!\\w)[0-9]+\\.[0-9]+(?!\\w))|((?<!\\w)[0-9]+(?!\\w))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\[)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\]))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\{)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\})))|(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?<=\\()((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))|((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))$)|((?<!\\.)(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?!\\.))))",
       "captures": {
         "1": {
           "name": "keyword.operator.with.nix"
@@ -3571,38 +4435,523 @@
         }
       }
     },
+    "value_normal_base": {
+      "match": "(?:(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.))))|(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))|((\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+))|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>))|((?<!\\w)null(?!\\w))|((?<!\\w)true|false(?!\\w))|((?<!\\w)[0-9]+\\.[0-9]+(?!\\w))|((?<!\\w)[0-9]+(?!\\w))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\[)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\]))|(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\{)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))?(\\})))",
+      "captures": {
+        "1": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "2": {
+          "name": "string.quoted.double.nix",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.nix"
+            }
+          ]
+        },
+        "3": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "4": {
+          "name": "string.quoted.single.nix"
+        },
+        "5": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "6": {
+          "name": "string.quoted.single.nix",
+          "patterns": [
+            {
+              "include": "#escape_character_single_quote"
+            }
+          ]
+        },
+        "7": {
+          "name": "constant.character.escape.nix"
+        },
+        "8": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "9": {
+          "name": "constant.url.nix"
+        },
+        "10": {
+          "name": "punctuation.other.url.protocol.nix"
+        },
+        "11": {
+          "name": "punctuation.other.url.address.nix"
+        },
+        "12": {
+          "name": "constant.path.normal.nix"
+        },
+        "13": {
+          "name": "punctuation.other.path.normal.nix"
+        },
+        "14": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.other.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.other.relative.nix"
+            }
+          ]
+        },
+        "15": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.other.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.other.relative.nix"
+            }
+          ]
+        },
+        "16": {
+          "name": "constant.path.system.nix"
+        },
+        "17": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "18": {
+          "name": "string.unquoted.path.nix punctuation.section.regexp.nix punctuation.section.path.nix",
+          "patterns": [
+            {
+              "match": "\\/",
+              "name": "punctuation.other.path.nix"
+            },
+            {
+              "match": "(?<!\\w)\\.\\.|\\.(?!\\w)",
+              "name": "punctuation.other.relative.nix"
+            }
+          ]
+        },
+        "19": {
+          "name": "punctuation.other.path.system.nix"
+        },
+        "20": {
+          "name": "constant.language.null.nix"
+        },
+        "21": {
+          "name": "constant.language.boolean.$21.nix"
+        },
+        "22": {
+          "name": "constant.numeric.decimal.nix"
+        },
+        "23": {
+          "name": "constant.numeric.integer.nix"
+        },
+        "24": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "25": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "26": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "27": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "28": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "29": {
+          "name": "punctuation.definition.list.nix"
+        },
+        "30": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "31": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "32": {
+          "name": "punctuation.definition.dict.nix"
+        },
+        "33": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "34": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "35": {
+          "name": "punctuation.definition.dict.nix"
+        }
+      }
+    },
     "values": {
       "patterns": [
         {
-          "include": "#comments"
+          "include": "#most_values"
         },
         {
-          "include": "#double_quote"
+          "include": "#value_base"
+        }
+      ]
+    },
+    "values_inside_list": {
+      "patterns": [
+        {
+          "include": "#most_values"
         },
         {
-          "include": "#single_quote"
-        },
-        {
-          "include": "#list"
-        },
-        {
-          "include": "#brackets"
-        },
-        {
-          "include": "#parentheses"
-        },
-        {
-          "include": "#if_then_else"
-        },
-        {
-          "include": "#let_in_statement"
-        },
-        {
-          "include": "#value_base_case"
+          "include": "#list_value_base"
         }
       ]
     },
     "variable": {
+      "match": "(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))|((?<!\\.)(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?!\\.)))",
+      "captures": {
+        "1": {
+          "name": "variable.other.object.access.nix"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "3": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "4": {
+          "name": "punctuation.separator.dot-access.nix"
+        },
+        "5": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "6": {
+          "patterns": [
+            {
+              "match": "\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "7": {
+          "patterns": [
+            {
+              "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "3": {
+                  "name": "string.quoted.double.nix",
+                  "patterns": [
+                    {
+                      "match": "\\\\.",
+                      "name": "constant.character.escape.nix"
+                    }
+                  ]
+                },
+                "4": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "5": {
+                  "name": "string.quoted.single.nix"
+                },
+                "6": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "7": {
+                  "name": "string.quoted.single.nix",
+                  "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    }
+                  ]
+                },
+                "8": {
+                  "name": "constant.character.escape.nix"
+                },
+                "9": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "10": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "11": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "12": {
+                  "name": "comment.block.nix"
+                },
+                "13": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                },
+                "14": {
+                  "name": "punctuation.separator.dot-access.nix"
+                },
+                "15": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "16": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "17": {
+                  "name": "comment.block.nix"
+                },
+                "18": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "8": {
+          "patterns": [
+            {
+              "match": "(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:(?:(?:\\s*(\\/\\*)((?:[^\\*]++|\\*+(?!\\/))*+(\\*\\/))\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))",
+              "captures": {
+                "1": {
+                  "name": "variable.other.object.property.nix"
+                },
+                "2": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "3": {
+                  "name": "string.quoted.double.nix",
+                  "patterns": [
+                    {
+                      "match": "\\\\.",
+                      "name": "constant.character.escape.nix"
+                    }
+                  ]
+                },
+                "4": {
+                  "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+                },
+                "5": {
+                  "name": "string.quoted.single.nix"
+                },
+                "6": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "7": {
+                  "name": "string.quoted.single.nix",
+                  "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    }
+                  ]
+                },
+                "8": {
+                  "name": "constant.character.escape.nix"
+                },
+                "9": {
+                  "name": "punctuation.definition.string.single.nix"
+                },
+                "10": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "11": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "12": {
+                  "name": "comment.block.nix"
+                },
+                "13": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                },
+                "14": {
+                  "name": "punctuation.separator.dot-access.nix"
+                },
+                "15": {
+                  "patterns": [
+                    {
+                      "include": "#inline_comment"
+                    }
+                  ]
+                },
+                "16": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "17": {
+                  "name": "comment.block.nix"
+                },
+                "18": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "9": {
+          "name": "variable.other.property.nix"
+        },
+        "10": {
+          "name": "variable.other.object.property.nix"
+        },
+        "11": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "12": {
+          "name": "string.quoted.double.nix",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.nix"
+            }
+          ]
+        },
+        "13": {
+          "name": "string.quoted.double.nix punctuation.definition.string.double.nix"
+        },
+        "14": {
+          "name": "string.quoted.single.nix"
+        },
+        "15": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "16": {
+          "name": "string.quoted.single.nix",
+          "patterns": [
+            {
+              "include": "#escape_character_single_quote"
+            }
+          ]
+        },
+        "17": {
+          "name": "constant.character.escape.nix"
+        },
+        "18": {
+          "name": "punctuation.definition.string.single.nix"
+        },
+        "19": {
+          "name": "variable.other.nix"
+        }
+      }
+    },
+    "variable_or_function": {
       "match": "(?:(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(\\.)((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(((?:(?:(?:(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:\"(?:\\\\.|(?!\\$\\{)[^\"])*\")|(?:(?:''(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*''(?!\\$|\\'|\\\\.))))(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z))\\.(?:(?:(?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))*))((?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))|(?:(\")((?:\\\\.|(?!\\$\\{)[^\"])*)(\"))|(?:(('')((?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(''(?!\\$|\\'|\\\\.)))))))|(?:((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?<=\\()((?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w))(?:((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))(?:(?=\\{|\"|'|\\d|\\w|-|\\+|\\.\\/|\\/|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=(([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))|((?:((?:\\s*\\/\\*(?:[^\\*]++|\\*+(?!\\/))*+\\*\\/\\s*)+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|(?:\\A)|(?:\\Z)))$)|((?<!\\.)(?<!\\w)[a-zA-Z_][a-zA-Z0-9_\\-']*(?!\\w)(?!\\.)))",
       "captures": {
         "1": {
