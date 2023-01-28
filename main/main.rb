@@ -354,7 +354,7 @@ grammar = Grammar.new(
         
         grammar[:standalone_variable] = Pattern.new(
             tag_as: "variable.other",
-            match: variable,
+            match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
         )
         
         grammar[:standalone_function_call] = Pattern.new(
@@ -414,9 +414,15 @@ grammar = Grammar.new(
                 ),
                 includes: [ middle_repeat ],
             ).then(
-                tag_as: "entity.name.function.method",
-                match: attribute,
-            ),
+                match: oneOf([
+                    Pattern.new(
+                        tag_as: "entity.name.function.method",
+                        match: variable,
+                    ),
+                    grammar[:double_quote_inline],
+                    grammar[:single_quote_inline],
+                ]),
+            ).then(function_call_lookahead),
         )
         
         grammar[:variable] = oneOf([
@@ -543,22 +549,64 @@ grammar = Grammar.new(
         
         # FIXME: "assert" keyword
         # ex: assert assertMsg ("foo" == "bar") "foo is not bar, silly"; ""
-        assignment_start = attribute_key.then(std_space).then(
-            match: /=/,
-            tag_as: "keyword.operator.assignment",
-        )
         
-        grammar[:assignment_statement] = PatternRange.new(
-            tag_as: "meta.statement",
-            start_pattern: assignment_start,
-            end_pattern: Pattern.new(
-                match: /;/,
-                tag_as: "punctuation.terminator.statement"
+        assignmentOf = ->(attribute_pattern) do
+            Pattern.new(
+                Pattern.new(
+                    tag_as: "meta.attribute-key",
+                    match: attribute_pattern,
+                    includes: [
+                        attribute,
+                        dot_access,
+                    ],
+                ).then(std_space).then(
+                    match: /=/,
+                    tag_as: "keyword.operator.assignment",
+                )
+            )
+        end
+        
+        # generic attribute
+        assignment_start = assignmentOf[
+            attribute.zeroOrMoreOf(
+                std_space.then(
+                    dot_access
+                ).then(std_space).then(
+                    attribute
+                )
+            )
+        ]
+        
+        grammar[:assignment_statements] = [
+            # 
+            # shellHook
+            # 
+            PatternRange.new(
+                tag_as: "meta.shell-hook",
+                start_pattern: assignmentOf[variableBounds[/shellHook/]],
+                end_pattern: Pattern.new(
+                    match: /;/,
+                    tag_as: "punctuation.terminator.statement"
+                ),
+                includes: [
+                    :values,
+                ]
             ),
-            includes: [
-                :values,
-            ]
-        )
+            # 
+            # normal attribute assignment
+            # 
+            PatternRange.new(
+                tag_as: "meta.statement",
+                start_pattern: assignment_start,
+                end_pattern: Pattern.new(
+                    match: /;/,
+                    tag_as: "punctuation.terminator.statement"
+                ),
+                includes: [
+                    :values,
+                ]
+            ),
+        ]
         
         grammar[:parameter] = Pattern.new(
             tag_as: "variable.parameter.function",
@@ -567,6 +615,10 @@ grammar = Grammar.new(
         optional = Pattern.new(
             match: "?",
             tag_as: "punctuation.separator.default",
+        )
+        comma = Pattern.new(
+            match: ",",
+            tag_as: "punctuation.separator.comma",
         )
         eplipsis = Pattern.new(
             tag_as: "punctuation.vararg-ellipses",
@@ -603,7 +655,7 @@ grammar = Grammar.new(
                     ),
                     includes: [
                         :comments,
-                        :assignment_statement,
+                        :assignment_statements,
                     ],
                 ),
                 # 
@@ -624,6 +676,7 @@ grammar = Grammar.new(
                         grammar[:parameter],
                         optional,
                         eplipsis,
+                        comma,
                         :values,
                     ],
                 )
@@ -644,7 +697,7 @@ grammar = Grammar.new(
             end_pattern: lookAheadFor(/\}|;/), # technically this is imperfect, but must be done cause of multi-line values
             includes: [
                 :comments,
-                :assignment_statement,
+                :assignment_statements,
                 # 
                 # attribute set
                 # 
@@ -656,7 +709,7 @@ grammar = Grammar.new(
                     end_pattern: lookAheadFor(/\}|;/),
                     includes: [
                         :comments,
-                        :assignment_statement,
+                        :assignment_statements,
                     ],
                 ),
             ]
@@ -748,41 +801,7 @@ grammar = Grammar.new(
             :value_base_case,
             # FIXME: functions
         ]
-    
-    # 
-    # other
-    # 
-        # TODO: add shell support
-    
-    
-    # grammar[:line_continuation_character] = Pattern.new(
-    #     match: /\\\n/,
-    #     tag_as: "constant.character.escape.line-continuation",
-    # )
-    
-    # grammar[:attribute] = PatternRange.new(
-    #     start_pattern: Pattern.new(
-    #             match: /\[\[/,
-    #             tag_as: "punctuation.section.attribute.begin"
-    #         ),
-    #     end_pattern: Pattern.new(
-    #             match: /\]\]/,
-    #             tag_as: "punctuation.section.attribute.end",
-    #         ),
-    #     tag_as: "support.other.attribute",
-    #     # tag_content_as: "support.other.attribute", # <- alternative that doesnt double-tag the start/end
-    #     includes: [
-    #         :attributes_context,
-    #     ]
-    # )
-
-# 
-# imports
-# 
-    # grammar.import(PathFor[:pattern]["comments"])
-    # grammar.import(PathFor[:pattern]["string"])
-    # grammar.import(PathFor[:pattern]["numeric_literal"])
-
+    # FIXME: builtins
 #
 # Save
 #
