@@ -1,4 +1,6 @@
-# frozen_string_literal: true
+
+    FIXME: "or" keyword
+    frozen_string_literal: true
 require 'ruby_grammar_builder'
 require 'walk_up'
 require_relative walk_up_until("paths.rb")
@@ -58,6 +60,8 @@ grammar = Grammar.new(
 # 
 # patterns
 # 
+    # FIXME: "or" keyword
+    
     # 
     # comments
     # 
@@ -361,7 +365,7 @@ grammar = Grammar.new(
     # 
     # variables
     # 
-        function_call_lookahead = std_space.then(lookAheadFor(/\{|"|'|\d|\w|-|\+|\.\/|\/|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-|\+|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         
         grammar[:standalone_variable] = Pattern.new(
             tag_as: "variable.other",
@@ -604,6 +608,7 @@ grammar = Grammar.new(
                     tag_as: "punctuation.terminator.statement"
                 ),
                 includes: [
+                    generateStringBlock[ additional_tag:"source.shell", includes:[ "source.shell" ] ],
                     :values,
                 ]
             ),
@@ -658,6 +663,7 @@ grammar = Grammar.new(
             ),
             end_pattern: lookBehindFor(/\}|\}:/),
             includes: [
+                :comments,
                 # 
                 # attribute set
                 # 
@@ -704,7 +710,7 @@ grammar = Grammar.new(
     # 
         # let in
         grammar[:let_in_statement] =  PatternRange.new(
-            tag_as: "meta.punctuation.section.bracket",
+            tag_as: "meta.punctuation.section.let",
             start_pattern: Pattern.new(
                 match: variableBounds[/let/],
                 tag_as: "keyword.control.let",
@@ -723,8 +729,7 @@ grammar = Grammar.new(
                     ),
                     end_pattern: lookAheadFor(/\}|;/),
                     includes: [
-                        :comments,
-                        :assignment_statements,
+                        :values,
                     ],
                 ),
             ]

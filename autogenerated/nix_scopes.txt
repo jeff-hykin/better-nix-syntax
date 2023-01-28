@@ -28,6 +28,7 @@ meta.attribute-set.nix
 meta.list.nix
 meta.punctuation.section.bracket.nix
 meta.punctuation.section.conditional.nix
+meta.punctuation.section.let.nix
 meta.shell-hook.nix
 meta.statement.nix
 punctuation.definition.comment.begin.nix
@@ -56,6 +57,7 @@ punctuation.separator.dot-access.nix
 punctuation.separator.with.nix
 punctuation.terminator.statement.nix
 punctuation.vararg-ellipses.nix
+source.shell.nix
 storage.modifier.nix
 string.quoted.double.nix
 string.quoted.other.nix
