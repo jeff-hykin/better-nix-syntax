@@ -382,6 +382,7 @@ grammar = Grammar.new(
             match: ".",
         )
         
+        # TODO: dangling attribute key, e.g. ({aldkfjal = 10;}).aldkfjal
         attribute = oneOf([
             Pattern.new(
                 tag_as: "variable.other.object.property",
