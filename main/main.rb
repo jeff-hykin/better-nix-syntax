@@ -1,6 +1,3 @@
-
-    FIXME: "or" keyword
-    frozen_string_literal: true
 require 'ruby_grammar_builder'
 require 'walk_up'
 require_relative walk_up_until("paths.rb")
@@ -60,8 +57,6 @@ grammar = Grammar.new(
 # 
 # patterns
 # 
-    # FIXME: "or" keyword
-    
     # 
     # comments
     # 
@@ -373,13 +368,13 @@ grammar = Grammar.new(
         )
         
         grammar[:standalone_function_call] = Pattern.new(
-            tag_as: "entity.name.function",
-            match: variable,
+            tag_as: "entity.name.function.call",
+            match: Pattern.new(/\b/).then(@tokens.lookAheadToAvoidWordsThat(:areKeywords)).then(variable),
         ).then(function_call_lookahead)
         
         grammar[:standalone_function_call_guess] = lookBehindFor(/\(/).then(
-            tag_as: "entity.name.function",
-            match: variable,
+            tag_as: "entity.name.function.call",
+            match: Pattern.new(/\b/).then(@tokens.lookAheadToAvoidWordsThat(:areKeywords)).then(variable),
         ).then(function_call_lookahead.or(std_space.then(/$/)))
         
         dot_access = Pattern.new(
@@ -506,7 +501,6 @@ grammar = Grammar.new(
                 tag_as: "punctuation.separator.with",
             ).then(std_space)
         )
-        # FIXME: "include"
     
     # 
     # list
@@ -566,9 +560,6 @@ grammar = Grammar.new(
             ],
         )
         
-        # FIXME: "assert" keyword
-        # ex: assert assertMsg ("foo" == "bar") "foo is not bar, silly"; ""
-        
         assignmentOf = ->(attribute_pattern) do
             Pattern.new(
                 Pattern.new(
@@ -597,6 +588,35 @@ grammar = Grammar.new(
         ]
         
         grammar[:assignment_statements] = [
+            # 
+            # include statement
+            # 
+            PatternRange.new(
+                tag_as: "meta.include",
+                start_pattern: Pattern.new(
+                    match: variableBounds[/include/],
+                    tag_as: "keyword.other.include",
+                ),
+                end_pattern: Pattern.new(
+                    match: /;/,
+                    tag_as: "punctuation.terminator.statement"
+                ),
+                includes: [
+                    PatternRange.new(
+                        tag_as: "meta.source",
+                        start_pattern: Pattern.new(
+                            match: "(",
+                            tag_as: "punctuation.separator.source",
+                        ),
+                        end_pattern: Pattern.new(
+                            match: ")",
+                            tag_as: "punctuation.separator.source"
+                        ),
+                    ),
+                    :standalone_variable,
+                ]
+            ),
+            
             # 
             # shellHook
             # 
@@ -646,7 +666,9 @@ grammar = Grammar.new(
         )
         
         # FIXME: simple non-bracket function definition
-                
+            # grammar[:simple_function] = PatternRange.new(
+            #     start_
+            # )
         grammar[:brackets] =  PatternRange.new(
             tag_as: "meta.punctuation.section.bracket",
             start_pattern: Pattern.new(
@@ -683,7 +705,7 @@ grammar = Grammar.new(
                 # function definition
                 # 
                 PatternRange.new(
-                    tag_as: "punctuation.section.parameters",
+                    tag_as: "meta.punctuation.section.parameters",
                     start_pattern: grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,/),
                     end_pattern: Pattern.new(
                         Pattern.new(
@@ -695,16 +717,28 @@ grammar = Grammar.new(
                     includes: [
                         :comments,
                         grammar[:parameter],
-                        optional,
+                        PatternRange.new(
+                            tag_as: "meta.default",
+                            start_pattern: optional,
+                            end_pattern: lookAheadFor(/,|}/),
+                            includes: [
+                                :values,
+                            ]
+                        ),
                         eplipsis,
                         comma,
-                        :values,
                     ],
-                )
+                ),
+                # just a normal ending bracket to an empty attribute set
+                std_space.then(
+                    match: "}",
+                    tag_as: "punctuation.section.bracket",
+                ),
             ]
         )
         # FIXME: inline function definition
     
+    value_end = lookAheadFor(/\}|;|,|\)|else\W|then\W|in\W|else$|then$|in$/) # technically this is imperfect, but must be done cause of multi-line values
     # 
     # keyworded statements
     # 
@@ -715,19 +749,29 @@ grammar = Grammar.new(
                 match: variableBounds[/let/],
                 tag_as: "keyword.control.let",
             ),
-            end_pattern: lookAheadFor(/\}|;/), # technically this is imperfect, but must be done cause of multi-line values
+            apply_end_pattern_last: true,
+            end_pattern: lookAheadFor(/./).or(/$/), # match anything (once inner patterns are done)
             includes: [
-                :comments,
-                :assignment_statements,
-                # 
-                # attribute set
-                # 
+                # first part
                 PatternRange.new(
-                    start_pattern: Pattern.new(
+                    tag_as: "meta.let.in.part1",
+                    # anchor to the begining of the match
+                    start_pattern: /\G/,
+                    # then grab the "in"
+                    end_pattern: Pattern.new(
                         match: variableBounds[/in/],
                         tag_as: "keyword.control.in",
                     ),
-                    end_pattern: lookAheadFor(/\}|;/),
+                    includes: [
+                        :comments,
+                        :assignment_statements,
+                    ],
+                ),
+                # second part
+                PatternRange.new(
+                    tag_as: "meta.let.in.part2",
+                    start_pattern: lookBehindFor(/\Win\W|\Win\$|^in\W|^in\$/),
+                    end_pattern: value_end,
                     includes: [
                         :values,
                     ],
@@ -743,8 +787,16 @@ grammar = Grammar.new(
                     tag_as: "keyword.control.if",
                 ),
             ),
-            end_pattern: lookAheadFor(/\}|;/), # technically this is imperfect, but must be done cause of multi-line values
+            end_pattern: lookBehindFor(/^else\W|^else$|\Welse\W|\Welse$/),
             includes: [
+                PatternRange.new(
+                    tag_as: "meta.punctuation.section.condition",
+                    start_pattern: /\G/,
+                    end_pattern: lookAheadFor(/\Wthen\W|\Wthen$|^then\W|^then$\W/),
+                    includes: [
+                        :values,
+                    ],
+                ),
                 PatternRange.new(
                     start_pattern: Pattern.new(
                         match: variableBounds[/then/],
@@ -758,7 +810,20 @@ grammar = Grammar.new(
                         :values
                     ],
                 ),
-                :values
+            ],
+        )
+        
+        grammar[:assert] =  PatternRange.new(
+            tag_as: "meta.punctuation.section.conditional",
+            start_pattern: Pattern.new(
+                maybe(value_prefix).then(
+                    match: variableBounds[/assert/],
+                    tag_as: "keyword.operator.assert",
+                ),
+            ),
+            end_pattern: value_end,
+            includes: [
+                :values,
             ],
         )
     
@@ -793,7 +858,7 @@ grammar = Grammar.new(
             ]
         )
         
-        grammar[:value_normal_base] = oneOf([
+        grammar[:value_common_base] = oneOf([
             grammar[:double_quote_inline],
             grammar[:single_quote_inline],
             grammar[:url],
@@ -807,12 +872,12 @@ grammar = Grammar.new(
             grammar[:empty_list],
             grammar[:empty_set],
         ])
-        grammar[:value_base] = maybe(value_prefix).oneOf([
-            grammar[:value_normal_base],
+        grammar[:inline_value] = maybe(value_prefix).oneOf([
+            grammar[:value_common_base],
             grammar[:variable_or_function],
         ])
         grammar[:list_value_base] = maybe(value_prefix).oneOf([
-            grammar[:value_normal_base],
+            grammar[:value_common_base],
             grammar[:variable],
         ])
         
@@ -825,11 +890,12 @@ grammar = Grammar.new(
             :parentheses,
             :if_then_else,
             :let_in_statement,
+            :assert,
             # FIXME: functions
         ]
         grammar[:values] = [
             :most_values,
-            :value_base,
+            :inline_value,
         ]
         grammar[:values_inside_list] = [
             :most_values,

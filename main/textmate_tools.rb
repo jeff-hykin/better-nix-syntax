@@ -131,14 +131,19 @@ class TokenHelper
         return matches.map do |each| each[:representation] end
     end
 
+    def lookBehindForWordsThat(*adjectives)
+        array_of_invalid_names = self.representationsThat(*adjectives)
+        return Pattern.new(/\b/).lookBehindFor(/#{array_of_invalid_names.map { |each| '\W'+each+'[ \t]|^'+each+'[ \t]' } .join('|')}/)
+    end
+    
     def lookBehindToAvoidWordsThat(*adjectives)
         array_of_invalid_names = self.representationsThat(*adjectives)
-        return Pattern.new(/\b/).lookBehindToAvoid(/#{array_of_invalid_names.map { |each| '\W'+each+'|^'+each } .join('|')}/)
+        return lookBehindToAvoid(/#{array_of_invalid_names.map { |each| '\W'+each+'[ \t]|^'+each+'[ \t]' } .join('|')}/)
     end
 
     def lookAheadToAvoidWordsThat(*adjectives)
         array_of_invalid_names = self.representationsThat(*adjectives)
-        return Pattern.new(/\b/).lookAheadToAvoid(/#{array_of_invalid_names.map { |each| each+'\W|'+each+'\$' } .join('|')}/)
+        return lookAheadToAvoid(/#{array_of_invalid_names.map { |each| each+'\W|'+each+'\$' } .join('|')}/)
     end
 
     def that(*adjectives)
