@@ -200,49 +200,49 @@ grammar = Grammar.new(
                 includes: [
                     Pattern.new(
                         match: /\//,
-                        tag_as: "punctuation.other.path",
+                        tag_as: "punctuation.definition.path",
                     ),
                     Pattern.new(
                         match: variableBounds[/\.\.|\./],
-                        tag_as: "punctuation.other.relative",
+                        tag_as: "punctuation.definition.relative",
                     ),
                 ],
             )
             
             grammar[:normal_path_literal] = Pattern.new(
-                tag_as: "constant.path.normal",
+                tag_as: "constant.other.path.normal",
                 match: Pattern.new(
                     Pattern.new(
                         match:/\.\//,
-                        tag_as: "punctuation.other.path.normal",
+                        tag_as: "punctuation.definition.path.normal",
                     ).then(grammar[:path_literal_content])
                 ),
             )
             
             grammar[:system_path_literal] = Pattern.new(
-                tag_as: "constant.path.system",
+                tag_as: "constant.other.path.system",
                 match: Pattern.new(
                     Pattern.new(
                         match: /</,
-                        tag_as: "punctuation.other.path.system",
+                        tag_as: "punctuation.definition.path.system",
                     ).then(
                         grammar[:path_literal_content]
                     ).then(
                         match: />/,
-                        tag_as: "punctuation.other.path.system",
+                        tag_as: "punctuation.definition.path.system",
                     )
                 ),
             )
             
             grammar[:url] = Pattern.new(
-                tag_as: "constant.url",
+                tag_as: "constant.other.url",
                 match: Pattern.new(
                     Pattern.new(
                         match: /[a-zA-Z][a-zA-Z0-9_+\-\.]*:/,
-                        tag_as: "punctuation.other.url.protocol",
+                        tag_as: "punctuation.definition.url.protocol",
                     ).then(
                         match: /[a-zA-Z0-9%$*!@&*_=+:'\/?~\-\.:]+/,
-                        tag_as: "punctuation.other.url.address",
+                        tag_as: "punctuation.definition.url.address",
                     )
                 ),
             )
@@ -398,6 +398,22 @@ grammar = Grammar.new(
         )
         
         attribute = oneOf([
+            # standalone
+            lookBehindToAvoid(/\./).then(
+                tag_as: "variable.other.object",
+                match: variable,
+            ).lookAheadToAvoid(/\./),
+            # first
+            lookBehindToAvoid(/\./).then(
+                tag_as: "variable.other.object.access",
+                match: variable,
+            ),
+            # last
+            Pattern.new(
+                tag_as: "variable.other.property",
+                match: variable.lookAheadToAvoid(/\./),
+            ),
+            # middle
             Pattern.new(
                 tag_as: "variable.other.object.property",
                 match: variable,
