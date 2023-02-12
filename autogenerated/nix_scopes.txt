@@ -60,6 +60,7 @@ punctuation.section.function.nix
 punctuation.section.parentheses.nix
 punctuation.section.path.nix
 punctuation.section.regexp.nix
+punctuation.separator.assert.nix
 punctuation.separator.comma.nix
 punctuation.separator.default.nix
 punctuation.separator.dot-access.nix

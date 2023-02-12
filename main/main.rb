@@ -3,6 +3,14 @@ require 'walk_up'
 require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
+# fixme
+    # basic function
+    # function's @
+    # inherit
+# todo
+    # better builtin attribute matching
+    # tag dangling attribute key, e.g. ({aldkfjal = 10;}).aldkfjal
+
 # 
 # 
 # create grammar!
@@ -387,7 +395,6 @@ grammar = Grammar.new(
             match: ".",
         )
         
-        # TODO: dangling attribute key, e.g. ({aldkfjal = 10;}).aldkfjal
         attribute = oneOf([
             Pattern.new(
                 tag_as: "variable.other.object.property",
@@ -676,16 +683,11 @@ grammar = Grammar.new(
             match: "...",
         )
         
-        # FIXME: simple non-bracket function definition
-            # grammar[:simple_function] = PatternRange.new(
-            #     start_
-            # )
         grammar[:brackets] =  PatternRange.new(
             tag_as: "meta.punctuation.section.bracket",
             start_pattern: Pattern.new(
                 maybe(value_prefix).maybe(
                     std_space.then(
-                        # FIXME: also make it so that variables cannot be keywords like this
                         match: variableBounds[/rec/],
                         tag_as: "storage.modifier",
                     ).then(std_space)
@@ -747,7 +749,6 @@ grammar = Grammar.new(
                 ),
             ]
         )
-        # FIXME: inline function definition
     
     value_end = lookAheadFor(/\}|;|,|\)|else\W|then\W|in\W|else$|then$|in$/) # technically this is imperfect, but must be done cause of multi-line values
     # 
@@ -832,7 +833,10 @@ grammar = Grammar.new(
                     tag_as: "keyword.operator.assert",
                 ),
             ),
-            end_pattern: value_end,
+            end_pattern: Pattern.new(
+                match: /;/,
+                tag_as: "punctuation.separator.assert",
+            ),
             includes: [
                 :values,
             ],
@@ -904,7 +908,6 @@ grammar = Grammar.new(
             :let_in_statement,
             :assert,
             :operators,
-            # FIXME: functions
         ]
         grammar[:values] = [
             :most_values,
@@ -914,7 +917,6 @@ grammar = Grammar.new(
             :most_values,
             :list_value_base,
         ]
-    # FIXME: builtins
 #
 # Save
 #
