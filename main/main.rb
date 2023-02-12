@@ -52,7 +52,7 @@ grammar = Grammar.new(
     variableBounds = ->(regex_pattern) do
         lookBehindToAvoid(@standard_character).then(regex_pattern).lookAheadToAvoid(@standard_character)
     end
-    variable = variableBounds[part_of_a_variable]
+    variable = variableBounds[part_of_a_variable].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
     
 # 
 # patterns
@@ -374,12 +374,12 @@ grammar = Grammar.new(
         
         grammar[:standalone_function_call] = Pattern.new(
             tag_as: "entity.name.function.call",
-            match: Pattern.new(/\b/).then(@tokens.lookAheadToAvoidWordsThat(:areKeywords)).then(variable),
+            match: variable,
         ).then(function_call_lookahead)
         
         grammar[:standalone_function_call_guess] = lookBehindFor(/\(/).then(
             tag_as: "entity.name.function.call",
-            match: Pattern.new(/\b/).then(@tokens.lookAheadToAvoidWordsThat(:areKeywords)).then(variable),
+            match: variable,
         ).then(function_call_lookahead.or(std_space.then(/$/)))
         
         dot_access = Pattern.new(

@@ -14,6 +14,7 @@ tokens = [
     { representation: "with"    , areKeywords: true },
     { representation: "let"     , areKeywords: true },
     { representation: "in"      , areKeywords: true },
+    { representation: "rec"     , areKeywords: true },
     
     # operators
     { representation: "-"       , areOperators: true, priority: 3,  name: "neg"      , associtivity: :none , },
