@@ -4,10 +4,10 @@ require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
 # fixme
-    # basic function
-    # function's @
     # inherit
     # <path> literals
+    # basic function
+    # function's @
 # todo
     # better builtin attribute matching
     # tag dangling attribute key, e.g. ({aldkfjal = 10;}).aldkfjal
