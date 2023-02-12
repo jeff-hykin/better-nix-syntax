@@ -4,6 +4,7 @@ require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
 # fixme
+    # with statement
     # inherit
     # <path> literals
     # basic function
@@ -60,9 +61,15 @@ grammar = Grammar.new(
     part_of_a_variable = /[a-zA-Z_][a-zA-Z0-9_\-']*/
     # this is really useful for keywords. eg: variableBounds[/new/] wont match "newThing" or "thingnew"
     variableBounds = ->(regex_pattern) do
-        lookBehindToAvoid(@standard_character).then(regex_pattern).lookAheadToAvoid(@standard_character)
+        lookBehindToAvoid(/[a-zA-Z0-9_']/).then(regex_pattern).lookAheadToAvoid(/[a-zA-Z0-9_\-']/)
     end
     variable = variableBounds[part_of_a_variable].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
+    
+    Pattern.new(
+        should_not_partial_match: ["with"],
+        should_not_fully_match: ["with"],
+        match: variable,
+    )
     
 # 
 # patterns
@@ -350,6 +357,7 @@ grammar = Grammar.new(
                                 tag_as: "string.quoted.single punctuation.definition.string.single",
                                 match: /''/,
                             ),
+                            apply_end_pattern_last: true,
                             end_pattern: Pattern.new(
                                 tag_as: "string.quoted.single punctuation.definition.string.single",
                                 match: /''/,
@@ -370,11 +378,11 @@ grammar = Grammar.new(
     # 
     # variables
     # 
-        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         
         grammar[:standalone_variable] = Pattern.new(
             Pattern.new(
-                tag_as: "variable.language.special.builtins",
+                tag_as: "support.module variable.language.special.builtins",
                 match: lookBehindToAvoid(".").then(/builtins/).lookAheadToAvoid("."),
             ).or(
                 tag_as: "variable.other",
@@ -384,7 +392,7 @@ grammar = Grammar.new(
         
         grammar[:standalone_function_call] = Pattern.new(
             tag_as: "entity.name.function.call",
-            match: variable,
+            match: variable.lookBehindToAvoid(/^with[ \\t]/),
         ).then(function_call_lookahead)
         
         grammar[:standalone_function_call_guess] = lookBehindFor(/\(/).then(
@@ -443,16 +451,19 @@ grammar = Grammar.new(
             )
         )
         
-        grammar[:variable_with_attributes] = Pattern.new(
-            object_access.then(
-                tag_as: "variable.other.property",
-                match: attribute,
-            ),
+        builtin_method = lookBehindFor(/builtins\./).then(
+            tag_as: "variable.language.special.property.$match support.type.builtin.property.$match",
+            match: @tokens.that(:areBuiltinAttributes, :areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
         )
-        
-        grammar[:variable_with_method] = Pattern.new(
-            object_access.then(
+        builtin_value = lookBehindFor(/builtins\./).then(
+            tag_as: "variable.language.special.method.$match support.type.builtin.method.$match",
+            match: @tokens.that(:areBuiltinAttributes, !:areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
+        )
+        method_pattern = Pattern.new(
+            Pattern.new(
                 match: oneOf([
+                    builtin_method,
+                    builtin_value,
                     Pattern.new(
                         tag_as: "entity.name.function.method",
                         match: variable,
@@ -460,11 +471,33 @@ grammar = Grammar.new(
                     grammar[:double_quote_inline],
                     grammar[:single_quote_inline],
                 ]),
-            ).then(function_call_lookahead),
+            ).then(function_call_lookahead)
+        )
+        
+        grammar[:variable_with_attributes] = Pattern.new(
+            object_access.oneOf([
+                builtin_method,
+                builtin_value,
+                Pattern.new(
+                    tag_as: "variable.other.property",
+                    match: attribute,
+                ),
+            ]),
+        )
+        
+        grammar[:variable_with_method] = Pattern.new(
+            object_access.then(method_pattern),
+        )
+        
+        grammar[:variable_with_method_guess] = Pattern.new(
+            lookBehindFor("(").then(
+                object_access
+            ).then(method_pattern),
         )
         
         grammar[:variable_or_function] = oneOf([
             grammar[:variable_with_method],
+            grammar[:variable_with_method_guess],
             grammar[:variable_with_attributes],
             grammar[:standalone_function_call],
             grammar[:standalone_function_call_guess],
