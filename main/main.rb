@@ -7,6 +7,7 @@ require_relative './tokens.rb'
     # basic function
     # function's @
     # inherit
+    # <path> literals
 # todo
     # better builtin attribute matching
     # tag dangling attribute key, e.g. ({aldkfjal = 10;}).aldkfjal
