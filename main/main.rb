@@ -11,6 +11,7 @@ require_relative './tokens.rb'
 # todo
     # better builtin attribute matching
     # tag dangling attribute key, e.g. ({aldkfjal = 10;}).aldkfjal
+    # custom hanlding of stdenv, lib, mkDerivation, and shellHook
 
 # 
 # 
