@@ -360,7 +360,7 @@ grammar = Grammar.new(
     # 
     # variables
     # 
-        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-|\+|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         
         grammar[:standalone_variable] = Pattern.new(
             tag_as: "variable.other",
@@ -485,6 +485,14 @@ grammar = Grammar.new(
         )
         
         namespace = standalone_namespace.or(namespace_with_attributes)
+    
+    # 
+    # operators
+    # 
+        grammar[:operators] = Pattern.new(
+            tag_as: "keyword.operator",
+            match: @tokens.that(:areOperators),
+        )
     
     # 
     # keyworded values
@@ -882,6 +890,7 @@ grammar = Grammar.new(
             grammar[:variable],
         ])
         
+        
         grammar[:most_values] = [
             :comments, # comments are valid whereever values are
             :double_quote,
@@ -892,6 +901,7 @@ grammar = Grammar.new(
             :if_then_else,
             :let_in_statement,
             :assert,
+            :operators,
             # FIXME: functions
         ]
         grammar[:values] = [

@@ -23,6 +23,7 @@ keyword.control.let.nix
 keyword.control.then.nix
 keyword.operator.assert.nix
 keyword.operator.assignment.nix
+keyword.operator.nix
 keyword.operator.with.nix
 keyword.other.include.nix
 meta.attribute-key.nix

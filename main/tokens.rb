@@ -16,24 +16,24 @@ tokens = [
     { representation: "in"      , areKeywords: true },
     
     # operators
-    { representation: "-"       , areOperators: true, priority: 3,  name: "neg"      , associtivity: :none , }
-    { representation: "?"       , areOperators: true, priority: 4,  name: "has_attr" , associtivity: :none , }
-    { representation: "++"      , areOperators: true, priority: 5,  name: "concat"   , associtivity: :right, }
-    { representation: "*"       , areOperators: true, priority: 6,  name: "mul"      , associtivity: :left , }
-    { representation: "/"       , areOperators: true, priority: 6,  name: "div"      , associtivity: :left , }
-    { representation: "+"       , areOperators: true, priority: 7,  name: "add"      , associtivity: :left , }
-    { representation: "-"       , areOperators: true, priority: 7,  name: "sub"      , associtivity: :left , }
-    { representation: "!"       , areOperators: true, priority: 8,  name: "not"      , associtivity: :left , }
-    { representation: "//"      , areOperators: true, priority: 9,  name: "update"   , associtivity: :right, }
-    { representation: "<"       , areOperators: true, priority: 10, name: "lt"       , associtivity: :left , }
-    { representation: "<="      , areOperators: true, priority: 10, name: "lte"      , associtivity: :left , }
-    { representation: ">"       , areOperators: true, priority: 10, name: "gt"       , associtivity: :left , }
-    { representation: ">="      , areOperators: true, priority: 10, name: "gte"      , associtivity: :left , }
-    { representation: "=="      , areOperators: true, priority: 11, name: "eq"       , associtivity: :none , }
-    { representation: "!="      , areOperators: true, priority: 11, name: "neq"      , associtivity: :none , }
-    { representation: "&&"      , areOperators: true, priority: 12, name: "and"      , associtivity: :left , }
-    { representation: "||"      , areOperators: true, priority: 13, name: "or"       , associtivity: :left , }
-    { representation: "->"      , areOperators: true, priority: 14, name: "impl"     , associtivity: :none , }
+    { representation: "-"       , areOperators: true, priority: 3,  name: "neg"      , associtivity: :none , },
+    { representation: "?"       , areOperators: true, priority: 4,  name: "has_attr" , associtivity: :none , },
+    { representation: "++"      , areOperators: true, priority: 5,  name: "concat"   , associtivity: :right, },
+    { representation: "*"       , areOperators: true, priority: 6,  name: "mul"      , associtivity: :left , },
+    { representation: "/"       , areOperators: true, priority: 6,  name: "div"      , associtivity: :left , },
+    { representation: "+"       , areOperators: true, priority: 7,  name: "add"      , associtivity: :left , },
+    { representation: "-"       , areOperators: true, priority: 7,  name: "sub"      , associtivity: :left , },
+    { representation: "!"       , areOperators: true, priority: 8,  name: "not"      , associtivity: :left , },
+    { representation: "//"      , areOperators: true, priority: 9,  name: "update"   , associtivity: :right, },
+    { representation: "<"       , areOperators: true, priority: 10, name: "lt"       , associtivity: :left , },
+    { representation: "<="      , areOperators: true, priority: 10, name: "lte"      , associtivity: :left , },
+    { representation: ">"       , areOperators: true, priority: 10, name: "gt"       , associtivity: :left , },
+    { representation: ">="      , areOperators: true, priority: 10, name: "gte"      , associtivity: :left , },
+    { representation: "=="      , areOperators: true, priority: 11, name: "eq"       , associtivity: :none , },
+    { representation: "!="      , areOperators: true, priority: 11, name: "neq"      , associtivity: :none , },
+    { representation: "&&"      , areOperators: true, priority: 12, name: "and"      , associtivity: :left , },
+    { representation: "||"      , areOperators: true, priority: 13, name: "or"       , associtivity: :left , },
+    { representation: "->"      , areOperators: true, priority: 14, name: "impl"     , associtivity: :none , },
 ]
 
 # automatically add some adjectives (functional adjectives)
