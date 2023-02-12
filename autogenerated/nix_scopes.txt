@@ -73,6 +73,7 @@ string.quoted.double.nix
 string.quoted.other.nix
 string.quoted.single.nix
 string.unquoted.path.nix
+variable.language.special.builtins.nix
 variable.other.nix
 variable.other.object.access.nix
 variable.other.object.property.nix

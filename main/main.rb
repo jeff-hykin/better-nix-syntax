@@ -363,8 +363,13 @@ grammar = Grammar.new(
         function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         
         grammar[:standalone_variable] = Pattern.new(
-            tag_as: "variable.other",
-            match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
+            Pattern.new(
+                tag_as: "variable.language.special.builtins",
+                match: lookBehindToAvoid(".").then(/builtins/).lookAheadToAvoid("."),
+            ).or(
+                tag_as: "variable.other",
+                match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
+            )
         )
         
         grammar[:standalone_function_call] = Pattern.new(
@@ -392,10 +397,15 @@ grammar = Grammar.new(
             grammar[:single_quote_inline],
         ])
         
-        grammar[:variable_with_attributes] = Pattern.new(
+        object_access = Pattern.new(
             Pattern.new(
-                tag_as: "variable.other.object.access",
-                match: variable,
+                Pattern.new(
+                    tag_as: "variable.other.object.access variable.language.special.builtins",
+                    match: variableBounds[/builtins/],
+                ).or(
+                    tag_as: "variable.other.object.access",
+                    match: variable,
+                )
             ).then(std_space).then(
                 dot_access
             ).then(std_space).then(
@@ -405,26 +415,18 @@ grammar = Grammar.new(
                     ),
                 ),
                 includes: [ middle_repeat ],
-            ).then(
+            )
+        )
+        
+        grammar[:variable_with_attributes] = Pattern.new(
+            object_access.then(
                 tag_as: "variable.other.property",
                 match: attribute,
             ),
         )
         
         grammar[:variable_with_method] = Pattern.new(
-            Pattern.new(
-                tag_as: "variable.other.object.access",
-                match: variable,
-            ).then(std_space).then(
-                dot_access
-            ).then(std_space).then(
-                match: zeroOrMoreOf(
-                    middle_repeat = Pattern.new(
-                        attribute.then(std_space).then(dot_access).then(std_space),
-                    ),
-                ),
-                includes: [ middle_repeat ],
-            ).then(
+            object_access.then(
                 match: oneOf([
                     Pattern.new(
                         tag_as: "entity.name.function.method",
