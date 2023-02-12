@@ -65,12 +65,6 @@ grammar = Grammar.new(
     end
     variable = variableBounds[part_of_a_variable].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
     
-    Pattern.new(
-        should_not_partial_match: ["with"],
-        should_not_fully_match: ["with"],
-        match: variable,
-    )
-    
 # 
 # patterns
 # 
@@ -961,6 +955,7 @@ grammar = Grammar.new(
             :operators,
         ]
         grammar[:values] = [
+            value_prefix,
             :most_values,
             :inline_value,
         ]
