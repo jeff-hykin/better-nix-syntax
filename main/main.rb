@@ -8,6 +8,7 @@ require_relative './tokens.rb'
     # <path> literals
     # basic function
     # function's @
+    # the ternary "or" operator: https://github.com/NixOS/nix/issues/7405
 # todo
     # better function call detection when multiple vars split up by spaces
     # custom hanlding of stdenv, lib, mkDerivation, and shellHook
