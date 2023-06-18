@@ -393,17 +393,17 @@ grammar = Grammar.new(
         
         grammar[:standalone_function_call] = Pattern.new(
             oneOf([
-                Pattern.new(
+                lookBehindToAvoid(/\)|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.external",
                     match: externalVariable.lookBehindToAvoid(/^with[ \\t]/),
                 ).then(function_call_lookahead),
                 
-                Pattern.new(
+                lookBehindToAvoid(/\)|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.dirty",
                     match: dirtyVariable.lookBehindToAvoid(/^with[ \\t]/),
                 ).then(function_call_lookahead),
                 
-                Pattern.new(
+                lookBehindToAvoid(/\)|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call",
                     match: variable.lookBehindToAvoid(/^with[ \\t]/),
                 ).then(function_call_lookahead),
