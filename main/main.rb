@@ -441,6 +441,21 @@ grammar = Grammar.new(
             match: ".",
         )
         
+        interpolated_attribute = Pattern.new(
+            # try to support thing.${stuff}
+            Pattern.new(
+                match: /\$\{/,
+                tag_as: "punctuation.section.embedded",
+            ).then(
+                match: /.+?/,
+                includes: [
+                    :values,
+                ],
+            ).then(
+                match: /\}/,
+                tag_as: "punctuation.section.embedded",
+            )
+        )
         attribute = oneOf([
             # standalone
             lookBehindToAvoid(/\./).then(
@@ -456,12 +471,12 @@ grammar = Grammar.new(
             # last
             Pattern.new(
                 tag_as: "variable.other.property",
-                match: variable.lookAheadToAvoid(/\./),
+                match: interpolated_attribute.or(variable.lookAheadToAvoid(/\./)),
             ),
             # middle
             Pattern.new(
                 tag_as: "variable.other.object.property",
-                match: variable,
+                match: interpolated_attribute.or(variable),
             ),
             grammar[:double_quote_inline],
             grammar[:single_quote_inline],
