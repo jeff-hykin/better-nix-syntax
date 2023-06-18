@@ -63,6 +63,8 @@ grammar = Grammar.new(
         lookBehindToAvoid(/[a-zA-Z0-9_']/).then(regex_pattern).lookAheadToAvoid(/[a-zA-Z0-9_\-']/)
     end
     variable = variableBounds[part_of_a_variable].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
+    externalVariable = variableBounds[/_-#{part_of_a_variable}/].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
+    dirtyVariable = variableBounds[/_'#{part_of_a_variable}/].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
     
 # 
 # patterns
@@ -378,19 +380,55 @@ grammar = Grammar.new(
                 tag_as: "support.module variable.language.special.builtins",
                 match: lookBehindToAvoid(".").then(/builtins/).lookAheadToAvoid("."),
             ).or(
+                tag_as: "variable.other.external",
+                match: lookBehindToAvoid(".").then(externalVariable).lookAheadToAvoid("."),
+            ).or(
+                tag_as: "variable.other.dirty",
+                match: lookBehindToAvoid(".").then(dirtyVariable).lookAheadToAvoid("."),
+            ).or(
                 tag_as: "variable.other",
                 match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
             )
         )
         
         grammar[:standalone_function_call] = Pattern.new(
-            tag_as: "entity.name.function.call",
-            match: variable.lookBehindToAvoid(/^with[ \\t]/),
-        ).then(function_call_lookahead)
+            oneOf([
+                Pattern.new(
+                    tag_as: "entity.name.function.call.external",
+                    match: externalVariable.lookBehindToAvoid(/^with[ \\t]/),
+                ).then(function_call_lookahead),
+                
+                Pattern.new(
+                    tag_as: "entity.name.function.call.dirty",
+                    match: dirtyVariable.lookBehindToAvoid(/^with[ \\t]/),
+                ).then(function_call_lookahead),
+                
+                Pattern.new(
+                    tag_as: "entity.name.function.call",
+                    match: variable.lookBehindToAvoid(/^with[ \\t]/),
+                ).then(function_call_lookahead),
+            ])
+        )
         
-        grammar[:standalone_function_call_guess] = lookBehindFor(/\(/).then(
-            tag_as: "entity.name.function.call",
-            match: variable,
+        grammar[:standalone_function_call_guess] = oneOf([
+            
+            lookBehindFor(/\(/).then(
+                tag_as: "entity.name.function.call.external",
+                match: externalVariable,
+            ).then(function_call_lookahead.or(std_space.then(/$/))),
+            
+            lookBehindFor(/\(/).then(
+                tag_as: "entity.name.function.call.dirty",
+                match: dirtyVariable,
+            ).then(function_call_lookahead.or(std_space.then(/$/))),
+            
+            lookBehindFor(/\(/).then(
+                tag_as: "entity.name.function.call",
+                match: variable,
+            ).then(function_call_lookahead.or(std_space.then(/$/))),
+            
+        ])
+        
         grammar[:parameter] = Pattern.new(
             tag_as: "variable.parameter.function",
             match: variable,
