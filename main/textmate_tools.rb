@@ -133,12 +133,12 @@ class TokenHelper
 
     def lookBehindForWordsThat(*adjectives)
         array_of_invalid_names = self.representationsThat(*adjectives)
-        return Pattern.new(/\b/).lookBehindFor(/#{array_of_invalid_names.map { |each| '\W'+each+'|^'+each } .join('|')}/).then(/\b/)
+        return Pattern.new(/\b/).lookBehindFor(/#{array_of_invalid_names.map { |each| '\W'+each+'\b|^'+each+'\b' } .join('|')}/)
     end
     
     def lookBehindToAvoidWordsThat(*adjectives)
         array_of_invalid_names = self.representationsThat(*adjectives)
-        return lookBehindToAvoid(/#{array_of_invalid_names.map { |each| '\W'+each+'|^'+each } .join('|')}/).then(/\b/)
+        return lookBehindToAvoid(/#{array_of_invalid_names.map { |each| '\W'+each+'\b|^'+each+'\b' } .join('|')}/)
     end
 
     def lookAheadToAvoidWordsThat(*adjectives)

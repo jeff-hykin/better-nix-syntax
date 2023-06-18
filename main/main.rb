@@ -371,7 +371,7 @@ grammar = Grammar.new(
     # 
     # variables
     # 
-        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         
         grammar[:standalone_variable] = Pattern.new(
             Pattern.new(
@@ -391,7 +391,12 @@ grammar = Grammar.new(
         grammar[:standalone_function_call_guess] = lookBehindFor(/\(/).then(
             tag_as: "entity.name.function.call",
             match: variable,
-        ).then(function_call_lookahead.or(std_space.then(/$/)))
+        grammar[:parameter] = Pattern.new(
+            tag_as: "variable.parameter.function",
+            match: variable,
+        )
+        
+        grammar[:probably_parameter] = grammar[:parameter].lookAheadFor(/ *+:/)
         
         dot_access = Pattern.new(
             tag_as: "punctuation.separator.dot-access",
@@ -402,6 +407,7 @@ grammar = Grammar.new(
             # standalone
             lookBehindToAvoid(/\./).then(
                 tag_as: "variable.other.object",
+                should_fully_match: [ "zipListsWith'" ],
                 match: variable,
             ).lookAheadToAvoid(/\./),
             # first
@@ -489,6 +495,7 @@ grammar = Grammar.new(
         )
         
         grammar[:variable_or_function] = oneOf([
+            grammar[:probably_parameter],
             grammar[:variable_with_method],
             grammar[:variable_with_method_guess],
             grammar[:variable_with_attributes],
@@ -710,10 +717,6 @@ grammar = Grammar.new(
             ),
         ]
         
-        grammar[:parameter] = Pattern.new(
-            tag_as: "variable.parameter.function",
-            match: variable,
-        )
         optional = Pattern.new(
             match: "?",
             tag_as: "punctuation.separator.default",
