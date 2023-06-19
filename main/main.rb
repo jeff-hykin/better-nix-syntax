@@ -9,6 +9,7 @@ require_relative './tokens.rb'
     # basic function
     # function's @
     # the ternary "or" operator: https://github.com/NixOS/nix/issues/7405
+    # the ? (need to highlight the second argument as an attribute)
 # todo
     # better function call detection when multiple vars split up by spaces
     # custom hanlding of stdenv, lib, mkDerivation, and shellHook
@@ -393,17 +394,17 @@ grammar = Grammar.new(
         
         grammar[:standalone_function_call] = Pattern.new(
             oneOf([
-                lookBehindToAvoid(/\)|\s/).then(std_space).then(
+                lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.external",
                     match: externalVariable.lookBehindToAvoid(/^with[ \\t]/),
                 ).then(function_call_lookahead),
                 
-                lookBehindToAvoid(/\)|\s/).then(std_space).then(
+                lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.dirty",
                     match: dirtyVariable.lookBehindToAvoid(/^with[ \\t]/),
                 ).then(function_call_lookahead),
                 
-                lookBehindToAvoid(/\)|\s/).then(std_space).then(
+                lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call",
                     match: variable.lookBehindToAvoid(/^with[ \\t]/),
                 ).then(function_call_lookahead),
