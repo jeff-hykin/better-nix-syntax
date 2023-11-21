@@ -11,10 +11,21 @@
   scopes:
     - comment.line
 - source: '{'
-- source: description
+  scopesBegin:
+    - meta.punctuation.section.bracket
   scopes:
-    - variable.other
-- source: ' = '
+    - punctuation.section.bracket
+- source: description
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -27,28 +38,57 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: outputs
   scopes:
-    - variable.other
-- source: ' = { '
-- source: self
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
   scopes:
-    - variable.other
-- source: ' }:'
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: self
+  scopesBegin:
+    - meta.punctuation.section.function
+  scopes:
+    - variable.parameter.function
+- source: '}'
+  scopesBegin:
+    - meta.punctuation.section.parameters
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.parameters
 - source: let
   scopesBegin:
-    - variable.other
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
 - source: jobs
-  scopesEnd:
-    - variable.other
-- source: ' = '
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: import
   scopes:
-    - variable.other
+    - entity.name.function.call
 - source: ./
   scopes:
-    - constant.path.normal
-    - punctuation.other.path.normal
+    - constant.other.path.normal
+    - punctuation.definition.path.normal
 - source: pkgs
   scopesBegin:
     - string.unquoted.path
@@ -56,53 +96,109 @@
     - punctuation.section.path
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: top-level
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: release.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
-- source: ' {'
-- source: nixpkgs
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
   scopes:
-    - variable.other
-- source: ' = '
+    - punctuation.section.bracket
+- source: nixpkgs
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: self
   scopes:
     - variable.other
 - source: ;
-- source: '      };'
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: a
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: <
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.section.regexp.path.angle-brackets
+- source: path
+- source: '>'
+  scopes:
+    - punctuation.section.regexp.path.angle-brackets
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: lib
   scopes:
-    - variable.other
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: import
   scopes:
-    - variable.other
+    - entity.name.function.call
 - source: .
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
   scopes:
-    - punctuation.other.relative
+    - punctuation.definition.relative
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: lib
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: systems
   scopes:
-    - variable.other
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: lib
   scopes:
     - variable.other.object.access
@@ -111,28 +207,36 @@
     - punctuation.separator.dot-access
 - source: systems
   scopes:
-    - variable.other.property
     - variable.other.object.property
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: supported
   scopes:
-    - variable.other.object.access
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hydra
   scopes:
     - variable.other.property
-    - variable.other.object.property
+    - variable.other.property
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: forAllSystems
   scopes:
-    - variable.other
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: f
   scopes:
-    - variable.other
-- source: ': '
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
 - source: lib
   scopes:
     - variable.other.object.access
@@ -141,31 +245,55 @@
     - punctuation.separator.dot-access
 - source: genAttrs
   scopes:
-    - variable.other.property
-    - variable.other.object.property
+    - entity.name.function.method
 - source: systems
   scopes:
-    - variable.other
-- source: ' ('
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: system
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: f
+  scopes:
+    - entity.name.function.call
 - source: system
   scopes:
     - variable.other
-- source: ': '
-- source: f
-  scopesBegin:
-    - variable.other
-- source: system
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
   scopesEnd:
-    - variable.other
-- source: );
+    - meta.statement
 - source: in
   scopes:
-    - variable.other
-- source: '    {'
-- source: lib
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
   scopes:
-    - variable.other
-- source: ' = '
+    - punctuation.section.bracket
+- source: lib
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: lib
   scopes:
     - variable.other.object.access
@@ -174,28 +302,45 @@
     - punctuation.separator.dot-access
 - source: extend
   scopes:
-    - variable.other.property
-    - variable.other.object.property
-- source: ' ('
+    - entity.name.function.method
+- source: (
+  scopes:
+    - punctuation.section.parentheses
 - source: final
   scopes:
-    - variable.other
-- source: ': '
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
 - source: prev
   scopes:
-    - variable.other
-- source: ': {'
-- source: nixos
+    - variable.parameter.function.standalone
+- source: ':'
   scopes:
-    - variable.other
-- source: ' = '
+    - punctuation.definition.function.colon
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: nixos
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: import
   scopes:
-    - variable.other
+    - entity.name.function.call
 - source: ./
   scopes:
-    - constant.path.normal
-    - punctuation.other.path.normal
+    - constant.other.path.normal
+    - punctuation.definition.path.normal
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -203,36 +348,65 @@
     - punctuation.section.path
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: lib
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
-- source: ' { '
-- source: lib
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
   scopes:
-    - variable.other
-- source: ' = '
+    - punctuation.section.bracket
+- source: lib
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: final
   scopes:
     - variable.other
-- source: '; };'
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: nixosSystem
   scopes:
-    - variable.other
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: args
   scopes:
-    - variable.other
+    - variable.parameter.function.standalone
 - source: ':'
+  scopes:
+    - punctuation.definition.function.colon
 - source: import
   scopes:
-    - variable.other
+    - entity.name.function.call
 - source: ./
   scopes:
-    - constant.path.normal
-    - punctuation.other.path.normal
+    - constant.other.path.normal
+    - punctuation.definition.path.normal
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -240,25 +414,41 @@
     - punctuation.section.path
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: lib
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: eval-config.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
-- source: ' ('
+- source: (
+  scopes:
+    - punctuation.section.parentheses
 - source: args
   scopes:
     - variable.other
-- source: ' // {'
-- source: modules
+- source: //
   scopes:
-    - variable.other
-- source: ' = '
+    - keyword.operator.//
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: modules
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: args
   scopes:
     - variable.other.object.access
@@ -268,9 +458,24 @@
 - source: modules
   scopes:
     - variable.other.property
-    - variable.other.object.property
-- source: ' ++ [ {'
+    - variable.other.property
+- source: ++
+  scopes:
+    - keyword.operator.++
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
 - source: system
+  scopesBegin:
+    - meta.attribute-set
+    - meta.attribute-key
   scopes:
     - variable.other.object.access
 - source: .
@@ -278,14 +483,29 @@
     - punctuation.separator.dot-access
 - source: nixos
   scopes:
-    - variable.other.property
     - variable.other.object.property
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: versionSuffix
   scopes:
-    - variable.other
-- source: ' ='
-- source: '                ".${'
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: .
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: final
   scopes:
     - variable.other.object.access
@@ -294,15 +514,16 @@
     - punctuation.separator.dot-access
 - source: substring
   scopes:
-    - variable.other.property
-    - variable.other.object.property
+    - entity.name.function.method
 - source: '0'
   scopesBegin:
     - constant.numeric.integer
 - source: '8'
   scopesEnd:
     - constant.numeric.integer
-- source: ' ('
+- source: (
+  scopes:
+    - punctuation.section.parentheses
 - source: self
   scopes:
     - variable.other.object.access
@@ -311,11 +532,10 @@
     - punctuation.separator.dot-access
 - source: lastModifiedDate
   scopes:
-    - variable.other.property
-    - variable.other.object.property
+    - entity.name.function.method
 - source: or
   scopes:
-    - variable.other
+    - keyword.operator.or
 - source: self
   scopes:
     - variable.other.object.access
@@ -324,11 +544,10 @@
     - punctuation.separator.dot-access
 - source: lastModified
   scopes:
-    - variable.other.property
-    - variable.other.object.property
+    - entity.name.function.method
 - source: or
   scopes:
-    - variable.other
+    - keyword.operator.or
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -340,7 +559,16 @@
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: ')}.${'
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: self
   scopes:
     - variable.other.object.access
@@ -349,11 +577,10 @@
     - punctuation.separator.dot-access
 - source: shortRev
   scopes:
-    - variable.other.property
-    - variable.other.object.property
+    - entity.name.function.method
 - source: or
   scopes:
-    - variable.other
+    - keyword.operator.or
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -365,8 +592,20 @@
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: '}";'
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: system
+  scopesBegin:
+    - meta.attribute-key
   scopes:
     - variable.other.object.access
 - source: .
@@ -374,13 +613,18 @@
     - punctuation.separator.dot-access
 - source: nixos
   scopes:
-    - variable.other.property
     - variable.other.object.property
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: revision
   scopes:
-    - variable.other
-- source: ' = '
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: final
   scopes:
     - variable.other.object.access
@@ -389,17 +633,22 @@
     - punctuation.separator.dot-access
 - source: mkIf
   scopes:
-    - variable.other.property
-    - variable.other.object.property
-- source: ' ('
+    - entity.name.function.method
+- source: (
+  scopes:
+    - punctuation.section.parentheses
 - source: self
   scopes:
     - variable.other
-- source: ' ? '
+- source: '?'
+  scopes:
+    - keyword.operator.?
 - source: rev
   scopes:
     - variable.other
-- source: ') '
+- source: )
+  scopes:
+    - punctuation.section.parentheses
 - source: self
   scopes:
     - variable.other.object.access
@@ -409,12 +658,57 @@
 - source: rev
   scopes:
     - variable.other.property
-    - variable.other.object.property
+    - variable.other.property
 - source: ;
-- source: '            } ];'
-- source: '          });'
-- source: '      });'
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: checks
+  scopesBegin:
+    - meta.attribute-key
   scopes:
     - variable.other.object.access
 - source: .
@@ -422,13 +716,18 @@
     - punctuation.separator.dot-access
 - source: x86_64-linux
   scopes:
-    - variable.other.property
     - variable.other.object.property
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: tarball
   scopes:
-    - variable.other
-- source: ' = '
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: jobs
   scopes:
     - variable.other.object.access
@@ -438,16 +737,33 @@
 - source: tarball
   scopes:
     - variable.other.property
-    - variable.other.object.property
+    - variable.other.property
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: htmlDocs
   scopes:
-    - variable.other
-- source: ' = {'
-- source: nixpkgsManual
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
   scopes:
-    - variable.other
-- source: ' = '
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: nixpkgsManual
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: jobs
   scopes:
     - variable.other.object.access
@@ -457,19 +773,27 @@
 - source: manual
   scopes:
     - variable.other.property
-    - variable.other.object.property
+    - variable.other.property
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: nixosManual
   scopes:
-    - variable.other
-- source: ' = ('
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: (
+  scopes:
+    - punctuation.section.parentheses
 - source: import
   scopes:
-    - variable.other
+    - entity.name.function.call
 - source: ./
   scopes:
-    - constant.path.normal
-    - punctuation.other.path.normal
+    - constant.other.path.normal
+    - punctuation.definition.path.normal
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -477,93 +801,178 @@
     - punctuation.section.path
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: release-small.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
-- source: ' {'
-- source: nixpkgs
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
   scopes:
-    - variable.other
-- source: ' = '
+    - punctuation.section.bracket
+- source: nixpkgs
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: self
   scopes:
     - variable.other
 - source: ;
-- source: '        }).'
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: nixos
   scopes:
-    - variable.other.object.access
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: manual
   scopes:
-    - variable.other.property
     - variable.other.object.property
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: x86_64-linux
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: legacyPackages
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: forAllSystems
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: system
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: .
+  scopes:
+    - punctuation.definition.relative
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: system
   scopes:
     - variable.other
 - source: ;
-- source: '      };'
-- source: legacyPackages
   scopes:
-    - variable.other
-- source: ' = '
-- source: forAllSystems
-  scopes:
-    - variable.other
-- source: ' ('
-- source: system
-  scopes:
-    - variable.other
-- source: ': '
-- source: import
-  scopes:
-    - variable.other
-- source: .
-  scopesBegin:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-  scopes:
-    - punctuation.other.relative
-- source: /
-  scopes:
-    - punctuation.other.path
-- source: .
-  scopes:
-    - punctuation.other.relative
+    - punctuation.terminator.statement
   scopesEnd:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-- source: ' { '
-- source: inherit
-  scopesBegin:
-    - variable.other
-- source: system
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
   scopesEnd:
-    - variable.other
-- source: '; });'
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: nixosModules
   scopes:
-    - variable.other
-- source: ' = {'
-- source: notDetected
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
   scopes:
-    - variable.other
-- source: ' = '
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: notDetected
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
 - source: import
   scopes:
-    - variable.other
+    - entity.name.function.call
 - source: ./
   scopes:
-    - constant.path.normal
-    - punctuation.other.path.normal
+    - constant.other.path.normal
+    - punctuation.definition.path.normal
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -571,25 +980,53 @@
     - punctuation.section.path
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: modules
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: installer
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: scan
 - source: /
   scopes:
-    - punctuation.other.path
+    - punctuation.definition.path
 - source: not-detected.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
 - source: ;
-- source: '      };'
-- source: '    };'
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket

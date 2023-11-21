@@ -8,7 +8,7 @@
       jobs = import ./pkgs/top-level/release.nix {
         nixpkgs = self;
       };
-
+      a  = <path>;
       lib = import ./lib;
 
       systems = lib.systems.supported.hydra;

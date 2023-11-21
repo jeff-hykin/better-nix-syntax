@@ -3,12 +3,6 @@ require 'walk_up'
 require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
-# fixme
-    # inherit
-    # <path> literals
-    # basic function
-    # function's @
-    # the ternary "or" operator: https://github.com/NixOS/nix/issues/7405
 # todo
     # better function call detection when multiple vars split up by spaces
     # custom hanlding of stdenv, lib, mkDerivation, and shellHook
@@ -194,6 +188,25 @@ grammar = Grammar.new(
         # 
         # file path and URLs
         # 
+            grammar[:path_literal_angle_brackets] = Pattern.new(
+                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path",
+                match: /<\w+>/,
+                includes: [
+                    Pattern.new(
+                        match: /<|>/,
+                        tag_as: "punctuation.section.regexp.path.angle-brackets",
+                    ),
+                    Pattern.new(
+                        match: /\//,
+                        tag_as: "punctuation.definition.path",
+                    ),
+                    Pattern.new(
+                        match: variableBounds[/\.\.|\./],
+                        tag_as: "punctuation.definition.relative",
+                    ),
+                ],
+            )
+            
             grammar[:path_literal_content] = Pattern.new(
                 tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path",
                 match: /[\w+\-\.\/]+\/[\w+\-\.\/]+/,
@@ -383,6 +396,11 @@ grammar = Grammar.new(
             )
         )
         
+        grammar[:or_operator] = Pattern.new(
+            tag_as: "keyword.operator.or",
+            match: /\bor\b/,
+        )
+        
         grammar[:standalone_function_call] = Pattern.new(
             tag_as: "entity.name.function.call",
             match: variable.lookBehindToAvoid(/^with[ \\t]/),
@@ -543,7 +561,7 @@ grammar = Grammar.new(
     # operators
     # 
         grammar[:operators] = Pattern.new(
-            tag_as: "keyword.operator",
+            tag_as: "keyword.operator.$match",
             match: @tokens.that(:areOperators),
         )
     
@@ -593,10 +611,24 @@ grammar = Grammar.new(
                 ]
             ),
         ]
-    
+    # 
+    # basic function
+    # 
+        grammar[:basic_function] = Pattern.new(
+            Pattern.new(
+                match: variable,
+                tag_as: "variable.parameter.function.standalone",
+            ).then(
+                std_space
+            ).then(
+                match: ":",
+                tag_as: "punctuation.definition.function.colon"
+            )
+        )
     # 
     # attribute_set or function
     # 
+        
         grammar[:empty_set] = Pattern.new(
             maybe(std_space).then(
                 match: "{",
@@ -621,7 +653,10 @@ grammar = Grammar.new(
                 dot_access,
             ],
         )
-        
+        assignment_operator = Pattern.new(
+            match: /\=/,
+            tag_as: "keyword.operator.assignment",
+        )
         assignmentOf = ->(attribute_pattern) do
             Pattern.new(
                 Pattern.new(
@@ -632,32 +667,35 @@ grammar = Grammar.new(
                         dot_access,
                     ],
                 ).then(std_space).then(
-                    match: /=/,
-                    tag_as: "keyword.operator.assignment",
+                    assignment_operator
                 )
             )
         end
         
         # generic attribute
-        assignment_start = assignmentOf[
-            attribute.zeroOrMoreOf(
-                std_space.then(
-                    dot_access
-                ).then(std_space).then(
-                    attribute
-                )
+        assignment_start = Pattern.new(
+            lookAheadFor(/inherit\b/).or(
+                assignmentOf[
+                    attribute.zeroOrMoreOf(
+                        std_space.then(
+                            dot_access
+                        ).then(std_space).then(
+                            attribute
+                        )
+                    )
+                ]
             )
-        ]
+        )
         
         grammar[:assignment_statements] = [
             # 
-            # include statement
+            # inherit statement
             # 
             PatternRange.new(
-                tag_as: "meta.include",
+                tag_as: "meta.inherit",
                 start_pattern: Pattern.new(
-                    match: variableBounds[/include/],
-                    tag_as: "keyword.other.include",
+                    match: variableBounds[/inherit/],
+                    tag_as: "keyword.other.inherit",
                 ),
                 end_pattern: Pattern.new(
                     match: /;/,
@@ -682,18 +720,20 @@ grammar = Grammar.new(
             # 
             # shellHook
             # 
-            PatternRange.new(
-                tag_as: "meta.shell-hook",
-                start_pattern: assignmentOf[variableBounds[/shellHook/]],
-                end_pattern: Pattern.new(
-                    match: /;/,
-                    tag_as: "punctuation.terminator.statement"
-                ),
-                includes: [
-                    generateStringBlock[ additional_tag:"source.shell", includes:[ "source.shell" ] ],
-                    :values,
-                ]
-            ),
+                # its broken atm
+                # PatternRange.new(
+                #     tag_as: "meta.shell-hook",
+                #     start_pattern: assignmentOf[variableBounds[/shellHook/]],
+                #     end_pattern: Pattern.new(
+                #         match: /;/,
+                #         tag_as: "punctuation.terminator.statement"
+                #     ),
+                #     includes: [
+                #         generateStringBlock[ additional_tag:"source.shell", includes:[ "source.shell" ] ],
+                #         :values,
+                #     ]
+                # ),
+            
             # 
             # normal attribute assignment
             # 
@@ -705,7 +745,59 @@ grammar = Grammar.new(
                     tag_as: "punctuation.terminator.statement"
                 ),
                 includes: [
+                    assignment_start,
                     :values,
+                ]
+            ),
+            
+            # 
+            # dynamic attribute assignment
+            # 
+            PatternRange.new(
+                tag_as: "meta.statement.dynamic-attr",
+                start_pattern: Pattern.new(
+                    match: lookAheadFor(/\$/),
+                ),
+                end_pattern: Pattern.new(
+                    match: /;/,
+                    tag_as: "punctuation.terminator.statement"
+                ),
+                includes: [
+                    :interpolation,
+                    PatternRange.new(
+                        start_pattern: assignment_operator,
+                        end_pattern: lookAheadFor(/;/),
+                        includes: [
+                            :bracket_ending_with_semicolon_context,
+                            :values,
+                        ],
+                    ),
+                ]
+            ),
+            
+            # 
+            # dynamic attribute assignment
+            # 
+            PatternRange.new(
+                tag_as: "meta.statement.dynamic-attr",
+                start_pattern: Pattern.new(
+                    match: lookAheadFor(/"|'/),
+                ),
+                end_pattern: Pattern.new(
+                    match: /;/,
+                    tag_as: "punctuation.terminator.statement"
+                ),
+                includes: [
+                    :double_quote,
+                    :single_quote,
+                    PatternRange.new(
+                        start_pattern: assignment_operator,
+                        end_pattern: lookAheadFor(/;/),
+                        includes: [
+                            :bracket_ending_with_semicolon_context,
+                            :values,
+                        ],
+                    ),
                 ]
             ),
         ]
@@ -727,72 +819,98 @@ grammar = Grammar.new(
             match: "...",
         )
         
-        grammar[:brackets] =  PatternRange.new(
-            tag_as: "meta.punctuation.section.bracket",
-            start_pattern: Pattern.new(
-                maybe(value_prefix).maybe(
-                    std_space.then(
-                        match: variableBounds[/rec/],
-                        tag_as: "storage.modifier",
-                    ).then(std_space)
-                ).then(
-                    match: "{",
-                    tag_as: "punctuation.section.bracket",
+        grammar[:newline_eater] = Pattern.new(
+            match: /\s++/,
+        )
+        
+        bracketContext = ->(lookahead_end) do
+            function_parameters = PatternRange.new(
+                tag_as: "meta.punctuation.section.parameters",
+                start_pattern: /\G/,
+                end_pattern: Pattern.new(
+                    Pattern.new(
+                        match: "}",
+                        tag_as: "punctuation.section.bracket",
+                    ).then(std_space).maybe(
+                        Pattern.new(
+                            tag_as: "punctuation.definition.arguments",
+                            match: /@/,
+                        ).then(
+                            tag_as: "variable.language.arguments",
+                            match: variable,
+                        ).then(std_space)
+                    ).then(match: ":", tag_as: "punctuation.definition.function.colon")
                 ),
-            ),
-            end_pattern: lookBehindFor(/\}|\}:/),
-            includes: [
-                :comments,
-                # 
-                # attribute set
-                # 
-                PatternRange.new(
-                    tag_as: "meta.attribute-set",
-                    start_pattern: lookAheadFor(assignment_start),
-                    end_pattern: Pattern.new(
+                includes: [
+                    grammar[:parameter],
+                    PatternRange.new(
+                        tag_as: "meta.default",
+                        start_pattern: optional,
+                        end_pattern: lookAheadFor(/,|}/),
+                        includes: [
+                            :values,
+                        ]
+                    ),
+                    eplipsis,
+                    comma,
+                ],
+            )
+            PatternRange.new(
+                tag_as: "meta.punctuation.section.bracket",
+                start_pattern: Pattern.new(
+                    maybe(value_prefix).maybe(
+                        std_space.then(
+                            match: variableBounds[/rec/],
+                            tag_as: "storage.modifier",
+                        ).then(std_space)
+                    ).then(
+                        match: "{",
+                        tag_as: "punctuation.section.bracket",
+                    ),
+                ),
+                end_pattern: lookAheadFor(lookahead_end).or(lookBehindFor(/\}/)),
+                includes: [
+                    :comments,
+                    # 
+                    # attribute set
+                    # 
+                    PatternRange.new(
+                        tag_as: "meta.attribute-set",
+                        start_pattern: lookAheadFor(assignment_start),
+                        end_pattern: Pattern.new(
+                            match: "}",
+                            tag_as: "punctuation.section.bracket",
+                        ),
+                        includes: [
+                            :comments,
+                            :assignment_statements,
+                        ],
+                    ),
+                    # 
+                    # function definition
+                    # 
+                    PatternRange.new(
+                        tag_as: "meta.punctuation.section.function",
+                        start_pattern: Pattern.new(
+                            grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,|\}/),
+                        ),
+                        end_pattern: lookAheadFor(lookahead_end),
+                        includes: [
+                            function_parameters,
+                            :values,
+                        ],
+                    ),
+                    # just a normal ending bracket to an empty attribute set
+                    std_space.then(
                         match: "}",
                         tag_as: "punctuation.section.bracket",
                     ),
-                    includes: [
-                        :comments,
-                        :assignment_statements,
-                    ],
-                ),
-                # 
-                # function definition
-                # 
-                PatternRange.new(
-                    tag_as: "meta.punctuation.section.parameters",
-                    start_pattern: grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,/),
-                    end_pattern: Pattern.new(
-                        Pattern.new(
-                            match: "}",
-                            tag_as: "punctuation.section.bracket",
-                        ).then(std_space).then(match: ":", tag_as: "punctuation.section.function")
-                        # FIXME: add the {}@aldkfjadj: case
-                    ),
-                    includes: [
-                        :comments,
-                        grammar[:parameter],
-                        PatternRange.new(
-                            tag_as: "meta.default",
-                            start_pattern: optional,
-                            end_pattern: lookAheadFor(/,|}/),
-                            includes: [
-                                :values,
-                            ]
-                        ),
-                        eplipsis,
-                        comma,
-                    ],
-                ),
-                # just a normal ending bracket to an empty attribute set
-                std_space.then(
-                    match: "}",
-                    tag_as: "punctuation.section.bracket",
-                ),
-            ]
-        )
+                ]
+            )
+        end
+        
+        grammar[:bracket_ending_with_semicolon_context] = bracketContext[/;/]
+        grammar[:brackets] = bracketContext[/;|,|\)|else\W|then\W|in\W|else$|then$|in$/]
     
     value_end = lookAheadFor(/\}|;|,|\)|else\W|then\W|in\W|else$|then$|in$/) # technically this is imperfect, but must be done cause of multi-line values
     # 
@@ -922,6 +1040,7 @@ grammar = Grammar.new(
             grammar[:single_quote_inline],
             grammar[:url],
             grammar[:normal_path_literal],
+            grammar[:path_literal_angle_brackets],
             grammar[:path_literal_content],
             grammar[:system_path_literal],
             grammar[:null],
@@ -951,7 +1070,10 @@ grammar = Grammar.new(
             :if_then_else,
             :let_in_statement,
             :assert,
+            :or_operator,
+            :path_literal_angle_brackets,
             :operators,
+            :basic_function,
         ]
         grammar[:values] = [
             value_prefix,
