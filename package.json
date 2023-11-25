@@ -12,7 +12,7 @@
         "Programming Languages"
     ],
     "repository": {
-        "url": "https://github.com/jeff-hykin/better-cpp-syntax",
+        "url": "https://github.com/jeff-hykin/better-nix-syntax",
         "type": "git"
     },
     "scripts": {},
