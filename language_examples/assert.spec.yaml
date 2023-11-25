@@ -1,1 +1,1483 @@
-[]
+- source: /*
+  scopesBegin:
+    - comment.block
+  scopes:
+    - punctuation.definition.comment.begin
+- source: ' Impure default args for `pkgs/top-level/default.nix`. See that file'
+- source: '   for the meaning of each argument. '
+- source: '*/'
+  scopes:
+    - punctuation.definition.comment.end
+  scopesEnd:
+    - comment.block
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: homeDir
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: getEnv
+  scopes:
+    - variable.language.special.property.getEnv
+    - support.type.builtin.property.$74
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: HOME
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' Return ‘x’ if it evaluates, or ‘def’ if it throws an exception.'
+  scopes:
+    - comment.line
+- source: try
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: x
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: def
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: let
+  scopes:
+    - entity.name.function.call
+- source: res
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: tryEval
+  scopes:
+    - variable.language.special.property.tryEval
+    - support.type.builtin.property.$74
+- source: x
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: res
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: success
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: res
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: value
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: def
+  scopes:
+    - variable.other
+- source: ;
+- source: in
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: localSystem
+  scopesBegin:
+    - meta.punctuation.section.function
+  scopes:
+    - variable.parameter.function
+- source: '?'
+  scopesBegin:
+    - meta.punctuation.section.parameters
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: system
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: args
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: system
+  scopes:
+    - entity.name.function.method
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: currentSystem
+  scopes:
+    - variable.language.special.method.currentSystem
+    - support.type.builtin.method.$125
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.default
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: system
+  scopes:
+    - variable.parameter.function
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: localSystem
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: system
+  scopes:
+    - variable.other.property
+    - variable.other.property
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: crossSystem
+  scopes:
+    - variable.parameter.function
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: localSystem
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: config
+  scopes:
+    - variable.parameter.function
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: configFile
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: getEnv
+  scopes:
+    - variable.language.special.property.getEnv
+    - support.type.builtin.property.$74
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: NIXPKGS_CONFIG
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: configFile2
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: homeDir
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /.config/nixpkgs/config.nix
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: configFile3
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: homeDir
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /.nixpkgs/config.nix
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: configFile
+  scopes:
+    - variable.other
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: configFile
+  scopes:
+    - variable.other
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: import
+  scopesBegin:
+    - variable.other
+- source: configFile
+  scopesEnd:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: homeDir
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: configFile2
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: configFile2
+  scopes:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: homeDir
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: configFile3
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: configFile3
+  scopes:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: '}'
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: ','
+- source: overlays
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: isDir
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: path
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: path
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /.
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: pathOverlays
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: try
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: toString
+  scopes:
+    - variable.other
+- source: <
+  scopes:
+    - keyword.operator.<
+- source: nixpkgs-overlays
+  scopes:
+    - variable.other
+- source: '>'
+  scopes:
+    - keyword.operator.>
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: homeOverlaysFile
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: homeDir
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /.config/nixpkgs/overlays.nix
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: homeOverlaysDir
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: homeDir
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /.config/nixpkgs/overlays
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: overlays
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: path
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: isDir
+  scopesBegin:
+    - variable.other
+- source: path
+  scopesEnd:
+    - variable.other
+- source: ' then'
+- source: let
+  scopes:
+    - entity.name.function.call
+- source: content
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: readDir
+  scopes:
+    - variable.language.special.property.readDir
+    - support.type.builtin.property.$74
+- source: path
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: map
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: 'n'
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: path
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: 'n'
+  scopes:
+    - variable.other
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+- source: )
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: filter
+  scopes:
+    - variable.language.special.property.filter
+    - support.type.builtin.property.$124
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: 'n'
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: match
+  scopes:
+    - variable.language.special.property.match
+    - support.type.builtin.property.$74
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: .*
+- source: \\
+  scopes:
+    - constant.character.escape
+- source: .nix
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: 'n'
+  scopes:
+    - variable.other
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: match
+  scopes:
+    - variable.language.special.property.match
+    - support.type.builtin.property.$74
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: \\
+  scopes:
+    - constant.character.escape
+- source: .#.*
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: 'n'
+  scopes:
+    - variable.other
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '||'
+  scopes:
+    - keyword.operator.||
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: path
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: 'n'
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /default.nix
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+- source: )
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: attrNames
+  scopes:
+    - variable.language.special.property.attrNames
+    - support.type.builtin.property.$74
+- source: content
+  scopes:
+    - variable.other
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: path
+  scopes:
+    - variable.other
+- source: ;
+- source: '        in'
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: pathOverlays
+  scopes:
+    - variable.other
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: pathOverlays
+  scopes:
+    - variable.other
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: overlays
+  scopesBegin:
+    - variable.other
+- source: pathOverlays
+  scopesEnd:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: builtins
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: homeOverlaysFile
+  scopes:
+    - variable.other
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: homeOverlaysDir
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: throw
+  scopes:
+    - entity.name.function.call
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '                    Nixpkgs overlays can be specified with '
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: homeOverlaysFile
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ' or '
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: homeOverlaysDir
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ', '
+- source: '                    but not both.'
+- source: '                    Please remove one of them and try again.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: builtins
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: homeOverlaysFile
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: isDir
+  scopesBegin:
+    - variable.other
+- source: homeOverlaysFile
+  scopesEnd:
+    - variable.other
+- source: ' then'
+- source: throw
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: homeOverlaysFile
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ' should be a file'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: overlays
+  scopesBegin:
+    - variable.other
+- source: homeOverlaysFile
+  scopesEnd:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: builtins
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - support.type.builtin.property.$74
+- source: homeOverlaysDir
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: '!'
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - keyword.operator.!
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: isDir
+  scopes:
+    - entity.name.function.call
+- source: homeOverlaysDir
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: throw
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: homeOverlaysDir
+  scopes:
+    - variable.other
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ' should be a directory'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: overlays
+  scopesBegin:
+    - variable.other
+- source: homeOverlaysDir
+  scopesEnd:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: '['
+  scopesBegin:
+    - meta.list
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - meta.list
+    - punctuation.definition.list
+- source: ', '
+- source: crossOverlays
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: '['
+  scopesBegin:
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.list
+- source: ','
+- source: '    ...'
+- source: '}:'
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' If `localSystem` was explicitly passed, legacy `system` should'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' not be passed, and vice-versa.'
+  scopes:
+    - comment.line
+- source: assert
+  scopes:
+    - entity.name.function.call
+- source: args
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: localSystem
+  scopes:
+    - variable.other
+- source: '->'
+  scopes:
+    - keyword.operator.->
+- source: '!'
+  scopes:
+    - keyword.operator.!
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: args
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: system
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+- source: assert
+  scopes:
+    - entity.name.function.call
+- source: args
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: system
+  scopes:
+    - variable.other
+- source: '->'
+  scopes:
+    - keyword.operator.->
+- source: '!'
+  scopes:
+    - keyword.operator.!
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: args
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: localSystem
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: .
+  scopes:
+    - punctuation.definition.relative
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: removeAttrs
+  scopes:
+    - variable.language.special.property.removeAttrs
+    - support.type.builtin.property.$74
+- source: args
+  scopes:
+    - variable.other
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: system
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: config
+  scopesBegin:
+    - variable.other
+- source: overlays
+- source: localSystem
+  scopesEnd:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses

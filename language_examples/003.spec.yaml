@@ -1,1 +1,2782 @@
-[]
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: config
+  scopes:
+    - meta.punctuation.section.function
+    - variable.parameter.function
+  scopesEnd:
+    - meta.punctuation.section.bracket
+- source: ', '
+- source: options
+  scopes:
+    - variable.other
+- source: ', '
+- source: lib
+  scopes:
+    - variable.other
+- source: ', '
+- source: pkgs
+  scopes:
+    - variable.other
+- source: ', ... }:'
+- source: with
+  scopes:
+    - keyword.operator.with
+- source: lib
+  scopes:
+    - entity.name.namespace
+- source: ;
+  scopes:
+    - punctuation.separator.with
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: cfg
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: opt
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: options
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: isConfig
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: x
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isAttrs
+  scopes:
+    - variable.language.special.property.isAttrs
+    - support.type.builtin.property.$74
+- source: x
+  scopes:
+    - variable.other
+- source: '||'
+  scopes:
+    - keyword.operator.||
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isFunction
+  scopes:
+    - entity.name.function.method
+- source: x
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: optCall
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: f
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: x
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isFunction
+  scopes:
+    - entity.name.function.method
+- source: f
+  scopes:
+    - variable.other
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: f
+  scopesBegin:
+    - variable.other
+- source: x
+  scopesEnd:
+    - variable.other
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: f
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: mergeConfig
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: lhs_
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: rhs_
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: lhs
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: optCall
+  scopes:
+    - entity.name.function.call
+- source: lhs_
+  scopes:
+    - variable.other
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: pkgs
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: rhs
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: optCall
+  scopes:
+    - entity.name.function.call
+- source: rhs_
+  scopes:
+    - variable.other
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: pkgs
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: recursiveUpdate
+  scopes:
+    - entity.name.function.call
+- source: lhs
+  scopesBegin:
+    - variable.other
+- source: rhs
+  scopesEnd:
+    - variable.other
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: optionalAttrs
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: lhs
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: packageOverrides
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: packageOverrides
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: pkgs
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: optCall
+  scopes:
+    - entity.name.function.call
+- source: lhs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: packageOverrides
+  scopes:
+    - entity.name.function.method
+- source: pkgs
+  scopes:
+    - variable.other
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: optCall
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: attrByPath
+  scopes:
+    - entity.name.function.call
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: packageOverrides
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: '}'
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: rhs
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: pkgs
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: optionalAttrs
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: lhs
+  scopes:
+    - variable.other
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: perlPackageOverrides
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: perlPackageOverrides
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: pkgs
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: optCall
+  scopes:
+    - entity.name.function.call
+- source: lhs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: perlPackageOverrides
+  scopes:
+    - entity.name.function.method
+- source: pkgs
+  scopes:
+    - variable.other
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: optCall
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: attrByPath
+  scopes:
+    - entity.name.function.call
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: perlPackageOverrides
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: '}'
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: rhs
+  scopes:
+    - variable.other
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: pkgs
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: configType
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOptionType
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: name
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs-config
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs config
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: check
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: x
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: let
+  scopes:
+    - entity.name.function.call
+- source: traceXIfNot
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: c
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: c
+  scopesBegin:
+    - variable.other
+- source: x
+  scopesEnd:
+    - variable.other
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: 'true'
+  scopes:
+    - constant.language.boolean.true
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: traceSeqN
+  scopes:
+    - entity.name.function.method
+- source: '1'
+  scopes:
+    - constant.numeric.integer
+- source: x
+  scopes:
+    - variable.other
+- source: 'false'
+  scopes:
+    - constant.language.boolean.false
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '      in traceXIfNot isConfig;'
+- source: merge
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: args
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: foldr
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: def
+  scopes:
+    - variable.parameter.function.standalone
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: mergeConfig
+  scopes:
+    - entity.name.function.call
+- source: def
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: value
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - punctuation.definition.dict
+- source: '}'
+  scopesEnd:
+    - punctuation.definition.dict
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: overlayType
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOptionType
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: name
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs-overlay
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs overlay
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: check
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isFunction
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: merge
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mergeOneOption
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: pkgsType
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOptionType
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: name
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: An evaluation of Nixpkgs; the top level attribute set of packages
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: check
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isAttrs
+  scopes:
+    - variable.language.special.property.isAttrs
+    - support.type.builtin.property.$124
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: defaultPkgs
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: import
+  scopes:
+    - entity.name.function.call
+- source: ..
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: ..
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: ..
+  scopes:
+    - punctuation.definition.relative
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: '}'
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: finalPkgs
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: opt
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isDefined
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: cfg
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: appendOverlays
+  scopes:
+    - entity.name.function.method
+- source: cfg
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: overlays
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: defaultPkgs
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: imports
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: assertions.nix
+- source: .
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: meta.nix
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: options
+  scopesBegin:
+    - meta.attribute-key
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: pkgs
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: defaultText
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: literalExpression
+  scopes:
+    - entity.name.function.call
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        import "'
+- source: '''''$'
+  scopes:
+    - constant.character.escape
+- source: '{nixos}/.." {'
+- source: '          inherit (cfg) config overlays localSystem crossSystem;'
+- source: '        }'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: type
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: pkgsType
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: example
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: literalExpression
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'import <nixpkgs> {}'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        If set, the pkgs argument to all NixOS modules is the value of'
+- source: '        this option, extended with <code>nixpkgs.overlays</code>, if'
+- source: '        that is also set. Either <code>nixpkgs.crossSystem</code> or'
+- source: '        <code>nixpkgs.localSystem</code> will be used in an assertion'
+- source: '        to check that the NixOS and Nixpkgs architectures match. Any'
+- source: '        other options in <code>nixpkgs.*</code>, notably <code>config</code>,'
+- source: '        will be ignored.'
+- source: '        If unset, the pkgs argument to all NixOS modules is determined'
+- source: '        as shown in the default value for this option.'
+- source: '        The default value imports the Nixpkgs source files'
+- source: '        relative to the location of this NixOS module, because'
+- source: '        NixOS and Nixpkgs are distributed together for consistency,'
+- source: '        so the <code>nixos</code> in the default value is in fact a'
+- source: '        relative path. The <code>config</code>, <code>overlays</code>,'
+- source: '        <code>localSystem</code>, and <code>crossSystem</code> come'
+- source: '        from this option''s siblings.'
+- source: '        This option can be used by applications like NixOps to increase'
+- source: '        the performance of evaluation, or to create packages that depend'
+- source: '        on a container that should be built with the exact same evaluation'
+- source: '        of Nixpkgs, for example. Applications like this should set'
+- source: '        their default value using <code>lib.mkDefault</code>, so'
+- source: '        user-provided configuration can override it without using'
+- source: '        <code>lib</code>.'
+- source: '        Note that using a distinct version of Nixpkgs with NixOS may'
+- source: '        be an unexpected source of problems. Use this option with care.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: config
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: default
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - punctuation.definition.dict
+- source: '}'
+  scopesEnd:
+    - punctuation.definition.dict
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: example
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: literalExpression
+  scopes:
+    - variable.other
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '          { allowBroken = true; allowUnfree = true; }'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: type
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: configType
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        The configuration of the Nix Packages collection.  (For'
+- source: '        details, see the Nixpkgs documentation.)  It allows you to set'
+- source: '        package configuration options.'
+- source: '        Ignored when <code>nixpkgs.pkgs</code> is set.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: overlays
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: default
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: example
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: literalExpression
+  scopes:
+    - variable.other
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '          ['
+- source: '            (self: super: {'
+- source: '              openssh = super.openssh.override {'
+- source: '                hpnSupport = true;'
+- source: '                kerberos = self.libkrb5;'
+- source: '              };'
+- source: '            })'
+- source: '          ]'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: type
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: types
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: listOf
+  scopes:
+    - entity.name.function.method
+- source: overlayType
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        List of overlays to use with the Nix Packages collection.'
+- source: '        (For details, see the Nixpkgs documentation.)  It allows'
+- source: '        you to override packages globally. Each function in the list'
+- source: '        takes as an argument the <emphasis>original</emphasis> Nixpkgs.'
+- source: '        The first argument should be used for finding dependencies, and'
+- source: '        the second should be used for overriding recipes.'
+- source: '        If <code>nixpkgs.pkgs</code> is set, overlays specified here'
+- source: '        will be applied after the overlays that were already present'
+- source: '        in <code>nixpkgs.pkgs</code>.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: localSystem
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: type
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: types
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: attrs
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' TODO utilize lib.systems.parsedPlatform'
+  scopes:
+    - comment.line
+- source: default
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: cfg
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: system
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: example
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: system
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: aarch64-linux
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: config
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: aarch64-unknown-linux-gnu
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' Make sure that the final value has all fields for sake of other modules'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' referring to this. TODO make `lib.systems` itself use the module system.'
+  scopes:
+    - comment.line
+- source: apply
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: systems
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: elaborate
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: defaultText
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: literalExpression
+  scopes:
+    - variable.other
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: (import "
+- source: '''''$'
+  scopes:
+    - constant.character.escape
+- source: '{nixos}/../lib").lib.systems.examples.aarch64-multiplatform'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        Specifies the platform on which NixOS should be built. When'
+- source: '        <code>nixpkgs.crossSystem</code> is unset, it also specifies'
+- source: '        the platform <emphasis>for</emphasis> which NixOS should be'
+- source: '        built.  If this option is unset, it defaults to the platform'
+- source: '        type of the machine where evaluation happens. Specifying this'
+- source: '        option is useful when doing distributed multi-platform'
+- source: '        deployment, or when building virtual machines. See its'
+- source: '        description in the Nixpkgs manual for more details.'
+- source: '        Ignored when <code>nixpkgs.pkgs</code> is set.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: crossSystem
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: type
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: types
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nullOr
+  scopes:
+    - entity.name.function.method
+- source: types
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: attrs
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' TODO utilize lib.systems.parsedPlatform'
+  scopes:
+    - comment.line
+- source: default
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: example
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: system
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: aarch64-linux
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: config
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: aarch64-unknown-linux-gnu
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        Specifies the platform for which NixOS should be'
+- source: '        built. Specify this only if it is different from'
+- source: '        <code>nixpkgs.localSystem</code>, the platform'
+- source: '        <emphasis>on</emphasis> which NixOS should be built. In other'
+- source: '        words, specify this to cross-compile NixOS. Otherwise it'
+- source: '        should be set as null, the default. See its description in the'
+- source: '        Nixpkgs manual for more details.'
+- source: '        Ignored when <code>nixpkgs.pkgs</code> is set.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: system
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: type
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: types
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: str
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: example
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: i686-linux
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        Specifies the Nix platform type on which NixOS should be built.'
+- source: '        It is better to specify <code>nixpkgs.localSystem</code> instead.'
+- source: '        <programlisting>'
+- source: '        {'
+- source: '          nixpkgs.system = ..;'
+- source: '        }'
+- source: '        </programlisting>'
+- source: '        is the same as'
+- source: '        <programlisting>'
+- source: '        {'
+- source: '          nixpkgs.localSystem.system = ..;'
+- source: '        }'
+- source: '        </programlisting>'
+- source: '        See <code>nixpkgs.localSystem</code> for more information.'
+- source: '        Ignored when <code>nixpkgs.localSystem</code> is set.'
+- source: '        Ignored when <code>nixpkgs.pkgs</code> is set.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: initialSystem
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: mkOption
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: type
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: types
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: str
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: internal
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: 'true'
+  scopes:
+    - constant.language.boolean.true
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '        Preserved value of <literal>system</literal> passed to <literal>eval-config.nix</literal>.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: config
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: _module
+  scopesBegin:
+    - meta.attribute-set
+    - meta.attribute-key
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: args
+  scopes:
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: pkgs
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: finalPkgs
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: assertions
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: nixosExpectedSystem
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: crossSystem
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: crossSystem
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: system
+  scopes:
+    - entity.name.function.method
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: systems
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: parse
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: doubleFromSystem
+  scopes:
+    - entity.name.function.method
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: systems
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: parse
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkSystemFromString
+  scopes:
+    - entity.name.function.method
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: crossSystem
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: config
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: localSystem
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: system
+  scopes:
+    - entity.name.function.method
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: systems
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: parse
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: doubleFromSystem
+  scopes:
+    - entity.name.function.method
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: systems
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: parse
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkSystemFromString
+  scopes:
+    - entity.name.function.method
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: localSystem
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: config
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: nixosOption
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: if
+  scopes:
+    - entity.name.function.call
+- source: config
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nixpkgs
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: crossSystem
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: then
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs.crossSystem
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: else
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs.localSystem
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: pkgsSystem
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: finalPkgs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: stdenv
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: targetPlatform
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: system
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: assertion
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: nixosExpectedSystem
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '= '
+- source: pkgsSystem
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: message
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: >-
+    The NixOS nixpkgs.pkgs option was set to a Nixpkgs invocation that compiles
+    to target system 
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: pkgsSystem
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ' but NixOS was configured for system '
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: nixosExpectedSystem
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ' via NixOS option '
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: nixosOption
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: . The NixOS system settings must match the Nixpkgs target system.
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' needs a full nixpkgs path to import nixpkgs'
+  scopes:
+    - comment.line
+- source: meta
+  scopesBegin:
+    - meta.statement
+    - meta.attribute-key
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: buildDocsInSandbox
+  scopes:
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: 'false'
+  scopes:
+    - constant.language.boolean.false
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket

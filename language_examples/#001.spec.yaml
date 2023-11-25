@@ -1,1 +1,430 @@
-[]
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: lib
+  scopesBegin:
+    - meta.punctuation.section.function
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopesBegin:
+    - meta.punctuation.section.parameters
+  scopes:
+    - punctuation.separator.comma
+- source: stdenv
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: fetchurl
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: nixos
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: testVersion
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: testEqualDerivation
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+- source: stdenv
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: mkDerivation
+  scopesBegin:
+    - variable.parameter.function
+- source: rec
+  scopesEnd:
+    - variable.parameter.function
+- source: ' {'
+- source: pname
+  scopes:
+    - variable.parameter.function
+- source: ' = "'
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: '";'
+- source: version
+  scopes:
+    - variable.parameter.function
+- source: ' = "2.12";'
+- source: src
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: fetchurl
+  scopes:
+    - variable.parameter.function
+- source: ' {'
+- source: url
+  scopes:
+    - variable.parameter.function
+- source: ' = "'
+- source: mirror
+  scopes:
+    - variable.parameter.function
+- source: '://'
+- source: gnu
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: '/${'
+- source: pname
+  scopes:
+    - variable.parameter.function
+- source: '}-${'
+- source: version
+  scopes:
+    - variable.parameter.function
+- source: '}.'
+- source: tar
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: gz
+  scopes:
+    - variable.parameter.function
+- source: '";'
+- source: sha256
+  scopes:
+    - variable.parameter.function
+- source: ' = "1ayhp9v4m4rdhjmnl2bq3cibrbqqkgjbl3s7yk2nhlh8vj3ay16g";'
+- source: '    };'
+- source: doCheck
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: 'true'
+  scopes:
+    - variable.parameter.function
+- source: ;
+- source: passthru
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: tests
+  scopes:
+    - variable.parameter.function
+- source: ' = {'
+- source: version
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: testVersion
+  scopes:
+    - variable.parameter.function
+- source: ' { '
+- source: package
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: '; };'
+- source: invariant-under-noXlibs
+  scopes:
+    - variable.parameter.function
+- source: ' ='
+- source: testEqualDerivation
+  scopes:
+    - variable.parameter.function
+- source: '                "'
+- source: hello
+  scopesBegin:
+    - variable.parameter.function
+- source: must
+- source: not
+- source: be
+- source: rebuilt
+- source: when
+- source: environment
+  scopesEnd:
+    - variable.parameter.function
+- source: .
+- source: noXlibs
+  scopesBegin:
+    - variable.parameter.function
+- source: is
+- source: set
+  scopesEnd:
+    - variable.parameter.function
+- source: ."
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: '                ('
+- source: nixos
+  scopes:
+    - variable.parameter.function
+- source: ' { '
+- source: environment
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: noXlibs
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: 'true'
+  scopes:
+    - variable.parameter.function
+- source: '; }).'
+- source: pkgs
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: ;
+- source: '    };'
+- source: meta
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: with
+  scopesBegin:
+    - variable.parameter.function
+- source: lib
+  scopesEnd:
+    - variable.parameter.function
+- source: '; {'
+- source: description
+  scopes:
+    - variable.parameter.function
+- source: ' = "'
+- source: A
+  scopesBegin:
+    - variable.parameter.function
+- source: program
+- source: that
+- source: produces
+- source: a
+- source: familiar
+  scopesEnd:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: friendly
+  scopesBegin:
+    - variable.parameter.function
+- source: greeting
+  scopesEnd:
+    - variable.parameter.function
+- source: '";'
+- source: longDescription
+  scopes:
+    - variable.parameter.function
+- source: ' = '''''
+- source: GNU
+  scopesBegin:
+    - variable.parameter.function
+- source: Hello
+- source: is
+- source: a
+- source: program
+- source: that
+- source: prints
+  scopesEnd:
+    - variable.parameter.function
+- source: ' "'
+- source: Hello
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: world
+  scopes:
+    - variable.parameter.function
+- source: '!" '
+- source: when
+  scopesBegin:
+    - variable.parameter.function
+- source: you
+- source: run
+- source: it
+  scopesEnd:
+    - variable.parameter.function
+- source: .
+- source: It
+  scopesBegin:
+    - variable.parameter.function
+- source: is
+- source: fully
+- source: customizable
+  scopesEnd:
+    - variable.parameter.function
+- source: .
+- source: '        '''';'
+- source: homepage
+  scopes:
+    - variable.parameter.function
+- source: ' = "'
+- source: https
+  scopes:
+    - variable.parameter.function
+- source: '://'
+- source: www
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: gnu
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: org
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: software
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: manual
+  scopes:
+    - variable.parameter.function
+- source: /";
+- source: changelog
+  scopes:
+    - variable.parameter.function
+- source: ' = "'
+- source: https
+  scopes:
+    - variable.parameter.function
+- source: '://'
+- source: git
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: savannah
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: gnu
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: org
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: cgit
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: hello
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: git
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: plain
+  scopes:
+    - variable.parameter.function
+- source: /
+- source: NEWS
+  scopes:
+    - variable.parameter.function
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: h
+  scopes:
+    - variable.other
+- source: '='
+- source: v
+  scopes:
+    - variable.other
+- source: $
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: version
+  scopesBegin:
+    - meta.punctuation.section.function
+  scopes:
+    - variable.parameter.function
+- source: '}";'
+  scopesBegin:
+    - meta.punctuation.section.parameters
+- source: license
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: licenses
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: gpl3Plus
+  scopes:
+    - variable.parameter.function
+- source: ;
+- source: maintainers
+  scopes:
+    - variable.parameter.function
+- source: ' = [ '
+- source: maintainers
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: eelco
+  scopes:
+    - variable.parameter.function
+- source: ' ];'
+- source: platforms
+  scopes:
+    - variable.parameter.function
+- source: ' = '
+- source: platforms
+  scopes:
+    - variable.parameter.function
+- source: .
+- source: all
+  scopes:
+    - variable.parameter.function
+- source: ;
+- source: '    };'
+- source: '}'
