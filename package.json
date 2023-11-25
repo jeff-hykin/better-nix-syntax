@@ -3,6 +3,7 @@
     "displayName": "Better Nix Syntax",
     "description": "",
     "version": "0.0.1",
+    "icon": "icon.png",
     "author": {
         "name": "Jeff Hykin"
     },
