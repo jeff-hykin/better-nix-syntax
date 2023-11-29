@@ -122,7 +122,7 @@
 - source: isAttrs
   scopes:
     - variable.language.special.property.isAttrs
-    - support.type.builtin.property.$74
+    - support.type.builtin.property.$77
 - source: x
   scopes:
     - variable.other
@@ -164,9 +164,13 @@
   scopes:
     - punctuation.definition.function.colon
 - source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
   scopes:
-    - entity.name.function.call
+    - keyword.control.if
 - source: lib
+  scopesBegin:
+    - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
 - source: .
@@ -178,18 +182,22 @@
 - source: f
   scopes:
     - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
 - source: then
   scopes:
-    - entity.name.function.call
+    - keyword.control.then
 - source: f
-  scopesBegin:
-    - variable.other
+  scopes:
+    - entity.name.function.call
 - source: x
-  scopesEnd:
+  scopes:
     - variable.other
 - source: else
   scopes:
-    - entity.name.function.call
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: f
   scopes:
     - variable.other
@@ -650,9 +658,14 @@
   scopes:
     - punctuation.definition.function.colon
 - source: let
+  scopesBegin:
+    - meta.punctuation.section.let
   scopes:
-    - entity.name.function.call
+    - keyword.control.let
 - source: traceXIfNot
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
   scopes:
     - meta.attribute-key
     - variable.other.object
@@ -666,23 +679,31 @@
   scopes:
     - punctuation.definition.function.colon
 - source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
   scopes:
-    - entity.name.function.call
+    - keyword.control.if
 - source: c
   scopesBegin:
-    - variable.other
-- source: x
-  scopesEnd:
-    - variable.other
-- source: then
+    - meta.punctuation.section.condition
   scopes:
     - entity.name.function.call
+- source: x
+  scopes:
+    - variable.other
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
 - source: 'true'
   scopes:
     - constant.language.boolean.true
 - source: else
   scopes:
-    - entity.name.function.call
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: lib
   scopes:
     - variable.other.object.access
@@ -706,10 +727,22 @@
     - punctuation.terminator.statement
   scopesEnd:
     - meta.statement
-- source: '      in traceXIfNot isConfig;'
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: traceXIfNot
+  scopes:
+    - entity.name.function.call
+- source: isConfig
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
 - source: merge
-  scopesBegin:
-    - meta.statement
   scopes:
     - meta.attribute-key
     - variable.other.object
@@ -960,7 +993,7 @@
 - source: isAttrs
   scopes:
     - variable.language.special.property.isAttrs
-    - support.type.builtin.property.$124
+    - support.type.builtin.property.$127
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1027,9 +1060,13 @@
   scopes:
     - keyword.operator.assignment
 - source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
   scopes:
-    - entity.name.function.call
+    - keyword.control.if
 - source: opt
+  scopesBegin:
+    - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
 - source: .
@@ -1045,9 +1082,11 @@
   scopes:
     - variable.other.property
     - variable.other.property
+  scopesEnd:
+    - meta.punctuation.section.condition
 - source: then
   scopes:
-    - entity.name.function.call
+    - keyword.control.then
 - source: cfg
   scopes:
     - variable.other.object.access
@@ -1075,7 +1114,9 @@
     - variable.other.property
 - source: else
   scopes:
-    - entity.name.function.call
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: defaultPkgs
   scopes:
     - variable.other
@@ -2315,9 +2356,13 @@
   scopes:
     - keyword.operator.assignment
 - source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
   scopes:
-    - entity.name.function.call
+    - keyword.control.if
 - source: config
+  scopesBegin:
+    - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
 - source: .
@@ -2339,9 +2384,11 @@
 - source: 'null'
   scopes:
     - constant.language.null
+  scopesEnd:
+    - meta.punctuation.section.condition
 - source: then
   scopes:
-    - entity.name.function.call
+    - keyword.control.then
 - source: config
   scopes:
     - variable.other.object.access
@@ -2444,7 +2491,9 @@
     - punctuation.section.parentheses
 - source: else
   scopes:
-    - entity.name.function.call
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: config
   scopes:
     - variable.other.object.access
@@ -2556,9 +2605,13 @@
   scopes:
     - keyword.operator.assignment
 - source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
   scopes:
-    - entity.name.function.call
+    - keyword.control.if
 - source: config
+  scopesBegin:
+    - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
 - source: .
@@ -2580,9 +2633,11 @@
 - source: 'null'
   scopes:
     - constant.language.null
+  scopesEnd:
+    - meta.punctuation.section.condition
 - source: then
   scopes:
-    - entity.name.function.call
+    - keyword.control.then
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2596,7 +2651,9 @@
     - string.quoted.double
 - source: else
   scopes:
-    - entity.name.function.call
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: '"'
   scopesBegin:
     - string.quoted.double

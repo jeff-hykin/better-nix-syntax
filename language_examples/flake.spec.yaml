@@ -86,9 +86,10 @@
   scopes:
     - entity.name.function.call
 - source: ./
+  scopesBegin:
+    - constant.other.path.relative
   scopes:
-    - constant.other.path.normal
-    - punctuation.definition.path.normal
+    - punctuation.definition.path.relative
 - source: pkgs
   scopesBegin:
     - string.unquoted.path
@@ -103,6 +104,7 @@
     - punctuation.definition.path
 - source: release.nix
   scopesEnd:
+    - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
@@ -150,7 +152,7 @@
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
-    - punctuation.section.path
+    - punctuation.section.path.lookup
   scopes:
     - punctuation.section.regexp.path.angle-brackets
 - source: path
@@ -160,7 +162,7 @@
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
-    - punctuation.section.path
+    - punctuation.section.path.lookup
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -338,9 +340,10 @@
   scopes:
     - entity.name.function.call
 - source: ./
+  scopesBegin:
+    - constant.other.path.relative
   scopes:
-    - constant.other.path.normal
-    - punctuation.definition.path.normal
+    - punctuation.definition.path.relative
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -351,6 +354,7 @@
     - punctuation.definition.path
 - source: lib
   scopesEnd:
+    - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
@@ -404,9 +408,10 @@
   scopes:
     - entity.name.function.call
 - source: ./
+  scopesBegin:
+    - constant.other.path.relative
   scopes:
-    - constant.other.path.normal
-    - punctuation.definition.path.normal
+    - punctuation.definition.path.relative
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -421,6 +426,7 @@
     - punctuation.definition.path
 - source: eval-config.nix
   scopesEnd:
+    - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
@@ -791,9 +797,10 @@
   scopes:
     - entity.name.function.call
 - source: ./
+  scopesBegin:
+    - constant.other.path.relative
   scopes:
-    - constant.other.path.normal
-    - punctuation.definition.path.normal
+    - punctuation.definition.path.relative
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -804,6 +811,7 @@
     - punctuation.definition.path
 - source: release-small.nix
   scopesEnd:
+    - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
@@ -970,9 +978,10 @@
   scopes:
     - entity.name.function.call
 - source: ./
+  scopesBegin:
+    - constant.other.path.relative
   scopes:
-    - constant.other.path.normal
-    - punctuation.definition.path.normal
+    - punctuation.definition.path.relative
 - source: nixos
   scopesBegin:
     - string.unquoted.path
@@ -995,6 +1004,7 @@
     - punctuation.definition.path
 - source: not-detected.nix
   scopesEnd:
+    - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path

@@ -4,7 +4,6 @@ require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
 # FIXME:
-    # if statements
     # interpolation in paths
     # system path literal isnt working
 # todo

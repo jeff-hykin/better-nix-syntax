@@ -269,7 +269,7 @@
 - source: import
   scopes:
     - variable.language.special.property.import
-    - support.type.builtin.property.$74
+    - support.type.builtin.property.$77
 - source: .
   scopesBegin:
     - string.unquoted.path

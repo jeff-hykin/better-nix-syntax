@@ -228,7 +228,7 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$74
+    - support.type.builtin.property.$77
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -241,8 +241,10 @@
   scopesEnd:
     - string.quoted.double
 - source: /
+  scopesBegin:
+    - constant.other.path.absolute
   scopes:
-    - keyword.operator./
+    - punctuation.definition.path.absolute
 - source: Users
   scopesBegin:
     - string.unquoted.path
@@ -265,6 +267,7 @@
     - punctuation.definition.path
 - source: random.ignore
   scopesEnd:
+    - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
@@ -677,7 +680,7 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$74
+    - support.type.builtin.property.$77
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -690,8 +693,10 @@
   scopesEnd:
     - string.quoted.double
 - source: /
+  scopesBegin:
+    - constant.other.path.absolute
   scopes:
-    - keyword.operator./
+    - punctuation.definition.path.absolute
 - source: Users
   scopesBegin:
     - string.unquoted.path
@@ -714,6 +719,7 @@
     - punctuation.definition.path
 - source: random.ignore
   scopesEnd:
+    - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
