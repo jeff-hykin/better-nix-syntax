@@ -882,7 +882,7 @@ grammar = Grammar.new(
         bracketContext = ->(lookahead_end) do
             function_parameters = PatternRange.new(
                 tag_as: "meta.punctuation.section.parameters",
-                start_pattern: /\G/,
+                start_pattern: Pattern.new(/\G/).lookBehindToAvoid(/:|^/),
                 end_pattern: Pattern.new(
                     Pattern.new(
                         match: "}",
@@ -924,7 +924,7 @@ grammar = Grammar.new(
                         tag_as: "punctuation.section.bracket",
                     ),
                 ),
-                end_pattern: lookAheadFor(lookahead_end).or(lookBehindFor(/\}/)),
+                end_pattern: lookAheadFor(lookahead_end).or(lookBehindFor(/\}|:/)),
                 includes: [
                     :comments,
                     # 

@@ -1,0 +1,1174 @@
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: lib
+  scopesBegin:
+    - meta.punctuation.section.function
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopesBegin:
+    - meta.punctuation.section.parameters
+  scopes:
+    - punctuation.separator.comma
+- source: stdenv
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: fetchurl
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: zlib
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: libjpeg
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: imake
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: gccmakedep
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: libXaw
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: libXext
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: libXmu
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: libXp
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: libXpm
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: perl
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: xauth
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: fontDirectories
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: openssh
+  scopes:
+    - variable.parameter.function
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.parameters
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkDerivation
+  scopes:
+    - entity.name.function.method
+- source: rec
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - storage.modifier
+- source: '{'
+  scopes:
+    - punctuation.section.bracket
+- source: pname
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: tightvnc
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: version
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 1.3.10
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: src
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: fetchurl
+  scopes:
+    - entity.name.function.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: __id_static
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '0.3281866054227771'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: __id_dynamic
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: hashFile
+  scopes:
+    - variable.language.special.property.hashFile
+    - support.type.builtin.property.$74
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: sha256
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: /
+  scopes:
+    - keyword.operator./
+- source: Users
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: jeffhykin
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: repos
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: snowball
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: random.ignore
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: url
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'mirror://sourceforge/vnc-tight/tightvnc-'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: version
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: _unixsrc.tar.bz2
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: sha256
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: f48c70fea08d03744ae18df6b1499976362f16934eda3275cead87baad585c0d
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: patches
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: 1.3.10-CVE-2019-15678.patch
+- source: .
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: 1.3.10-CVE-2019-15679.patch
+- source: .
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: 1.3.10-CVE-2019-15680.patch
+- source: .
+  scopes:
+    - punctuation.definition.relative
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: 1.3.10-CVE-2019-8287.patch
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' for the builder script'
+  scopes:
+    - comment.line
+- source: inherit
+  scopesBegin:
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: fontDirectories
+  scopes:
+    - variable.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: hardeningDisable
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: format
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: buildInputs
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: zlib
+  scopesBegin:
+    - variable.other
+- source: libjpeg
+- source: imake
+- source: gccmakedep
+- source: libXaw
+- source: libXext
+- source: libXmu
+- source: libXp
+- source: libXpm
+- source: xauth
+- source: openssh
+  scopesEnd:
+    - variable.other
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: postPatch
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '    fontPath='
+- source: '    for i in $fontDirectories; do'
+- source: '      for j in $(find $i -name fonts.dir); do'
+- source: '        addToSearchPathWithCustomDelimiter "," fontPath $(dirname $j)'
+- source: '      done'
+- source: '    done'
+- source: '    sed -i "s@/usr/bin/ssh@'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: openssh
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /bin/ssh@g" vncviewer/vncviewer.h
+- source: '    sed -e ''s@/usr/bin/perl@'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: perl
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /bin/perl@' \
+- source: '        -e ''s@unix/:7100@''$fontPath''@'' \'
+- source: '        -i vncserver'
+- source: "    sed -e 's@.* CppCmd .*@#define CppCmd\t\tcpp@' -i Xvnc/config/cf/linux.cf"
+- source: "    sed -e 's@.* CppCmd .*@#define CppCmd\t\tcpp@' -i Xvnc/config/cf/Imake.tmpl"
+- source: '    sed -i \'
+- source: '        -e ''s@"uname","xauth","Xvnc","vncpasswd"@"uname","Xvnc","vncpasswd"@g'' \'
+- source: '        -e "s@\<xauth\>@'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: xauth
+  scopes:
+    - variable.other
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /bin/xauth@g" \
+- source: '        vncserver'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: preInstall
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '    mkdir -p $out/bin'
+- source: '    mkdir -p $out/share/man/man1'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: installPhase
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '    runHook preInstall'
+- source: '    ./vncinstall $out/bin $out/share/man'
+- source: '    runHook postInstall'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: postInstall
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '    # fix HTTP client:'
+- source: '    mkdir -p $out/share/tightvnc'
+- source: '    cp -r classes $out/share/tightvnc'
+- source: '    substituteInPlace $out/bin/vncserver \'
+- source: '      --replace /usr/local/vnc/classes $out/share/tightvnc/classes'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: meta
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: __id_static
+  scopesBegin:
+    - meta.attribute-set
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '0.13419370942290398'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: __id_dynamic
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: hashFile
+  scopes:
+    - variable.language.special.property.hashFile
+    - support.type.builtin.property.$74
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: sha256
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: /
+  scopes:
+    - keyword.operator./
+- source: Users
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: jeffhykin
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: repos
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: snowball
+- source: /
+  scopes:
+    - punctuation.definition.path
+- source: random.ignore
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: license
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: lib
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: licenses
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: gpl2Plus
+  scopes:
+    - variable.other.property
+    - variable.other.property
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: homepage
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'https://vnc-tight.sourceforge.net/'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: description
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: Improved version of VNC
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: longDescription
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '      TightVNC is an improved version of VNC, the great free'
+- source: '      remote-desktop tool. The improvements include bandwidth-friendly'
+- source: '      "tight" encoding, file transfers in the Windows version, enhanced'
+- source: '      GUI, many bugfixes, and more.'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: maintainers
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: platforms
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: i686-cygwin
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-cygwin
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: i686-freebsd13
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-freebsd13
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-solaris
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: aarch64-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv5tel-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv6l-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv7a-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv7l-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: i686-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: m68k-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: microblaze-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: microblazeel-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: mipsel-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: mips64el-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: powerpc64-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: powerpc64le-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: riscv32-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: riscv64-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: s390-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: s390x-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-linux
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: aarch64-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv6l-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv7a-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: armv7l-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: i686-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: m68k-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: mipsel-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: powerpc-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: riscv32-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: riscv64-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-netbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: i686-openbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-openbsd
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: x86_64-redox
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: knownVulnerabilities
+  scopes:
+    - meta.attribute-key
+    - variable.other.object
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: CVE-2021-42785
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' Unfortunately, upstream doesn''t maintain the 1.3 branch anymore, and the'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' new 2.x branch is substantially different (requiring either Windows or Java)'
+  scopes:
+    - comment.line
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
