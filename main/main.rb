@@ -933,6 +933,8 @@ grammar = Grammar.new(
                     ).then(match: ":", tag_as: "punctuation.definition.function.colon")
                 ),
                 includes: [
+                    :comments,
+                    :eplipsis,
                     grammar[:parameter],
                     PatternRange.new(
                         tag_as: "meta.default",
