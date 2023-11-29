@@ -949,7 +949,7 @@ grammar = Grammar.new(
                     ).then(
                         match: "{",
                         tag_as: "punctuation.section.bracket",
-                    ),
+                    ).lookBehindToAvoid(/\$\{/),
                 ),
                 end_pattern: lookAheadFor(lookahead_end).or(lookBehindFor(/\}|:/)),
                 includes: [
