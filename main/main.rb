@@ -194,7 +194,7 @@ grammar = Grammar.new(
         # file path and URLs
         # 
             grammar[:path_literal_angle_brackets] = Pattern.new(
-                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path.lookup",
+                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path.lookup storage.type.modifier",
                 match: /<\w+>/,
                 includes: [
                     Pattern.new(
@@ -203,26 +203,26 @@ grammar = Grammar.new(
                     ),
                     Pattern.new(
                         match: /\//,
-                        tag_as: "punctuation.definition.path",
+                        tag_as: "punctuation.definition.path storage.type.modifier",
                     ),
                     Pattern.new(
                         match: variableBounds[/\.\.|\./],
-                        tag_as: "punctuation.definition.relative",
+                        tag_as: "punctuation.definition.relative storage.type.modifier",
                     ),
                 ],
             )
             
             grammar[:path_literal_content] = Pattern.new(
-                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path",
+                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path storage.type.modifier",
                 match: /[\w+\-\.\/]+\/[\w+\-\.\/]+/,
                 includes: [
                     Pattern.new(
                         match: /\//,
-                        tag_as: "punctuation.definition.path",
+                        tag_as: "punctuation.definition.path storage.type.modifier",
                     ),
                     Pattern.new(
                         match: variableBounds[/\.\.|\./],
-                        tag_as: "punctuation.definition.relative",
+                        tag_as: "punctuation.definition.relative storage.type.modifier",
                     ),
                 ],
             )
@@ -232,7 +232,7 @@ grammar = Grammar.new(
                 match: Pattern.new(
                     Pattern.new(
                         match:/\.\//,
-                        tag_as: "punctuation.definition.path.relative",
+                        tag_as: "punctuation.definition.path.relative storage.type.modifier",
                     ).then(grammar[:path_literal_content])
                 ),
             )
@@ -242,7 +242,7 @@ grammar = Grammar.new(
                 match: Pattern.new(
                     Pattern.new(
                         match:/\//,
-                        tag_as: "punctuation.definition.path.absolute",
+                        tag_as: "punctuation.definition.path.absolute storage.type.modifier",
                     ).then(grammar[:path_literal_content])
                 ),
             )
@@ -252,12 +252,12 @@ grammar = Grammar.new(
                 match: Pattern.new(
                     Pattern.new(
                         match: /</,
-                        tag_as: "punctuation.definition.path.system",
+                        tag_as: "punctuation.definition.path.system storage.type.modifier",
                     ).then(
                         grammar[:path_literal_content]
                     ).then(
                         match: />/,
-                        tag_as: "punctuation.definition.path.system",
+                        tag_as: "punctuation.definition.path.system storage.type.modifier",
                     )
                 ),
             )
@@ -425,7 +425,7 @@ grammar = Grammar.new(
                 tag_as: "variable.other.dirty",
                 match: lookBehindToAvoid(".").then(dirty_variable).lookAheadToAvoid("."),
             ).or(
-                tag_as: "variable.other",
+                tag_as: "variable.other.object",
                 match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
             )
         )
@@ -516,6 +516,33 @@ grammar = Grammar.new(
                 should_fully_match: [ "zipListsWith'" ],
                 match: variable,
             ).lookAheadToAvoid(/\./),
+            
+            # first
+            lookBehindToAvoid(/\./).then(
+                tag_as: "variable.other.object.access",
+                match: variable,
+            ),
+            # last
+            Pattern.new(
+                tag_as: "variable.other.property",
+                match: interpolated_attribute.or(variable.lookAheadToAvoid(/\./)),
+            ),
+            # middle
+            Pattern.new(
+                tag_as: "variable.other.object.property",
+                match: interpolated_attribute.or(variable),
+            ),
+            grammar[:double_quote_inline],
+            grammar[:single_quote_inline],
+        ])
+        
+        attribute_assignment = oneOf([
+            # standalone
+            lookBehindToAvoid(/\./).then(
+                tag_as: "variable.other.constant",
+                should_fully_match: [ "zipListsWith'" ],
+                match: variable,
+            ).lookAheadToAvoid(/\./),
             # first
             lookBehindToAvoid(/\./).then(
                 tag_as: "variable.other.object.access",
@@ -557,11 +584,11 @@ grammar = Grammar.new(
         )
         
         builtin_method = lookBehindFor(/builtins\./).then(
-            tag_as: "variable.language.special.property.$match support.type.builtin.property.$match",
+            tag_as: "variable.language.special.property.$match entity.name.function.call.builtin support.type.builtin.method.$match",
             match: @tokens.that(:areBuiltinAttributes, :areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
         )
         builtin_value = lookBehindFor(/builtins\./).then(
-            tag_as: "variable.language.special.method.$match support.type.builtin.method.$match",
+            tag_as: "variable.language.special.method.$match support.type.builtin.property.$match",
             match: @tokens.that(:areBuiltinAttributes, !:areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
         )
         method_pattern = Pattern.new(
@@ -668,7 +695,8 @@ grammar = Grammar.new(
                 tag_as: "keyword.operator.with",
                 match: variableBounds[/with/],
             ).then(std_space).then(
-                namespace
+                tag_as: "meta.with",
+                match: namespace,
             ).then(
                 std_space
             ).then(
@@ -734,20 +762,6 @@ grammar = Grammar.new(
             ),
         )
         
-        attribute_key = Pattern.new(
-            tag_as: "meta.attribute-key",
-            match: attribute.zeroOrMoreOf(
-                std_space.then(
-                    dot_access
-                ).then(std_space).then(
-                    attribute
-                )
-            ),
-            includes: [
-                attribute,
-                dot_access,
-            ],
-        )
         assignment_operator = Pattern.new(
             match: /\=/,
             tag_as: "keyword.operator.assignment",
@@ -758,7 +772,7 @@ grammar = Grammar.new(
                     tag_as: "meta.attribute-key",
                     match: attribute_pattern,
                     includes: [
-                        attribute,
+                        attribute_assignment,
                         dot_access,
                     ],
                 ).then(std_space).then(
@@ -775,7 +789,7 @@ grammar = Grammar.new(
                         std_space.then(
                             dot_access
                         ).then(std_space).then(
-                            attribute
+                            attribute_assignment
                         )
                     )
                 ]
@@ -807,8 +821,11 @@ grammar = Grammar.new(
                             match: ")",
                             tag_as: "punctuation.separator.source"
                         ),
+                        includes: [
+                            namespace,
+                        ],
                     ),
-                    :standalone_variable,
+                    attribute_assignment,
                 ]
             ),
             
@@ -990,6 +1007,7 @@ grammar = Grammar.new(
                         apply_end_pattern_last: true,
                         end_pattern: lookAheadFor(lookahead_end),
                         includes: [
+                            :comments,
                             function_parameters,
                             :values,
                         ],
@@ -1041,6 +1059,7 @@ grammar = Grammar.new(
                     start_pattern: lookBehindFor(/\Win\W|\Win\$|^in\W|^in\$/),
                     end_pattern: value_end,
                     includes: [
+                        :comments,
                         :values,
                     ],
                 ),
@@ -1062,6 +1081,7 @@ grammar = Grammar.new(
                     start_pattern: /\G/,
                     end_pattern: lookAheadFor(/\Wthen\W|\Wthen$|^then\W|^then$\W/),
                     includes: [
+                        :comments,
                         :values,
                     ],
                 ),
@@ -1075,6 +1095,7 @@ grammar = Grammar.new(
                         tag_as: "keyword.control.else",
                     ),
                     includes: [
+                        :comments,
                         :values
                     ],
                 ),
@@ -1094,6 +1115,7 @@ grammar = Grammar.new(
                 tag_as: "punctuation.separator.assert",
             ),
             includes: [
+                :comments,
                 :values,
             ],
         )
@@ -1125,6 +1147,7 @@ grammar = Grammar.new(
                 ),
             ),
             includes: [
+                :comments,
                 :values,
             ]
         )
