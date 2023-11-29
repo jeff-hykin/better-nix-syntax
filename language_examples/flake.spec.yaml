@@ -20,7 +20,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -43,7 +43,7 @@
 - source: outputs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -78,7 +78,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -92,24 +92,29 @@
     - constant.other.path.relative
   scopes:
     - punctuation.definition.path.relative
+    - storage.type.modifier
 - source: pkgs
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: top-level
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: release.nix
   scopesEnd:
     - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -120,7 +125,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -128,7 +133,7 @@
     - keyword.operator.assignment
 - source: self
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -146,7 +151,7 @@
 - source: a
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -155,6 +160,7 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path.lookup
+    - storage.type.modifier
   scopes:
     - punctuation.section.regexp.path.angle-brackets
 - source: path
@@ -165,13 +171,14 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path.lookup
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: lib
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -185,23 +192,27 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: lib
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: systems
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -233,7 +244,7 @@
 - source: forAllSystems
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -254,7 +265,7 @@
     - entity.name.function.method
 - source: systems
   scopes:
-    - variable.other
+    - variable.other.object
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -269,7 +280,7 @@
     - entity.name.function.call
 - source: system
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -294,7 +305,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -334,7 +345,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -350,20 +361,24 @@
     - constant.other.path.relative
   scopes:
     - punctuation.definition.path.relative
+    - storage.type.modifier
 - source: nixos
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: lib
   scopesEnd:
     - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -374,7 +389,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -382,7 +397,7 @@
     - keyword.operator.assignment
 - source: final
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -400,7 +415,7 @@
 - source: nixosSystem
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -420,30 +435,35 @@
     - constant.other.path.relative
   scopes:
     - punctuation.definition.path.relative
+    - storage.type.modifier
 - source: nixos
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: lib
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: eval-config.nix
   scopesEnd:
     - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: args
   scopes:
-    - variable.other
+    - variable.other.object
 - source: //
   scopes:
     - keyword.operator.//
@@ -457,7 +477,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -653,13 +673,13 @@
     - punctuation.section.parentheses
 - source: self
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: rev
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -758,7 +778,7 @@
 - source: htmlDocs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -772,7 +792,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -794,7 +814,7 @@
 - source: nixosManual
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -811,20 +831,24 @@
     - constant.other.path.relative
   scopes:
     - punctuation.definition.path.relative
+    - storage.type.modifier
 - source: nixos
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: release-small.nix
   scopesEnd:
     - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -835,7 +859,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -843,7 +867,7 @@
     - keyword.operator.assignment
 - source: self
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -894,7 +918,7 @@
 - source: legacyPackages
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -920,18 +944,23 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: .
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -945,7 +974,7 @@
     - keyword.other.inherit
 - source: system
   scopes:
-    - variable.other
+    - variable.other.constant
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -966,7 +995,7 @@
 - source: nixosModules
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -980,7 +1009,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -996,32 +1025,39 @@
     - constant.other.path.relative
   scopes:
     - punctuation.definition.path.relative
+    - storage.type.modifier
 - source: nixos
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: modules
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: installer
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: scan
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: not-detected.nix
   scopesEnd:
     - constant.other.path.relative
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement

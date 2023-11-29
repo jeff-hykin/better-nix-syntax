@@ -8,7 +8,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -31,7 +31,7 @@
 - source: inputs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -117,7 +117,7 @@
 - source: outputs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -204,7 +204,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -227,7 +227,7 @@
     - punctuation.section.embedded
 - source: system
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - variable.other.property
@@ -239,7 +239,7 @@
 - source: nvs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -269,22 +269,27 @@
 - source: import
   scopes:
     - variable.language.special.property.import
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: .
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: default.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -298,7 +303,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -314,46 +319,46 @@
 - source: _pkgs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
 - source: pkgs
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: _src
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
 - source: self
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: system
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
 - source: system
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: deno
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -373,7 +378,7 @@
 - source: bash
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -422,7 +427,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -438,7 +443,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -446,20 +451,20 @@
     - keyword.operator.assignment
 - source: nvs
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: default
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
 - source: nvs
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement

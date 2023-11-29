@@ -136,7 +136,7 @@
     - punctuation.section.parentheses
 - source: enableCrypt
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '->'
   scopes:
     - keyword.operator.->
@@ -145,7 +145,7 @@
     - punctuation.section.parentheses
 - source: libxcrypt
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -198,7 +198,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -279,7 +279,7 @@
 - source: libcInc
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -294,14 +294,14 @@
     - entity.name.function.method
 - source: libc
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: libcLib
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -316,14 +316,14 @@
     - entity.name.function.method
 - source: libc
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: crossCompiling
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -356,7 +356,7 @@
 - source: common
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -426,7 +426,7 @@
     - keyword.other.inherit
 - source: version
   scopes:
-    - variable.other
+    - variable.other.constant
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -437,7 +437,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -458,7 +458,7 @@
 - source: src
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -475,7 +475,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -498,7 +498,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -512,7 +512,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -529,39 +530,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: url
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -576,7 +584,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -598,7 +606,7 @@
     - keyword.other.inherit
 - source: sha256
   scopes:
-    - variable.other
+    - variable.other.constant
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -616,7 +624,7 @@
 - source: strictDeps
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -639,7 +647,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -692,7 +700,7 @@
     - entity.name.function.method
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -710,7 +718,7 @@
 - source: setOutputFlags
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -775,7 +783,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -793,7 +801,7 @@
     - punctuation.section.parentheses
 - source: enableCrypt
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '&&'
   scopes:
     - keyword.operator.&&
@@ -815,14 +823,14 @@
     - punctuation.section.parentheses
 - source: libxcrypt
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: disallowedReferences
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -852,7 +860,7 @@
 - source: patches
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -872,16 +880,20 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: no-sys-dirs-5.31.patch
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -893,16 +905,20 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: http-tiny-verify-ssl-by-default.patch
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -934,16 +950,20 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: ld-shared.patch
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ++
   scopes:
     - keyword.operator.++
@@ -967,23 +987,29 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: cpp-precomp.patch
 - source: .
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: sw_vers.patch
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -1003,22 +1029,26 @@
     - entity.name.function.method
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: .
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: MakeMaker-cross.patch
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1041,7 +1071,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1056,7 +1086,7 @@
 - source: crossCompiling
   scopes:
     - meta.punctuation.section.condition
-    - variable.other
+    - variable.other.object
 - source: then
   scopes:
     - keyword.control.then
@@ -1073,7 +1103,7 @@
     - punctuation.section.embedded
 - source: coreutils
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1175,7 +1205,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1190,7 +1220,7 @@
 - source: crossCompiling
   scopes:
     - meta.punctuation.section.condition
-    - variable.other
+    - variable.other.object
 - source: then
   scopes:
     - keyword.control.then
@@ -1328,7 +1358,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1362,7 +1392,7 @@
     - punctuation.section.embedded
 - source: libcInc
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1379,7 +1409,7 @@
     - punctuation.section.embedded
 - source: libcLib
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1422,7 +1452,8 @@
 - source: match
   scopes:
     - variable.language.special.property.match
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -1438,7 +1469,7 @@
     - string.quoted.other
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1525,7 +1556,7 @@
     - entity.name.function.method
 - source: enableThreading
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1557,7 +1588,7 @@
     - keyword.operator.!
 - source: enableCrypt
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1630,7 +1661,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1743,7 +1774,7 @@
 - source: configureScript
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1764,7 +1795,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1801,7 +1832,7 @@
 - source: dontAddStaticConfigureFlags
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1814,7 +1845,7 @@
 - source: dontAddPrefix
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1823,14 +1854,14 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: enableParallelBuilding
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1839,7 +1870,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1898,7 +1929,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2078,7 +2109,7 @@
     - keyword.operator.!
 - source: enableThreading
   scopes:
-    - variable.other
+    - variable.other.object
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -2112,7 +2143,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2128,7 +2159,7 @@
 - source: setupHook
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2137,23 +2168,27 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: setup-hook.sh
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: passthru
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2170,7 +2205,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -2186,7 +2221,7 @@
     - punctuation.section.embedded
 - source: perl
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2202,7 +2237,7 @@
 - source: libPrefix
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2223,7 +2258,7 @@
 - source: pkgs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2235,32 +2270,41 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: ..
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: ..
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: top-level
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: perl-packages.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -2271,7 +2315,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -2294,7 +2338,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2308,7 +2352,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2325,32 +2370,39 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -2363,10 +2415,10 @@
     - keyword.other.inherit
 - source: perl
   scopesBegin:
-    - variable.other
+    - variable.other.constant
 - source: buildPerl
   scopesEnd:
-    - variable.other
+    - variable.other.constant
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -2377,7 +2429,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2434,7 +2486,7 @@
 - source: buildEnv
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2446,16 +2498,20 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: wrapper.nix
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -2466,7 +2522,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -2489,7 +2545,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2503,7 +2559,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2520,32 +2577,39 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -2558,7 +2622,7 @@
     - keyword.other.inherit
 - source: perl
   scopes:
-    - variable.other
+    - variable.other.constant
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -2571,6 +2635,8 @@
   scopes:
     - punctuation.separator.source
 - source: pkgs
+  scopes:
+    - entity.name.namespace
 - source: )
   scopes:
     - punctuation.separator.source
@@ -2578,7 +2644,7 @@
     - meta.source
 - source: requiredPerlModules
   scopes:
-    - variable.other
+    - variable.other.constant
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -2596,7 +2662,7 @@
 - source: withPackages
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2625,7 +2691,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -2648,7 +2714,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2662,7 +2728,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2679,39 +2746,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: extraLibs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2720,7 +2794,7 @@
     - entity.name.function.call
 - source: pkgs
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -2749,7 +2823,7 @@
 - source: doCheck
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2778,7 +2852,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -2801,7 +2875,7 @@
     - punctuation.section.embedded
 - source: libcInc
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2907,7 +2981,7 @@
     - entity.name.function.method
 - source: crossCompiling
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -2920,7 +2994,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2931,7 +3005,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2944,7 +3018,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2963,7 +3037,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2975,7 +3049,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2985,7 +3059,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2995,7 +3069,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -3022,7 +3096,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3031,6 +3105,7 @@
     - keyword.operator.with
 - source: lib
   scopes:
+    - meta.with
     - entity.name.namespace
 - source: ;
   scopes:
@@ -3045,7 +3120,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -3068,7 +3143,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3082,7 +3157,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -3099,39 +3175,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: homepage
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3152,7 +3235,7 @@
 - source: description
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3173,7 +3256,7 @@
 - source: license
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3193,7 +3276,7 @@
 - source: maintainers
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3223,7 +3306,7 @@
 - source: platforms
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3243,7 +3326,7 @@
 - source: priority
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3332,7 +3415,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -3365,7 +3448,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3382,7 +3465,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -3405,7 +3488,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3419,7 +3502,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -3436,39 +3520,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: name
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3483,7 +3574,7 @@
     - punctuation.section.embedded
 - source: crossVersion
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -3498,7 +3589,7 @@
 - source: owner
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3519,7 +3610,7 @@
 - source: repo
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3540,20 +3631,20 @@
 - source: rev
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
 - source: crossVersion
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: sha256
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3585,7 +3676,7 @@
 - source: depsBuildBuild
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3612,7 +3703,7 @@
     - variable.other.property
 - source: makeWrapper
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -3624,7 +3715,7 @@
 - source: postUnpack
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3640,7 +3731,7 @@
     - punctuation.section.embedded
 - source: perl-cross-src
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -3684,7 +3775,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -3701,7 +3792,7 @@
 - source: configurePlatforms
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3756,7 +3847,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3765,16 +3856,20 @@
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
   scopes:
     - punctuation.definition.relative
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: setup-hook-cross.sh
   scopesEnd:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -3813,7 +3908,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -3836,7 +3931,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3850,7 +3945,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -3867,32 +3963,39 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -3909,7 +4012,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3926,7 +4029,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -3949,7 +4052,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3963,7 +4066,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -3980,39 +4084,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: perl
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4032,7 +4143,7 @@
 - source: buildPerl
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4052,7 +4163,7 @@
 - source: version
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4073,7 +4184,7 @@
 - source: sha256
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4115,7 +4226,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4132,7 +4243,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -4155,7 +4266,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4169,7 +4280,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -4186,39 +4298,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: perl
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4238,7 +4357,7 @@
 - source: buildPerl
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4258,7 +4377,7 @@
 - source: version
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4279,7 +4398,7 @@
 - source: sha256
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4321,7 +4440,7 @@
     - meta.statement
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4338,7 +4457,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -4361,7 +4480,7 @@
 - source: __id_dynamic
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4375,7 +4494,8 @@
 - source: hashFile
   scopes:
     - variable.language.special.property.hashFile
-    - support.type.builtin.property.$77
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.$78
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -4392,39 +4512,46 @@
     - constant.other.path.absolute
   scopes:
     - punctuation.definition.path.absolute
+    - storage.type.modifier
 - source: Users
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: jeffhykin
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: repos
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: snowball
 - source: /
   scopes:
     - punctuation.definition.path
+    - storage.type.modifier
 - source: random.ignore
   scopesEnd:
     - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
+    - storage.type.modifier
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: perl
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4444,7 +4571,7 @@
 - source: buildPerl
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4464,7 +4591,7 @@
 - source: version
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -4485,7 +4612,7 @@
 - source: sha256
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment

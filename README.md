@@ -18,6 +18,7 @@ NOTE: The default VS Code theme does not color much. Switch to the Dark+ theme (
 ## How do I use it?
 Just install the VS Code extension and the changes will automatically be applied to all relevent files.
 
+<!-- Use: Dracula, Tokyo Night, Monokai Pro, Night Owl, Noctis -->
 <!-- # Before and After (Material Theme)
 Before                     | After 
 :-------------------------:|:-------------------------:

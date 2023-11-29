@@ -94,7 +94,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -139,7 +139,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -162,7 +162,7 @@
 - source: version
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -183,7 +183,7 @@
 - source: src
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -200,7 +200,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -223,20 +223,20 @@
 - source: repo
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
 - source: pname
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: rev
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -251,7 +251,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other
+    - variable.other.object
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -266,7 +266,7 @@
 - source: sha256
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -287,7 +287,7 @@
 - source: fetchSubmodules
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -311,7 +311,7 @@
 - source: buildInputs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -322,7 +322,7 @@
     - punctuation.definition.list
 - source: curl
   scopes:
-    - variable.other
+    - variable.other.object
 - source: xorg
   scopes:
     - variable.other.object.access
@@ -355,10 +355,10 @@
     - variable.other.property
 - source: avahiWithLibdnssdCompat
   scopesBegin:
-    - variable.other
+    - variable.other.object
 - source: qtbase
   scopesEnd:
-    - variable.other
+    - variable.other.object
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -370,7 +370,7 @@
 - source: nativeBuildInputs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -381,10 +381,10 @@
     - punctuation.definition.list
 - source: cmake
   scopesBegin:
-    - variable.other
+    - variable.other.object
 - source: wrapGAppsHook
   scopesEnd:
-    - variable.other
+    - variable.other.object
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -396,7 +396,7 @@
 - source: postFixup
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -419,7 +419,7 @@
 - source: qtWrapperArgs
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -454,7 +454,7 @@
     - punctuation.definition.list
 - source: openssl
   scopes:
-    - variable.other
+    - variable.other.object
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -480,7 +480,7 @@
 - source: meta
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -494,7 +494,7 @@
     - meta.attribute-set
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopesBegin:
     - meta.statement
@@ -517,7 +517,7 @@
 - source: longDescription
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -542,7 +542,7 @@
 - source: homepage
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -563,7 +563,7 @@
 - source: downloadPage
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -584,7 +584,7 @@
 - source: license
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -610,7 +610,7 @@
 - source: maintainers
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -646,7 +646,7 @@
 - source: platforms
   scopes:
     - meta.attribute-key
-    - variable.other.object
+    - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
