@@ -4,24 +4,44 @@
   scopes:
     - punctuation.section.bracket
 - source: config
-  scopes:
+  scopesBegin:
     - meta.punctuation.section.function
+  scopes:
     - variable.parameter.function
-  scopesEnd:
-    - meta.punctuation.section.bracket
-- source: ', '
+- source: ','
+  scopesBegin:
+    - meta.punctuation.section.parameters
+  scopes:
+    - punctuation.separator.comma
 - source: options
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: lib
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: pkgs
   scopes:
-    - variable.other
-- source: ', ... }:'
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: ...
+  scopes:
+    - punctuation.vararg-ellipses
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.parameters
 - source: with
   scopes:
     - keyword.operator.with

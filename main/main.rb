@@ -950,6 +950,7 @@ grammar = Grammar.new(
                         start_pattern: Pattern.new(
                             grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,|\}/),
                         ),
+                        apply_end_pattern_last: true,
                         end_pattern: lookAheadFor(lookahead_end),
                         includes: [
                             function_parameters,

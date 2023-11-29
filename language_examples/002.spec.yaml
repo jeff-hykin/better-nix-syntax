@@ -4,54 +4,77 @@
   scopes:
     - punctuation.section.bracket
 - source: lib
-  scopes:
+  scopesBegin:
     - meta.punctuation.section.function
+  scopes:
     - variable.parameter.function
-  scopesEnd:
-    - meta.punctuation.section.bracket
-- source: ', '
+- source: ','
+  scopesBegin:
+    - meta.punctuation.section.parameters
+  scopes:
+    - punctuation.separator.comma
 - source: fetchFromGitHub
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: cmake
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: curl
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: xorg
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: avahi
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: qtbase
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: mkDerivation
   scopes:
-    - variable.other
+    - variable.parameter.function
 - source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: openssl
   scopes:
-    - variable.other
-- source: ', '
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: wrapGAppsHook
   scopes:
-    - variable.other
+    - variable.parameter.function
 - source: ','
+  scopes:
+    - punctuation.separator.comma
 - source: avahiWithLibdnssdCompat
   scopes:
-    - variable.other
+    - variable.parameter.function
 - source: '?'
+  scopesBegin:
+    - meta.default
   scopes:
-    - keyword.operator.?
+    - punctuation.separator.default
 - source: avahi
   scopes:
     - variable.other.object.access
@@ -89,9 +112,17 @@
   scopes:
     - punctuation.section.bracket
   scopesEnd:
+    - meta.default
     - meta.punctuation.section.bracket
     - meta.attribute-set
-- source: '}:'
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.parameters
 - source: mkDerivation
   scopes:
     - entity.name.function.call
