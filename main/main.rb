@@ -926,7 +926,7 @@ grammar = Grammar.new(
                         Pattern.new(
                             tag_as: "punctuation.definition.arguments",
                             match: /@/,
-                        ).then(
+                        ).then(std_space).then(
                             tag_as: "variable.language.arguments",
                             match: variable,
                         ).then(std_space)
