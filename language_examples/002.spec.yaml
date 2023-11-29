@@ -122,6 +122,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: mkDerivation
   scopes:

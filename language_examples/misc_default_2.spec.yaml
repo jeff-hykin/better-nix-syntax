@@ -125,6 +125,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: assert
   scopesBegin:
@@ -397,6 +399,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: stdenv
   scopes:
@@ -3884,9 +3888,6 @@
 - source: )
   scopes:
     - punctuation.section.parentheses
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.punctuation.section.function
 - source: ;
   scopes:
     - punctuation.terminator.statement

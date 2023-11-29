@@ -23,6 +23,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: let
   scopesBegin:
@@ -1906,6 +1908,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: let
   scopesBegin:
@@ -2109,8 +2113,6 @@
     - variable.other.object
 - source: acc
   scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.punctuation.section.function
     - variable.other.object
 - source: ;
   scopes:
@@ -2227,6 +2229,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: if
   scopesBegin:
@@ -2568,8 +2572,6 @@
     - punctuation.section.bracket
   scopesEnd:
     - meta.punctuation.section.bracket
-    - meta.punctuation.section.function
-    - meta.punctuation.section.bracket
     - meta.attribute-set
 - source: ;
   scopes:
@@ -2779,6 +2781,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: let
   scopesBegin:
@@ -3040,8 +3044,6 @@
 - source: '['
 - source: ']'
   scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.punctuation.section.function
     - punctuation.definition.list
 - source: ;
   scopes:
@@ -5260,6 +5262,8 @@
   scopes:
     - punctuation.definition.function.colon
   scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: attrs1
   scopes:
@@ -5522,9 +5526,6 @@
 - source: )
   scopes:
     - punctuation.section.parentheses
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.punctuation.section.function
 - source: ;
   scopes:
     - punctuation.terminator.statement

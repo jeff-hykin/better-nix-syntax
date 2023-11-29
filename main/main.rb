@@ -78,7 +78,7 @@ grammar = Grammar.new(
                     match: /.*/,
                     tag_as: "comment.line",
                 ),
-            ),
+            ).then("\n"),
         ])
         
         # 
@@ -1005,7 +1005,7 @@ grammar = Grammar.new(
                             grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,|\}/),
                         ),
                         apply_end_pattern_last: true,
-                        end_pattern: lookAheadFor(lookahead_end),
+                        end_pattern: lookBehindFor(/:/),
                         includes: [
                             :comments,
                             function_parameters,
