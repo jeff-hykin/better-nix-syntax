@@ -137,8 +137,17 @@ class TokenHelper
     end
     
     def lookBehindToAvoidWordsThat(*adjectives)
-        array_of_invalid_names = self.representationsThat(*adjectives)
-        return lookBehindToAvoid(/#{array_of_invalid_names.map { |each| '\W'+each+'[\\t ]|^'+each+'[\\t ]|\W'+each+'$|^'+each+'$' } .join('|')}/)
+        names = self.representationsThat(*adjectives)
+        return oneOf([
+            # good case: no partial match
+            lookBehindToAvoid(/#{names.join("|")}/),
+            # unconfirmed case: partial match, but not nessairly full reject
+            lookBehindFor(/#{names.join("|")}/).then(
+                lookBehindFor(/#{names.map{ |each| "[^a-zA-Z0-9\\-_]#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/).or(
+                    lookBehindFor(/#{names.map{ |each| "^#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/),
+                ),
+            ),
+        ])
     end
 
     def lookAheadToAvoidWordsThat(*adjectives)

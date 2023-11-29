@@ -3,6 +3,10 @@ require 'walk_up'
 require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
+# FIXME:
+    # if statements
+    # interpolation in paths
+    # system path literal isnt working
 # todo
     # better function call detection when multiple vars split up by spaces
     # custom hanlding of stdenv, lib, mkDerivation, and shellHook
@@ -57,8 +61,8 @@ grammar = Grammar.new(
         lookBehindToAvoid(/[a-zA-Z0-9_']/).then(regex_pattern).lookAheadToAvoid(/[a-zA-Z0-9_\-']/)
     end
     variable = variableBounds[part_of_a_variable].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
-    externalVariable = variableBounds[/_-#{part_of_a_variable}/].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
-    dirtyVariable = variableBounds[/_'#{part_of_a_variable}/].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
+    external_variable = variableBounds[/_-#{part_of_a_variable}/].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
+    dirty_variable = variableBounds[/_'#{part_of_a_variable}/].then(@tokens.lookBehindToAvoidWordsThat(:areKeywords))
     
 # 
 # patterns
@@ -191,7 +195,7 @@ grammar = Grammar.new(
         # file path and URLs
         # 
             grammar[:path_literal_angle_brackets] = Pattern.new(
-                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path",
+                tag_as: "string.unquoted.path punctuation.section.regexp punctuation.section.path.lookup",
                 match: /<\w+>/,
                 includes: [
                     Pattern.new(
@@ -224,12 +228,22 @@ grammar = Grammar.new(
                 ],
             )
             
-            grammar[:normal_path_literal] = Pattern.new(
-                tag_as: "constant.other.path.normal",
+            grammar[:relative_path_literal] = Pattern.new(
+                tag_as: "constant.other.path.relative",
                 match: Pattern.new(
                     Pattern.new(
                         match:/\.\//,
-                        tag_as: "punctuation.definition.path.normal",
+                        tag_as: "punctuation.definition.path.relative",
+                    ).then(grammar[:path_literal_content])
+                ),
+            )
+            
+            grammar[:absolute_path_literal] = Pattern.new(
+                tag_as: "constant.other.path.absolute",
+                match: Pattern.new(
+                    Pattern.new(
+                        match:/\//,
+                        tag_as: "punctuation.definition.path.absolute",
                     ).then(grammar[:path_literal_content])
                 ),
             )
@@ -387,6 +401,19 @@ grammar = Grammar.new(
     # variables
     # 
         function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        lookBehindToAvoidNames = ->(names) do
+            oneOf([
+                # good case: no partial match
+                lookBehindToAvoid(/#{names.join("|")}/),
+                # unconfirmed case: partial match, but not nessairly full reject
+                lookBehindFor(/#{names.join("|")}/).then(
+                    lookBehindFor(/#{names.map{ |each| "[^a-zA-Z0-9\\-_]#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/).or(
+                        lookBehindFor(/#{names.map{ |each| "^#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/),
+                    ),
+                ),
+            ])
+        end
+        avoid_invalid_names = lookBehindToAvoidNames[ ["with", "if", "then", "else", "let", "in", "assert", ] ]
         
         grammar[:standalone_variable] = Pattern.new(
             Pattern.new(
@@ -394,10 +421,10 @@ grammar = Grammar.new(
                 match: lookBehindToAvoid(".").then(/builtins/).lookAheadToAvoid("."),
             ).or(
                 tag_as: "variable.other.external",
-                match: lookBehindToAvoid(".").then(externalVariable).lookAheadToAvoid("."),
+                match: lookBehindToAvoid(".").then(external_variable).lookAheadToAvoid("."),
             ).or(
                 tag_as: "variable.other.dirty",
-                match: lookBehindToAvoid(".").then(dirtyVariable).lookAheadToAvoid("."),
+                match: lookBehindToAvoid(".").then(dirty_variable).lookAheadToAvoid("."),
             ).or(
                 tag_as: "variable.other",
                 match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
@@ -413,17 +440,17 @@ grammar = Grammar.new(
             oneOf([
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.external",
-                    match: externalVariable.lookBehindToAvoid(/^with[ \\t]/),
+                    match: external_variable.then(avoid_invalid_names)
                 ).then(function_call_lookahead),
                 
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.dirty",
-                    match: dirtyVariable.lookBehindToAvoid(/^with[ \\t]/),
+                    match: dirty_variable.then(avoid_invalid_names),
                 ).then(function_call_lookahead),
                 
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call",
-                    match: variable.lookBehindToAvoid(/^with[ \\t]/),
+                    match: variable.then(avoid_invalid_names),
                 ).then(function_call_lookahead),
             ])
         )
@@ -432,17 +459,17 @@ grammar = Grammar.new(
             
             lookBehindFor(/\(/).then(
                 tag_as: "entity.name.function.call.external",
-                match: externalVariable,
+                match: external_variable.then(avoid_invalid_names),
             ).then(function_call_lookahead.or(std_space.then(/$/))),
             
             lookBehindFor(/\(/).then(
                 tag_as: "entity.name.function.call.dirty",
-                match: dirtyVariable,
+                match: dirty_variable.then(avoid_invalid_names),
             ).then(function_call_lookahead.or(std_space.then(/$/))),
             
             lookBehindFor(/\(/).then(
                 tag_as: "entity.name.function.call",
-                match: variable,
+                match: variable.then(avoid_invalid_names),
             ).then(function_call_lookahead.or(std_space.then(/$/))),
             
         ])
@@ -1096,7 +1123,8 @@ grammar = Grammar.new(
             grammar[:double_quote_inline],
             grammar[:single_quote_inline],
             grammar[:url],
-            grammar[:normal_path_literal],
+            grammar[:relative_path_literal],
+            grammar[:absolute_path_literal],
             grammar[:path_literal_angle_brackets],
             grammar[:path_literal_content],
             grammar[:system_path_literal],
@@ -1129,6 +1157,8 @@ grammar = Grammar.new(
             :assert,
             :or_operator,
             :path_literal_angle_brackets,
+            :relative_path_literal,
+            :absolute_path_literal,
             :operators,
             :basic_function,
         ]
