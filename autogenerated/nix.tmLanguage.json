@@ -3233,7 +3233,7 @@
       }
     },
     "inline_value": {
-      "match": "(?:(?:((?<![a-zA-Z0-9_'])(?:with)(?![a-zA-Z0-9_\\-']))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*))((?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(;)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)))?)(?:(?:(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))|((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))|((?:(\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)))|((?:(\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)))|(<\\w+>)|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((?:(<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>)))|((?<![a-zA-Z0-9_'])(?:null)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:true|false)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[0-9]+\\.[0-9]+)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[0-9]+)(?![a-zA-Z0-9_\\-']))|(?:(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\[)(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\]))|(?:(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\{)(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\})))|(?:(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?= *+:))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?<=\\()(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))|(?:(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|(?:(?<=\\()((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$)))|(?:(?:(?:((?<!\\.)(?:builtins)(?!\\.))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))))",
+      "match": "(?:(?:((?<![a-zA-Z0-9_'])(?:with)(?![a-zA-Z0-9_\\-']))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*))((?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(;)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)))?)(?:(?:(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))|((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))|((?:(\\.\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)))|((?:(\\/)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)))|(<\\w+>)|([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)|((?:(<)([\\w+\\-\\.\\/]+\\/[\\w+\\-\\.\\/]+)(>)))|((?<![a-zA-Z0-9_'])(?:null)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:true|false)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[0-9]+\\.[0-9]+)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[0-9]+)(?![a-zA-Z0-9_\\-']))|(?:(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\[)(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\]))|(?:(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\{)(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))?)(\\})))|(?:(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?= *+:))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?<=\\()(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))|(?:(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?:(?:derivationStrict)|(?:fetchMercurial)|(?:scopedImport)|(?:zipAttrsWith)|(?:fetchTarball)|(?:removeAttrs)|(?:placeholder)|(?:derivation)|(?:baseNameOf)|(?:fetchGit)|(?:fromTOML)|(?:toString)|(?:import)|(?:isNull)|(?:throw)|(?:abort)|(?:dirOf)|(?:map)))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|(?:(?<!\\()((?:(?:derivationStrict)|(?:fetchMercurial)|(?:scopedImport)|(?:zipAttrsWith)|(?:fetchTarball)|(?:removeAttrs)|(?:placeholder)|(?:derivation)|(?:baseNameOf)|(?:fetchGit)|(?:fromTOML)|(?:toString)|(?:import)|(?:isNull)|(?:throw)|(?:abort)|(?:dirOf)|(?:map)))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$)))|(?:(?:(?:((?<!\\.)(?:builtins)(?!\\.))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))))",
       "captures": {
         "1": {
           "name": "keyword.operator.with.nix"
@@ -4984,7 +4984,7 @@
           ]
         },
         "150": {
-          "name": "entity.name.function.call.external.nix"
+          "name": "entity.name.function.call.nix support.type.builtin.top-level.nix support.type.builtin.property.$150.nix"
         },
         "151": {
           "patterns": [
@@ -5046,7 +5046,7 @@
           ]
         },
         "158": {
-          "name": "entity.name.function.call.dirty.nix"
+          "name": "entity.name.function.call.external.nix"
         },
         "159": {
           "patterns": [
@@ -5108,7 +5108,7 @@
           ]
         },
         "166": {
-          "name": "entity.name.function.call.nix"
+          "name": "entity.name.function.call.dirty.nix"
         },
         "167": {
           "patterns": [
@@ -5145,50 +5145,41 @@
           "name": "punctuation.definition.url.address.nix"
         },
         "172": {
-          "name": "entity.name.function.call.external.nix"
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
         },
         "173": {
           "patterns": [
             {
-              "include": "#inline_comment"
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
             }
           ]
         },
         "174": {
-          "patterns": [
-            {
-              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
-              "captures": {
-                "1": {
-                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
-                },
-                "2": {
-                  "name": "comment.block.nix"
-                },
-                "3": {
-                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
-                }
-              }
-            }
-          ]
+          "name": "entity.name.function.call.nix"
         },
         "175": {
-          "name": "constant.other.url.nix"
-        },
-        "176": {
-          "name": "punctuation.definition.url.protocol.nix"
-        },
-        "177": {
-          "name": "punctuation.definition.url.address.nix"
-        },
-        "178": {
           "patterns": [
             {
               "include": "#inline_comment"
             }
           ]
         },
-        "179": {
+        "176": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -5206,8 +5197,17 @@
             }
           ]
         },
+        "177": {
+          "name": "constant.other.url.nix"
+        },
+        "178": {
+          "name": "punctuation.definition.url.protocol.nix"
+        },
+        "179": {
+          "name": "punctuation.definition.url.address.nix"
+        },
         "180": {
-          "name": "entity.name.function.call.dirty.nix"
+          "name": "entity.name.function.call.nix support.type.builtin.top-level.nix support.type.builtin.property.$180.nix"
         },
         "181": {
           "patterns": [
@@ -5244,41 +5244,16 @@
           "name": "punctuation.definition.url.address.nix"
         },
         "186": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
+          "name": "entity.name.function.call.external.nix"
         },
         "187": {
           "patterns": [
             {
-              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
-              "captures": {
-                "1": {
-                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
-                },
-                "2": {
-                  "name": "comment.block.nix"
-                },
-                "3": {
-                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
-                }
-              }
+              "include": "#inline_comment"
             }
           ]
         },
         "188": {
-          "name": "entity.name.function.call.nix"
-        },
-        "189": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
-        },
-        "190": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -5296,25 +5271,53 @@
             }
           ]
         },
-        "191": {
+        "189": {
           "name": "constant.other.url.nix"
         },
-        "192": {
+        "190": {
           "name": "punctuation.definition.url.protocol.nix"
         },
-        "193": {
+        "191": {
           "name": "punctuation.definition.url.address.nix"
         },
-        "194": {
+        "192": {
           "patterns": [
             {
               "include": "#inline_comment"
             }
           ]
+        },
+        "193": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "194": {
+          "name": "entity.name.function.call.dirty.nix"
         },
         "195": {
           "patterns": [
             {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "196": {
+          "patterns": [
+            {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
               "captures": {
                 "1": {
@@ -5330,16 +5333,112 @@
             }
           ]
         },
-        "196": {
-          "name": "support.module.nix variable.language.special.builtins.nix"
-        },
         "197": {
-          "name": "variable.other.external.nix"
+          "name": "constant.other.url.nix"
         },
         "198": {
-          "name": "variable.other.dirty.nix"
+          "name": "punctuation.definition.url.protocol.nix"
         },
         "199": {
+          "name": "punctuation.definition.url.address.nix"
+        },
+        "200": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "201": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "202": {
+          "name": "entity.name.function.call.nix"
+        },
+        "203": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "204": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "205": {
+          "name": "constant.other.url.nix"
+        },
+        "206": {
+          "name": "punctuation.definition.url.protocol.nix"
+        },
+        "207": {
+          "name": "punctuation.definition.url.address.nix"
+        },
+        "208": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "209": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "210": {
+          "name": "support.module.nix variable.language.special.builtins.nix"
+        },
+        "211": {
+          "name": "variable.other.external.nix"
+        },
+        "212": {
+          "name": "variable.other.dirty.nix"
+        },
+        "213": {
           "name": "variable.other.nix"
         }
       }
@@ -7275,7 +7374,7 @@
       }
     },
     "standalone_function_call": {
-      "match": "(?:(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))",
+      "match": "(?:(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?:(?:derivationStrict)|(?:fetchMercurial)|(?:scopedImport)|(?:zipAttrsWith)|(?:fetchTarball)|(?:removeAttrs)|(?:placeholder)|(?:derivation)|(?:baseNameOf)|(?:fetchGit)|(?:fromTOML)|(?:toString)|(?:import)|(?:isNull)|(?:throw)|(?:abort)|(?:dirOf)|(?:map)))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))",
       "captures": {
         "1": {
           "patterns": [
@@ -7303,7 +7402,7 @@
           ]
         },
         "3": {
-          "name": "entity.name.function.call.external.nix"
+          "name": "entity.name.function.call.nix support.type.builtin.top-level.nix support.type.builtin.property.$3.nix"
         },
         "4": {
           "patterns": [
@@ -7365,7 +7464,7 @@
           ]
         },
         "11": {
-          "name": "entity.name.function.call.dirty.nix"
+          "name": "entity.name.function.call.external.nix"
         },
         "12": {
           "patterns": [
@@ -7427,7 +7526,7 @@
           ]
         },
         "19": {
-          "name": "entity.name.function.call.nix"
+          "name": "entity.name.function.call.dirty.nix"
         },
         "20": {
           "patterns": [
@@ -7461,15 +7560,77 @@
           "name": "punctuation.definition.url.protocol.nix"
         },
         "24": {
+          "name": "punctuation.definition.url.address.nix"
+        },
+        "25": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "26": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "27": {
+          "name": "entity.name.function.call.nix"
+        },
+        "28": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "29": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "30": {
+          "name": "constant.other.url.nix"
+        },
+        "31": {
+          "name": "punctuation.definition.url.protocol.nix"
+        },
+        "32": {
           "name": "punctuation.definition.url.address.nix"
         }
       }
     },
     "standalone_function_call_guess": {
-      "match": "(?:(?<=\\()((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$)))",
+      "match": "(?:(?<!\\()((?:(?:derivationStrict)|(?:fetchMercurial)|(?:scopedImport)|(?:zipAttrsWith)|(?:fetchTarball)|(?:removeAttrs)|(?:placeholder)|(?:derivation)|(?:baseNameOf)|(?:fetchGit)|(?:fromTOML)|(?:toString)|(?:import)|(?:isNull)|(?:throw)|(?:abort)|(?:dirOf)|(?:map)))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$)))",
       "captures": {
         "1": {
-          "name": "entity.name.function.call.external.nix"
+          "name": "entity.name.function.call.nix support.type.builtin.top-level.nix support.type.builtin.property.$1.nix"
         },
         "2": {
           "patterns": [
@@ -7506,41 +7667,16 @@
           "name": "punctuation.definition.url.address.nix"
         },
         "7": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
+          "name": "entity.name.function.call.external.nix"
         },
         "8": {
           "patterns": [
             {
-              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
-              "captures": {
-                "1": {
-                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
-                },
-                "2": {
-                  "name": "comment.block.nix"
-                },
-                "3": {
-                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
-                }
-              }
+              "include": "#inline_comment"
             }
           ]
         },
         "9": {
-          "name": "entity.name.function.call.dirty.nix"
-        },
-        "10": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
-        },
-        "11": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -7558,51 +7694,51 @@
             }
           ]
         },
-        "12": {
+        "10": {
           "name": "constant.other.url.nix"
         },
-        "13": {
+        "11": {
           "name": "punctuation.definition.url.protocol.nix"
         },
-        "14": {
+        "12": {
           "name": "punctuation.definition.url.address.nix"
         },
-        "15": {
+        "13": {
           "patterns": [
             {
               "include": "#inline_comment"
             }
           ]
+        },
+        "14": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "15": {
+          "name": "entity.name.function.call.dirty.nix"
         },
         "16": {
           "patterns": [
             {
-              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
-              "captures": {
-                "1": {
-                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
-                },
-                "2": {
-                  "name": "comment.block.nix"
-                },
-                "3": {
-                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
-                }
-              }
+              "include": "#inline_comment"
             }
           ]
         },
         "17": {
-          "name": "entity.name.function.call.nix"
-        },
-        "18": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
-        },
-        "19": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -7620,23 +7756,85 @@
             }
           ]
         },
-        "20": {
+        "18": {
           "name": "constant.other.url.nix"
         },
-        "21": {
+        "19": {
           "name": "punctuation.definition.url.protocol.nix"
         },
-        "22": {
+        "20": {
           "name": "punctuation.definition.url.address.nix"
         },
-        "23": {
+        "21": {
           "patterns": [
             {
               "include": "#inline_comment"
             }
           ]
         },
+        "22": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "23": {
+          "name": "entity.name.function.call.nix"
+        },
         "24": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "25": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "26": {
+          "name": "constant.other.url.nix"
+        },
+        "27": {
+          "name": "punctuation.definition.url.protocol.nix"
+        },
+        "28": {
+          "name": "punctuation.definition.url.address.nix"
+        },
+        "29": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "30": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -8736,7 +8934,7 @@
       }
     },
     "variable_or_function": {
-      "match": "(?:(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?= *+:))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?<=\\()(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))|(?:(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|(?:(?<=\\()((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$)))|(?:(?:(?:((?<!\\.)(?:builtins)(?!\\.))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.))))",
+      "match": "(?:(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?= *+:))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?<=\\()(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))))|(?:(?:(?:((?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-']))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(((?:(?:(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.)))|(?:(?:(?:\\$\\{)(?:.+?)\\})|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))))|(?:\"(?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*)\")|(?:(?:(?:'')(?:(?:(?:\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*)(?:(?:'')(?!\\$|\\'|\\\\.)))))(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)\\.(?:(?:(?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))*)))(?:(?<=builtins\\.)((?:(?:unsafeDiscardOutputDependency)|(?:unsafeDiscardStringContext)|(?:concatStringsSep)|(?:unsafeGetAttrPos)|(?:derivationStrict)|(?:addErrorContext)|(?:compareVersions)|(?:fetchMercurial)|(?:intersectAttrs)|(?:replaceStrings)|(?:genericClosure)|(?:appendContext)|(?:functionArgs)|(?:traceVerbose)|(?:stringLength)|(?:zipAttrsWith)|(?:splitVersion)|(?:scopedImport)|(?:fetchTarball)|(?:filterSource)|(?:parseDrvName)|(?:placeholder)|(?:concatLists)|(?:listToAttrs)|(?:removeAttrs)|(?:isFunction)|(?:hashString)|(?:pathExists)|(?:derivation)|(?:baseNameOf)|(?:attrValues)|(?:hasContext)|(?:getContext)|(?:substring)|(?:fetchTree)|(?:concatMap)|(?:storePath)|(?:partition)|(?:attrNames)|(?:lessThan)|(?:catAttrs)|(?:fetchGit)|(?:fetchurl)|(?:findFile)|(?:fromJSON)|(?:fromTOML)|(?:hashFile)|(?:isString)|(?:mapAttrs)|(?:readFile)|(?:toString)|(?:getAttr)|(?:isAttrs)|(?:hasAttr)|(?:genList)|(?:tryEval)|(?:deepSeq)|(?:readDir)|(?:isFloat)|(?:groupBy)|(?:isList)|(?:isBool)|(?:getEnv)|(?:isNull)|(?:isPath)|(?:bitAnd)|(?:length)|(?:foldl')|(?:filter)|(?:elemAt)|(?:bitXor)|(?:toFile)|(?:toJSON)|(?:toPath)|(?:typeOf)|(?:import)|(?:dirOf)|(?:abort)|(?:split)|(?:isInt)|(?:toXML)|(?:bitOr)|(?:match)|(?:break)|(?:trace)|(?:floor)|(?:throw)|(?:elem)|(?:sort)|(?:ceil)|(?:tail)|(?:head)|(?:path)|(?:mul)|(?:map)|(?:div)|(?:sub)|(?:any)|(?:seq)|(?:all)|(?:add))(?![a-zA-Z0-9_\\-']))|(?<=builtins\\.)((?:(?:currentSystem)|(?:langVersion)|(?:currentTime)|(?:nixVersion)|(?:storeDir)|(?:nixPath)|(?:false)|(?:null)|(?:true))(?![a-zA-Z0-9_\\-']))|((?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)|(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?!\\.))))|((?:(?:(\\$\\{)(.+?)(\\}))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))|(?:(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?:(?:derivationStrict)|(?:fetchMercurial)|(?:scopedImport)|(?:zipAttrsWith)|(?:fetchTarball)|(?:removeAttrs)|(?:placeholder)|(?:derivation)|(?:baseNameOf)|(?:fetchGit)|(?:fromTOML)|(?:toString)|(?:import)|(?:isNull)|(?:throw)|(?:abort)|(?:dirOf)|(?:map)))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<!\\)|\"|\\d|\\s)((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|(?:(?<!\\()((?:(?:derivationStrict)|(?:fetchMercurial)|(?:scopedImport)|(?:zipAttrsWith)|(?:fetchTarball)|(?:removeAttrs)|(?:placeholder)|(?:derivation)|(?:baseNameOf)|(?:fetchGit)|(?:fromTOML)|(?:toString)|(?:import)|(?:isNull)|(?:throw)|(?:abort)|(?:dirOf)|(?:map)))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+))))))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$))|(?<=\\()((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$))))(?:(?<!with|if|then|else|let|in|assert)|(?<=with|if|then|else|let|in|assert)(?:(?<=[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]if|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]assert)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^with|^if|^then|^else|^let|^in|^assert)(?![^a-zA-Z0-9\\-_]|$)))))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))|(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))$)))|(?:(?:(?:((?<!\\.)(?:builtins)(?!\\.))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_-(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:_'(?-mix:[a-zA-Z_][a-zA-Z0-9_\\-']*))(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.)))|((?<!\\.)(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?<!assert|with|then|else|rec|let|in|if)|(?<=assert|with|then|else|rec|let|in|if)(?:(?<=[^a-zA-Z0-9\\-_]assert|[^a-zA-Z0-9\\-_]with|[^a-zA-Z0-9\\-_]then|[^a-zA-Z0-9\\-_]else|[^a-zA-Z0-9\\-_]rec|[^a-zA-Z0-9\\-_]let|[^a-zA-Z0-9\\-_]in|[^a-zA-Z0-9\\-_]if)(?![^a-zA-Z0-9\\-_]|$)|(?:(?<=^assert|^with|^then|^else|^rec|^let|^in|^if)(?![^a-zA-Z0-9\\-_]|$)))))(?!\\.))))",
       "captures": {
         "1": {
           "name": "variable.parameter.function.nix"
@@ -9884,7 +10082,7 @@
           ]
         },
         "84": {
-          "name": "entity.name.function.call.external.nix"
+          "name": "entity.name.function.call.nix support.type.builtin.top-level.nix support.type.builtin.property.$84.nix"
         },
         "85": {
           "patterns": [
@@ -9946,7 +10144,7 @@
           ]
         },
         "92": {
-          "name": "entity.name.function.call.dirty.nix"
+          "name": "entity.name.function.call.external.nix"
         },
         "93": {
           "patterns": [
@@ -10008,7 +10206,7 @@
           ]
         },
         "100": {
-          "name": "entity.name.function.call.nix"
+          "name": "entity.name.function.call.dirty.nix"
         },
         "101": {
           "patterns": [
@@ -10045,50 +10243,41 @@
           "name": "punctuation.definition.url.address.nix"
         },
         "106": {
-          "name": "entity.name.function.call.external.nix"
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
         },
         "107": {
           "patterns": [
             {
-              "include": "#inline_comment"
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
             }
           ]
         },
         "108": {
-          "patterns": [
-            {
-              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
-              "captures": {
-                "1": {
-                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
-                },
-                "2": {
-                  "name": "comment.block.nix"
-                },
-                "3": {
-                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
-                }
-              }
-            }
-          ]
+          "name": "entity.name.function.call.nix"
         },
         "109": {
-          "name": "constant.other.url.nix"
-        },
-        "110": {
-          "name": "punctuation.definition.url.protocol.nix"
-        },
-        "111": {
-          "name": "punctuation.definition.url.address.nix"
-        },
-        "112": {
           "patterns": [
             {
               "include": "#inline_comment"
             }
           ]
         },
-        "113": {
+        "110": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -10106,8 +10295,17 @@
             }
           ]
         },
+        "111": {
+          "name": "constant.other.url.nix"
+        },
+        "112": {
+          "name": "punctuation.definition.url.protocol.nix"
+        },
+        "113": {
+          "name": "punctuation.definition.url.address.nix"
+        },
         "114": {
-          "name": "entity.name.function.call.dirty.nix"
+          "name": "entity.name.function.call.nix support.type.builtin.top-level.nix support.type.builtin.property.$114.nix"
         },
         "115": {
           "patterns": [
@@ -10144,41 +10342,16 @@
           "name": "punctuation.definition.url.address.nix"
         },
         "120": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
+          "name": "entity.name.function.call.external.nix"
         },
         "121": {
           "patterns": [
             {
-              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
-              "captures": {
-                "1": {
-                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
-                },
-                "2": {
-                  "name": "comment.block.nix"
-                },
-                "3": {
-                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
-                }
-              }
+              "include": "#inline_comment"
             }
           ]
         },
         "122": {
-          "name": "entity.name.function.call.nix"
-        },
-        "123": {
-          "patterns": [
-            {
-              "include": "#inline_comment"
-            }
-          ]
-        },
-        "124": {
           "patterns": [
             {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
@@ -10196,25 +10369,53 @@
             }
           ]
         },
-        "125": {
+        "123": {
           "name": "constant.other.url.nix"
         },
-        "126": {
+        "124": {
           "name": "punctuation.definition.url.protocol.nix"
         },
-        "127": {
+        "125": {
           "name": "punctuation.definition.url.address.nix"
         },
-        "128": {
+        "126": {
           "patterns": [
             {
               "include": "#inline_comment"
             }
           ]
+        },
+        "127": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "128": {
+          "name": "entity.name.function.call.dirty.nix"
         },
         "129": {
           "patterns": [
             {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "130": {
+          "patterns": [
+            {
               "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
               "captures": {
                 "1": {
@@ -10230,16 +10431,112 @@
             }
           ]
         },
-        "130": {
-          "name": "support.module.nix variable.language.special.builtins.nix"
-        },
         "131": {
-          "name": "variable.other.external.nix"
+          "name": "constant.other.url.nix"
         },
         "132": {
-          "name": "variable.other.dirty.nix"
+          "name": "punctuation.definition.url.protocol.nix"
         },
         "133": {
+          "name": "punctuation.definition.url.address.nix"
+        },
+        "134": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "135": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "136": {
+          "name": "entity.name.function.call.nix"
+        },
+        "137": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "138": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "139": {
+          "name": "constant.other.url.nix"
+        },
+        "140": {
+          "name": "punctuation.definition.url.protocol.nix"
+        },
+        "141": {
+          "name": "punctuation.definition.url.address.nix"
+        },
+        "142": {
+          "patterns": [
+            {
+              "include": "#inline_comment"
+            }
+          ]
+        },
+        "143": {
+          "patterns": [
+            {
+              "match": "(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*)",
+              "captures": {
+                "1": {
+                  "name": "comment.block.nix punctuation.definition.comment.begin.nix"
+                },
+                "2": {
+                  "name": "comment.block.nix"
+                },
+                "3": {
+                  "name": "comment.block.nix punctuation.definition.comment.end.nix"
+                }
+              }
+            }
+          ]
+        },
+        "144": {
+          "name": "support.module.nix variable.language.special.builtins.nix"
+        },
+        "145": {
+          "name": "variable.other.external.nix"
+        },
+        "146": {
+          "name": "variable.other.dirty.nix"
+        },
+        "147": {
           "name": "variable.other.nix"
         }
       }

@@ -438,6 +438,11 @@ grammar = Grammar.new(
         grammar[:standalone_function_call] = Pattern.new(
             oneOf([
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
+                    tag_as: "entity.name.function.call support.type.builtin.top-level support.type.builtin.property.$match",
+                    match: @tokens.that(:areBuiltinAttributes,:areFunctions,:canAppearTopLevel),
+                ).then(function_call_lookahead),
+                
+                lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.external",
                     match: external_variable.then(avoid_invalid_names)
                 ).then(function_call_lookahead),
@@ -455,13 +460,17 @@ grammar = Grammar.new(
         )
         
         grammar[:standalone_function_call_guess] = oneOf([
-            
+            lookBehindToAvoid(/\(/).then(
+                tag_as: "entity.name.function.call support.type.builtin.top-level support.type.builtin.property.$match",
+                match: @tokens.that(:areBuiltinAttributes,:areFunctions,:canAppearTopLevel),
+            ).then(function_call_lookahead),
+                
             lookBehindFor(/\(/).then(
                 tag_as: "entity.name.function.call.external",
                 match: external_variable.then(avoid_invalid_names),
             ).then(function_call_lookahead.or(std_space.then(/$/))),
             
-            lookBehindFor(/\(/).then(
+            lookBehindFor(/\(/).then( 
                 tag_as: "entity.name.function.call.dirty",
                 match: dirty_variable.then(avoid_invalid_names),
             ).then(function_call_lookahead.or(std_space.then(/$/))),
