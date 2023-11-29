@@ -988,6 +988,8 @@
 - source: abort
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.abort
 - source: errorMsg
   scopes:
     - variable.other
@@ -2091,6 +2093,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -2361,6 +2365,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -3413,6 +3419,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -3854,6 +3862,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -4097,6 +4107,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -4208,6 +4220,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -4664,6 +4678,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -5014,6 +5030,8 @@
 - source: baseNameOf
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.baseNameOf
 - source: path'
   scopes:
     - variable.other
@@ -5287,6 +5305,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -5591,6 +5611,8 @@
 - source: zipAttrsWith
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.zipAttrsWith
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -5725,6 +5747,8 @@
 - source: zipAttrsWith
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.zipAttrsWith
 - source: (
   scopes:
     - punctuation.section.parentheses

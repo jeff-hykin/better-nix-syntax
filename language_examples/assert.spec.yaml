@@ -435,6 +435,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: configFile
   scopes:
     - variable.other
@@ -485,6 +487,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: configFile2
   scopes:
     - variable.other
@@ -535,6 +539,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: configFile3
   scopes:
     - variable.other
@@ -788,6 +794,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -800,6 +808,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1028,6 +1038,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: path
   scopes:
     - variable.other
@@ -1138,6 +1150,8 @@
 - source: throw
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -1221,6 +1235,8 @@
 - source: throw
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1312,6 +1328,8 @@
 - source: throw
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1483,6 +1501,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: .
   scopesBegin:
     - string.unquoted.path

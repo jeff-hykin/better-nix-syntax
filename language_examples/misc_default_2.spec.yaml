@@ -1651,6 +1651,8 @@
 - source: placeholder
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.placeholder
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1678,6 +1680,8 @@
 - source: placeholder
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.placeholder
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1706,6 +1710,8 @@
 - source: placeholder
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.placeholder
 - source: '"'
   scopesBegin:
     - string.quoted.double

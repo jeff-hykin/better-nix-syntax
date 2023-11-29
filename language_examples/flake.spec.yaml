@@ -85,6 +85,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: ./
   scopesBegin:
     - constant.other.path.relative
@@ -176,6 +178,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: .
   scopesBegin:
     - string.unquoted.path
@@ -339,6 +343,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: ./
   scopesBegin:
     - constant.other.path.relative
@@ -407,6 +413,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: ./
   scopesBegin:
     - constant.other.path.relative
@@ -796,6 +804,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: ./
   scopesBegin:
     - constant.other.path.relative
@@ -903,6 +913,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: .
   scopesBegin:
     - string.unquoted.path
@@ -977,6 +989,8 @@
 - source: import
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
 - source: ./
   scopesBegin:
     - constant.other.path.relative

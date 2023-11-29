@@ -1604,6 +1604,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1696,6 +1698,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -4505,6 +4509,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -5352,7 +5358,9 @@
     - meta.punctuation.section.conditional
 - source: throw
   scopes:
-    - variable.other
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -5951,6 +5959,8 @@
 - source: removeAttrs
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.removeAttrs
 - source: mergeAttrBy2
   scopes:
     - variable.other
@@ -6180,6 +6190,8 @@
 - source: removeAttrs
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.removeAttrs
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -6248,6 +6260,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -6354,6 +6368,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -6439,6 +6455,8 @@
 - source: map
   scopes:
     - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.map
 - source: (
   scopes:
     - punctuation.section.parentheses
