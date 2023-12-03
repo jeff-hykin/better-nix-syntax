@@ -136,10 +136,14 @@
   scopes:
     - entity.name.namespace
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: apple_sdk
   scopes:
     - entity.name.namespace
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: frameworks
   scopes:
     - entity.name.namespace

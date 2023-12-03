@@ -77,6 +77,8 @@
   scopes:
     - entity.name.namespace
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: trivial
   scopes:
     - entity.name.namespace
@@ -108,6 +110,8 @@
   scopes:
     - entity.name.namespace
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: strings
   scopes:
     - entity.name.namespace
@@ -139,6 +143,8 @@
   scopes:
     - entity.name.namespace
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: lists
   scopes:
     - entity.name.namespace
@@ -351,11 +357,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -387,16 +397,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: else
   scopes:
@@ -535,11 +541,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -568,16 +578,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: else
   scopes:
@@ -808,11 +814,12 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '${'
   scopesBegin:
-    - meta.attribute-key
+    - meta.statement.dynamic-attr
   scopes:
-    - variable.other.property
     - punctuation.section.embedded
 - source: elemAt
   scopes:
@@ -825,10 +832,7 @@
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
     - punctuation.section.embedded
-  scopesEnd:
-    - meta.attribute-key
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -854,7 +858,7 @@
   scopes:
     - punctuation.terminator.statement
   scopesEnd:
-    - meta.statement
+    - meta.statement.dynamic-attr
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -1746,11 +1750,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1762,16 +1770,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopes:
@@ -2143,16 +2147,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: x
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopes:
@@ -2314,16 +2314,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopes:
@@ -2422,11 +2418,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -2437,25 +2437,11 @@
     - meta.list
   scopes:
     - punctuation.definition.list
-- source: s
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: '${'
-  scopes:
-    - variable.other.property
-    - variable.other.property
-    - punctuation.section.embedded
+- source: 's.${'
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
-  scopes:
-    - variable.other.property
-    - variable.other.property
-    - punctuation.section.embedded
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -2582,16 +2568,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: ;
   scopes:
@@ -2776,16 +2758,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: ;
   scopes:
@@ -3121,21 +3099,19 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '${'
   scopesBegin:
-    - meta.attribute-key
+    - meta.statement.dynamic-attr
   scopes:
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
     - punctuation.section.embedded
-  scopesEnd:
-    - meta.attribute-key
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3150,16 +3126,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: (
   scopes:
@@ -3172,16 +3144,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: or
   scopes:
@@ -3196,7 +3164,7 @@
   scopes:
     - punctuation.terminator.statement
   scopesEnd:
-    - meta.statement
+    - meta.statement.dynamic-attr
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -3578,21 +3546,19 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '${'
   scopesBegin:
-    - meta.attribute-key
+    - meta.statement.dynamic-attr
   scopes:
-    - variable.other.property
     - punctuation.section.embedded
 - source: attrName
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
     - punctuation.section.embedded
-  scopesEnd:
-    - meta.attribute-key
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -3603,7 +3569,7 @@
   scopes:
     - punctuation.terminator.statement
   scopesEnd:
-    - meta.statement
+    - meta.statement.dynamic-attr
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -3621,16 +3587,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: attrName
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopes:
@@ -4066,16 +4028,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: ;
   scopes:
@@ -4198,16 +4156,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopesBegin:
@@ -4311,16 +4265,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopesBegin:
@@ -6486,16 +6436,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: or
   scopes:
@@ -6706,16 +6652,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: output
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: or
   scopes:

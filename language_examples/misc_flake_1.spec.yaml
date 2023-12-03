@@ -217,22 +217,19 @@
     - punctuation.separator.dot-access
 - source: legacyPackages
   scopes:
+    - variable.other.property
     - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: system
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: ;
   scopes:

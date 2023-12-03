@@ -941,16 +941,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: name
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: or
   scopes:
@@ -4621,16 +4617,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: attr
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopesBegin:
@@ -4939,11 +4931,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -4972,16 +4968,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: set2
   scopes:
@@ -4991,16 +4983,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: )
   scopes:
@@ -5316,11 +5304,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -5367,16 +5359,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: ++
   scopes:
@@ -5389,16 +5377,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: else
   scopes:
@@ -5429,16 +5413,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: else
   scopes:
@@ -5484,16 +5464,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'n'
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: '#'
   scopes:
@@ -5904,11 +5880,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -5927,11 +5907,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -5948,16 +5932,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: 'y'
   scopes:
@@ -5967,16 +5947,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: '#'
   scopes:
@@ -5997,16 +5973,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: '#'
   scopes:
@@ -6027,16 +5999,12 @@
     - punctuation.separator.dot-access
 - source: '${'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
   scopes:
-    - variable.other.property
-    - variable.other.property
     - punctuation.section.embedded
 - source: '#'
   scopes:
@@ -6088,11 +6056,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
-- source: '} '
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
 - source: '&&'
   scopes:
     - keyword.operator.&&
@@ -6105,11 +6077,15 @@
 - source: '?'
   scopes:
     - keyword.operator.?
-- source: ' ${'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: a
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
 - source: )
   scopesBegin:
     - punctuation.section.parentheses

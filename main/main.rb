@@ -494,80 +494,38 @@ grammar = Grammar.new(
             match: ".",
         )
         
-        interpolated_attribute = Pattern.new(
-            # try to support thing.${stuff}
-            Pattern.new(
-                match: /\$\{/,
-                tag_as: "punctuation.section.embedded",
-            ).then(
-                match: /.+?/,
-                includes: [
-                    :values,
-                ],
-            ).then(
-                match: /\}/,
-                tag_as: "punctuation.section.embedded",
-            )
-        )
-        attribute = oneOf([
-            # standalone
-            lookBehindToAvoid(/\./).then(
-                tag_as: "variable.other.object",
-                should_fully_match: [ "zipListsWith'" ],
-                should_not_partial_match: ["in", "let", "if"],
-                match: variable,
-            ).lookAheadToAvoid(/\./),
-            
-            # first
-            lookBehindToAvoid(/\./).then(
-                tag_as: "variable.other.object.access",
-                match: variable,
-            ),
-            # last
-            Pattern.new(
-                tag_as: "variable.other.property",
-                match: interpolated_attribute.or(variable.lookAheadToAvoid(/\./)),
-            ),
-            # middle
-            Pattern.new(
-                tag_as: "variable.other.object.property",
-                match: interpolated_attribute.or(variable),
-            ),
-            grammar[:double_quote_inline],
-            grammar[:single_quote_inline],
-        ])
-        
-        attribute_assignment = oneOf([
-            # standalone
-            Pattern.new(
-                should_fully_match: ["x86_64-darwin"],
-                should_partial_match: ["system;", "systemin;"],
-                match: (
-                    lookBehindToAvoid(/\./).then(
-                        tag_as: "variable.other.constant",
-                        should_fully_match: [ "zipListsWith'", "x86_64-darwin" ],
-                        match: variable,
-                    ).lookAheadToAvoid(/\./)
+        attributeGenerator = ->(tag) do
+            return oneOf([
+                # standalone
+                lookBehindToAvoid(/\./).then(
+                    tag_as: tag,
+                    should_fully_match: [ "zipListsWith'" ],
+                    should_not_partial_match: ["in", "let", "if"],
+                    match: variable,
+                ).lookAheadToAvoid(/\./),
+                
+                # first
+                lookBehindToAvoid(/\./).then(
+                    tag_as: "variable.other.object.access",
+                    match: variable,
                 ),
-            ),
-            # first
-            lookBehindToAvoid(/\./).then(
-                tag_as: "variable.other.object.access",
-                match: variable,
-            ),
-            # last
-            Pattern.new(
-                tag_as: "variable.other.property",
-                match: interpolated_attribute.or(variable.lookAheadToAvoid(/\./)),
-            ),
-            # middle
-            Pattern.new(
-                tag_as: "variable.other.object.property",
-                match: interpolated_attribute.or(variable),
-            ),
-            grammar[:double_quote_inline],
-            grammar[:single_quote_inline],
-        ])
+                # last
+                Pattern.new(
+                    tag_as: "variable.other.property",
+                    match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
+                ),
+                # middle
+                Pattern.new(
+                    tag_as: "variable.other.object.property",
+                    match: variable, #.or(interpolated_attribute),
+                ),
+                grammar[:double_quote_inline],
+                grammar[:single_quote_inline],
+            ])
+        end
+        
+        attribute = attributeGenerator["variable.other.object"]
+        attribute_assignment = attributeGenerator["variable.other.constant"]
         
         object_access = Pattern.new(
             Pattern.new(
@@ -867,8 +825,6 @@ grammar = Grammar.new(
                 includes: [
                     assignment_start,
                     :values,
-                    dot_access,
-                    :interpolation,
                 ]
             ),
             
@@ -1198,6 +1154,9 @@ grammar = Grammar.new(
             value_prefix,
             :most_values,
             :inline_value,
+            attribute,
+            dot_access,
+            :interpolation,
         ]
         grammar[:values_inside_list] = [
             :most_values,

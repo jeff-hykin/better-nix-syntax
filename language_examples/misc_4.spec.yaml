@@ -93,6 +93,8 @@
   scopes:
     - entity.name.namespace
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: hostPlatform
   scopes:
     - entity.name.namespace
