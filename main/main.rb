@@ -405,11 +405,11 @@ grammar = Grammar.new(
                 # good case: no partial match
                 lookBehindToAvoid(/#{names.join("|")}/),
                 # unconfirmed case: partial match, but not nessairly full reject
-                lookBehindFor(/#{names.join("|")}/).then(
-                    lookBehindFor(/#{names.map{ |each| "[^a-zA-Z0-9\\-_]#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/).or(
-                        lookBehindFor(/#{names.map{ |each| "^#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/),
-                    ),
-                ),
+                # lookBehindFor(/#{names.join("|")}/).then(
+                #     lookBehindFor(/#{names.map{ |each| "[^a-zA-Z0-9\\-_]#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/).or(
+                #         lookBehindFor(/#{names.map{ |each| "^#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/),
+                #     ),
+                # ),
             ])
         end
         avoid_invalid_names = lookBehindToAvoidNames[ ["with", "if", "then", "else", "let", "in", "assert", ] ]
@@ -538,11 +538,17 @@ grammar = Grammar.new(
         
         attribute_assignment = oneOf([
             # standalone
-            lookBehindToAvoid(/\./).then(
-                tag_as: "variable.other.constant",
-                should_fully_match: [ "zipListsWith'" ],
-                match: variable,
-            ).lookAheadToAvoid(/\./),
+            Pattern.new(
+                should_fully_match: ["x86_64-darwin"],
+                should_partial_match: ["system;", "systemin;"],
+                match: (
+                    lookBehindToAvoid(/\./).then(
+                        tag_as: "variable.other.constant",
+                        should_fully_match: [ "zipListsWith'", "x86_64-darwin" ],
+                        match: variable,
+                    ).lookAheadToAvoid(/\./)
+                ),
+            ),
             # first
             lookBehindToAvoid(/\./).then(
                 tag_as: "variable.other.object.access",
@@ -824,6 +830,21 @@ grammar = Grammar.new(
                         includes: [
                             namespace,
                         ],
+                    ),
+                    # Pattern.new(
+                    #     match: /[\w\-]+/,
+                    # ),
+                    Pattern.new(
+                        tag_as: "keyword.operator.debug",
+                        should_fully_match: ["x86_64-darwin"],
+                        should_partial_match: ["system;", "systemin;"],
+                        match: (
+                            lookBehindToAvoid(/\./).then(
+                                tag_as: "variable.other.constant",
+                                should_fully_match: [ "zipListsWith'", "x86_64-darwin" ],
+                                match: variable,
+                            ).lookAheadToAvoid(/\./)
+                        ),
                     ),
                     attribute_assignment,
                 ]
