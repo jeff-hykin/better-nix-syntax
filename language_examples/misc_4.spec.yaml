@@ -6,11 +6,10 @@
 - source: stdenv
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: ','
-  scopesBegin:
-    - meta.punctuation.section.parameters
   scopes:
     - punctuation.separator.comma
 - source: lib
@@ -102,7 +101,7 @@
     - punctuation.separator.source
   scopesEnd:
     - meta.source
-- source: systemin
+- source: system
   scopes:
     - variable.other.constant
 - source: ;

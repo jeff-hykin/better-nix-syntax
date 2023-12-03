@@ -6,11 +6,10 @@
 - source: lib
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: ','
-  scopesBegin:
-    - meta.punctuation.section.parameters
   scopes:
     - punctuation.separator.comma
 - source: ...
@@ -1879,11 +1878,10 @@
 - source: inputList
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: ','
-  scopesBegin:
-    - meta.punctuation.section.parameters
   scopes:
     - punctuation.separator.comma
 - source: acc
@@ -2132,11 +2130,10 @@
 - source: inputList
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: ','
-  scopesBegin:
-    - meta.punctuation.section.parameters
   scopes:
     - punctuation.separator.comma
 - source: outputList
@@ -2764,11 +2761,10 @@
 - source: startSet
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: ','
-  scopesBegin:
-    - meta.punctuation.section.parameters
   scopes:
     - punctuation.separator.comma
 - source: operator
@@ -5185,11 +5181,11 @@
 - source: mergeLists
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: '?'
   scopesBegin:
-    - meta.punctuation.section.parameters
     - meta.default
   scopes:
     - punctuation.separator.default

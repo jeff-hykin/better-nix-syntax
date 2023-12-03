@@ -6,11 +6,10 @@
 - source: lib
   scopesBegin:
     - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
 - source: ','
-  scopesBegin:
-    - meta.punctuation.section.parameters
   scopes:
     - punctuation.separator.comma
 - source: fetchFromGitHub

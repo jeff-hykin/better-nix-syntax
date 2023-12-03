@@ -941,39 +941,6 @@ grammar = Grammar.new(
         )
         
         bracketContext = ->(lookahead_end) do
-            function_parameters = PatternRange.new(
-                tag_as: "meta.punctuation.section.parameters",
-                start_pattern: Pattern.new(/\G/).lookBehindToAvoid(/:|^/),
-                end_pattern: Pattern.new(
-                    Pattern.new(
-                        match: "}",
-                        tag_as: "punctuation.section.bracket",
-                    ).then(std_space).maybe(
-                        Pattern.new(
-                            tag_as: "punctuation.definition.arguments",
-                            match: /@/,
-                        ).then(std_space).then(
-                            tag_as: "variable.language.arguments",
-                            match: variable,
-                        ).then(std_space)
-                    ).then(match: ":", tag_as: "punctuation.definition.function.colon")
-                ),
-                includes: [
-                    :comments,
-                    :eplipsis,
-                    grammar[:parameter],
-                    PatternRange.new(
-                        tag_as: "meta.default",
-                        start_pattern: optional,
-                        end_pattern: lookAheadFor(/,|}/),
-                        includes: [
-                            :values,
-                        ]
-                    ),
-                    eplipsis,
-                    comma,
-                ],
-            )
             PatternRange.new(
                 tag_as: "meta.punctuation.section.bracket",
                 start_pattern: Pattern.new(
@@ -1009,16 +976,38 @@ grammar = Grammar.new(
                     # function definition
                     # 
                     PatternRange.new(
-                        tag_as: "meta.punctuation.section.function",
+                        tag_as: "meta.punctuation.section.function meta.punctuation.section.parameters",
                         start_pattern: Pattern.new(
                             grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,|\}/),
                         ),
-                        apply_end_pattern_last: true,
-                        end_pattern: lookBehindFor(/:/),
+                        end_pattern: Pattern.new(
+                            Pattern.new(
+                                match: "}",
+                                tag_as: "punctuation.section.bracket",
+                            ).then(std_space).maybe(
+                                Pattern.new(
+                                    tag_as: "punctuation.definition.arguments",
+                                    match: /@/,
+                                ).then(std_space).then(
+                                    tag_as: "variable.language.arguments",
+                                    match: variable,
+                                ).then(std_space)
+                            ).then(match: ":", tag_as: "punctuation.definition.function.colon")
+                        ),
                         includes: [
                             :comments,
-                            function_parameters,
-                            :values,
+                            :eplipsis,
+                            grammar[:parameter],
+                            PatternRange.new(
+                                tag_as: "meta.default",
+                                start_pattern: optional,
+                                end_pattern: lookAheadFor(/,|}/),
+                                includes: [
+                                    :values,
+                                ]
+                            ),
+                            eplipsis,
+                            comma,
                         ],
                     ),
                     # just a normal ending bracket to an empty attribute set
