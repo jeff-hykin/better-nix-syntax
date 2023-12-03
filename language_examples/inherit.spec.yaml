@@ -1,0 +1,186 @@
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: a
+  scopes:
+    - variable.other.constant
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: inherit
+  scopes:
+    - keyword.other.inherit
+- source: a
+  scopesBegin:
+    - variable.other.constant
+- source: b
+- source: c
+  scopesEnd:
+    - variable.other.constant
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: callPackage
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: a
+  scopes:
+    - variable.other.constant
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: callPackage
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: a
+  scopesBegin:
+    - variable.other.constant
+- source: b
+- source: c
+  scopesEnd:
+    - variable.other.constant
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: callPackage
+  scopes:
+    - entity.name.namespace
+- source: ..
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+  scopes:
+    - punctuation.definition.relative
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: tools
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: filesystems
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: garage
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: darwin
+  scopes:
+    - entity.name.namespace
+- source: .
+- source: apple_sdk
+  scopes:
+    - entity.name.namespace
+- source: .
+- source: frameworks
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: Security
+  scopes:
+    - variable.other.constant
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: garage
+  scopesBegin:
+    - variable.other.constant
+- source: garage_0_7
+- source: garage_0_8
+- source: garage_0_7_3
+- source: garage_0_8_0
+  scopesEnd:
+    - variable.other.constant
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket

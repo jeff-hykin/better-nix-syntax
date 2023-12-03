@@ -830,6 +830,7 @@ grammar = Grammar.new(
                         ),
                         includes: [
                             namespace,
+                            :values,
                         ],
                     ),
                     attribute_assignment,
