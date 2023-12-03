@@ -3186,7 +3186,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: nul
   scopes:
     - variable.other.object
@@ -6500,7 +6500,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: value
   scopes:
     - variable.other.object
@@ -6720,7 +6720,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: pkg
   scopes:
     - variable.other.object.access

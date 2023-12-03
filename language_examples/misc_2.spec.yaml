@@ -955,7 +955,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: default
   scopes:
     - variable.other.object
@@ -2962,10 +2962,10 @@
   scopes:
     - keyword.operator.++
 - source: operator
-  scopes:
-    - entity.name.function.call
+  scopesBegin:
+    - variable.other.object
 - source: x
-  scopes:
+  scopesEnd:
     - variable.other.object
 - source: )
   scopesBegin:

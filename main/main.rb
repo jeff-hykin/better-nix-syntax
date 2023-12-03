@@ -412,7 +412,7 @@ grammar = Grammar.new(
                 # ),
             ])
         end
-        avoid_invalid_names = lookBehindToAvoidNames[ ["with", "if", "then", "else", "let", "in", "assert", ] ]
+        avoid_invalid_names = lookBehindToAvoidNames[ ["with", "if", "then", "else", "let", "in", "assert", "or", ] ]
         
         grammar[:standalone_variable] = Pattern.new(
             Pattern.new(

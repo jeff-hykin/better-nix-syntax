@@ -382,7 +382,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: throwSystem
   scopes:
     - variable.other.object
@@ -683,7 +683,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: throwSystem
   scopes:
     - variable.other.object

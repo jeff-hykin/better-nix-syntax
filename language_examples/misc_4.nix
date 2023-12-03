@@ -4,7 +4,7 @@
 }:
 
 let
-  inherit (stdenv.hostPlatform) systemin;
+  inherit (stdenv.hostPlatform) system;
   throwSystem = throw "Unsupported system: ${system}";
 
   plat = {__id_static="0.1453876445068445";__id_dynamic=builtins.hashFile "sha256" /Users/jeffhykin/repos/snowball/random.ignore;
