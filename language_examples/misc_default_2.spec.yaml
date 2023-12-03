@@ -980,7 +980,15 @@
 - source: optionals
   scopes:
     - entity.name.function.method
-- source: 'stdenv.isDarwin '
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isDarwin
+  scopes:
+    - entity.name.function.method
 - source: '['
   scopesBegin:
     - meta.list
@@ -2079,7 +2087,15 @@
 - source: optionalString
   scopes:
     - entity.name.function.method
-- source: 'stdenv.isDarwin '
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isDarwin
+  scopes:
+    - entity.name.function.method
 - source: ''''''
   scopesBegin:
     - string.quoted.other

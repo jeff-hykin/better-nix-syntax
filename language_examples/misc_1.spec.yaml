@@ -6766,10 +6766,20 @@
     - punctuation.definition.comment.end
   scopesEnd:
     - comment.block
-- source: '  getBin = getOutput '
+- source: getBin
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: getOutput
+  scopes:
+    - entity.name.function.call
 - source: '"'
   scopesBegin:
-    - meta.statement.dynamic-attr
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -6783,7 +6793,7 @@
   scopes:
     - punctuation.terminator.statement
   scopesEnd:
-    - meta.statement.dynamic-attr
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block

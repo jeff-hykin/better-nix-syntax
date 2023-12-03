@@ -145,7 +145,7 @@ class TokenHelper
             # good case: no partial match
             lookBehindToAvoid(/#{names.join("|")}/),
             # good case: partial match but was only an ending prefix
-            lookBehindFor(/#{names.map{ |each| /#{word_pattern}#{each}/ }.join('|')}/),
+            lookBehindFor(/#{names.map{ |each| "#{word_pattern.to_s[7...-1]}#{each}" }.join("|")}/),
             # all other cases are invalid
         ])
     end
@@ -156,7 +156,7 @@ class TokenHelper
             # good case: no partial match
             lookAheadToAvoid(/#{names.join("|")}/),
             # good case: partial match but was only an ending prefix
-            lookAheadFor(/#{names.map{ |each| /#{each}#{word_pattern}/ }.join('|')}/),
+            lookAheadFor(/#{names.map{ |each| /#{each}#{word_pattern.to_s[7...-1]}/ }.join('|')}/),
             # all other cases are invalid
         ])
     end

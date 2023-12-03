@@ -102,7 +102,7 @@
     - punctuation.separator.source
   scopesEnd:
     - meta.source
-- source: system
+- source: systemin
   scopes:
     - variable.other.constant
 - source: ;
@@ -276,12 +276,15 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '    x86_64-darwin = '
+- source: x86_64-darwin
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
-    - meta.statement.dynamic-attr
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -294,11 +297,7 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement.dynamic-attr
 - source: aarch64-linux
-  scopesBegin:
-    - meta.statement
   scopes:
     - meta.attribute-key
     - variable.other.constant
@@ -319,12 +318,15 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '    aarch64-darwin = '
+- source: aarch64-darwin
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
-    - meta.statement.dynamic-attr
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -337,11 +339,7 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement.dynamic-attr
 - source: armv7l-linux
-  scopesBegin:
-    - meta.statement
   scopes:
     - meta.attribute-key
     - variable.other.constant
@@ -370,11 +368,18 @@
   scopesEnd:
     - meta.punctuation.section.bracket
     - meta.attribute-set
-- source: '.${'
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: system
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
 - source: or
   scopes:
     - entity.name.function.call
@@ -396,8 +401,19 @@
     - meta.punctuation.section.conditional
   scopes:
     - keyword.control.if
-- source: ' stdenv.isDarwin'
+- source: stdenv
+  scopesBegin:
+    - meta.punctuation.section.condition
   scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isDarwin
+  scopes:
+    - variable.other.property
+    - variable.other.property
+  scopesEnd:
     - meta.punctuation.section.condition
 - source: then
   scopes:
@@ -561,12 +577,15 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '    x86_64-darwin = '
+- source: x86_64-darwin
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
-    - meta.statement.dynamic-attr
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -579,11 +598,7 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement.dynamic-attr
 - source: aarch64-linux
-  scopesBegin:
-    - meta.statement
   scopes:
     - meta.attribute-key
     - variable.other.constant
@@ -604,12 +619,15 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '    aarch64-darwin = '
+- source: aarch64-darwin
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
-    - meta.statement.dynamic-attr
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -622,11 +640,7 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement.dynamic-attr
 - source: armv7l-linux
-  scopesBegin:
-    - meta.statement
   scopes:
     - meta.attribute-key
     - variable.other.constant
@@ -655,11 +669,18 @@
   scopesEnd:
     - meta.punctuation.section.bracket
     - meta.attribute-set
-- source: '.${'
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
 - source: system
   scopes:
     - variable.other.object
 - source: '}'
+  scopes:
+    - punctuation.section.embedded
 - source: or
   scopes:
     - entity.name.function.call
@@ -1225,7 +1246,16 @@
 - source: '='
   scopes:
     - keyword.operator.assignment
-- source: ' stdenv.isDarwin'
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isDarwin
+  scopes:
+    - variable.other.property
+    - variable.other.property
 - source: ;
   scopes:
     - punctuation.terminator.statement

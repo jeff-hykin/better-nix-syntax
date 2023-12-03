@@ -28,7 +28,6 @@ keyword.control.then.nix
 keyword.operator.$0.nix
 keyword.operator.assert.nix
 keyword.operator.assignment.nix
-keyword.operator.debug.nix
 keyword.operator.or.nix
 keyword.operator.with.nix
 keyword.other.inherit.nix

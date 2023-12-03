@@ -514,6 +514,7 @@ grammar = Grammar.new(
             lookBehindToAvoid(/\./).then(
                 tag_as: "variable.other.object",
                 should_fully_match: [ "zipListsWith'" ],
+                should_not_partial_match: ["in", "let", "if"],
                 match: variable,
             ).lookAheadToAvoid(/\./),
             
@@ -830,21 +831,6 @@ grammar = Grammar.new(
                         includes: [
                             namespace,
                         ],
-                    ),
-                    # Pattern.new(
-                    #     match: /[\w\-]+/,
-                    # ),
-                    Pattern.new(
-                        tag_as: "keyword.operator.debug",
-                        should_fully_match: ["x86_64-darwin"],
-                        should_partial_match: ["system;", "systemin;"],
-                        match: (
-                            lookBehindToAvoid(/\./).then(
-                                tag_as: "variable.other.constant",
-                                should_fully_match: [ "zipListsWith'", "x86_64-darwin" ],
-                                match: variable,
-                            ).lookAheadToAvoid(/\./)
-                        ),
                     ),
                     attribute_assignment,
                 ]
