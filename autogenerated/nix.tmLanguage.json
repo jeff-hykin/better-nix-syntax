@@ -1308,6 +1308,13 @@
             },
             {
               "include": "#values"
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.dot-access.nix"
+            },
+            {
+              "include": "#interpolation"
             }
           ]
         },

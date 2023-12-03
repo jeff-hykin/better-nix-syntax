@@ -880,6 +880,8 @@ grammar = Grammar.new(
                 includes: [
                     assignment_start,
                     :values,
+                    dot_access,
+                    :interpolation,
                 ]
             ),
             
