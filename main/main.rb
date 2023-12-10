@@ -935,7 +935,7 @@ grammar = Grammar.new(
                     PatternRange.new(
                         tag_as: "meta.punctuation.section.function meta.punctuation.section.parameters",
                         start_pattern: Pattern.new(
-                            grammar[:parameter].then(std_space).lookAheadFor(/$|\?|,|\}/),
+                            grammar[:parameter].or(eplipsis).then(std_space).lookAheadFor(/$|\?|,|\}/),
                         ),
                         end_pattern: Pattern.new(
                             Pattern.new(
