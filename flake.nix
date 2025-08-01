@@ -172,7 +172,7 @@
                         pure = true;
                         envPassthrough = [ "NIX_SSL_CERT_FILE" "TERM" ];
                         # ^this is the default list. Could add HISTSIZE, EDITOR, etc without loosing much purity
-                        home = (pkgs.home-manager.lib.homeManagerConfiguration
+                        home = (home-manager.lib.homeManagerConfiguration
                              {
                                 inherit pkgs;
                                 modules = [
