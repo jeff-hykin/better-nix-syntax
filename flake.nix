@@ -55,7 +55,7 @@
                         pkgsWithPython38.legacyPackages.${system}.python38Packages.pip
                         pkgsWithPython38.legacyPackages.${system}.python38Packages.virtualenv
                         pkgsWithPython38.legacyPackages.${system}.python38Packages.wheel
-                        pkgs.python2
+                        pkgsWithPython38.python2
                         pkgs.cmake
                         pkgs.pkg-config
                         pkgs.libffi
