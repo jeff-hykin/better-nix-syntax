@@ -144,7 +144,7 @@
         xome.url = "github:jeff-hykin/xome";
         
     };
-    outputs = { self, nixpkgs, flake-utils, home-manager, xome, ... }:
+    outputs = { self, nixpkgs, flake-utils, home-manager, nixpkgsWithNodejs16, nixpkgsWithRuby, xome, ... }:
         flake-utils.lib.eachSystem flake-utils.lib.allSystems (system:
             let
                 setup = {
