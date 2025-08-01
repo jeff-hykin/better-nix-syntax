@@ -2,10 +2,12 @@
     description = "My Project";
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-        nixpkgsWithPython38.url = "https://github.com/NixOS/nixpkgs/archive/9108a20782535741433c304f6a4376cb8b364b89.tar.gz";
+        # nixpkgs.url = "github:NixOS/nixpkgs/6f884c2#nodejs-slim";
+        # nixpkgsWithPython38.url = "https://github.com/NixOS/nixpkgs/archive/9108a20782535741433c304f6a4376cb8b364b89.tar.gz";
+        nixpkgsWithNodejs.url = "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz"
         xome.url = "github:jeff-hykin/xome";
     };
-    outputs = { self, nixpkgs, nixpkgsWithPython38, xome, ... }:
+    outputs = { self, nixpkgs, nixpkgsWithNodejs16, xome, ... }:
         xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({system, ...}:
             let
                 setup = {
@@ -22,7 +24,8 @@
                     };
                 };
                 pkgs = import nixpkgs setup;
-                pkgsWithPython38 = import nixpkgsWithPython38 setup;
+                # pkgsWithPython38 = import nixpkgsWithPython38 setup;
+                pkgsWithNodejs16 = import nixpkgsWithNodejs16 setup;
             in
                 {
                     # for home-manager examples, see: https://deepwiki.com/nix-community/home-manager/5-configuration-examples
@@ -55,24 +58,25 @@
                         pkgs.git
                         
                         # project specific
-                        pkgs.nodejs 
-                        pkgsWithPython38.python38
-                        pkgsWithPython38.python38Packages.setuptools
-                        pkgsWithPython38.python38Packages.pip
-                        pkgsWithPython38.python38Packages.virtualenv
-                        pkgsWithPython38.python38Packages.wheel
-                        pkgsWithPython38.python2
+                        pkgsWithNodejs16.nodejs # v16.15.0
+                        # npm --version           8.5.5
+                        # pkgsWithPython38.python38 # 3.8.13.venv
+                        # pkgsWithPython38.python38Packages.setuptools
+                        # pkgsWithPython38.python38Packages.pip
+                        # pkgsWithPython38.python38Packages.virtualenv
+                        # pkgsWithPython38.python38Packages.wheel
+                        # pkgsWithPython38.python2
                         pkgs.cmake
                         pkgs.pkg-config
                         pkgs.libffi
-                        pkgs.ruby.devEnv
+                        pkgs.ruby.devEnv # ruby 2.7.6p219 (2022-04-12 revision c9c2245c0a) [arm64-darwin21]
+                        pkgs.bundix
                         pkgs.sqlite
                         pkgs.libpcap
                         pkgs.postgresql
                         pkgs.libxml2
                         pkgs.libxslt
                         pkgs.pkg-config
-                        pkgs.bundix
                         pkgs.gnumake
                         pkgs.ncurses5
                         pkgs.openssh
