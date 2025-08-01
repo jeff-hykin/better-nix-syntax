@@ -6,9 +6,9 @@
         xome.url = "github:jeff-hykin/xome";
     };
     outputs = { self, nixpkgs, nixpkgsWithPython38, xome, ... }:
-        xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({pkgs, system, ...}:
+        xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({system, ...}:
             let
-                pkgsWithPython38 = import nixpkgsWithPython38 {
+                setup = {
                     system = system;
 
                     # This is where you allow insecure/unfree packages
@@ -16,7 +16,9 @@
                         allowUnfree = true;
                         allowInsecure = true;
                     };
-                };
+                }
+                pkgs = import nixpkgs setup;
+                pkgsWithPython38 = import nixpkgsWithPython38 setup;
             in
                 {
                     # for home-manager examples, see: https://deepwiki.com/nix-community/home-manager/5-configuration-examples
