@@ -2,6 +2,7 @@
     description = "My Project";
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+        nixpkgsWithPython38.url = "github:NixOS/nixpkgs/336eda0d07dc5e2be1f923990ad9fdb6bc8e28e3";
         xome.url = "github:jeff-hykin/xome";
     };
     outputs = { self, nixpkgs, xome, ... }:
