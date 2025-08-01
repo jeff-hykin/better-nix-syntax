@@ -59,7 +59,7 @@
                             export PATH="$PATH:/usr/bin/"
                         '';
                     };
-                    // fancy prompt
+                    # fancy prompt
                     starship = {
                         enable = true;
                         enableZshIntegration = true;
