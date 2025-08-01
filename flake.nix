@@ -16,7 +16,7 @@
                         allowUnfree = true;
                         allowInsecure = true;
                     };
-                }
+                };
                 pkgs = import nixpkgs setup;
                 pkgsWithPython38 = import nixpkgsWithPython38 setup;
             in
