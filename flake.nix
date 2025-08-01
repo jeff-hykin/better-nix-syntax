@@ -4,7 +4,7 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
         # nixpkgs.url = "github:NixOS/nixpkgs/6f884c2#nodejs-slim";
         # nixpkgsWithPython38.url = "https://github.com/NixOS/nixpkgs/archive/9108a20782535741433c304f6a4376cb8b364b89.tar.gz";
-        nixpkgsWithNodejs.url = "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz"
+        nixpkgsWithNodejs.url = "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz";
         xome.url = "github:jeff-hykin/xome";
     };
     outputs = { self, nixpkgs, nixpkgsWithNodejs16, xome, ... }:
