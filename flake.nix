@@ -50,11 +50,11 @@
                         
                         # project specific
                         pkgs.nodejs 
-                        pkgsWithPython38.legacyPackages.${system}.python38
-                        pkgsWithPython38.legacyPackages.${system}.python38Packages.setuptools
-                        pkgsWithPython38.legacyPackages.${system}.python38Packages.pip
-                        pkgsWithPython38.legacyPackages.${system}.python38Packages.virtualenv
-                        pkgsWithPython38.legacyPackages.${system}.python38Packages.wheel
+                        pkgsWithPython38.python38
+                        pkgsWithPython38.python38Packages.setuptools
+                        pkgsWithPython38.python38Packages.pip
+                        pkgsWithPython38.python38Packages.virtualenv
+                        pkgsWithPython38.python38Packages.wheel
                         pkgsWithPython38.python2
                         pkgs.cmake
                         pkgs.pkg-config
