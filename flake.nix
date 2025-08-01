@@ -5,8 +5,8 @@
         nixpkgsWithPython38.url = "github:NixOS/nixpkgs/336eda0d07dc5e2be1f923990ad9fdb6bc8e28e3";
         xome.url = "github:jeff-hykin/xome";
     };
-    outputs = { self, nixpkgs, xome, ... }:
-        xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({pkgs, ...}:
+    outputs = { self, nixpkgs, nixpkgsWithPython38, xome, ... }:
+        xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({pkgs, system, ...}:
             {
                 # for home-manager examples, see: https://deepwiki.com/nix-community/home-manager/5-configuration-examples
                 # all home-manager options: https://nix-community.github.io/home-manager/options.xhtml
@@ -39,11 +39,11 @@
                     
                     # project specific
                     pkgs.nodejs 
-                    pkgs.python38
-                    pkgs.python38Packages.setuptools
-                    pkgs.python38Packages.pip
-                    pkgs.python38Packages.virtualenv
-                    pkgs.python38Packages.wheel
+                    nixpkgsWithPython38.legacyPackages.${system}.python38
+                    nixpkgsWithPython38.legacyPackages.${system}.python38Packages.setuptools
+                    nixpkgsWithPython38.legacyPackages.${system}.python38Packages.pip
+                    nixpkgsWithPython38.legacyPackages.${system}.python38Packages.virtualenv
+                    nixpkgsWithPython38.legacyPackages.${system}.python38Packages.wheel
                     pkgs.python2
                     pkgs.cmake
                     pkgs.pkg-config
