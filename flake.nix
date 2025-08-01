@@ -19,6 +19,7 @@
                         allowUnfree = true;
                         allowInsecure = true;
                         permittedInsecurePackages = [
+                            "python-2.7.18.8"
                             "python-2.7.18.6"
                             "openssl-1.0.2u"
                         ];
