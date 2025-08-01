@@ -147,7 +147,7 @@
     };
     outputs = { self, libSource, nixpkgs, flake-utils, home-manager, nixpkgsWithNodejs16, nixpkgsWithRuby, ... }:
         let
-            lib = nixpkgs.lib;
+            lib = builtins.trace nixpkgs.lib.trivial.version nixpkgs.lib;
             defaultEnvPassthrough = [ "NIX_SSL_CERT_FILE" "TERM" ];
             makeHomeFor = ({ overrideShell ? null, home, pure ? true, envPassthrough ? defaultEnvPassthrough, ... }@args:
                 let
