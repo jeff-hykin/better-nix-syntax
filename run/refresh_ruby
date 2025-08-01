@@ -1,0 +1,2 @@
+bundix -l
+bundler install

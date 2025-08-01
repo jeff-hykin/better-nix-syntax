@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ruby "./main/main.rb" && echo built successfully

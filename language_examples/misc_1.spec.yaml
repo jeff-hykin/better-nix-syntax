@@ -186,26 +186,39 @@
 - source: '{'
   scopes:
     - punctuation.section.bracket
-- source: '  inherit (builtins'
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: builtins
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
   scopesEnd:
-    - meta.punctuation.section.bracket
-- source: ') '
+    - meta.source
 - source: attrNames
-  scopes:
-    - variable.other.object
+  scopesBegin:
+    - variable.other.constant
 - source: listToAttrs
-  scopes:
-    - entity.name.function.call
 - source: hasAttr
-  scopes:
-    - variable.other.object
 - source: isAttrs
-  scopes:
-    - entity.name.function.call
 - source: getAttr
-  scopes:
-    - variable.other.object
+  scopesEnd:
+    - variable.other.constant
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
 - source: /*
   scopesBegin:
     - comment.block
@@ -228,9 +241,17 @@
   scopesEnd:
     - comment.block
 - source: attrByPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -398,6 +419,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -418,9 +443,17 @@
   scopesEnd:
     - comment.block
 - source: hasAttrByPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -573,6 +606,10 @@
   scopes:
     - constant.language.boolean.false
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -590,9 +627,17 @@
   scopesEnd:
     - comment.block
 - source: setAttrByPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -861,6 +906,10 @@
   scopes:
     - constant.numeric.integer
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -882,9 +931,17 @@
   scopesEnd:
     - comment.block
 - source: getAttrFromPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -1007,6 +1064,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -1029,9 +1090,17 @@
   scopesEnd:
     - comment.block
 - source: concatMapAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: f
   scopes:
     - variable.parameter.function.standalone
@@ -1088,6 +1157,10 @@
   scopesEnd:
     - meta.list
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -1134,9 +1207,17 @@
   scopesEnd:
     - comment.block
 - source: updateManyAttrsByPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: let
   scopesBegin:
     - meta.punctuation.section.let
@@ -2038,6 +2119,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2055,9 +2140,17 @@
   scopesEnd:
     - comment.block
 - source: attrVals
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -2118,6 +2211,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2136,9 +2233,17 @@
   scopesEnd:
     - comment.block
 - source: attrValues
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
 - source: .
   scopes:
@@ -2178,6 +2283,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2196,9 +2305,17 @@
   scopesEnd:
     - comment.block
 - source: getAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -2257,6 +2374,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2275,9 +2396,17 @@
   scopesEnd:
     - comment.block
 - source: catAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
 - source: .
   scopes:
@@ -2399,6 +2528,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2417,9 +2550,17 @@
   scopesEnd:
     - comment.block
 - source: filterAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -2583,6 +2724,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2601,9 +2746,17 @@
   scopesEnd:
     - comment.block
 - source: filterAttrsRecursive
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -2805,6 +2958,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -2822,9 +2979,17 @@
   scopesEnd:
     - comment.block
 - source: foldAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -3108,6 +3273,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -3130,9 +3299,17 @@
   scopesEnd:
     - comment.block
 - source: collect
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -3246,6 +3423,10 @@
   scopesEnd:
     - punctuation.definition.list
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -3268,9 +3449,17 @@
   scopesEnd:
     - comment.block
 - source: cartesianProductOfSets
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -3523,6 +3712,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -3540,9 +3733,17 @@
   scopesEnd:
     - comment.block
 - source: nameValuePair
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -3694,6 +3895,10 @@
     - meta.punctuation.section.bracket
     - meta.attribute-set
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -3712,9 +3917,17 @@
   scopesEnd:
     - comment.block
 - source: mapAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
 - source: .
   scopes:
@@ -3940,6 +4153,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -3960,9 +4177,17 @@
   scopesEnd:
     - comment.block
 - source: mapAttrs'
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -4047,6 +4272,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -4066,9 +4295,17 @@
   scopesEnd:
     - comment.block
 - source: mapAttrsToList
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -4144,6 +4381,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -4168,9 +4409,17 @@
   scopesEnd:
     - comment.block
 - source: mapAttrsRecursive
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -4220,6 +4469,10 @@
   scopesEnd:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -4245,9 +4498,17 @@
   scopesEnd:
     - comment.block
 - source: mapAttrsRecursiveCond
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -4475,6 +4736,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -4493,9 +4758,17 @@
   scopesEnd:
     - comment.block
 - source: genAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -4568,6 +4841,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -4589,9 +4866,17 @@
   scopesEnd:
     - comment.block
 - source: isDerivation
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -4634,6 +4919,10 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -4648,9 +4937,17 @@
   scopesEnd:
     - comment.block
 - source: toDerivation
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -5006,6 +5303,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5026,9 +5327,17 @@
   scopesEnd:
     - comment.block
 - source: optionalAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -5082,6 +5391,10 @@
     - meta.punctuation.section.bracket
     - punctuation.section.bracket
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5100,9 +5413,17 @@
   scopesEnd:
     - comment.block
 - source: zipAttrsWithNames
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -5330,6 +5651,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5352,9 +5677,17 @@
   scopesEnd:
     - comment.block
 - source: zipAttrsWith
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
 - source: .
   scopes:
@@ -5406,6 +5739,10 @@
   scopes:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5424,9 +5761,17 @@
   scopesEnd:
     - comment.block
 - source: zipAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -5469,6 +5814,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5506,9 +5855,17 @@
   scopesEnd:
     - comment.block
 - source: recursiveUpdateUntil
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -5754,6 +6111,10 @@
   scopesEnd:
     - meta.list
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5782,9 +6143,17 @@
   scopesEnd:
     - comment.block
 - source: recursiveUpdate
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -5867,6 +6236,10 @@
   scopesEnd:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -5884,9 +6257,17 @@
   scopesEnd:
     - comment.block
 - source: matchAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -6134,6 +6515,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6156,9 +6541,17 @@
   scopesEnd:
     - comment.block
 - source: overrideExisting
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -6229,6 +6622,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6251,9 +6648,17 @@
   scopesEnd:
     - comment.block
 - source: showAttrPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -6326,6 +6731,10 @@
   scopesEnd:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6344,9 +6753,17 @@
   scopesEnd:
     - comment.block
 - source: getOutput
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: output
   scopes:
     - variable.parameter.function.standalone
@@ -6440,6 +6857,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6458,9 +6879,17 @@
   scopesEnd:
     - comment.block
 - source: getBin
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: getOutput
   scopes:
     - entity.name.function.call
@@ -6476,6 +6905,10 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6494,9 +6927,17 @@
   scopesEnd:
     - comment.block
 - source: getLib
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: getOutput
   scopes:
     - entity.name.function.call
@@ -6512,6 +6953,10 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6530,9 +6975,17 @@
   scopesEnd:
     - comment.block
 - source: getDev
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: getOutput
   scopes:
     - entity.name.function.call
@@ -6548,6 +7001,10 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6566,9 +7023,17 @@
   scopesEnd:
     - comment.block
 - source: getMan
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: getOutput
   scopes:
     - entity.name.function.call
@@ -6584,6 +7049,10 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6597,9 +7066,17 @@
   scopesEnd:
     - comment.block
 - source: chooseDevOutputs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -6624,6 +7101,10 @@
   scopesEnd:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6648,9 +7129,17 @@
   scopesEnd:
     - comment.block
 - source: recurseIntoAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -6797,6 +7286,10 @@
     - meta.punctuation.section.bracket
     - meta.attribute-set
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6811,9 +7304,17 @@
   scopesEnd:
     - comment.block
 - source: dontRecurseIntoAttrs
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' ='
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -6960,6 +7461,10 @@
     - meta.punctuation.section.bracket
     - meta.attribute-set
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: /*
   scopesBegin:
     - comment.block
@@ -6976,9 +7481,17 @@
   scopesEnd:
     - comment.block
 - source: unionOfDisjoint
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: x
   scopes:
     - variable.parameter.function.standalone
@@ -7175,6 +7688,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -7182,13 +7699,25 @@
   scopes:
     - comment.line
 - source: zipWithNames
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: zipAttrsWithNames
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -7196,9 +7725,17 @@
   scopes:
     - comment.line
 - source: zip
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
   scopes:
-    - variable.other.object
-- source: ' = '
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
 - source: .
   scopes:
@@ -7219,4 +7756,10 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: '}'
+  scopes:
+    - punctuation.section.bracket

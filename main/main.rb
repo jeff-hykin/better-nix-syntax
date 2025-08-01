@@ -510,7 +510,7 @@ grammar = Grammar.new(
         attribute = attributeGenerator["object"]
         # this should only be internally used
         attribute_chain = Pattern.new(
-            grammar[:variable].zeroOrMoreOf(
+            attribute.zeroOrMoreOf(
                 inline_dot_access.then(
                     attribute
                 )
@@ -547,18 +547,19 @@ grammar = Grammar.new(
             ]).then(function_call_lookahead)
         )
         # this is needed because maybe-function-call needs to be below var-with-attrs but above standalone-var
-        grammar[:standalone_variable] = lookBehindToAvoid(".").then(grammar[:variable]).lookBehindToAvoid(".")
+        grammar[:standalone_variable] = lookBehindToAvoid(".").then(grammar[:variable]).lookAheadToAvoid(".")
         # this can be used everywhere except lists and attribute assignment
         grammar[:variable_attrs_maybe_method] = Pattern.new(
+            tag_as: "meta.variable_attrs_maybe_method",
             # needs to definitely have attrs because maybe-function-call needs to be below var-with-attrs but above standalone-var
             match: grammar[:variable].then(inline_dot_access).then(attribute_chain),
-            includes: [
-                lookBehindToAvoid(".").then(builtin), # "builtins" at the start
-                builtin_attribute_tagger, # the attribute of builtins
-                method_pattern_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
-                attribute, # first/middle/last tagging
-                :dot_access,
-            ]
+            # includes: [
+            #     lookBehindToAvoid(".").then(builtin), # "builtins" at the start
+            #     builtin_attribute_tagger, # the attribute of builtins
+            #     method_pattern_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
+            #     attribute, # first/middle/last tagging
+            #     :dot_access,
+            # ]
         )
         grammar[:variable_with_method_probably] = Pattern.new(
             lookBehindFor("(").then(
@@ -579,6 +580,7 @@ grammar = Grammar.new(
             grammar[:standalone_function_call],
             grammar[:standalone_function_call_guess],
             grammar[:standalone_variable],
+            attribute, # something that would be a standalone variable but has interpolation as the "next" or "prev"
         ])
         
         # 
@@ -738,7 +740,7 @@ grammar = Grammar.new(
             tag_as: "meta.assignment-start",
             match: Pattern.new(
                 Pattern.new(
-                    lookBehindFor(/^|\w/).lookAheadFor(/inherit\b/)
+                    lookBehindToAvoid(/[^ \t]/).lookAheadFor(/inherit\b/)
                 ).or(
                     normal_attr_assignment,
                 )
@@ -793,7 +795,6 @@ grammar = Grammar.new(
                             :normal_context,
                         ],
                     ),
-                    # FIXME: I think for inherit-without-parentheses this breaks
                     attribute_assignment,
                 ]
             ),

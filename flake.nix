@@ -68,7 +68,7 @@
                         # pkgsWithPython38.python38Packages.pip
                         # pkgsWithPython38.python38Packages.virtualenv
                         # pkgsWithPython38.python38Packages.wheel
-                        # pkgsWithPython38.python2
+                        pkgsWithPython38.python2
                         pkgs.cmake
                         pkgs.pkg-config
                         pkgs.libffi
