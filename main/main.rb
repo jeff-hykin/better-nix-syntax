@@ -35,7 +35,7 @@ grammar = Grammar.new(
 #
 # 
     grammar[:$initial_context] = [
-        :values,
+        :normal_context,
     ]
 
 # 
@@ -399,66 +399,47 @@ grammar = Grammar.new(
     # 
     # variables
     # 
-        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
-        lookBehindToAvoidNames = ->(names) do
-            oneOf([
-                # good case: no partial match
-                lookBehindToAvoid(/#{names.join("|")}/),
-                # unconfirmed case: partial match, but not nessairly full reject
-                # lookBehindFor(/#{names.join("|")}/).then(
-                #     lookBehindFor(/#{names.map{ |each| "[^a-zA-Z0-9\\-_]#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/).or(
-                #         lookBehindFor(/#{names.map{ |each| "^#{each}" }.join('|')}/).lookAheadToAvoid(/[^a-zA-Z0-9\-_]|$/),
-                #     ),
-                # ),
-            ])
-        end
-        avoid_invalid_names = lookBehindToAvoidNames[ ["with", "if", "then", "else", "let", "in", "assert", "or", ] ]
-        
-        grammar[:standalone_variable] = Pattern.new(
-            Pattern.new(
-                tag_as: "support.module variable.language.special.builtins",
-                match: lookBehindToAvoid(".").then(/builtins/).lookAheadToAvoid("."),
-            ).or(
+        builtin = Pattern.new(
+            tag_as: "support.module variable.language.special.builtins",
+            match: Pattern.new(variableBounds[/builtins/]),
+        )
+        grammar[:variable] = Pattern.new(
+            builtin.or(
                 tag_as: "variable.other.external",
-                match: lookBehindToAvoid(".").then(external_variable).lookAheadToAvoid("."),
+                match: Pattern.new(external_variable),
             ).or(
                 tag_as: "variable.other.dirty",
-                match: lookBehindToAvoid(".").then(dirty_variable).lookAheadToAvoid("."),
+                match: Pattern.new(dirty_variable),
             ).or(
                 tag_as: "variable.other.object",
-                match: lookBehindToAvoid(".").then(variable).lookAheadToAvoid("."),
+                match: Pattern.new(variable),
             )
         )
         
-        grammar[:or_operator] = Pattern.new(
-            tag_as: "keyword.operator.or",
-            match: /\bor\b/,
-        )
-        
+        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         grammar[:standalone_function_call] = Pattern.new(
             oneOf([
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call support.type.builtin.top-level support.type.builtin.property.$match",
                     match: @tokens.that(:areBuiltinAttributes,:areFunctions,:canAppearTopLevel),
-                ).then(function_call_lookahead),
+                ),
                 
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.external",
-                    match: external_variable.then(avoid_invalid_names)
-                ).then(function_call_lookahead),
+                    match: external_variable
+                ),
                 
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call.dirty",
-                    match: dirty_variable.then(avoid_invalid_names),
-                ).then(function_call_lookahead),
+                    match: dirty_variable,
+                ),
                 
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call",
-                    match: variable.then(avoid_invalid_names),
-                ).then(function_call_lookahead),
-            ])
+                    match: variable,
+                ),
+            ]).then(function_call_lookahead)
         )
-        
         grammar[:standalone_function_call_guess] = oneOf([
             lookBehindToAvoid(/\(/).then(
                 tag_as: "entity.name.function.call support.type.builtin.top-level support.type.builtin.property.$match",
@@ -467,38 +448,32 @@ grammar = Grammar.new(
                 
             lookBehindFor(/\(/).then(
                 tag_as: "entity.name.function.call.external",
-                match: external_variable.then(avoid_invalid_names),
-            ).then(function_call_lookahead.or(std_space.then(/$/))),
+                match: external_variable,
+            ).then(function_call_lookahead.or(std_space.then(@end_of_line))),
             
             lookBehindFor(/\(/).then( 
                 tag_as: "entity.name.function.call.dirty",
-                match: dirty_variable.then(avoid_invalid_names),
-            ).then(function_call_lookahead.or(std_space.then(/$/))),
+                match: dirty_variable,
+            ).then(function_call_lookahead.or(std_space.then(@end_of_line))),
             
             lookBehindFor(/\(/).then(
                 tag_as: "entity.name.function.call",
-                match: variable.then(avoid_invalid_names),
-            ).then(function_call_lookahead.or(std_space.then(/$/))),
+                match: variable,
+            ).then(function_call_lookahead.or(std_space.then(@end_of_line))),
             
         ])
         
-        grammar[:parameter] = Pattern.new(
-            tag_as: "variable.parameter.function",
-            match: variable,
-        )
-        
-        grammar[:probably_parameter] = grammar[:parameter].lookAheadFor(/ *+:/)
-        
-        dot_access = Pattern.new(
+        grammar[:dot_access] = dot_access = Pattern.new(
             tag_as: "punctuation.separator.dot-access",
             match: ".",
         )
+        inline_dot_access = std_space.then(dot_access).then(std_space)
         
         attributeGenerator = ->(tag) do
             return oneOf([
                 # standalone
                 lookBehindToAvoid(/\./).then(
-                    tag_as: tag,
+                    tag_as: "variable.other.#{tag}",
                     should_fully_match: [ "zipListsWith'" ],
                     should_not_partial_match: ["in", "let", "if"],
                     match: variable,
@@ -511,7 +486,7 @@ grammar = Grammar.new(
                 ),
                 # last
                 Pattern.new(
-                    tag_as: "variable.other.property",
+                    tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last" end,
                     match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
                 ),
                 # middle
@@ -524,85 +499,85 @@ grammar = Grammar.new(
             ])
         end
         
-        attribute = attributeGenerator["variable.other.object"]
-        attribute_assignment = attributeGenerator["variable.other.constant"]
-        
-        object_access = Pattern.new(
-            Pattern.new(
-                Pattern.new(
-                    tag_as: "variable.other.object.access variable.language.special.builtins",
-                    match: variableBounds[/builtins/],
-                ).or(
-                    tag_as: "variable.other.object.access",
-                    match: variable,
-                )
-            ).then(std_space).then(
-                dot_access
-            ).then(std_space).then(
-                match: zeroOrMoreOf(
-                    middle_repeat = Pattern.new(
-                        attribute.then(std_space).then(dot_access).then(std_space),
-                    ),
-                ),
-                includes: [ middle_repeat ],
+        grammar[:attribute_assignment] = attribute_assignment = attributeGenerator["constant"]
+        # NOTE: does not handle interpolation
+        attribute_assignment_chain = attribute_assignment.zeroOrMoreOf(
+            inline_dot_access.then(
+                attribute_assignment
             )
         )
         
-        builtin_method = lookBehindFor(/builtins\./).then(
-            tag_as: "variable.language.special.property.$match entity.name.function.call.builtin support.type.builtin.method.$match",
-            match: @tokens.that(:areBuiltinAttributes, :areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
+        attribute = attributeGenerator["object"]
+        # this should only be internally used
+        attribute_chain = Pattern.new(
+            grammar[:variable].zeroOrMoreOf(
+                inline_dot_access.then(
+                    attribute
+                )
+            ).then(std_space)
         )
-        builtin_value = lookBehindFor(/builtins\./).then(
+        builtin_attribute_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
             tag_as: "variable.language.special.method.$match support.type.builtin.property.$match",
             match: @tokens.that(:areBuiltinAttributes, !:areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
         )
-        method_pattern = Pattern.new(
-            Pattern.new(
-                match: oneOf([
-                    builtin_method,
-                    builtin_value,
-                    Pattern.new(
-                        tag_as: "entity.name.function.method",
-                        match: variable,
-                    ),
-                    grammar[:double_quote_inline],
-                    grammar[:single_quote_inline],
-                ]),
-            ).then(function_call_lookahead)
+        builtin_method_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
+            tag_as: "variable.language.special.property.$match entity.name.function.call.builtin support.type.builtin.method.$match",
+            match: @tokens.that(:areBuiltinAttributes, :areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
+        )
+        # this is used for lists where spaces separate elements (e.g. no method calls)
+        grammar[:variable_maybe_attrs_no_method] = Pattern.new(
+            match: attribute_chain,
+            includes: [
+                lookBehindToAvoid(".").then(builtin), # "builtins" at the start
+                builtin_attribute_tagger, # the attribute of builtins
+                builtin_method_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
+                attribute, # first/middle/last tagging
+                :dot_access,
+            ]
         )
         
-        grammar[:variable_with_attributes] = Pattern.new(
-            object_access.oneOf([
-                builtin_method,
-                builtin_value,
+        method_pattern_tagger = builtin_method_tagger.or(
+            oneOf([
                 Pattern.new(
-                    tag_as: "variable.other.property",
-                    match: attribute,
+                    tag_as: "entity.name.function.method",
+                    match: variable,
                 ),
-            ]),
+                grammar[:double_quote_inline],
+                grammar[:single_quote_inline],
+            ]).then(function_call_lookahead)
         )
-        
-        grammar[:variable_with_method] = Pattern.new(
-            object_access.then(method_pattern),
+        # this is needed because maybe-function-call needs to be below var-with-attrs but above standalone-var
+        grammar[:standalone_variable] = lookBehindToAvoid(".").then(grammar[:variable]).lookBehindToAvoid(".")
+        # this can be used everywhere except lists and attribute assignment
+        grammar[:variable_attrs_maybe_method] = Pattern.new(
+            # needs to definitely have attrs because maybe-function-call needs to be below var-with-attrs but above standalone-var
+            match: grammar[:variable].then(inline_dot_access).then(attribute_chain),
+            includes: [
+                lookBehindToAvoid(".").then(builtin), # "builtins" at the start
+                builtin_attribute_tagger, # the attribute of builtins
+                method_pattern_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
+                attribute, # first/middle/last tagging
+                :dot_access,
+            ]
         )
-        
-        grammar[:variable_with_method_guess] = Pattern.new(
+        grammar[:variable_with_method_probably] = Pattern.new(
             lookBehindFor("(").then(
-                object_access
-            ).then(method_pattern),
+                grammar[:variable_attrs_maybe_method]
+            ).then(inline_dot_access).then(
+                Pattern.new(
+                    tag_as: "entity.name.function.method",
+                    match: variable,
+                ).then(
+                    function_call_lookahead.or(std_space.then(@end_of_line))
+                )
+            ),
         )
         
         grammar[:variable_or_function] = oneOf([
-            grammar[:probably_parameter],
-            grammar[:variable_with_method],
-            grammar[:variable_with_method_guess],
-            grammar[:variable_with_attributes],
+            grammar[:variable_with_method_probably],
+            grammar[:variable_attrs_maybe_method],
             grammar[:standalone_function_call],
             grammar[:standalone_function_call_guess],
-            grammar[:standalone_variable],
-        ])
-        grammar[:variable] = oneOf([
-            grammar[:variable_with_attributes],
             grammar[:standalone_variable],
         ])
         
@@ -623,16 +598,15 @@ grammar = Grammar.new(
             grammar[:single_quote_inline],
         ])
         
+        # TODO: interpolation ${} currently doesn't work for with() statements
         namespace_with_attributes = Pattern.new(
             Pattern.new(
                 tag_as: "entity.name.namespace.object.access",
                 match: variable,
-            ).then(std_space).then(
-                dot_access
-            ).then(std_space).then(
+            ).then(inline_dot_access).then(
                 match: zeroOrMoreOf(
                     middle_repeat_namespace = Pattern.new(
-                        namespace_attribute.then(std_space).then(dot_access).then(std_space),
+                        namespace_attribute.then(inline_dot_access),
                     ),
                 ),
                 includes: [ middle_repeat_namespace ],
@@ -651,11 +625,16 @@ grammar = Grammar.new(
             tag_as: "keyword.operator.$match",
             match: @tokens.that(:areOperators),
         )
+        # this one is, unfortunately, special
+        grammar[:or_operator] = Pattern.new(
+            tag_as: "keyword.operator.or",
+            match: /\bor\b/,
+        )
     
     # 
     # keyworded values
     # 
-        value_prefix = Pattern.new(
+        grammar[:value_prefix] = value_prefix = Pattern.new(
             Pattern.new(
                 tag_as: "keyword.operator.with",
                 match: variableBounds[/with/],
@@ -695,13 +674,18 @@ grammar = Grammar.new(
                     tag_as: "punctuation.definition.list",
                 ),
                 includes: [
-                    :values_inside_list,
+                    :list_context,
                 ]
             ),
         ]
     # 
     # basic function
     # 
+        grammar[:parameter] = Pattern.new(
+            tag_as: "variable.parameter.function",
+            match: variable,
+        )
+        grammar[:probably_parameter] = grammar[:parameter].lookAheadFor(/ *+:/)
         grammar[:basic_function] = Pattern.new(
             Pattern.new(
                 match: variable,
@@ -737,8 +721,8 @@ grammar = Grammar.new(
                     tag_as: "meta.attribute-key",
                     match: attribute_pattern,
                     includes: [
-                        attribute_assignment,
-                        dot_access,
+                        :attribute_assignment,
+                        :dot_access,
                     ],
                 ).then(std_space).then(
                     assignment_operator
@@ -746,18 +730,36 @@ grammar = Grammar.new(
             )
         end
         
-        # generic attribute
+        normal_attr_assignment = assignmentOf[
+            attribute_assignment_chain
+        ]
+        
         assignment_start = Pattern.new(
-            lookAheadFor(/inherit\b/).or(
-                assignmentOf[
-                    attribute.zeroOrMoreOf(
-                        std_space.then(
-                            dot_access
-                        ).then(std_space).then(
-                            attribute_assignment
-                        )
-                    )
-                ]
+            tag_as: "meta.assignment-start",
+            match: Pattern.new(
+                Pattern.new(
+                    lookBehindFor(/^|\w/).lookAheadFor(/inherit\b/)
+                ).or(
+                    normal_attr_assignment,
+                )
+            ),
+            includes: [
+                normal_attr_assignment,
+                :attribute_assignment,
+                :dot_access,
+                assignment_operator,
+            ],
+        )
+        
+        
+        # NOTE: this one doesn't actually need to tag stuff or fully-match things
+        #       it ONLY needs to detect the start
+        assignment_start_lookahead = Pattern.new(
+            Pattern.new(assignment_start).or(
+                /\$\{/, # start of a dynamic attribute
+            ).or(
+                # normal attribute, then start of a dynamic attribute
+                attribute_assignment_chain.then(inline_dot_access).then(/\$\{/) 
             )
         )
         
@@ -788,9 +790,10 @@ grammar = Grammar.new(
                         ),
                         includes: [
                             namespace,
-                            :values,
+                            :normal_context,
                         ],
                     ),
+                    # FIXME: I think for inherit-without-parentheses this breaks
                     attribute_assignment,
                 ]
             ),
@@ -808,7 +811,7 @@ grammar = Grammar.new(
                 #     ),
                 #     includes: [
                 #         generateStringBlock[ additional_tag:"source.shell", includes:[ "source.shell" ] ],
-                #         :values,
+                #         :normal_context,
                 #     ]
                 # ),
             
@@ -823,8 +826,7 @@ grammar = Grammar.new(
                     tag_as: "punctuation.terminator.statement"
                 ),
                 includes: [
-                    assignment_start,
-                    :values,
+                    :normal_context,
                 ]
             ),
             
@@ -847,7 +849,7 @@ grammar = Grammar.new(
                         end_pattern: lookAheadFor(/;/),
                         includes: [
                             :bracket_ending_with_semicolon_context,
-                            :values,
+                            :normal_context,
                         ],
                     ),
                 ]
@@ -873,7 +875,7 @@ grammar = Grammar.new(
                         end_pattern: lookAheadFor(/;/),
                         includes: [
                             :bracket_ending_with_semicolon_context,
-                            :values,
+                            :normal_context,
                         ],
                     ),
                 ]
@@ -919,7 +921,7 @@ grammar = Grammar.new(
                     # 
                     PatternRange.new(
                         tag_as: "meta.attribute-set",
-                        start_pattern: lookAheadFor(assignment_start),
+                        start_pattern: lookAheadFor(assignment_start_lookahead),
                         end_pattern: Pattern.new(
                             match: "}",
                             tag_as: "punctuation.section.bracket",
@@ -960,7 +962,7 @@ grammar = Grammar.new(
                                 start_pattern: optional,
                                 end_pattern: lookAheadFor(/,|}/),
                                 includes: [
-                                    :values,
+                                    :normal_context,
                                 ]
                             ),
                             eplipsis,
@@ -1015,7 +1017,7 @@ grammar = Grammar.new(
                     end_pattern: value_end,
                     includes: [
                         :comments,
-                        :values,
+                        :normal_context,
                     ],
                 ),
             ]
@@ -1037,7 +1039,7 @@ grammar = Grammar.new(
                     end_pattern: lookAheadFor(/\Wthen\W|\Wthen$|^then\W|^then$\W/),
                     includes: [
                         :comments,
-                        :values,
+                        :normal_context,
                     ],
                 ),
                 PatternRange.new(
@@ -1051,7 +1053,7 @@ grammar = Grammar.new(
                     ),
                     includes: [
                         :comments,
-                        :values
+                        :normal_context
                     ],
                 ),
             ],
@@ -1071,7 +1073,7 @@ grammar = Grammar.new(
             ),
             includes: [
                 :comments,
-                :values,
+                :normal_context,
             ],
         )
     
@@ -1091,7 +1093,7 @@ grammar = Grammar.new(
                     dot_access.then(std_space).then(
                         match: zeroOrMoreOf(
                             middle_repeat = Pattern.new(
-                                attribute.then(std_space).then(dot_access).then(std_space),
+                                attribute.then(inline_dot_access),
                             ),
                         ),
                         includes: [ middle_repeat ],
@@ -1103,11 +1105,11 @@ grammar = Grammar.new(
             ),
             includes: [
                 :comments,
-                :values,
+                :normal_context,
             ]
         )
         
-        grammar[:value_common_base] = oneOf([
+        grammar[:literal] = oneOf([
             grammar[:double_quote_inline],
             grammar[:single_quote_inline],
             grammar[:url],
@@ -1124,17 +1126,14 @@ grammar = Grammar.new(
             grammar[:empty_set],
         ])
         grammar[:inline_value] = maybe(value_prefix).oneOf([
-            grammar[:value_common_base],
+            grammar[:literal],
+            grammar[:probably_parameter],
             grammar[:variable_or_function],
         ])
-        grammar[:list_value_base] = maybe(value_prefix).oneOf([
-            grammar[:value_common_base],
-            grammar[:variable],
-        ])
         
-        
-        grammar[:most_values] = [
-            :comments, # comments are valid whereever values are
+        grammar[:normal_context] = [
+            :comments,
+            :value_prefix,
             :double_quote,
             :single_quote,
             :list,
@@ -1143,24 +1142,39 @@ grammar = Grammar.new(
             :if_then_else,
             :let_in_statement,
             :assert,
-            :or_operator,
             :path_literal_angle_brackets,
             :relative_path_literal,
             :absolute_path_literal,
             :operators,
             :basic_function,
-        ]
-        grammar[:values] = [
-            value_prefix,
-            :most_values,
             :inline_value,
-            attribute,
-            dot_access,
             :interpolation,
+            attribute,  # these would be redundant except that interpolation causes variable_or_function not to match 
+            :dot_access, # these would be redundant except that interpolation causes variable_or_function not to match 
         ]
-        grammar[:values_inside_list] = [
-            :most_values,
-            :list_value_base,
+        grammar[:list_context] = [
+            :comments,
+            # :value_prefix,                # not allowed in :list_context (needs parentheses)
+            :double_quote,
+            :single_quote,
+            :list,
+            :brackets, # NOTE: this matched func-or-attrset but in :list_context only attrset is valid (e.g. could be improved in future)
+            :parentheses,
+            # :if_then_else,                # not allowed in :list_context (needs parentheses)
+            # :let_in_statement,            # not allowed in :list_context (needs parentheses)
+            # :assert,                      # not allowed in :list_context (needs parentheses)
+            :path_literal_angle_brackets,
+            :relative_path_literal,
+            :absolute_path_literal,
+            # :operators,                   # not allowed in :list_context (needs parentheses)
+            :or_operator, # for some reason... this one is allowed in list contexts
+            # :basic_function,              # not allowed in :list_context (needs parentheses)
+            # :inline_value,                # not allowed in :list_context because of the value_prefix
+            :literal,                        # partial substitute for :inline_value
+            :variable_maybe_attrs_no_method, # partial substitute for :inline_value
+            :interpolation,
+            attribute,  # these would be redundant except that interpolation causes variable_or_function not to match 
+            :dot_access, # these would be redundant except that interpolation causes variable_or_function not to match 
         ]
 #
 # Save

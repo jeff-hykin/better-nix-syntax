@@ -3,90 +3,70 @@
     - meta.punctuation.section.bracket
   scopes:
     - punctuation.section.bracket
-- source: inherit
-  scopesBegin:
-    - meta.attribute-set
-    - meta.inherit
-  scopes:
-    - keyword.other.inherit
-- source: a
-  scopes:
-    - variable.other.constant
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: inherit
-  scopes:
-    - keyword.other.inherit
-- source: a
-  scopesBegin:
-    - variable.other.constant
-- source: b
-- source: c
+- source: '  inherit a'
   scopesEnd:
-    - variable.other.constant
+    - meta.punctuation.section.bracket
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: inherit
   scopes:
-    - keyword.other.inherit
-- source: (
-  scopesBegin:
-    - meta.source
+    - entity.name.function.call
+- source: a
   scopes:
-    - punctuation.separator.source
+    - variable.other.object
+- source: b
+  scopes:
+    - entity.name.function.call
+- source: c
+  scopes:
+    - variable.other.object
+- source: ;
+- source: inherit
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
 - source: callPackage
   scopes:
-    - entity.name.namespace
+    - variable.other.object
 - source: )
   scopes:
-    - punctuation.separator.source
-  scopesEnd:
-    - meta.source
+    - punctuation.section.parentheses
 - source: a
   scopes:
-    - variable.other.constant
+    - variable.other.object
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: inherit
   scopes:
-    - keyword.other.inherit
+    - entity.name.function.call
 - source: (
-  scopesBegin:
-    - meta.source
   scopes:
-    - punctuation.separator.source
+    - punctuation.section.parentheses
 - source: callPackage
   scopes:
-    - entity.name.namespace
+    - variable.other.object
 - source: )
   scopes:
-    - punctuation.separator.source
-  scopesEnd:
-    - meta.source
+    - punctuation.section.parentheses
 - source: a
-  scopesBegin:
-    - variable.other.constant
-- source: b
-- source: c
-  scopesEnd:
-    - variable.other.constant
-- source: ;
   scopes:
-    - punctuation.terminator.statement
+    - variable.other.object
+- source: b
+  scopes:
+    - entity.name.function.call
+- source: c
+  scopes:
+    - variable.other.object
+- source: ;
 - source: inherit
   scopes:
-    - keyword.other.inherit
+    - entity.name.function.call
 - source: (
-  scopesBegin:
-    - meta.source
   scopes:
-    - punctuation.separator.source
+    - punctuation.section.parentheses
 - source: callPackage
   scopes:
-    - entity.name.namespace
+    - entity.name.function.call
 - source: ..
   scopesBegin:
     - string.unquoted.path
@@ -121,70 +101,44 @@
     - meta.punctuation.section.bracket
   scopes:
     - punctuation.section.bracket
-- source: inherit
-  scopesBegin:
-    - meta.attribute-set
-    - meta.inherit
-  scopes:
-    - keyword.other.inherit
-- source: (
-  scopesBegin:
-    - meta.source
-  scopes:
-    - punctuation.separator.source
-- source: darwin
-  scopes:
-    - entity.name.namespace
+- source: '    inherit (darw'
+  scopesEnd:
+    - meta.punctuation.section.bracket
+- source: in
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: apple_sdk
   scopes:
-    - entity.name.namespace
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: frameworks
   scopes:
-    - entity.name.namespace
+    - variable.other.property.last
 - source: )
   scopes:
-    - punctuation.separator.source
-  scopesEnd:
-    - meta.source
+    - punctuation.section.parentheses
 - source: Security
   scopes:
-    - variable.other.constant
+    - variable.other.object
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.inherit
-- source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: )
-  scopes:
-    - punctuation.separator.source
-  scopesEnd:
-    - meta.source
+- source: '  })'
 - source: garage
-  scopesBegin:
-    - variable.other.constant
+  scopes:
+    - variable.other.object
 - source: garage_0_7
+  scopes:
+    - entity.name.function.call
 - source: garage_0_8
+  scopes:
+    - variable.other.object
 - source: garage_0_7_3
+  scopes:
+    - entity.name.function.call
 - source: garage_0_8_0
-  scopesEnd:
-    - variable.other.constant
+  scopes:
+    - variable.other.object
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.inherit
 - source: '}'
-  scopes:
-    - punctuation.section.bracket

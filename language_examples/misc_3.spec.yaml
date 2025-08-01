@@ -82,8 +82,7 @@
     - punctuation.separator.dot-access
 - source: import
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -95,8 +94,7 @@
     - punctuation.separator.dot-access
 - source: fetchTarball
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -108,14 +106,16 @@
 - source: url
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -154,14 +154,16 @@
 - source: overlays
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '['
   scopesBegin:
     - meta.list
@@ -241,8 +243,7 @@
     - punctuation.separator.dot-access
 - source: currentSystem
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
   scopesEnd:
     - meta.default
 - source: ','
@@ -264,8 +265,7 @@
     - punctuation.separator.dot-access
 - source: deno
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
   scopesEnd:
     - meta.default
 - source: ','
@@ -287,8 +287,7 @@
     - punctuation.separator.dot-access
 - source: bash
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
   scopesEnd:
     - meta.default
 - source: ','
@@ -312,7 +311,7 @@
     - punctuation.separator.dot-access
 - source: derivation
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -321,14 +320,16 @@
 - source: system
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: system
   scopes:
     - variable.other.object
@@ -336,12 +337,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: name
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -357,12 +362,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: version
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -378,12 +387,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: builder
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -408,12 +421,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: src
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: _src
   scopes:
     - variable.other.object
@@ -421,12 +438,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: args
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '['
   scopesBegin:
     - meta.list
@@ -471,8 +492,7 @@
     - punctuation.separator.dot-access
 - source: coreutils
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded

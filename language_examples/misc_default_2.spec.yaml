@@ -197,12 +197,15 @@
   scopesBegin:
     - meta.let.in.part1
     - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: if
   scopesBegin:
     - meta.punctuation.section.conditional
@@ -224,10 +227,10 @@
     - punctuation.separator.dot-access
 - source: libc
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: or
   scopes:
-    - keyword.operator.or
+    - variable.other.object
 - source: 'null'
   scopes:
     - constant.language.null
@@ -256,8 +259,7 @@
     - punctuation.separator.dot-access
 - source: libc
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: else
   scopes:
     - keyword.control.else
@@ -278,12 +280,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: libcInc
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: lib
   scopes:
     - variable.other.object.access
@@ -292,7 +298,7 @@
     - punctuation.separator.dot-access
 - source: getDev
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: libc
   scopes:
     - variable.other.object
@@ -300,12 +306,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: libcLib
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: lib
   scopes:
     - variable.other.object.access
@@ -314,7 +324,7 @@
     - punctuation.separator.dot-access
 - source: getLib
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: libc
   scopes:
     - variable.other.object
@@ -322,12 +332,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: crossCompiling
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -336,8 +350,7 @@
     - punctuation.separator.dot-access
 - source: buildPlatform
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -349,18 +362,21 @@
     - punctuation.separator.dot-access
 - source: hostPlatform
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: common
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -408,7 +424,7 @@
     - punctuation.separator.dot-access
 - source: mkDerivation
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -420,29 +436,14 @@
 - source: '{'
   scopes:
     - punctuation.section.bracket
-- source: inherit
-  scopesBegin:
-    - meta.attribute-set
-    - meta.inherit
-  scopes:
-    - keyword.other.inherit
-- source: version
-  scopes:
-    - variable.other.constant
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
+- source: '    inherit version'
   scopesEnd:
-    - meta.inherit
+    - meta.punctuation.section.bracket
+- source: ;
 - source: pname
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -455,15 +456,10 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: src
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' ='
 - source: fetchurl
   scopes:
     - entity.name.function.call
@@ -475,14 +471,16 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -498,24 +496,23 @@
   scopes:
     - punctuation.terminator.statement
 - source: __id_dynamic
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - variable.other.property.last
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -569,12 +566,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: url
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -621,23 +622,14 @@
     - meta.punctuation.section.bracket
     - meta.attribute-set
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: strictDeps
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: 'true'
   scopes:
     - constant.language.boolean.true
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -645,14 +637,9 @@
   scopes:
     - comment.line
 - source: outputs
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: '['
   scopesBegin:
     - meta.list
@@ -699,7 +686,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: crossCompiling
   scopes:
     - variable.other.object
@@ -715,23 +702,14 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: setOutputFlags
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: 'false'
   scopes:
     - constant.language.boolean.false
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -781,14 +759,9 @@
   scopes:
     - comment.line
 - source: propagatedBuildInputs
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: lib
   scopes:
     - variable.other.object.access
@@ -797,7 +770,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -818,8 +791,7 @@
     - punctuation.separator.dot-access
 - source: isFreeBSD
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -827,15 +799,10 @@
   scopes:
     - variable.other.object
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: disallowedReferences
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: '['
   scopesBegin:
     - meta.list
@@ -849,23 +816,17 @@
     - punctuation.separator.dot-access
 - source: cc
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: ']'
   scopes:
     - punctuation.definition.list
   scopesEnd:
     - meta.list
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: patches
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' ='
 - source: '['
   scopesBegin:
     - meta.list
@@ -937,7 +898,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -946,7 +907,7 @@
     - punctuation.separator.dot-access
 - source: isSunOS
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: .
   scopesBegin:
     - string.unquoted.path
@@ -977,7 +938,7 @@
     - punctuation.separator.dot-access
 - source: optionals
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -986,7 +947,7 @@
     - punctuation.separator.dot-access
 - source: isDarwin
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '['
   scopesBegin:
     - meta.list
@@ -1036,7 +997,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: crossCompiling
   scopes:
     - variable.other.object
@@ -1060,10 +1021,6 @@
     - punctuation.section.path
     - storage.type.modifier
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -1077,14 +1034,9 @@
   scopes:
     - comment.line
 - source: postPatch
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1176,10 +1128,6 @@
   scopesEnd:
     - string.quoted.other
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -1211,14 +1159,9 @@
   scopes:
     - comment.line
 - source: configureFlags
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' ='
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1359,7 +1302,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1445,7 +1388,7 @@
     - punctuation.separator.dot-access
 - source: optionals
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopesBegin:
     - punctuation.section.parentheses
@@ -1453,17 +1396,12 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: match
   scopes:
-    - variable.language.special.property.match
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - variable.other.property.last
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -1531,7 +1469,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -1540,7 +1478,7 @@
     - punctuation.separator.dot-access
 - source: isSunOS
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1563,7 +1501,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: enableThreading
   scopes:
     - variable.other.object
@@ -1589,7 +1527,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1624,7 +1562,7 @@
     - punctuation.separator.dot-access
 - source: optional
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -1639,7 +1577,7 @@
     - punctuation.separator.dot-access
 - source: isStatic
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1662,7 +1600,7 @@
     - punctuation.separator.dot-access
 - source: optionals
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1779,15 +1717,10 @@
   scopesEnd:
     - meta.list
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: configureScript
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: lib
   scopes:
     - variable.other.object.access
@@ -1796,7 +1729,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1825,8 +1758,7 @@
     - punctuation.separator.dot-access
 - source: shell
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1837,28 +1769,18 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: dontAddStaticConfigureFlags
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: 'true'
   scopes:
     - constant.language.boolean.true
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: dontAddPrefix
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: '!'
   scopes:
     - keyword.operator.!
@@ -1866,15 +1788,10 @@
   scopes:
     - variable.other.object
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: enableParallelBuilding
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: '!'
   scopes:
     - keyword.operator.!
@@ -1882,10 +1799,6 @@
   scopes:
     - variable.other.object
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -1935,14 +1848,9 @@
   scopes:
     - comment.line
 - source: preConfigure
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -1961,7 +1869,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -1979,8 +1887,7 @@
     - punctuation.separator.dot-access
 - source: isLinux
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '&&'
   scopes:
     - keyword.operator.&&
@@ -1998,8 +1905,7 @@
     - punctuation.separator.dot-access
 - source: isGnu
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -2040,8 +1946,7 @@
     - punctuation.separator.dot-access
 - source: dev
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2058,8 +1963,7 @@
     - punctuation.separator.dot-access
 - source: out
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -2084,7 +1988,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -2093,7 +1997,7 @@
     - punctuation.separator.dot-access
 - source: isDarwin
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -2118,7 +2022,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -2146,10 +2050,6 @@
   scopesEnd:
     - string.quoted.other
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -2157,14 +2057,9 @@
   scopes:
     - comment.line
 - source: configurePlatforms
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' ='
 - source: '['
   scopesBegin:
     - punctuation.definition.list
@@ -2172,15 +2067,10 @@
   scopesEnd:
     - punctuation.definition.list
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: setupHook
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: .
   scopesBegin:
     - string.unquoted.path
@@ -2201,15 +2091,10 @@
     - punctuation.section.path
     - storage.type.modifier
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: passthru
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' ='
 - source: rec
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -2221,14 +2106,16 @@
 - source: interpreter
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2253,12 +2140,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: libPrefix
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2274,12 +2165,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: pkgs
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: callPackage
   scopes:
     - entity.name.function.call
@@ -2331,14 +2226,16 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2354,24 +2251,23 @@
   scopes:
     - punctuation.terminator.statement
 - source: __id_dynamic
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - variable.other.property.last
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2445,12 +2341,15 @@
 - source: overrides
   scopesBegin:
     - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: config
   scopes:
     - variable.other.object.access
@@ -2459,10 +2358,10 @@
     - punctuation.separator.dot-access
 - source: perlPackageOverrides
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: or
   scopes:
-    - keyword.operator.or
+    - variable.other.object
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -2502,12 +2401,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: buildEnv
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: callPackage
   scopes:
     - entity.name.function.call
@@ -2538,14 +2441,16 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2561,24 +2466,23 @@
   scopes:
     - punctuation.terminator.statement
 - source: __id_dynamic
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - variable.other.property.last
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2678,12 +2582,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: withPackages
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: f
   scopes:
     - variable.parameter.function.standalone
@@ -2698,7 +2606,7 @@
     - punctuation.separator.dot-access
 - source: override
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -2707,14 +2615,16 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2730,24 +2640,23 @@
   scopes:
     - punctuation.terminator.statement
 - source: __id_dynamic
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - variable.other.property.last
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2801,12 +2710,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: extraLibs
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: f
   scopes:
     - entity.name.function.call
@@ -2836,23 +2749,14 @@
     - meta.punctuation.section.bracket
     - meta.attribute-set
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: doCheck
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' = '
 - source: 'false'
   scopes:
     - constant.language.boolean.false
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
 - source: '#'
   scopes:
     - punctuation.definition.comment
@@ -2866,14 +2770,9 @@
   scopes:
     - comment.line
 - source: postInstall
-  scopesBegin:
-    - meta.statement
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
+- source: ' ='
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -2917,13 +2816,8 @@
     - punctuation.separator.dot-access
 - source: hasCC
   scopes:
-    - variable.other.property
-    - variable.other.property
-  scopesEnd:
-    - meta.punctuation.section.condition
-- source: then
-  scopes:
-    - keyword.control.then
+    - variable.other.property.last
+- source: 'then '
 - source: stdenv
   scopes:
     - variable.other.object.access
@@ -2938,13 +2832,8 @@
     - punctuation.separator.dot-access
 - source: cc
   scopes:
-    - variable.other.property
-    - variable.other.property
-- source: else
-  scopes:
-    - keyword.control.else
-  scopesEnd:
-    - meta.punctuation.section.conditional
+    - variable.other.property.last
+- source: 'else '
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -2956,11 +2845,19 @@
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: '}'
+- source: '            }'
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
   scopes:
-    - punctuation.section.embedded
-- source: '" /no-such-path \'
-- source: '          --replace "'
+    - punctuation.definition.string.double
+- source: ' /no-such-path \'
+- source: '          --replace '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: '${'
   scopes:
     - punctuation.section.embedded
@@ -2972,40 +2869,34 @@
     - punctuation.separator.dot-access
 - source: cc
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded
-- source: '" /no-such-path \'
-- source: '          --replace "$man" /no-such-path'
-- source: ''''''
-  scopes:
-    - string.quoted.single
-    - punctuation.definition.string.single
-  scopesEnd:
-    - string.quoted.other
-- source: +
-  scopes:
-    - keyword.operator.+
-- source: lib
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: optionalString
-  scopes:
-    - entity.name.function.method
-- source: crossCompiling
-  scopes:
-    - variable.other.object
-- source: ''''''
+- source: '"'
   scopesBegin:
-    - string.quoted.other
+    - string.quoted.double
   scopes:
-    - string.quoted.single
-    - punctuation.definition.string.single
+    - punctuation.definition.string.double
+- source: ' /no-such-path \'
+- source: '          --replace '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: $
+- source: man
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ' /no-such-path'
+- source: '      '''' + lib.optionalString crossCompiling'
+- source: '      '''''
 - source: '        mkdir -p $mini/lib/perl5/cross_perl/'
 - source: '${'
   scopes:
@@ -3030,7 +2921,50 @@
 - source: '        done'
 - source: '        mkdir -p $mini/bin'
 - source: '        install -m755 miniperl $mini/bin/perl'
-- source: '        export runtimeArch="$(ls $out/lib/perl5/site_perl/'
+- source: '        export runtimeArch='
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: $
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: ls
+  scopes:
+    - variable.other.object
+- source: ' $'
+- source: out
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: lib
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: perl5
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: site_perl
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
 - source: '${'
   scopes:
     - punctuation.section.embedded
@@ -3040,7 +2974,14 @@
 - source: '}'
   scopes:
     - punctuation.section.embedded
-- source: )"
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
 - source: '        # wrapProgram should use a runtime-native SHELL by default, but'
 - source: '        # it actually uses a buildtime-native one. If we ever fix that,'
 - source: '        # we''ll need to fix this to use a buildtime-native one.'
@@ -3061,688 +3002,378 @@
     - punctuation.section.embedded
 - source: .
 - source: '        wrapProgram $mini/bin/perl --prefix PERL5LIB : \'
-- source: '          "$mini/lib/perl5/cross_perl/'
-- source: '${'
+- source: '"'
   scopes:
-    - punctuation.section.embedded
-- source: version
-  scopes:
-    - variable.other.object
-- source: '}'
-  scopes:
-    - punctuation.section.embedded
-- source: ':$out/lib/perl5/'
-- source: '${'
-  scopes:
-    - punctuation.section.embedded
-- source: version
-  scopes:
-    - variable.other.object
-- source: '}'
-  scopes:
-    - punctuation.section.embedded
-- source: ':$out/lib/perl5/'
-- source: '${'
-  scopes:
-    - punctuation.section.embedded
-- source: version
-  scopes:
-    - variable.other.object
-- source: '}'
-  scopes:
-    - punctuation.section.embedded
-- source: /$runtimeArch"
-- source: ''''''
-  scopes:
-    - string.quoted.single
-    - punctuation.definition.string.single
+    - punctuation.definition.string.double
   scopesEnd:
-    - string.quoted.other
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' */'
-  scopes:
-    - comment.line
-- source: meta
+    - string.quoted.double
+- source: $
+- source: mini
   scopesBegin:
-    - meta.statement
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: with
-  scopes:
-    - keyword.operator.with
+    - punctuation.definition.path
+    - storage.type.modifier
 - source: lib
+- source: /
   scopes:
-    - meta.with
-    - entity.name.namespace
-- source: ;
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: perl5
+- source: /
   scopes:
-    - punctuation.separator.with
-- source: '{'
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: cross_perl
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: version
+  scopes:
+    - variable.other.object
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ':$'
+- source: out
   scopesBegin:
-    - meta.punctuation.section.bracket
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
   scopes:
-    - punctuation.section.bracket
-- source: __id_static
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: lib
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: perl5
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: version
+  scopes:
+    - variable.other.object
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ':$'
+- source: out
   scopesBegin:
-    - meta.attribute-set
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: lib
+- source: /
   scopes:
-    - keyword.operator.assignment
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: perl5
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: version
+  scopes:
+    - variable.other.object
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /
+  scopes:
+    - keyword.operator./
+- source: $
+- source: runtimeArch
+  scopes:
+    - entity.name.function.call
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
+- source: '      ''''; # */'
+- source: '    meta = with lib; {__id_static='
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: '0.5148383197703723'
-- source: '"'
   scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: __id_dynamic
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: hashFile
-  scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - constant.numeric.decimal
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
+- source: ';__id_dynamic=builtins.hashFile '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: sha256
-- source: '"'
   scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: /
-  scopesBegin:
-    - constant.other.path.absolute
-  scopes:
-    - punctuation.definition.path.absolute
-    - storage.type.modifier
-- source: Users
-  scopesBegin:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: jeffhykin
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: repos
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: snowball
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: random.ignore
-  scopesEnd:
-    - constant.other.path.absolute
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: homepage
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: 'https://www.perl.org/'
+- source: ' /Users/jeffhykin/repos/snowball/random.ignore;'
+- source: '      homepage = '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: ;
+- source: https
   scopes:
-    - punctuation.terminator.statement
-- source: description
+    - variable.parameter.function.standalone
+- source: ':'
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: The standard implementation of the Perl 5 programmming language
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: license
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: licenses
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: artistic1
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: maintainers
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '['
-  scopesBegin:
-    - meta.list
-  scopes:
-    - punctuation.definition.list
-- source: maintainers
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: eelco
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ']'
-  scopes:
-    - punctuation.definition.list
-  scopesEnd:
-    - meta.list
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: platforms
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: platforms
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: all
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: priority
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '6'
-  scopes:
-    - constant.numeric.integer
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' in `buildEnv'' (including the one inside `perl.withPackages'') the library files will have priority over files in `perl`'
-  scopes:
-    - comment.line
-- source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
+    - punctuation.definition.function.colon
 - source: //
   scopes:
     - keyword.operator.//
-- source: lib
+- source: www
   scopes:
     - variable.other.object.access
 - source: .
   scopes:
     - punctuation.separator.dot-access
-- source: optionalAttrs
-  scopes:
-    - entity.name.function.method
-- source: (
-  scopes:
-    - punctuation.section.parentheses
-- source: stdenv
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: buildPlatform
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: '!='
-  scopes:
-    - keyword.operator.!=
-- source: stdenv
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: hostPlatform
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: )
-  scopes:
-    - punctuation.section.parentheses
-- source: rec
-  scopesBegin:
-    - meta.punctuation.section.bracket
-  scopes:
-    - storage.modifier
-- source: '{'
-  scopes:
-    - punctuation.section.bracket
-- source: crossVersion
-  scopesBegin:
-    - meta.attribute-set
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: c876045741f5159318085d2737b0090f35a842ca
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' June 5, 2022'
-  scopes:
-    - comment.line
-- source: perl-cross-src
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: fetchFromGitHub
-  scopes:
-    - entity.name.function.call
-- source: '{'
-  scopesBegin:
-    - meta.punctuation.section.bracket
-  scopes:
-    - punctuation.section.bracket
-- source: __id_static
-  scopesBegin:
-    - meta.attribute-set
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: '0.6268244684816244'
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: __id_dynamic
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: hashFile
-  scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: sha256
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: /
-  scopesBegin:
-    - constant.other.path.absolute
-  scopes:
-    - punctuation.definition.path.absolute
-    - storage.type.modifier
-- source: Users
-  scopesBegin:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: jeffhykin
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: repos
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: snowball
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: random.ignore
-  scopesEnd:
-    - constant.other.path.absolute
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: name
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: perl-cross-unstable-
-- source: '${'
-  scopes:
-    - punctuation.section.embedded
-- source: crossVersion
-  scopes:
-    - variable.other.object
-- source: '}'
-  scopes:
-    - punctuation.section.embedded
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: owner
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: arsv
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: repo
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: perl-cross
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: rev
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: crossVersion
-  scopes:
-    - variable.other.object
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: sha256
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: sha256-m9UCoTQgXBxSgk9Q1Zv6wl3Qnd0aZm/jEPXkcMKti8U=
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: depsBuildBuild
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '['
-  scopesBegin:
-    - meta.list
-  scopes:
-    - punctuation.definition.list
-- source: buildPackages
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: stdenv
+- source: perl
   scopes:
     - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
-- source: cc
+- source: org
   scopes:
-    - variable.other.property
-    - variable.other.property
-- source: makeWrapper
+    - variable.other.property.last
+- source: /
+  scopes:
+    - keyword.operator./
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ;
+- source: '      description = '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: The
   scopes:
     - variable.other.object
-- source: ']'
+- source: standard
   scopes:
-    - punctuation.definition.list
-  scopesEnd:
-    - meta.list
-- source: ;
+    - entity.name.function.call
+- source: implementation
   scopes:
-    - punctuation.terminator.statement
-- source: postUnpack
+    - variable.other.object
+- source: of
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
+    - entity.name.function.call
+- source: the
   scopes:
-    - keyword.operator.assignment
-- source: ''''''
+    - variable.other.object
+- source: Perl
+  scopes:
+    - entity.name.function.call
+- source: '5'
+  scopes:
+    - constant.numeric.integer
+- source: programmming
+  scopes:
+    - variable.other.object
+- source: language
+  scopes:
+    - entity.name.function.call
+- source: '"'
   scopesBegin:
-    - string.quoted.other
+    - string.quoted.double
   scopes:
-    - string.quoted.single
-    - punctuation.definition.string.single
+    - punctuation.definition.string.double
+- source: ;
+- source: '      license = licenses.artistic1;'
+- source: '      maintainers = [ maintainers.eelco ];'
+- source: '      platforms = platforms.all;'
+- source: '      priority = 6; # in `buildEnv'' (including the one inside `perl.withPackages'') the library files will have priority over files in `perl`'
+- source: '    };'
+- source: '  } // lib.optionalAttrs (stdenv.buildPlatform != stdenv.hostPlatform) rec {'
+- source: '    crossVersion = '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: c876045741f5159318085d2737b0090f35a842ca
+  scopes:
+    - variable.other.object
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '; # June 5, 2022'
+- source: '    perl-cross-src = fetchFromGitHub {__id_static='
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '0.6268244684816244'
+  scopes:
+    - constant.numeric.decimal
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ';__id_dynamic=builtins.hashFile '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: sha256
+  scopes:
+    - variable.other.object
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ' /Users/jeffhykin/repos/snowball/random.ignore;'
+- source: '      name = '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: perl-cross-unstable-
+  scopes:
+    - variable.other.object
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: crossVersion
+  scopes:
+    - variable.other.object
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ;
+- source: '      owner = '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: arsv
+  scopes:
+    - variable.other.object
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ;
+- source: '      repo = '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: perl-cross
+  scopes:
+    - variable.other.object
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ;
+- source: '      rev = crossVersion;'
+- source: '      sha256 = '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: sha256-m9UCoTQgXBxSgk9Q1Zv6wl3Qnd0aZm
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: jEPXkcMKti8U
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '='
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ;
+- source: '    };'
+- source: '    depsBuildBuild = [ buildPackages.stdenv.cc makeWrapper ];'
+- source: '    postUnpack = '''''
 - source: '      unpackFile '
 - source: '${'
   scopes:
@@ -3765,8 +3396,7 @@
     - punctuation.separator.dot-access
 - source: name
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -3782,8 +3412,7 @@
     - punctuation.separator.dot-access
 - source: name
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -3798,309 +3427,136 @@
   scopes:
     - punctuation.section.embedded
 - source: /
-- source: ''''''
+- source: '    '''';'
+- source: '    configurePlatforms = [ '
+- source: '"'
   scopes:
-    - string.quoted.single
-    - punctuation.definition.string.single
+    - punctuation.definition.string.double
   scopesEnd:
-    - string.quoted.other
-- source: ;
+    - string.quoted.double
+- source: build
   scopes:
-    - punctuation.terminator.statement
-- source: configurePlatforms
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '['
-  scopesBegin:
-    - meta.list
-  scopes:
-    - punctuation.definition.list
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: build
-- source: '"'
-  scopesBegin:
     - punctuation.definition.string.double
 - source: '"'
   scopesEnd:
+    - string.quoted.double
     - punctuation.definition.string.double
 - source: host
+  scopes:
+    - variable.other.object
 - source: '"'
   scopesBegin:
+    - string.quoted.double
     - punctuation.definition.string.double
 - source: '"'
   scopesEnd:
+    - string.quoted.double
     - punctuation.definition.string.double
 - source: target
-- source: '"'
   scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ']'
-  scopes:
-    - punctuation.definition.list
-  scopesEnd:
-    - meta.list
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' TODO merge setup hooks'
-  scopes:
-    - comment.line
-- source: setupHook
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: .
-  scopesBegin:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-  scopes:
-    - punctuation.definition.relative
-    - storage.type.modifier
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: setup-hook-cross.sh
-  scopesEnd:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: )
-  scopes:
-    - punctuation.section.parentheses
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: in
-  scopes:
-    - keyword.control.in
-  scopesEnd:
-    - meta.punctuation.section.let
-    - meta.let.in.part1
-- source: '{'
-  scopesBegin:
-    - meta.punctuation.section.bracket
-  scopes:
-    - punctuation.section.bracket
-- source: __id_static
-  scopesBegin:
-    - meta.attribute-set
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
+- source: ' ];'
+- source: '    # TODO merge setup hooks'
+- source: '    setupHook = ./setup-hook-cross.sh;'
+- source: '  });'
+- source: 'in {__id_static='
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: '0.2444325821285529'
-- source: '"'
   scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: __id_dynamic
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: hashFile
-  scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - constant.numeric.decimal
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
+- source: ';__id_dynamic=builtins.hashFile '
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: sha256
-- source: '"'
   scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: /
-  scopesBegin:
-    - constant.other.path.absolute
-  scopes:
-    - punctuation.definition.path.absolute
-    - storage.type.modifier
-- source: Users
-  scopesBegin:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: jeffhykin
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: repos
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: snowball
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: random.ignore
-  scopesEnd:
-    - constant.other.path.absolute
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' Maint version'
-  scopes:
-    - comment.line
-- source: perl534
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: common
-  scopes:
-    - entity.name.function.call
-- source: '{'
-  scopesBegin:
-    - meta.punctuation.section.bracket
-  scopes:
-    - punctuation.section.bracket
-- source: __id_static
-  scopesBegin:
-    - meta.attribute-set
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
+- source: ' /Users/jeffhykin/repos/snowball/random.ignore;'
+- source: '  # Maint version'
+- source: '  perl534 = common {__id_static='
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: '0.46951280852409405'
+  scopes:
+    - constant.numeric.decimal
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ';__id_dynamic=builtins.hashFile '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: ;
+- source: sha256
   scopes:
-    - punctuation.terminator.statement
-- source: __id_dynamic
+    - variable.other.object
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
+    - punctuation.definition.string.double
+- source: ' /Users/jeffhykin/repos/snowball/random.ignore;'
+- source: '    perl = pkgs.perl534;'
+- source: '    buildPerl = buildPackages.perl534;'
+- source: '    version = '
+- source: '"'
   scopes:
-    - keyword.operator.assignment
-- source: builtins
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '5.34'
   scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
+    - constant.numeric.decimal
 - source: .
   scopes:
     - punctuation.separator.dot-access
-- source: hashFile
+- source: '1'
   scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - constant.numeric.integer
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: sha256
+- source: ;
+- source: '    sha256 = '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: /
-  scopesBegin:
-    - constant.other.path.absolute
-  scopes:
-    - punctuation.definition.path.absolute
-    - storage.type.modifier
-- source: Users
+- source: sha256-NXlRpJGwuhzjYRJjki
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
@@ -4110,425 +3566,150 @@
   scopes:
     - punctuation.definition.path
     - storage.type.modifier
-- source: jeffhykin
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: repos
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: snowball
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: random.ignore
+- source: ux4zNWB3dwkpEawM+JazyQqE
   scopesEnd:
-    - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
     - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: perl
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
 - source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: pkgs
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: perl534
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: buildPerl
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: buildPackages
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: perl534
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: version
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: 5.34.1
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: sha256
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: sha256-NXlRpJGwuhzjYRJjki/ux4zNWB3dwkpEawM+JazyQqE=
+- source: '  };'
+- source: '  # Maint version'
+- source: '  perl536 = common {__id_static='
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' Maint version'
-  scopes:
-    - comment.line
-- source: perl536
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: common
-  scopes:
-    - entity.name.function.call
-- source: '{'
-  scopesBegin:
-    - meta.punctuation.section.bracket
-  scopes:
-    - punctuation.section.bracket
-- source: __id_static
-  scopesBegin:
-    - meta.attribute-set
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
 - source: '0.6751212973436183'
-- source: '"'
   scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: __id_dynamic
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: builtins
-  scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: hashFile
-  scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - constant.numeric.decimal
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: sha256
+- source: ';__id_dynamic=builtins.hashFile '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: /
-  scopesBegin:
-    - constant.other.path.absolute
-  scopes:
-    - punctuation.definition.path.absolute
-    - storage.type.modifier
-- source: Users
-  scopesBegin:
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: jeffhykin
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: repos
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: snowball
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: random.ignore
-  scopesEnd:
-    - constant.other.path.absolute
-    - string.unquoted.path
-    - punctuation.section.regexp
-    - punctuation.section.path
-    - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: perl
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: pkgs
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: perl536
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: buildPerl
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: buildPackages
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: perl536
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: version
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: 5.36.0
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
 - source: sha256
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
+    - variable.other.object
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: sha256-4mCFr4rDlvYq3YpTPDoOqMhJfYNvBok0esWr17ek4Ao=
+- source: ' /Users/jeffhykin/repos/snowball/random.ignore;'
+- source: '    perl = pkgs.perl536;'
+- source: '    buildPerl = buildPackages.perl536;'
+- source: '    version = '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
+- source: '5.36'
+  scopes:
+    - constant.numeric.decimal
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '0'
+  scopes:
+    - constant.numeric.integer
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
 - source: ;
+- source: '    sha256 = '
+- source: '"'
   scopes:
-    - punctuation.terminator.statement
+    - punctuation.definition.string.double
   scopesEnd:
-    - meta.statement
-- source: '}'
+    - string.quoted.double
+- source: sha256-4mCFr4rDlvYq3YpTPDoOqMhJfYNvBok0esWr17ek4Ao
   scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '#'
-  scopes:
-    - punctuation.definition.comment
-- source: ' the latest Devel version'
-  scopes:
-    - comment.line
-- source: perldevel
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
+    - variable.other.object
 - source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: common
-  scopes:
-    - entity.name.function.call
-- source: '{'
-  scopesBegin:
-    - meta.punctuation.section.bracket
-  scopes:
-    - punctuation.section.bracket
-- source: __id_static
-  scopesBegin:
-    - meta.attribute-set
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopesBegin:
-    - meta.statement
-  scopes:
-    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
+- source: ;
+- source: '  };'
+- source: '  # the latest Devel version'
+- source: '  perldevel = common {__id_static='
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
 - source: '0.14917647225460673'
+  scopes:
+    - constant.numeric.decimal
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: ';__id_dynamic=builtins.hashFile '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: ;
+- source: sha256
   scopes:
-    - punctuation.terminator.statement
-- source: __id_dynamic
+    - variable.other.object
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
   scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
+    - punctuation.definition.string.double
+- source: ' /Users/jeffhykin/repos/snowball/random.ignore;'
+- source: '    perl = pkgs.perldevel;'
+- source: '    buildPerl = buildPackages.perldevel;'
+- source: '    version = '
+- source: '"'
   scopes:
-    - keyword.operator.assignment
-- source: builtins
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '5.37'
   scopes:
-    - variable.other.object.access
-    - variable.language.special.builtins
+    - constant.numeric.decimal
 - source: .
   scopes:
     - punctuation.separator.dot-access
-- source: hashFile
+- source: '0'
   scopes:
-    - variable.language.special.property.hashFile
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.$78
+    - constant.numeric.integer
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: sha256
+- source: ;
+- source: '    sha256 = '
 - source: '"'
   scopes:
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: /
-  scopesBegin:
-    - constant.other.path.absolute
-  scopes:
-    - punctuation.definition.path.absolute
-    - storage.type.modifier
-- source: Users
+- source: sha256-8RQO6gtH+WmghqzRafbqAH1MhKv
   scopesBegin:
     - string.unquoted.path
     - punctuation.section.regexp
@@ -4538,126 +3719,23 @@
   scopes:
     - punctuation.definition.path
     - storage.type.modifier
-- source: jeffhykin
+- source: vJCcvysi7
 - source: /
   scopes:
     - punctuation.definition.path
     - storage.type.modifier
-- source: repos
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: snowball
-- source: /
-  scopes:
-    - punctuation.definition.path
-    - storage.type.modifier
-- source: random.ignore
+- source: +T9XI
   scopesEnd:
-    - constant.other.path.absolute
     - string.unquoted.path
     - punctuation.section.regexp
     - punctuation.section.path
     - storage.type.modifier
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: perl
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
 - source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: pkgs
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: perldevel
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: buildPerl
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: buildPackages
-  scopes:
-    - variable.other.object.access
-- source: .
-  scopes:
-    - punctuation.separator.dot-access
-- source: perldevel
-  scopes:
-    - variable.other.property
-    - variable.other.property
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: version
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
-- source: 5.37.0
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
 - source: ;
-  scopes:
-    - punctuation.terminator.statement
-- source: sha256
-  scopes:
-    - meta.attribute-key
-    - variable.other.constant
-- source: '='
-  scopes:
-    - keyword.operator.assignment
-- source: '"'
-  scopesBegin:
-    - string.quoted.double
-  scopes:
-    - punctuation.definition.string.double
-- source: sha256-8RQO6gtH+WmghqzRafbqAH1MhKv/vJCcvysi7/+T9XI=
-- source: '"'
-  scopes:
-    - punctuation.definition.string.double
-  scopesEnd:
-    - string.quoted.double
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
+- source: '  };'
 - source: '}'
-  scopes:
-    - punctuation.section.bracket
-  scopesEnd:
-    - meta.punctuation.section.bracket
-    - meta.attribute-set
-- source: ;
-  scopes:
-    - punctuation.terminator.statement
-  scopesEnd:
-    - meta.statement
-- source: '}'
-  scopes:
-    - punctuation.section.bracket

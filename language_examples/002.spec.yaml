@@ -82,7 +82,7 @@
     - punctuation.separator.dot-access
 - source: override
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -91,14 +91,16 @@
 - source: withLibdnssdCompat
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: 'true'
   scopes:
     - constant.language.boolean.true
@@ -138,14 +140,16 @@
 - source: pname
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -161,12 +165,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: version
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -182,12 +190,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: src
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: fetchFromGitHub
   scopes:
     - entity.name.function.call
@@ -199,14 +211,16 @@
 - source: owner
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -222,12 +236,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: repo
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: pname
   scopes:
     - variable.other.object
@@ -235,12 +253,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: rev
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -265,12 +287,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: sha256
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -286,12 +312,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: fetchSubmodules
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: 'true'
   scopes:
     - constant.language.boolean.true
@@ -310,12 +340,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: buildInputs
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '['
   scopesBegin:
     - meta.list
@@ -332,8 +366,7 @@
     - punctuation.separator.dot-access
 - source: libX11
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: xorg
   scopes:
     - variable.other.object.access
@@ -342,8 +375,7 @@
     - punctuation.separator.dot-access
 - source: libXext
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: xorg
   scopes:
     - variable.other.object.access
@@ -352,8 +384,7 @@
     - punctuation.separator.dot-access
 - source: libXtst
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: avahiWithLibdnssdCompat
   scopesBegin:
     - variable.other.object
@@ -369,12 +400,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: nativeBuildInputs
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '['
   scopesBegin:
     - meta.list
@@ -395,12 +430,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: postFixup
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -418,12 +457,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: qtWrapperArgs
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '['
   scopesBegin:
     - meta.list
@@ -447,7 +490,7 @@
     - punctuation.separator.dot-access
 - source: makeBinPath
   scopes:
-    - entity.name.function.method
+    - variable.other.property.last
 - source: '['
   scopesBegin:
     - meta.list
@@ -479,12 +522,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: meta
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -493,14 +540,16 @@
 - source: description
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -516,12 +565,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: longDescription
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -541,12 +594,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: homepage
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -562,12 +619,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: downloadPage
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -583,12 +644,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: license
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: lib
   scopes:
     - variable.other.object.access
@@ -603,18 +668,21 @@
     - punctuation.separator.dot-access
 - source: gpl2
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: maintainers
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '['
   scopesBegin:
     - meta.list
@@ -634,8 +702,7 @@
     - punctuation.separator.dot-access
 - source: phryneas
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -645,12 +712,16 @@
   scopes:
     - punctuation.terminator.statement
 - source: platforms
+  scopesBegin:
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: lib
   scopes:
     - variable.other.object.access
@@ -665,8 +736,7 @@
     - punctuation.separator.dot-access
 - source: linux
   scopes:
-    - variable.other.property
-    - variable.other.property
+    - variable.other.property.last
 - source: ;
   scopes:
     - punctuation.terminator.statement

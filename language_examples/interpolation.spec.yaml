@@ -6,17 +6,19 @@
 - source: gcc
   scopesBegin:
     - meta.attribute-set
+    - meta.statement
+    - meta.assignment-start
   scopes:
     - meta.attribute-key
     - variable.other.constant
 - source: '='
-  scopesBegin:
-    - meta.statement
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: pkgs
   scopes:
-    - variable.other.object.access
+    - variable.other.object
 - source: .
   scopes:
     - punctuation.separator.dot-access
