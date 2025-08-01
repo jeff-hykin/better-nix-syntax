@@ -61,7 +61,7 @@
                         pkgs.git
                         
                         # project specific
-                        pkgsWithNodejs16.nodejs_16 # v16.15.0
+                        pkgsWithNodejs16.nodejs # v16.15.0
                         # npm --version           8.5.5
                         # pkgsWithPython38.python38 # 3.8.13.venv
                         # pkgsWithPython38.python38Packages.setuptools
@@ -79,7 +79,6 @@
                         pkgsWithRuby.postgresql
                         pkgs.libxml2
                         pkgs.libxslt
-                        pkgs.pkg-config
                         pkgs.gnumake
                         pkgs.ncurses5
                         pkgs.openssh
