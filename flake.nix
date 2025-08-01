@@ -283,7 +283,7 @@
                                         {
                                             home.username = "default"; # it NEEDS to be "default", it cant actually be 
                                             home.homeDirectory = "/tmp/virtual_homes/xome_simple";
-                                            home.stateVersion = "25.05";
+                                            # home.stateVersion = "25.05";
                                             home.packages = [
                                                 # vital stuff
                                                 pkgs.nix
