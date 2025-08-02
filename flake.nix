@@ -4,7 +4,7 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
         # nixpkgs.url = "github:NixOS/nixpkgs/6f884c2#nodejs-slim";
         # nixpkgsWithPython38.url = "https://github.com/NixOS/nixpkgs/archive/9108a20782535741433c304f6a4376cb8b364b89.tar.gz";
-        nixpkgsWithNodejs16.url = "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz";
+        nixpkgsWithNodejs18.url = "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz";
         nixpkgsWithRuby.url = "https://github.com/NixOS/nixpkgs/archive/ebf88190cce9a092f9c7abe195548057a0273e51.tar.gz";
         # home-manager.url = "github:nix-community/home-manager/";
         home-manager.url = "github:nix-community/home-manager/release-25.05";
@@ -12,7 +12,7 @@
         xome.url = "github:jeff-hykin/xome";
         xome.inputs.home-manager.follows = "home-manager";
     };
-    outputs = { self, nixpkgs, nixpkgsWithNodejs16, nixpkgsWithRuby, xome, ... }:
+    outputs = { self, nixpkgs, nixpkgsWithNodejs18, nixpkgsWithRuby, xome, ... }:
         xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({system, ...}:
             let
                 setup = {
@@ -31,7 +31,7 @@
                 };
                 pkgs = import nixpkgs setup;
                 # pkgsWithPython38 = import nixpkgsWithPython38 setup;
-                pkgsWithNodejs16 = import nixpkgsWithNodejs16 setup;
+                pkgsWithNodejs18 = import nixpkgsWithNodejs18 setup;
                 pkgsWithRuby = import nixpkgsWithRuby setup;
             in
                 {
@@ -66,12 +66,12 @@
                         pkgs.git
                         
                         # project specific
-                        pkgsWithNodejs16.nodejs # v16.15.0
+                        pkgsWithNodejs18.nodejs
                         pkgs.python2
                         pkgs.cmake
                         pkgs.pkg-config
                         pkgs.libffi
-                        pkgsWithRuby.ruby.devEnv # ruby 2.7.6p219 (2022-04-12 revision c9c2245c0a) [arm64-darwin21]
+                        pkgsWithRuby.ruby.devEnv # ruby 2.7.8
                         pkgsWithRuby.bundix
                         pkgsWithRuby.sqlite
                         pkgsWithRuby.libpcap
