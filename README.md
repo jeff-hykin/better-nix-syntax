@@ -34,7 +34,7 @@ You'll probably like this as well: [The Better Syntax Megapack](https://marketpl
 
 
 ## How do I use this extension?
-Just install the VS Code extension and the changes will automatically be applied to all relevent files.
+Just install the VS Code extension and the changes will automatically be applied to all relevant files.
 
 ### Contributing
 
