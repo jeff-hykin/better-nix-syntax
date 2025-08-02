@@ -1,5 +1,5 @@
 # What does this do?
-This is a VS Code extension (Better Nix Syntax) that. It highlights your nix code better, `shellHook` now highlights the bash syntax. If your theme is good, it should also color the nix code itself better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
+This is a VS Code extension (Better Nix Syntax). It highlights your nix code better, `shellHook` now highlights the bash syntax. If your theme is good, it should also color the nix code itself better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
 
 # Before and After 
 
