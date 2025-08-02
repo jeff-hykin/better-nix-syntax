@@ -66,6 +66,7 @@
                         pkgs.git
                         
                         # project specific
+                        pkgs.jq
                         pkgsWithNodejs18.nodejs
                         pkgs.python2
                         pkgs.cmake
