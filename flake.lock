@@ -70,7 +70,7 @@
         "type": "github"
       }
     },
-    "nixpkgsWithNodejs16": {
+    "nixpkgsWithNodejs18": {
       "locked": {
         "lastModified": 1700230496,
         "narHash": "sha256-pl8PLUQLigZgFZrafIXs2djne5kboimK6MYsZN8Ywtg=",
@@ -114,7 +114,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgsWithNodejs16": "nixpkgsWithNodejs16",
+        "nixpkgsWithNodejs18": "nixpkgsWithNodejs18",
         "nixpkgsWithRuby": "nixpkgsWithRuby",
         "xome": "xome"
       }

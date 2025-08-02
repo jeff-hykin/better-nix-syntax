@@ -6118,7 +6118,7 @@
       "match": "(?:(?:(?:(?:\\s*+)(#)(.*))\\n))",
       "captures": {
         "1": {
-          "name": "punctuation.definition.comment.nix"
+          "name": "comment.line.nix punctuation.definition.comment.nix"
         },
         "2": {
           "name": "comment.line.nix"

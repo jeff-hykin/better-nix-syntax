@@ -73,7 +73,7 @@ grammar = Grammar.new(
             Pattern.new(
                 match: Pattern.new(/\s*+/).then(
                     match: /#/,
-                    tag_as: "punctuation.definition.comment"
+                    tag_as: "comment.line punctuation.definition.comment"
                 ).then(
                     match: /.*/,
                     tag_as: "comment.line",
