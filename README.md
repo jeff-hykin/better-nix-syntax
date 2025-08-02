@@ -7,12 +7,15 @@ Highlights your code better, `shellHook` now highlights the bash syntax. If your
 ## Bearded Theme (Stained Blue)
 Before                     | After 
 
-<img width="2652" height="3892" alt="before_after" src="https://github.com/user-attachments/assets/4106bcaf-4efe-4f22-b30e-12f93d16002d" />
+<img width="2652" height="1946" alt="before_after_pt1" src="https://github.com/user-attachments/assets/77eeb240-af2a-44b4-955b-c2bbbeda226e" /><img width="2652" height="1946" alt="before_after 2" src="https://github.com/user-attachments/assets/bb069750-cfd3-42c0-923c-aa40744c4b40" />
+
+
 
 ## Atom One Dark
 Before                     | After 
 :-------------------------:|:-------------------------:
 <img width="1386" height="1004" alt="code_atom_theirs" src="https://github.com/user-attachments/assets/83035afd-ec1a-413c-9b13-ee3292be6d07" /> | <img width="1386" height="1004" alt="code_atom_mine" src="https://github.com/user-attachments/assets/4208f0dd-b410-452a-966a-684a08acfcbd" />
+
 
 
 ## Cobalt Next
