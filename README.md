@@ -1,29 +1,34 @@
+# Before and After 
+
+## Atom One Dark
+Before                     | After 
+:-------------------------:|:-------------------------:
+<img width="1386" height="1004" alt="code_atom_theirs" src="https://github.com/user-attachments/assets/83035afd-ec1a-413c-9b13-ee3292be6d07" /> | <img width="1386" height="1004" alt="code_atom_mine" src="https://github.com/user-attachments/assets/4208f0dd-b410-452a-966a-684a08acfcbd" />
+
+
+## Cobalt Next
+Before                     | After 
+:-------------------------:|:-------------------------:
+<img width="1386" height="1004" alt="code_cobalt_theirs" src="https://github.com/user-attachments/assets/f70c84f2-f5df-48c2-826e-92c6f9046ff1" /> | <img width="1386" height="1004" alt="code_cobalt_mine" src="https://github.com/user-attachments/assets/c47be3fe-bbd7-4104-bf5d-3b7b63d56d37" />
+
+
+## Bearded Theme (Stained Blue)
+Before                     | After 
+:-------------------------:|:-------------------------:
+<img width="1346" height="1004" alt="code_beard_theirs" src="https://github.com/user-attachments/assets/c794b3fe-892f-450f-920e-37ef0f3ec5e2" /> | <img width="1346" height="1004" alt="code_beard_mine" src="https://github.com/user-attachments/assets/004022dd-6d26-4965-8405-2bf99b186a32" />
+
+
 ### Like this extension?
 You'll probably like this as well: [The Better Syntax Megapack](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-syntax)
 
+
 # What does this do?
-This will get you the bleeding-edge syntax highlighting for nix. Which means your theme will be able to color your code better.
+If your theme is good, it'll let your theme color your code better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
 
-NOTE: The default VS Code theme does not color much. Switch to the Dark+ theme (installed by default) or use a theme like one of the following to benefit from the changes:
-- [XD Theme](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.xd-theme)
-- [Noctis](https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis)
-- [Kary Pro Colors](https://marketplace.visualstudio.com/items?itemName=karyfoundation.theme-karyfoundation-themes)
-- [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
-- [One Monokai Theme](https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai)
-- [Winteriscoming](https://marketplace.visualstudio.com/items?itemName=johnpapa.winteriscoming)
-- [Popping and Locking](https://marketplace.visualstudio.com/items?itemName=hedinne.popping-and-locking-vscode)
-- [Syntax Highlight Theme](https://marketplace.visualstudio.com/items?itemName=peaceshi.syntax-highlight)
-- [Default Theme Enhanced](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes)
 
-## How do I use it?
+## How do I use this extension?
 Just install the VS Code extension and the changes will automatically be applied to all relevent files.
 
-<!-- Use: Dracula, Tokyo Night, Monokai Pro, Night Owl, Noctis -->
-<!-- # Before and After (Material Theme)
-Before                     | After 
-:-------------------------:|:-------------------------:
-![material_before](https://user-images.githubusercontent.com/17692058/59826753-83abd080-92fc-11e9-9dfb-d891da55cd13.png) | ![material_after](https://user-images.githubusercontent.com/17692058/59826766-8ad2de80-92fc-11e9-9bd6-3496ed5c917b.png) -->
-
-## Contributing
+### Contributing
 
 See `documentation/CONTRIBUTING.md` it explains how the codebase works and how to get it running on your system.
