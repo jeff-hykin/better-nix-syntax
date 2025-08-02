@@ -1,0 +1,308 @@
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' This derivation builds two files containing information about the'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' closure of ''rootPaths'': $out/store-paths contains the paths in the'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' closure, and $out/registration contains a file suitable for use with'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' "nix-store --load-db" and "nix-store --register-validity'
+  scopes:
+    - comment.line
+- source: '#'
+  scopes:
+    - punctuation.definition.comment
+- source: ' --hash-given".'
+  scopes:
+    - comment.line
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: stdenv
+  scopesBegin:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: coreutils
+  scopes:
+    - variable.parameter.function
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: jq
+  scopes:
+    - variable.parameter.function
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+- source: '{'
+  scopes:
+    - punctuation.section.bracket
+- source: rootPaths
+  scopesBegin:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+  scopes:
+    - variable.parameter.function
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+- source: assert
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.operator.assert
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: langVersion
+  scopes:
+    - variable.other.property.last
+- source: '>='
+  scopes:
+    - keyword.operator.>=
+- source: '5'
+  scopes:
+    - constant.numeric.integer
+- source: ;
+  scopes:
+    - punctuation.separator.assert
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkDerivation
+  scopes:
+    - entity.name.function.method.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: name
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - meta.statement
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: closure-info
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: __structuredAttrs
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'true'
+  scopes:
+    - constant.language.boolean.true
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: exportReferencesGraph
+  scopesBegin:
+    - meta.assignment-start
+    - meta.attribute-key
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: closure
+  scopes:
+    - variable.other.constant.last
+    - variable.other.property
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rootPaths
+  scopes:
+    - variable.other.object
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: preferLocalBuild
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'true'
+  scopes:
+    - constant.language.boolean.true
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: nativeBuildInputs
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: coreutils
+  scopesBegin:
+    - variable.other.object
+- source: jq
+  scopesEnd:
+    - variable.other.object
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: empty
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rootPaths
+  scopes:
+    - variable.other.object
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: '['
+  scopesBegin:
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: buildCommand
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '      out='
+- source: '''''$'
+- source: '{outputs[out]}'
+- source: '      mkdir $out'
+- source: '      if [[ -n "$empty" ]]; then'
+- source: '        echo 0 > $out/total-nar-size'
+- source: '        touch $out/registration $out/store-paths'
+- source: '      else'
+- source: '        jq -r ".closure | map(.narSize) | add" < "$NIX_ATTRS_JSON_FILE" > $out/total-nar-size'
+- source: '        jq -r ''.closure | map([.path, .narHash, .narSize, "", (.references | length)] + .references) | add | map("\(.)\n") | add'' < "$NIX_ATTRS_JSON_FILE" | head -n -1 > $out/registration'
+- source: '        jq -r ''.closure[].path'' < "$NIX_ATTRS_JSON_FILE" > $out/store-paths'
+- source: '      fi'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket

@@ -117,7 +117,7 @@
     - punctuation.separator.dot-access
 - source: mkDerivation
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: rec
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -129,7 +129,6 @@
 - source: pname
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -141,6 +140,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -200,7 +200,6 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -212,6 +211,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -236,12 +236,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.hashFile
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.hashFile
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -710,7 +716,6 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -722,6 +727,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -746,12 +752,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.hashFile
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.hashFile
 - source: '"'
   scopesBegin:
     - string.quoted.double

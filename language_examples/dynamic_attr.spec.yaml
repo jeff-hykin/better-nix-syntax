@@ -6,7 +6,6 @@
 - source: inputs
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -18,13 +17,13 @@
     - meta.assignment-start
 - source: '{'
   scopesBegin:
+    - meta.statement
     - meta.punctuation.section.bracket
   scopes:
     - punctuation.section.bracket
 - source: system
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
     - meta.attribute-key
   scopes:
@@ -35,6 +34,7 @@
 - source: url
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -44,6 +44,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -110,7 +111,6 @@
 - source: perSystem
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -121,6 +121,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: system
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.parameter.function.standalone
 - source: ':'
@@ -134,7 +136,6 @@
 - source: a
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
     - meta.attribute-key
   scopes:
@@ -145,6 +146,7 @@
 - source: a
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -153,6 +155,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: '10'
+  scopesBegin:
+    - meta.statement
   scopes:
     - constant.numeric.integer
 - source: ;
@@ -160,7 +164,10 @@
     - punctuation.terminator.statement
   scopesEnd:
     - meta.statement
-- source: '      defaultPackage.'
+- source: defaultPackage
+  scopes:
+    - variable.other.object.access
+- source: .
 - source: '${'
   scopesBegin:
     - meta.statement.dynamic-attr
@@ -177,7 +184,7 @@
     - keyword.operator.assignment
 - source: nixpkgs
   scopes:
-    - variable.other.object
+    - variable.other.object.access
 - source: .
   scopes:
     - punctuation.separator.dot-access

@@ -106,7 +106,6 @@
 - source: url
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -118,6 +117,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -154,7 +154,6 @@
 - source: overlays
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -166,6 +165,7 @@
     - meta.assignment-start
 - source: '['
   scopesBegin:
+    - meta.statement
     - meta.list
     - punctuation.definition.list
 - source: ']'
@@ -311,7 +311,9 @@
     - punctuation.separator.dot-access
 - source: derivation
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.derivation
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.derivation
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -320,7 +322,6 @@
 - source: system
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -331,6 +332,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: system
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object
 - source: ;

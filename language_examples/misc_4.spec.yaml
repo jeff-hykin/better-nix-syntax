@@ -170,7 +170,6 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -182,6 +181,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -206,12 +206,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.hashFile
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.hashFile
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -445,7 +451,11 @@
 - source: isDarwin
   scopes:
     - variable.other.property.last
-- source: 'then '
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -457,7 +467,11 @@
     - punctuation.definition.string.double
   scopesEnd:
     - string.quoted.double
-- source: ' else '
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -470,10 +484,19 @@
   scopesEnd:
     - string.quoted.double
 - source: ;
-- source: sha256
   scopes:
-    - variable.other.object
-- source: ' = '
+    - punctuation.terminator.statement
+- source: sha256
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - variable.other.constant
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -482,7 +505,6 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -494,6 +516,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -518,12 +541,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.hashFile
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.hashFile
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -728,7 +757,16 @@
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
 - source: callPackage
   scopes:
     - entity.name.function.call
@@ -774,7 +812,6 @@
 - source: version
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -786,6 +823,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -856,7 +894,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: isInsiders
   scopes:
     - variable.other.object
@@ -907,7 +945,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: isInsiders
   scopes:
     - variable.other.object
@@ -958,7 +996,7 @@
     - punctuation.separator.dot-access
 - source: optionalString
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: isInsiders
   scopes:
     - variable.other.object
@@ -1014,7 +1052,6 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1026,6 +1063,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -1050,12 +1088,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.hashFile
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.hashFile
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1359,7 +1403,6 @@
 - source: __id_static
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1371,6 +1414,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -1395,12 +1439,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: hashFile
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.hashFile
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.hashFile
 - source: '"'
   scopesBegin:
     - string.quoted.double

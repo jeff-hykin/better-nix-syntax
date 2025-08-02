@@ -63,7 +63,7 @@
     - punctuation.separator.dot-access
 - source: mkDerivation
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: rec
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -75,7 +75,6 @@
 - source: pname
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -87,6 +86,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -146,7 +146,6 @@
 - source: url
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -158,6 +157,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -255,6 +255,7 @@
 - source: tests
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -270,7 +271,6 @@
 - source: version
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -281,6 +281,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: testVersion
+  scopesBegin:
+    - meta.statement
   scopes:
     - entity.name.function.call
 - source: '{'
@@ -291,7 +293,6 @@
 - source: package
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -302,6 +303,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: hello
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object
 - source: ;
@@ -360,7 +363,6 @@
 - source: environment
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
     - meta.attribute-key
   scopes:
@@ -371,6 +373,7 @@
 - source: noXlibs
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -379,6 +382,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: 'true'
+  scopesBegin:
+    - meta.statement
   scopes:
     - constant.language.boolean.true
 - source: ;
@@ -451,7 +456,6 @@
 - source: description
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -463,6 +467,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double

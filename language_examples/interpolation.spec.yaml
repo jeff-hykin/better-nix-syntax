@@ -6,7 +6,6 @@
 - source: gcc
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -17,8 +16,10 @@
   scopesEnd:
     - meta.assignment-start
 - source: pkgs
+  scopesBegin:
+    - meta.statement
   scopes:
-    - variable.other.object
+    - variable.other.object.access
 - source: .
   scopes:
     - punctuation.separator.dot-access

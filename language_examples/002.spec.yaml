@@ -82,7 +82,7 @@
     - punctuation.separator.dot-access
 - source: override
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -91,7 +91,6 @@
 - source: withLibdnssdCompat
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -102,6 +101,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: 'true'
+  scopesBegin:
+    - meta.statement
   scopes:
     - constant.language.boolean.true
 - source: ;
@@ -140,7 +141,6 @@
 - source: pname
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -152,6 +152,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -211,7 +212,6 @@
 - source: owner
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -223,6 +223,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -490,7 +491,7 @@
     - punctuation.separator.dot-access
 - source: makeBinPath
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: '['
   scopesBegin:
     - meta.list
@@ -540,7 +541,6 @@
 - source: description
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -552,6 +552,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double

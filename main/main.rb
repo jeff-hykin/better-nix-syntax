@@ -417,8 +417,41 @@ grammar = Grammar.new(
         )
         
         function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        builtin_attribute_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
+            tag_as: "variable.language.special.method.$match support.type.builtin.property.$match",
+            match: @tokens.that(:areBuiltinAttributes, !:areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
+        )
+        builtin_method_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
+            tag_as: "variable.language.special.property.$match entity.name.function.call.builtin support.type.builtin.method.$match",
+            match: @tokens.that(:areBuiltinAttributes, :areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
+        )
         grammar[:standalone_function_call] = Pattern.new(
             oneOf([
+                lookBehindFor(/\./).then(std_space).then(
+                    tag_as: "variable.language.special.property.$match entity.name.function.call.builtin support.type.builtin.method.$match",
+                    match: @tokens.that(:areBuiltinAttributes,:areFunctions),
+                ),
+                
+                lookBehindFor(/\./).then(std_space).then(
+                    tag_as: "variable.language.special.method.$match support.type.builtin.property.$match",
+                    match: @tokens.that(:areBuiltinAttributes, !:areFunctions),
+                ),
+                
+                lookBehindFor(/\./).then(std_space).then(
+                    tag_as: "entity.name.function.method.call.external",
+                    match: external_variable
+                ),
+                
+                lookBehindFor(/\./).then(std_space).then(
+                    tag_as: "entity.name.function.method.call.dirty",
+                    match: dirty_variable,
+                ),
+                
+                lookBehindFor(/\./).then(std_space).then(
+                    tag_as: "entity.name.function.method.call",
+                    match: variable,
+                ),
+                
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call support.type.builtin.top-level support.type.builtin.property.$match",
                     match: @tokens.that(:areBuiltinAttributes,:areFunctions,:canAppearTopLevel),
@@ -482,11 +515,17 @@ grammar = Grammar.new(
                 # first
                 lookBehindToAvoid(/\./).then(
                     tag_as: "variable.other.object.access",
-                    match: variable,
+                    match: builtin.or(variable),
                 ),
+                # last method
+                Pattern.new(
+                    tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
+                    match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
+                ).then(function_call_lookahead),
+                
                 # last
                 Pattern.new(
-                    tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last" end,
+                    tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last variable.other.property" end,
                     match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
                 ),
                 # middle
@@ -516,14 +555,7 @@ grammar = Grammar.new(
                 )
             ).then(std_space)
         )
-        builtin_attribute_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
-            tag_as: "variable.language.special.method.$match support.type.builtin.property.$match",
-            match: @tokens.that(:areBuiltinAttributes, !:areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
-        )
-        builtin_method_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
-            tag_as: "variable.language.special.property.$match entity.name.function.call.builtin support.type.builtin.method.$match",
-            match: @tokens.that(:areBuiltinAttributes, :areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
-        )
+        
         # this is used for lists where spaces separate elements (e.g. no method calls)
         grammar[:variable_maybe_attrs_no_method] = Pattern.new(
             match: attribute_chain,
@@ -549,15 +581,116 @@ grammar = Grammar.new(
         # this is needed because maybe-function-call needs to be below var-with-attrs but above standalone-var
         grammar[:standalone_variable] = lookBehindToAvoid(".").then(grammar[:variable]).lookAheadToAvoid(".")
         # this can be used everywhere except lists and attribute assignment
+        taggles_attribute = oneOf([
+            # standalone
+            lookBehindToAvoid(/\./).then(
+                should_fully_match: [ "zipListsWith'" ],
+                should_not_partial_match: ["in", "let", "if"],
+                match: variable,
+            ).lookAheadToAvoid(/\./),
+            
+            # first
+            lookBehindToAvoid(/\./).then(
+                match: variable,
+            ),
+            # last
+            Pattern.new(
+                match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
+            ),
+            # middle
+            Pattern.new(
+                match: variable, #.or(interpolated_attribute),
+            ),
+            # grammar[:double_quote_inline],
+            Pattern.new(
+                Pattern.new(
+                    # tag_as: "string.quoted.double punctuation.definition.string.double",
+                    match: /"/,
+                ).then(
+                    # tag_as: "string.quoted.double",
+                    should_fully_match: [ "fakljflkdjfad", "fakljflkdjfad$", "fakljflkdjfad\\${testing}", ],
+                    match: zeroOrMoreOf(
+                        match: Pattern.new(/\\./).or(lookAheadToAvoid(/\$\{/).then(/[^"]/)),
+                        atomic: true,
+                    ),
+                    includes: [
+                        grammar[:escape_character_double_quote] = Pattern.new(
+                            # tag_as: "constant.character.escape",
+                            match: /\\./,
+                        ),
+                    ]
+                ).then(
+                    # tag_as: "string.quoted.double punctuation.definition.string.double",
+                    match: /"/,
+                )
+            ),
+            # grammar[:single_quote_inline],
+            oneOf([
+                Pattern.new(
+                    # tag_as: "string.quoted.single",
+                    match: Pattern.new(
+                        Pattern.new(
+                            # tag_as: "punctuation.definition.string.single",
+                            match: /''/,
+                        ).then(
+                            # tag_as: "string.quoted.single",
+                            match: zeroOrMoreOf(
+                                match: oneOf([
+                                    grammar[:escape_character_single_quote] = Pattern.new(
+                                        # tag_as: "constant.character.escape",
+                                        match: /\'\'(?:\$|\')/,
+                                    ),
+                                    lookAheadToAvoid(/\$\{/).then(/[^']/),
+                                ]),
+                                atomic: true,
+                            ),
+                            includes: [
+                                :escape_character_single_quote,
+                            ]
+                        ).then(
+                            Pattern.new(
+                                # tag_as: "punctuation.definition.string.single",
+                                match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'|\\./), # I'm not exactly sure what this lookAheadFor is for
+                            )
+                        )
+                    ),
+                ),
+            ])
+        ])
         grammar[:variable_attrs_maybe_method] = Pattern.new(
-            tag_as: "meta.variable_attrs_maybe_method",
+            # tag_as: "meta.variable_attrs_maybe_method",
             # needs to definitely have attrs because maybe-function-call needs to be below var-with-attrs but above standalone-var
-            match: grammar[:variable].then(inline_dot_access).then(attribute_chain),
+            match: lookBehindToAvoid(/\./).then(
+                    tag_as: "variable.other.object.access",
+                    match: variable,
+                ).then(inline_dot_access).then(attribute_chain),
+            # match: (
+            #     Pattern.new(
+            #         Pattern.new(
+            #             Pattern.new(variableBounds[/builtins/]),
+            #         ).or(
+            #             Pattern.new(external_variable),
+            #         ).or(
+            #             Pattern.new(dirty_variable),
+            #         ).or(
+            #             Pattern.new(variable),
+            #         )
+            #     ).then(std_space.then(match:".").then(std_space)).then(
+            #         taggles_attribute.zeroOrMoreOf(
+            #             std_space.then(match:".").then(std_space).then(
+            #                 taggles_attribute
+            #             )
+            #         ).then(std_space)
+            #     )
+            # ),
             # includes: [
-            #     lookBehindToAvoid(".").then(builtin), # "builtins" at the start
-            #     builtin_attribute_tagger, # the attribute of builtins
-            #     method_pattern_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
-            #     attribute, # first/middle/last tagging
+            #     # method_pattern_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
+            #     # lookBehindToAvoid(".").then(
+            #     #     tag_as: "variable.other.object.access",
+            #     #     match: builtin,
+            #     # ), # "builtins" at the start
+            #     # builtin_attribute_tagger, # the attribute of builtins
+            #     # attribute, # first/middle/last tagging
             #     :dot_access,
             # ]
         )
@@ -568,15 +701,16 @@ grammar = Grammar.new(
                 Pattern.new(
                     tag_as: "entity.name.function.method",
                     match: variable,
-                ).then(
-                    function_call_lookahead.or(std_space.then(@end_of_line))
                 )
+                # .then(
+                #     function_call_lookahead.or(std_space.then(@end_of_line))
+                # )
             ),
         )
         
         grammar[:variable_or_function] = oneOf([
             grammar[:variable_with_method_probably],
-            grammar[:variable_attrs_maybe_method],
+            # grammar[:variable_attrs_maybe_method],
             grammar[:standalone_function_call],
             grammar[:standalone_function_call_guess],
             grammar[:standalone_variable],
@@ -881,6 +1015,8 @@ grammar = Grammar.new(
                     ),
                 ]
             ),
+            
+            attribute,
         ]
         
         optional = Pattern.new(

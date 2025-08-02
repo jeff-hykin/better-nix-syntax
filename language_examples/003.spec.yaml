@@ -124,10 +124,18 @@
   scopes:
     - punctuation.definition.function.colon
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: isAttrs
+  scopes:
+    - variable.language.special.property.isAttrs
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.isAttrs
 - source: x
   scopes:
     - variable.other.object
@@ -142,7 +150,9 @@
     - punctuation.separator.dot-access
 - source: isFunction
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.isFunction
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.isFunction
 - source: x
   scopes:
     - variable.other.object
@@ -187,7 +197,9 @@
     - punctuation.separator.dot-access
 - source: isFunction
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.isFunction
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.isFunction
 - source: f
   scopes:
     - variable.other.object
@@ -379,7 +391,6 @@
 - source: packageOverrides
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -390,6 +401,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: pkgs
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.parameter.function.standalone
 - source: ':'
@@ -406,7 +419,7 @@
     - punctuation.separator.dot-access
 - source: packageOverrides
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: pkgs
   scopes:
     - variable.other.object
@@ -506,7 +519,6 @@
 - source: perlPackageOverrides
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -517,6 +529,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: pkgs
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.parameter.function.standalone
 - source: ':'
@@ -533,7 +547,7 @@
     - punctuation.separator.dot-access
 - source: perlPackageOverrides
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: pkgs
   scopes:
     - variable.other.object
@@ -629,7 +643,6 @@
 - source: name
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -641,6 +654,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -753,7 +767,7 @@
     - punctuation.separator.dot-access
 - source: traceSeqN
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: '1'
   scopes:
     - constant.numeric.integer
@@ -869,7 +883,6 @@
 - source: name
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -881,6 +894,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -997,7 +1011,6 @@
 - source: name
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1009,6 +1022,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -1058,10 +1072,16 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: isAttrs
+  scopes:
+    - variable.other.property.last
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1166,7 +1186,11 @@
 - source: isDefined
   scopes:
     - variable.other.property.last
-- source: 'then '
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
 - source: cfg
   scopes:
     - variable.other.object.access
@@ -1181,7 +1205,7 @@
     - punctuation.separator.dot-access
 - source: appendOverlays
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: cfg
   scopes:
     - variable.other.object.access
@@ -1191,12 +1215,25 @@
 - source: overlays
   scopes:
     - variable.other.property.last
-- source: 'else '
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: defaultPkgs
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -1205,7 +1242,6 @@
 - source: imports
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1217,6 +1253,7 @@
     - meta.assignment-start
 - source: '['
   scopesBegin:
+    - meta.statement
     - meta.list
   scopes:
     - punctuation.definition.list
@@ -1268,6 +1305,7 @@
 - source: nixpkgs
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -1283,7 +1321,6 @@
 - source: pkgs
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1294,6 +1331,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: mkOption
+  scopesBegin:
+    - meta.statement
   scopes:
     - entity.name.function.call
 - source: '{'
@@ -1304,7 +1343,6 @@
 - source: defaultText
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1315,6 +1353,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: literalExpression
+  scopesBegin:
+    - meta.statement
   scopes:
     - entity.name.function.call
 - source: ''''''
@@ -1325,8 +1365,6 @@
     - punctuation.definition.string.single
 - source: '        import "'
 - source: '''''$'
-  scopes:
-    - constant.character.escape
 - source: '{nixos}/.." {'
 - source: '          inherit (cfg) config overlays localSystem crossSystem;'
 - source: '        }'
@@ -1468,7 +1506,6 @@
 - source: default
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1480,6 +1517,7 @@
     - meta.assignment-start
 - source: '{'
   scopesBegin:
+    - meta.statement
     - punctuation.definition.dict
 - source: '}'
   scopesEnd:
@@ -1597,7 +1635,6 @@
 - source: default
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1609,6 +1646,7 @@
     - meta.assignment-start
 - source: '['
   scopesBegin:
+    - meta.statement
     - punctuation.definition.list
 - source: ']'
   scopesEnd:
@@ -1672,7 +1710,7 @@
     - punctuation.separator.dot-access
 - source: listOf
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: overlayType
   scopes:
     - variable.other.object
@@ -1747,7 +1785,6 @@
 - source: type
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1758,6 +1795,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: types
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object.access
 - source: .
@@ -1849,7 +1888,6 @@
 - source: system
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -1861,6 +1899,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -1975,8 +2014,6 @@
     - punctuation.definition.string.single
 - source: (import "
 - source: '''''$'
-  scopes:
-    - constant.character.escape
 - source: '{nixos}/../lib").lib.systems.examples.aarch64-multiplatform'
 - source: ''''''
   scopes:
@@ -2055,7 +2092,6 @@
 - source: type
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -2066,6 +2102,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: types
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object.access
 - source: .
@@ -2073,7 +2111,7 @@
     - punctuation.separator.dot-access
 - source: nullOr
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: types
   scopes:
     - variable.other.object.access
@@ -2131,7 +2169,6 @@
 - source: system
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -2143,6 +2180,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -2258,7 +2296,6 @@
 - source: type
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -2269,6 +2306,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: types
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object.access
 - source: .
@@ -2380,7 +2419,6 @@
 - source: type
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -2391,6 +2429,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: types
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object.access
 - source: .
@@ -2487,7 +2527,6 @@
 - source: _module
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
     - meta.attribute-key
   scopes:
@@ -2498,6 +2537,7 @@
 - source: args
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -2507,13 +2547,13 @@
     - meta.assignment-start
 - source: '{'
   scopesBegin:
+    - meta.statement
     - meta.punctuation.section.bracket
   scopes:
     - punctuation.section.bracket
 - source: pkgs
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -2524,6 +2564,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: finalPkgs
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object
 - source: ;
@@ -2630,7 +2672,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: or
   scopes:
     - variable.other.object
@@ -2734,7 +2776,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: or
   scopes:
     - variable.other.object
@@ -2941,7 +2983,6 @@
 - source: assertion
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -2952,6 +2993,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: nixosExpectedSystem
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object
 - source: '=='
@@ -3071,6 +3114,7 @@
 - source: buildDocsInSandbox
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='

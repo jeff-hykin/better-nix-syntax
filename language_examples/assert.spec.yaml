@@ -29,10 +29,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: getEnv
+  scopes:
+    - variable.language.special.property.getEnv
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.getEnv
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -98,10 +106,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: tryEval
+  scopes:
+    - variable.language.special.property.tryEval
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.tryEval
 - source: x
   scopes:
     - variable.other.object
@@ -132,7 +148,11 @@
 - source: success
   scopes:
     - variable.other.property.last
-- source: 'then '
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
 - source: res
   scopes:
     - variable.other.object.access
@@ -142,12 +162,25 @@
 - source: value
   scopes:
     - variable.other.property.last
-- source: 'else '
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
 - source: def
   scopes:
     - variable.other.object
 - source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -172,7 +205,6 @@
 - source: system
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -183,6 +215,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: args
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object.access
 - source: .
@@ -190,15 +224,21 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: or
   scopes:
     - variable.other.object
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: currentSystem
+  scopes:
+    - variable.other.property.last
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -279,10 +319,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: getEnv
+  scopes:
+    - variable.language.special.property.getEnv
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.getEnv
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -392,10 +440,18 @@
   scopes:
     - keyword.operator.&&
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: configFile
   scopes:
     - variable.other.object
@@ -438,10 +494,18 @@
   scopes:
     - keyword.operator.&&
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: configFile2
   scopes:
     - variable.other.object
@@ -484,10 +548,18 @@
   scopes:
     - keyword.operator.&&
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: configFile3
   scopes:
     - variable.other.object
@@ -554,10 +626,18 @@
   scopes:
     - punctuation.definition.function.colon
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -743,10 +823,18 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: readDir
+  scopes:
+    - variable.language.special.property.readDir
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.readDir
 - source: path
   scopes:
     - variable.other.object
@@ -818,6 +906,10 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -837,12 +929,18 @@
   scopes:
     - punctuation.section.parentheses
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: match
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.match
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.match
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -850,8 +948,6 @@
     - punctuation.definition.string.double
 - source: .*
 - source: \\
-  scopes:
-    - constant.character.escape
 - source: .nix
 - source: '"'
   scopes:
@@ -871,18 +967,24 @@
   scopes:
     - keyword.operator.&&
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: match
+  scopes:
+    - variable.language.special.property.match
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.match
 - source: '"'
   scopesBegin:
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
 - source: \\
-  scopes:
-    - constant.character.escape
 - source: .#.*
 - source: '"'
   scopes:
@@ -905,10 +1007,18 @@
   scopes:
     - keyword.operator.||
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -961,12 +1071,18 @@
   scopesEnd:
     - punctuation.section.parentheses
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: attrNames
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.attrNames
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.attrNames
 - source: content
   scopes:
     - variable.other.object
@@ -1025,10 +1141,18 @@
   scopes:
     - keyword.operator.&&
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: pathOverlays
   scopes:
     - variable.other.object
@@ -1052,10 +1176,18 @@
 - source: builtins
   scopesBegin:
     - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: homeOverlaysFile
   scopes:
     - variable.other.object
@@ -1063,10 +1195,18 @@
   scopes:
     - keyword.operator.&&
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: homeOverlaysDir
   scopes:
     - variable.other.object
@@ -1124,10 +1264,18 @@
 - source: builtins
   scopesBegin:
     - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: homeOverlaysFile
   scopes:
     - variable.other.object
@@ -1202,10 +1350,18 @@
 - source: builtins
   scopesBegin:
     - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: pathExists
+  scopes:
+    - variable.language.special.property.pathExists
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.pathExists
 - source: homeOverlaysDir
   scopes:
     - variable.other.object
@@ -1447,12 +1603,18 @@
   scopes:
     - punctuation.section.parentheses
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: removeAttrs
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.removeAttrs
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.removeAttrs
 - source: args
   scopes:
     - variable.other.object

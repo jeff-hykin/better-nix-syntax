@@ -6,7 +6,6 @@
 - source: description
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -18,6 +17,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -49,7 +49,6 @@
 - source: nixpkgs
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
     - meta.attribute-key
   scopes:
@@ -60,6 +59,7 @@
 - source: url
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -69,6 +69,7 @@
     - meta.assignment-start
 - source: '"'
   scopesBegin:
+    - meta.statement
     - string.quoted.double
   scopes:
     - punctuation.definition.string.double
@@ -93,6 +94,7 @@
 - source: url
   scopes:
     - variable.other.constant.last
+    - variable.other.property
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -199,7 +201,7 @@
     - punctuation.separator.dot-access
 - source: eachDefaultSystem
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method.call
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -235,7 +237,7 @@
     - punctuation.separator.dot-access
 - source: legacyPackages
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -278,12 +280,18 @@
   scopes:
     - punctuation.section.parentheses
 - source: builtins
+  scopes:
+    - variable.other.object.access
+    - support.module
+    - variable.language.special.builtins
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: import
   scopes:
-    - variable.other.property.last
+    - variable.language.special.property.import
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.import
 - source: .
   scopesBegin:
     - string.unquoted.path
@@ -314,7 +322,6 @@
 - source: _core
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -325,6 +332,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: builtins
+  scopesBegin:
+    - meta.statement
   scopes:
     - support.module
     - variable.language.special.builtins
@@ -458,7 +467,6 @@
 - source: packages
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -470,13 +478,13 @@
     - meta.assignment-start
 - source: '{'
   scopesBegin:
+    - meta.statement
     - meta.punctuation.section.bracket
   scopes:
     - punctuation.section.bracket
 - source: nvs
   scopesBegin:
     - meta.attribute-set
-    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -487,6 +495,8 @@
   scopesEnd:
     - meta.assignment-start
 - source: nvs
+  scopesBegin:
+    - meta.statement
   scopes:
     - variable.other.object
 - source: ;
