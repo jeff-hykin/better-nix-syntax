@@ -9,186 +9,217 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: lib
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: makeDesktopItem
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: unzip
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: libsecret
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: libXScrnSaver
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: libxshmfence
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: buildPackages
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: atomEnv
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: at-spi2-atk
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: autoPatchelfHook
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: systemd
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: fontconfig
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: libdbusmenu
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: glib
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: buildFHSUserEnvBubblewrap
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: wayland
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: tests
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: nodePackages
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: bash
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: version
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: src
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: meta
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: sourceRoot
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: commandLineArgs
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: executableName
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: longName
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: shortName
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: pname
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: updateScript
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: dontFixup
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -205,6 +236,7 @@
 - source: sourceExecutableName
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -212,7 +244,8 @@
     - punctuation.separator.default
 - source: executableName
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.default
 - source: '}'
@@ -237,7 +270,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -254,6 +287,7 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -262,9 +296,11 @@
 - source: pkgs
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: '['
   scopesBegin:
     - punctuation.definition.list
@@ -306,4 +342,5 @@
     - meta.let.in.part1
 - source: unwrapped
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter

@@ -1,14 +1,14 @@
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Experimental flake interface to Nixpkgs.'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' See https://github.com/NixOS/rfcs/pull/49 for details.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: '{'
   scopesBegin:
@@ -21,7 +21,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -47,7 +47,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -64,6 +64,7 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -86,7 +87,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -136,7 +137,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -146,7 +147,8 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -166,7 +168,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -197,7 +199,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -235,7 +237,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -244,6 +246,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -270,7 +273,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -279,12 +282,15 @@
 - source: f
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -293,22 +299,26 @@
     - entity.name.function.method.call
 - source: systems
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: system
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: f
   scopes:
     - entity.name.function.call
 - source: system
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -334,7 +344,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -345,6 +355,7 @@
     - meta.statement
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -357,15 +368,19 @@
 - source: final
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: prev
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -377,7 +392,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -424,7 +439,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -434,7 +449,8 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -454,7 +470,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -463,9 +479,11 @@
 - source: args
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: import
   scopes:
     - entity.name.function.call
@@ -504,7 +522,8 @@
     - punctuation.section.parentheses
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: //
   scopes:
     - keyword.operator.//
@@ -519,7 +538,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -530,6 +549,7 @@
     - meta.statement
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -556,6 +576,7 @@
     - meta.attribute-key
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -569,6 +590,7 @@
   scopes:
     - variable.other.constant.last
     - variable.other.property
+    - variable.parameter
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -589,6 +611,7 @@
 - source: final
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -609,6 +632,7 @@
 - source: self
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -617,10 +641,12 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: self
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -629,7 +655,8 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -654,6 +681,7 @@
 - source: self
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -662,7 +690,8 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -691,6 +720,7 @@
     - meta.attribute-key
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -704,6 +734,7 @@
   scopes:
     - variable.other.constant.last
     - variable.other.property
+    - variable.parameter
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -714,6 +745,7 @@
 - source: final
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -725,19 +757,22 @@
     - punctuation.section.parentheses
 - source: self
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: rev
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
 - source: self
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -797,6 +832,7 @@
     - meta.attribute-key
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -810,6 +846,7 @@
   scopes:
     - variable.other.constant.last
     - variable.other.property
+    - variable.parameter
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -820,6 +857,7 @@
 - source: jobs
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -834,7 +872,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -851,7 +889,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -862,6 +900,7 @@
     - meta.statement
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -876,7 +915,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -924,7 +963,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -934,7 +973,8 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -987,7 +1027,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1002,9 +1042,11 @@
 - source: system
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: import
   scopes:
     - entity.name.function.call
@@ -1045,7 +1087,7 @@
     - keyword.other.inherit
 - source: system
   scopes:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1068,7 +1110,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1085,7 +1127,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment

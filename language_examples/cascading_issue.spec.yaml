@@ -9,7 +9,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -20,6 +20,7 @@
     - meta.statement
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -32,16 +33,19 @@
     - support.type.builtin.method.groupBy
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: pred
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: foldl'
   scopes:
     - entity.name.function.call
@@ -51,15 +55,19 @@
 - source: r
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: e
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: let
   scopesBegin:
     - meta.punctuation.section.let
@@ -72,7 +80,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -83,7 +91,8 @@
     - entity.name.function.call
 - source: e
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -97,7 +106,8 @@
     - meta.let.in.part1
 - source: r
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: //
   scopes:
     - keyword.operator.//
@@ -114,7 +124,8 @@
     - punctuation.section.embedded
 - source: key
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -127,6 +138,7 @@
 - source: r
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -135,7 +147,8 @@
     - punctuation.section.embedded
 - source: key
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -163,7 +176,7 @@
     - punctuation.definition.list
 - source: e
   scopes:
-    - variable.other.object
+    - entity.name.function.object.method
 - source: ']'
   scopes:
     - punctuation.definition.list

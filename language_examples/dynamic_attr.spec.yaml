@@ -9,7 +9,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -28,6 +28,7 @@
     - meta.attribute-key
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -35,6 +36,7 @@
   scopes:
     - variable.other.constant.last
     - variable.other.property
+    - variable.parameter
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -73,7 +75,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -90,12 +92,14 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: nixpkgs
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -114,7 +118,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -125,9 +129,11 @@
     - meta.statement
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -140,6 +146,7 @@
     - meta.attribute-key
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -147,6 +154,7 @@
   scopes:
     - variable.other.constant.last
     - variable.other.property
+    - variable.parameter
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -167,6 +175,7 @@
 - source: defaultPackage
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
 - source: '${'
   scopesBegin:
@@ -175,7 +184,8 @@
     - punctuation.section.embedded
 - source: system
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -185,6 +195,7 @@
 - source: nixpkgs
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -193,7 +204,8 @@
     - punctuation.section.embedded
 - source: system
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded

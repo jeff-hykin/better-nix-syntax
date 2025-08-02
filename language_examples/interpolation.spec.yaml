@@ -9,7 +9,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -20,6 +20,7 @@
     - meta.statement
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -37,7 +38,8 @@
     - punctuation.section.embedded
 - source: numS
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded

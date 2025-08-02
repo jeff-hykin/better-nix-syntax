@@ -1,32 +1,26 @@
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' This derivation builds two files containing information about the'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' closure of ''rootPaths'': $out/store-paths contains the paths in the'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' closure, and $out/registration contains a file suitable for use with'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' "nix-store --load-db" and "nix-store --register-validity'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' --hash-given".'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: '{'
   scopesBegin:
@@ -39,18 +33,21 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: coreutils
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: jq
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -69,6 +66,7 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -87,6 +85,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -109,6 +108,7 @@
 - source: stdenv
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -126,7 +126,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -152,7 +152,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -170,6 +170,7 @@
     - meta.attribute-key
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -177,6 +178,7 @@
   scopes:
     - variable.other.constant.last
     - variable.other.property
+    - variable.parameter
   scopesEnd:
     - meta.attribute-key
 - source: '='
@@ -186,7 +188,8 @@
     - meta.assignment-start
 - source: rootPaths
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -195,7 +198,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -212,7 +215,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -225,10 +228,10 @@
     - punctuation.definition.list
 - source: coreutils
   scopesBegin:
-    - variable.other.object
+    - entity.name.function.object.method
 - source: jq
   scopesEnd:
-    - variable.other.object
+    - entity.name.function.object.method
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -242,7 +245,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -250,7 +253,8 @@
     - meta.assignment-start
 - source: rootPaths
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '=='
   scopes:
     - keyword.operator.==
@@ -268,7 +272,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment

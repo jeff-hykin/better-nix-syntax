@@ -9,6 +9,7 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -45,11 +46,11 @@
     - meta.source
 - source: genAttrs
   scopesBegin:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: isString
 - source: throwIfNot
   scopesEnd:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -61,7 +62,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -70,21 +71,27 @@
 - source: prefix
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: attrName
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: v
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: let
   scopesBegin:
     - meta.punctuation.section.let
@@ -97,7 +104,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -106,6 +113,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -118,10 +126,12 @@
     - support.type.builtin.method.unsafeGetAttrPos
 - source: attrName
   scopesBegin:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: v
   scopesEnd:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -142,7 +152,8 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '=='
   scopes:
     - keyword.operator.==
@@ -177,7 +188,8 @@
     - punctuation.section.embedded
 - source: prefix
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopesBegin:
     - punctuation.section.embedded
@@ -187,6 +199,7 @@
 - source: pos
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -208,6 +221,7 @@
 - source: pos
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -229,6 +243,7 @@
 - source: pos
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -251,7 +266,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -260,15 +275,19 @@
 - source: prefix
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: pkg
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: if
   scopesBegin:
     - meta.punctuation.section.conditional
@@ -278,13 +297,15 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: meta
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -300,6 +321,7 @@
 - source: pkg
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -327,7 +349,8 @@
     - punctuation.section.embedded
 - source: prefix
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopesBegin:
     - punctuation.section.embedded
@@ -337,6 +360,7 @@
 - source: pkg
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -428,7 +452,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -438,7 +462,8 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '@'
 - source: '{'
   scopesBegin:
@@ -446,10 +471,12 @@
   scopes:
     - punctuation.section.bracket
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' The derivation to be wrapped.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: derivation
   scopesBegin:
@@ -457,15 +484,16 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: ','
   scopes:
     - punctuation.separator.comma
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Optional meta attribute.'
-  scopes:
-    - comment.line
 - source: '#'
   scopesBegin:
     - punctuation.definition.comment
@@ -473,23 +501,20 @@
   scopesEnd:
     - punctuation.definition.comment
 - source: ' While this function is primarily about derivations, it can improve'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' the `meta` package attribute, which is usually specified through'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' `mkDerivation`.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: meta
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -504,11 +529,11 @@
   scopes:
     - punctuation.separator.comma
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Optional extra values to add to the returned attrset.'
-  scopes:
-    - comment.line
 - source: '#'
   scopesBegin:
     - punctuation.definition.comment
@@ -516,11 +541,12 @@
   scopesEnd:
     - punctuation.definition.comment
 - source: ' This can be used for adding package attributes, such as `tests`.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: passthru
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -537,11 +563,11 @@
   scopes:
     - punctuation.separator.comma
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Optional list of assumed outputs. Default: ["out"]'
-  scopes:
-    - comment.line
 - source: '#'
   scopesBegin:
     - punctuation.definition.comment
@@ -549,17 +575,16 @@
   scopesEnd:
     - punctuation.definition.comment
 - source: ' This must match the set of outputs that the returned derivation has.'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' You must use this when the derivation has multiple outputs.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: outputs
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -605,22 +630,19 @@
 - source: '#'
   scopesBegin:
     - meta.let.in.part1
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' These checks are strict in `drv` and some `drv` attributes, but the'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' attrset spine returned by lazyDerivation does not depend on it.'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' Instead, the individual derivation attributes do depend on it.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: checked
   scopesBegin:
@@ -628,7 +650,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -643,6 +665,7 @@
 - source: derivation
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -651,7 +674,8 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: 'null'
   scopes:
     - constant.language.null
@@ -685,54 +709,43 @@
     - string.quoted.double
 - source: throwIfNot
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' NOTE: Technically we could require our outputs to be a subset of the'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' actual ones, or even leave them unchecked and fail on a lazy basis.'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' However, consider the case where an output is added in the underlying'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' derivation, such as dev. lazyDerivation would remove it and cause it'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' to fail as a buildInputs item, without any indication as to what'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' happened. Hence the more stringent condition. We could consider'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' adding a flag to control this behavior if there''s a valid case for it,'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' but the documentation must have a note like this.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: (
   scopes:
@@ -740,6 +753,7 @@
 - source: derivation
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -751,7 +765,8 @@
     - keyword.operator.==
 - source: outputs
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -768,6 +783,7 @@
 - source: derivation
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -776,7 +792,8 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -821,7 +838,8 @@
     - string.quoted.double
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -832,6 +850,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -855,7 +874,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -879,7 +898,8 @@
     - meta.attribute-set
 - source: outputs
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -906,7 +926,8 @@
     - string.quoted.double
 - source: derivation
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -917,6 +938,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -940,7 +962,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -965,6 +987,7 @@
 - source: derivation
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -994,7 +1017,8 @@
     - string.quoted.other
 - source: derivation
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1012,11 +1036,11 @@
   scopes:
     - punctuation.section.bracket
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Hardcoded `type`'
-  scopes:
-    - comment.line
 - source: '#'
   scopesBegin:
     - punctuation.definition.comment
@@ -1024,37 +1048,27 @@
   scopesEnd:
     - punctuation.definition.comment
 - source: ' `lazyDerivation` requires its `derivation` argument to be a derivation,'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' so if it is not, that is a programming error by the caller and not'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' something that `lazyDerivation` consumers should be able to correct'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' for after the fact.'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' So, to improve laziness, we assume correctness here and check it only'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' when actual derivation values are accessed later.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: type
   scopesBegin:
@@ -1062,7 +1076,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1086,22 +1100,20 @@
   scopesEnd:
     - meta.statement
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' A fixed set of derivation values, so that `lazyDerivation` can return'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' its attrset before evaluating `derivation`.'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' This must only list attributes that are available on _all_ derivations.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: inherit
   scopesBegin:
@@ -1123,13 +1135,13 @@
     - meta.source
 - source: outPath
   scopesBegin:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: outputName
 - source: drvPath
 - source: name
 - source: system
   scopesEnd:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1138,23 +1150,23 @@
     - keyword.other.inherit
 - source: outputs
   scopes:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
   scopesEnd:
     - meta.inherit
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' The meta attribute can either be taken from the derivation, or if the'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' `lazyDerivation` caller knew a shortcut, be taken from there.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: meta
   scopesBegin:
@@ -1162,7 +1174,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -1171,6 +1183,7 @@
 - source: args
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1179,10 +1192,12 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: checked
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1208,19 +1223,23 @@
     - entity.name.function.call
 - source: outputs
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: outputName
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: checked
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1229,7 +1248,8 @@
     - punctuation.section.embedded
 - source: outputName
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1241,7 +1261,8 @@
     - keyword.operator.//
 - source: passthru
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1279,36 +1300,44 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
   scopesEnd:
     - meta.assignment-start
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Condition'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: cond
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Attribute value'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: value
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: if
   scopesBegin:
     - meta.punctuation.section.conditional
@@ -1317,13 +1346,15 @@
 - source: cond
   scopes:
     - meta.punctuation.section.condition
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: then
   scopes:
     - keyword.control.then
 - source: value
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else

@@ -22,7 +22,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -31,6 +31,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -58,10 +59,12 @@
   scopesEnd:
     - meta.statement
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' Return ‘x’ if it evaluates, or ‘def’ if it throws an exception.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: try
   scopesBegin:
@@ -69,7 +72,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -78,15 +81,19 @@
 - source: x
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: def
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: let
   scopesBegin:
     - meta.punctuation.section.let
@@ -99,7 +106,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -108,6 +115,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -120,7 +128,8 @@
     - support.type.builtin.method.tryEval
 - source: x
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -142,6 +151,7 @@
     - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -156,6 +166,7 @@
 - source: res
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -169,7 +180,8 @@
     - meta.punctuation.section.conditional
 - source: def
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -192,6 +204,7 @@
     - meta.punctuation.section.parameters
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -208,7 +221,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -219,6 +232,7 @@
     - meta.statement
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -227,10 +241,12 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -257,6 +273,7 @@
 - source: system
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -265,6 +282,7 @@
 - source: localSystem
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -279,6 +297,7 @@
 - source: crossSystem
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -286,7 +305,8 @@
     - punctuation.separator.default
 - source: localSystem
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.default
 - source: ','
@@ -295,6 +315,7 @@
 - source: config
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -312,7 +333,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -321,6 +342,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -350,7 +372,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -358,7 +380,8 @@
     - meta.assignment-start
 - source: homeDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -381,7 +404,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -389,7 +412,8 @@
     - meta.assignment-start
 - source: homeDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -424,7 +448,8 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -442,6 +467,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -454,7 +480,8 @@
     - support.type.builtin.method.pathExists
 - source: configFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -467,7 +494,8 @@
     - support.type.builtin.property.import
 - source: configFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else
@@ -478,7 +506,8 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -496,6 +525,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -508,7 +538,8 @@
     - support.type.builtin.method.pathExists
 - source: configFile2
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -521,7 +552,8 @@
     - support.type.builtin.property.import
 - source: configFile2
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else
@@ -532,7 +564,8 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -550,6 +583,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -562,7 +596,8 @@
     - support.type.builtin.method.pathExists
 - source: configFile3
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -575,7 +610,8 @@
     - support.type.builtin.property.import
 - source: configFile3
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else
@@ -596,6 +632,7 @@
 - source: overlays
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -613,7 +650,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -622,12 +659,15 @@
 - source: path
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -643,7 +683,8 @@
     - punctuation.section.parentheses
 - source: path
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -669,7 +710,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -683,13 +724,15 @@
     - punctuation.section.parentheses
 - source: toString
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: <
   scopes:
     - keyword.operator.<
 - source: nixpkgs-overlays
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '>'
   scopes:
     - keyword.operator.>
@@ -712,7 +755,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -720,7 +763,8 @@
     - meta.assignment-start
 - source: homeDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -743,7 +787,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -751,7 +795,8 @@
     - meta.assignment-start
 - source: homeDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -774,7 +819,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -783,9 +828,11 @@
 - source: path
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: if
   scopesBegin:
     - meta.punctuation.section.conditional
@@ -798,7 +845,8 @@
     - entity.name.function.call
 - source: path
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -816,7 +864,7 @@
     - meta.assignment-start
   scopes:
     - meta.attribute-key
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -825,6 +873,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -837,7 +886,8 @@
     - support.type.builtin.method.readDir
 - source: path
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -860,9 +910,11 @@
 - source: 'n'
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: import
   scopes:
     - entity.name.function.call
@@ -873,7 +925,8 @@
     - punctuation.section.parentheses
 - source: path
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -896,7 +949,8 @@
     - keyword.operator.+
 - source: 'n'
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopesBegin:
     - punctuation.section.parentheses
@@ -908,6 +962,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -922,15 +977,18 @@
 - source: 'n'
   scopes:
     - variable.parameter.function.standalone
+    - variable.other.object.parameter
 - source: ':'
   scopes:
     - punctuation.definition.function.colon
+    - variable.other.object.parameter
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -956,7 +1014,8 @@
     - string.quoted.double
 - source: 'n'
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -969,6 +1028,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -993,7 +1053,8 @@
     - string.quoted.double
 - source: 'n'
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '=='
   scopes:
     - keyword.operator.==
@@ -1009,6 +1070,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1024,7 +1086,8 @@
     - punctuation.section.parentheses
 - source: path
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -1047,7 +1110,8 @@
     - keyword.operator.+
 - source: 'n'
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -1073,6 +1137,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1085,7 +1150,8 @@
     - support.type.builtin.method.attrNames
 - source: content
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopesBegin:
     - punctuation.section.parentheses
@@ -1104,7 +1170,8 @@
     - support.type.builtin.property.import
 - source: path
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -1125,7 +1192,8 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '!='
   scopes:
     - keyword.operator.!=
@@ -1143,6 +1211,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1155,7 +1224,8 @@
     - support.type.builtin.method.pathExists
 - source: pathOverlays
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -1166,7 +1236,8 @@
     - entity.name.function.call
 - source: pathOverlays
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else
@@ -1178,6 +1249,7 @@
     - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1190,13 +1262,15 @@
     - support.type.builtin.method.pathExists
 - source: homeOverlaysFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '&&'
   scopes:
     - keyword.operator.&&
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1209,7 +1283,8 @@
     - support.type.builtin.method.pathExists
 - source: homeOverlaysDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -1232,7 +1307,8 @@
     - punctuation.section.embedded
 - source: homeOverlaysFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1242,7 +1318,8 @@
     - punctuation.section.embedded
 - source: homeOverlaysDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '}'
   scopes:
     - punctuation.section.embedded
@@ -1266,6 +1343,7 @@
     - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1278,7 +1356,8 @@
     - support.type.builtin.method.pathExists
 - source: homeOverlaysFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -1296,7 +1375,8 @@
     - entity.name.function.call
 - source: homeOverlaysFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -1312,7 +1392,8 @@
     - punctuation.section.parentheses
 - source: homeOverlaysFile
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -1337,10 +1418,12 @@
     - meta.punctuation.section.conditional
 - source: overlays
   scopesBegin:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: homeOverlaysFile
   scopesEnd:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else
@@ -1352,6 +1435,7 @@
     - meta.punctuation.section.condition
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1364,7 +1448,8 @@
     - support.type.builtin.method.pathExists
 - source: homeOverlaysDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
 - source: then
@@ -1388,7 +1473,8 @@
     - entity.name.function.call
 - source: homeOverlaysDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1407,7 +1493,8 @@
     - punctuation.section.parentheses
 - source: homeOverlaysDir
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: +
   scopes:
     - keyword.operator.+
@@ -1432,10 +1519,12 @@
     - meta.punctuation.section.conditional
 - source: overlays
   scopesBegin:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: homeOverlaysDir
   scopesEnd:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: else
   scopes:
     - keyword.control.else
@@ -1456,6 +1545,7 @@
 - source: crossOverlays
   scopes:
     - variable.parameter.function
+    - variable.other.object.parameter
 - source: '?'
   scopesBegin:
     - meta.default
@@ -1485,16 +1575,16 @@
     - meta.punctuation.section.function
     - meta.punctuation.section.parameters
 - source: '#'
+  scopesBegin:
+    - comment.line
   scopes:
     - punctuation.definition.comment
 - source: ' If `localSystem` was explicitly passed, legacy `system` should'
-  scopes:
-    - comment.line
 - source: '#'
   scopes:
     - punctuation.definition.comment
 - source: ' not be passed, and vice-versa.'
-  scopes:
+  scopesEnd:
     - comment.line
 - source: assert
   scopesBegin:
@@ -1503,13 +1593,15 @@
     - keyword.operator.assert
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: localSystem
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '->'
   scopes:
     - keyword.operator.->
@@ -1521,13 +1613,15 @@
     - punctuation.section.parentheses
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: system
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1539,13 +1633,15 @@
     - keyword.operator.assert
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: system
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '->'
   scopes:
     - keyword.operator.->
@@ -1557,13 +1653,15 @@
     - punctuation.section.parentheses
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: localSystem
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -1605,6 +1703,7 @@
 - source: builtins
   scopes:
     - variable.other.object.access
+    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1617,7 +1716,8 @@
     - support.type.builtin.method.removeAttrs
 - source: args
   scopes:
-    - variable.other.object
+    - variable.other.objec
+    - variable.parameter
 - source: '['
   scopesBegin:
     - meta.list
@@ -1655,11 +1755,11 @@
     - keyword.other.inherit
 - source: config
   scopesBegin:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: overlays
 - source: localSystem
   scopesEnd:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement

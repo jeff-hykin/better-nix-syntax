@@ -11,7 +11,7 @@
     - keyword.other.inherit
 - source: a
   scopes:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -20,11 +20,11 @@
     - keyword.other.inherit
 - source: a
   scopesBegin:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: b
 - source: c
   scopesEnd:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -46,7 +46,7 @@
     - meta.source
 - source: a
   scopes:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -68,11 +68,11 @@
     - meta.source
 - source: a
   scopesBegin:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: b
 - source: c
   scopesEnd:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -154,7 +154,7 @@
     - meta.source
 - source: Security
   scopes:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
@@ -173,13 +173,13 @@
     - meta.source
 - source: garage
   scopesBegin:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: garage_0_7
 - source: garage_0_8
 - source: garage_0_7_3
 - source: garage_0_8_0
   scopesEnd:
-    - variable.other.constant
+    - entity.other.attribute-name
 - source: ;
   scopes:
     - punctuation.terminator.statement
