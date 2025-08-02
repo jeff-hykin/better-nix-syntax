@@ -3,20 +3,13 @@ require 'walk_up'
 require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
-# FIXME:
-    # interpolation in paths
-    # system path literal isnt working
-# todo
-    # better function call detection when multiple vars split up by spaces
-    # custom hanlding of stdenv, lib, mkDerivation, and shellHook
-
 # 
 # 
-# create grammar!
+# Nix grammar
 # 
 # 
 # grammar = Grammar.fromTmLanguage("./original.tmLanguage.json")
-grammar = Grammar.new(
+@grammar = grammar = Grammar.new(
     name: "nix",
     scope_name: "source.nix",
     fileTypes: [
@@ -28,6 +21,8 @@ grammar = Grammar.new(
     ],
     version: "",
 )
+
+require_relative './shell_embedding.rb'
 
 # 
 #
@@ -306,37 +301,35 @@ grammar = Grammar.new(
                     )
                 )
                 
-                grammar[:single_quote_inline] = oneOf([
-                    Pattern.new(
-                        tag_as: "string.quoted.single",
-                        match: Pattern.new(
+                grammar[:single_quote_inline] = Pattern.new(
+                    tag_as: "string.quoted.single",
+                    match: Pattern.new(
+                        Pattern.new(
+                            tag_as: "punctuation.definition.string.single",
+                            match: /''/,
+                        ).then(
+                            tag_as: "string.quoted.single",
+                            match: zeroOrMoreOf(
+                                match: oneOf([
+                                    grammar[:escape_character_single_quote] = Pattern.new(
+                                        tag_as: "constant.character.escape",
+                                        match: /\'\'(?:\$|\')/,
+                                    ),
+                                    lookAheadToAvoid(/\$\{/).then(/[^']/),
+                                ]),
+                                atomic: true,
+                            ),
+                            includes: [
+                                :escape_character_single_quote,
+                            ]
+                        ).then(
                             Pattern.new(
                                 tag_as: "punctuation.definition.string.single",
-                                match: /''/,
-                            ).then(
-                                tag_as: "string.quoted.single",
-                                match: zeroOrMoreOf(
-                                    match: oneOf([
-                                        grammar[:escape_character_single_quote] = Pattern.new(
-                                            tag_as: "constant.character.escape",
-                                            match: /\'\'(?:\$|\')/,
-                                        ),
-                                        lookAheadToAvoid(/\$\{/).then(/[^']/),
-                                    ]),
-                                    atomic: true,
-                                ),
-                                includes: [
-                                    :escape_character_single_quote,
-                                ]
-                            ).then(
-                                Pattern.new(
-                                    tag_as: "punctuation.definition.string.single",
-                                    match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'|\\./), # I'm not exactly sure what this lookAheadFor is for
-                                )
+                                match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'|\\./), # I'm not exactly sure what this lookAheadFor is for
                             )
-                        ),
+                        )
                     ),
-                ])
+                )
             # 
             # multiline strings
             # 
@@ -898,8 +891,41 @@ grammar = Grammar.new(
                 attribute_assignment_chain.then(inline_dot_access).then(/\$\{/) 
             )
         )
-        
+        shell_hook_start = Pattern.new(
+            std_space.then(
+                match: variableBounds[/initContent|shellHook/],
+                tag_as: "entity.other.attribute-name",
+            ).then(std_space).then(assignment_operator).then(std_space).then(
+                tag_as: "punctuation.definition.string.single",
+                match: /''/,
+            )
+        )
+        safe_shell_inject = Pattern.new(
+            tag_as: "source.shell",
+            match: /(?:(?!\$\{)[^']|'[^'])++/,
+            includes: [
+                :SHELL_initial_context,
+            ]
+        )
         grammar[:assignment_statements] = [
+            # shell hooks
+            PatternRange.new(
+                tag_as: "string.quoted.single",
+                start_pattern: shell_hook_start,
+                end_pattern: Pattern.new(
+                    tag_as: "punctuation.definition.string.single",
+                    match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'|\\./), # I'm not exactly sure what this lookAheadFor is for
+                ).then(
+                    match: / *;/,
+                    tag_as: "punctuation.terminator.statement",
+                ),
+                includes: [
+                    :escape_character_single_quote,
+                    :interpolation,
+                    safe_shell_inject,
+                ],
+            ),
+            
             # 
             # inherit statement
             # 

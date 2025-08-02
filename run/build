@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
 ruby "./main/main.rb" && echo built successfully
+# below is a hint for when the package.json is broken
+echo '
+    const fs = require("fs")
+    JSON.parse(fs.readFileSync("./package.json"))
+' | node
