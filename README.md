@@ -1,6 +1,11 @@
 # What does this do?
 Highlights your code better, `shellHook` now highlights the bash syntax. If your theme is good, it should also color the nix code itself better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
 
+## Bearded Theme (Stained Blue)
+Before                     | After 
+:-------------------------:|:-------------------------:
+<img width="1326" height="3892" alt="code_shell_theirs" src="https://github.com/user-attachments/assets/6fc593a3-4f3d-4b59-b3f9-005699217340" /> | <img width="1326" height="3892" alt="code_shell_mine" src="https://github.com/user-attachments/assets/b1dfca2a-a025-4ee7-a9f7-185fe88cc109" />
+
 # Before and After 
 
 ## Atom One Dark
