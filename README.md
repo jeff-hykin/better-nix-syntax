@@ -3,10 +3,11 @@ Highlights your code better, `shellHook` now highlights the bash syntax. If your
 
 # Before and After 
 
+
 ## Bearded Theme (Stained Blue)
 Before                     | After 
-:-------------------------:|:-------------------------:
-<img width="1326" height="3892" alt="code_shell_theirs" src="https://github.com/user-attachments/assets/6fc593a3-4f3d-4b59-b3f9-005699217340" /> | <img width="1326" height="3892" alt="code_shell_mine" src="https://github.com/user-attachments/assets/b1dfca2a-a025-4ee7-a9f7-185fe88cc109" />
+
+<img width="2652" height="3892" alt="before_after" src="https://github.com/user-attachments/assets/4106bcaf-4efe-4f22-b30e-12f93d16002d" />
 
 ## Atom One Dark
 Before                     | After 
