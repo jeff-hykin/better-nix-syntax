@@ -1,3 +1,6 @@
+# What does this do?
+Highlights your code better, `shellHook` now highlights the bash syntax. If your theme is good, it should also color the nix code itself better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
+
 # Before and After 
 
 ## Atom One Dark
@@ -20,10 +23,6 @@ Before                     | After
 
 ### Like this extension?
 You'll probably like this as well: [The Better Syntax Megapack](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-syntax)
-
-
-# What does this do?
-If your theme is good, it'll let your theme color your code better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
 
 
 ## How do I use this extension?
