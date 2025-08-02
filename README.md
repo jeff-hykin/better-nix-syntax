@@ -1,12 +1,12 @@
 # What does this do?
 Highlights your code better, `shellHook` now highlights the bash syntax. If your theme is good, it should also color the nix code itself better. I'd recommended Atom One Dark, Tokyo Night, Cobalt Next, Bearded Theme (tons of variants), Noctis, XD Theme.
 
+# Before and After 
+
 ## Bearded Theme (Stained Blue)
 Before                     | After 
 :-------------------------:|:-------------------------:
 <img width="1326" height="3892" alt="code_shell_theirs" src="https://github.com/user-attachments/assets/6fc593a3-4f3d-4b59-b3f9-005699217340" /> | <img width="1326" height="3892" alt="code_shell_mine" src="https://github.com/user-attachments/assets/b1dfca2a-a025-4ee7-a9f7-185fe88cc109" />
-
-# Before and After 
 
 ## Atom One Dark
 Before                     | After 
@@ -19,8 +19,7 @@ Before                     | After
 :-------------------------:|:-------------------------:
 <img width="1386" height="1004" alt="code_cobalt_theirs" src="https://github.com/user-attachments/assets/f70c84f2-f5df-48c2-826e-92c6f9046ff1" /> | <img width="1386" height="1004" alt="code_cobalt_mine" src="https://github.com/user-attachments/assets/c47be3fe-bbd7-4104-bf5d-3b7b63d56d37" />
 
-
-## Bearded Theme (Stained Blue)
+## Bearded Theme
 Before                     | After 
 :-------------------------:|:-------------------------:
 <img width="1346" height="1004" alt="code_beard_theirs" src="https://github.com/user-attachments/assets/c794b3fe-892f-450f-920e-37ef0f3ec5e2" /> | <img width="1346" height="1004" alt="code_beard_mine" src="https://github.com/user-attachments/assets/004022dd-6d26-4965-8405-2bf99b186a32" />
