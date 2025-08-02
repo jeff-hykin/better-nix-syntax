@@ -2,15 +2,7 @@
     description = "My Project";
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-        # nixpkgs.url = "github:NixOS/nixpkgs/6f884c2#nodejs-slim";
-        # nixpkgsWithPython38.url = "https://github.com/NixOS/nixpkgs/archive/9108a20782535741433c304f6a4376cb8b364b89.tar.gz";
-        nixpkgsWithNodejs18.url = "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz";
-        nixpkgsWithRuby.url = "https://github.com/NixOS/nixpkgs/archive/ebf88190cce9a092f9c7abe195548057a0273e51.tar.gz";
-        # home-manager.url = "github:nix-community/home-manager/";
-        home-manager.url = "github:nix-community/home-manager/release-25.05";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
         xome.url = "github:jeff-hykin/xome";
-        xome.inputs.home-manager.follows = "home-manager";
     };
     outputs = { self, nixpkgs, nixpkgsWithNodejs18, nixpkgsWithRuby, xome, ... }:
         xome.superSimpleMakeHome { inherit nixpkgs; pure = true; } ({system, ...}:
@@ -21,19 +13,17 @@
                     # This is where you allow insecure/unfree packages
                     config = {
                         allowUnfree = true;
-                        allowInsecure = true;
-                        permittedInsecurePackages = [
-                            "python-2.7.18.8"
-                            "python-2.7.18.6"
-                            "openssl-1.0.2u"
-                        ];
                     };
                 };
+                a = hello.trace "a" 1;
                 pkgs = import nixpkgs setup;
                 # pkgsWithPython38 = import nixpkgsWithPython38 setup;
                 pkgsWithNodejs18 = import nixpkgsWithNodejs18 setup;
                 pkgsWithRuby = import nixpkgsWithRuby setup;
             in
+                {}
+        );
+}
                 {
                     # for home-manager examples, see: https://deepwiki.com/nix-community/home-manager/5-configuration-examples
                     # all home-manager options: https://nix-community.github.io/home-manager/options.xhtml

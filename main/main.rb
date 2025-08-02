@@ -411,7 +411,7 @@ grammar = Grammar.new(
                 tag_as: "variable.other.dirty",
                 match: Pattern.new(dirty_variable),
             ).or(
-                tag_as: "variable.other.object",
+                tag_as: "variable.other.objec variable.parameter",
                 match: Pattern.new(variable),
             )
         )
@@ -506,7 +506,7 @@ grammar = Grammar.new(
             return oneOf([
                 # standalone
                 lookBehindToAvoid(/\./).then(
-                    tag_as: "variable.other.#{tag}",
+                    tag_as: if tag == "object" then "entity.name.function.#{tag}.method" else "entity.other.attribute-name" end,
                     should_fully_match: [ "zipListsWith'" ],
                     should_not_partial_match: ["in", "let", "if"],
                     match: variable,
@@ -514,7 +514,7 @@ grammar = Grammar.new(
                 
                 # first
                 lookBehindToAvoid(/\./).then(
-                    tag_as: "variable.other.object.access",
+                    tag_as: "variable.other.object.access variable.parameter",
                     match: builtin.or(variable),
                 ),
                 # last method
@@ -525,7 +525,7 @@ grammar = Grammar.new(
                 
                 # last
                 Pattern.new(
-                    tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last variable.other.property" end,
+                    tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last variable.other.property variable.parameter" end,
                     match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
                 ),
                 # middle
@@ -818,19 +818,19 @@ grammar = Grammar.new(
     # basic function
     # 
         grammar[:parameter] = Pattern.new(
-            tag_as: "variable.parameter.function",
+            tag_as: "variable.parameter.function variable.other.object.parameter",
             match: variable,
         )
         grammar[:probably_parameter] = grammar[:parameter].lookAheadFor(/ *+:/)
         grammar[:basic_function] = Pattern.new(
             Pattern.new(
                 match: variable,
-                tag_as: "variable.parameter.function.standalone",
+                tag_as: "variable.parameter.function.standalone variable.other.object.parameter",
             ).then(
                 std_space
             ).then(
                 match: ":",
-                tag_as: "punctuation.definition.function.colon"
+                tag_as: "punctuation.definition.function.colon variable.other.object.parameter"
             )
         )
     # 

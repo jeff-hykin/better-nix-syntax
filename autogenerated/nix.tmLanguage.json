@@ -633,10 +633,10 @@
               "match": "(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))",
               "captures": {
                 "1": {
-                  "name": "variable.other.constant.nix"
+                  "name": "entity.other.attribute-name.nix"
                 },
                 "2": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "3": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -670,7 +670,7 @@
                   "name": "punctuation.definition.url.address.nix"
                 },
                 "12": {
-                  "name": "variable.other.constant.last.nix variable.other.property.nix"
+                  "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                 },
                 "13": {
                   "name": "variable.other.object.property.nix"
@@ -736,10 +736,10 @@
                       ]
                     },
                     "2": {
-                      "name": "variable.other.constant.nix"
+                      "name": "entity.other.attribute-name.nix"
                     },
                     "3": {
-                      "name": "variable.other.object.access.nix"
+                      "name": "variable.other.object.access.nix variable.parameter.nix"
                     },
                     "4": {
                       "name": "support.module.nix variable.language.special.builtins.nix"
@@ -773,7 +773,7 @@
                       "name": "punctuation.definition.url.address.nix"
                     },
                     "13": {
-                      "name": "variable.other.constant.last.nix variable.other.property.nix"
+                      "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                     },
                     "14": {
                       "name": "variable.other.object.property.nix"
@@ -849,10 +849,10 @@
                       "name": "comment.block.nix punctuation.definition.comment.end.nix"
                     },
                     "32": {
-                      "name": "variable.other.constant.nix"
+                      "name": "entity.other.attribute-name.nix"
                     },
                     "33": {
-                      "name": "variable.other.object.access.nix"
+                      "name": "variable.other.object.access.nix variable.parameter.nix"
                     },
                     "34": {
                       "name": "support.module.nix variable.language.special.builtins.nix"
@@ -886,7 +886,7 @@
                       "name": "punctuation.definition.url.address.nix"
                     },
                     "43": {
-                      "name": "variable.other.constant.last.nix variable.other.property.nix"
+                      "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                     },
                     "44": {
                       "name": "variable.other.object.property.nix"
@@ -971,10 +971,10 @@
               ]
             },
             "2": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "3": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "4": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -1008,7 +1008,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "13": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "14": {
               "name": "variable.other.object.property.nix"
@@ -1084,10 +1084,10 @@
               "name": "comment.block.nix punctuation.definition.comment.end.nix"
             },
             "32": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "33": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "34": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -1121,7 +1121,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "43": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "44": {
               "name": "variable.other.object.property.nix"
@@ -1272,10 +1272,10 @@
           "match": "(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))",
           "captures": {
             "1": {
-              "name": "variable.other.object.nix"
+              "name": "entity.name.function.object.method.nix"
             },
             "2": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "3": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -1366,10 +1366,10 @@
       "match": "(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))",
       "captures": {
         "1": {
-          "name": "variable.other.constant.nix"
+          "name": "entity.other.attribute-name.nix"
         },
         "2": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "3": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -1412,7 +1412,7 @@
           "name": "punctuation.definition.url.address.nix"
         },
         "10": {
-          "name": "variable.other.constant.last.nix variable.other.property.nix"
+          "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
         },
         "11": {
           "name": "variable.other.object.property.nix"
@@ -1458,7 +1458,7 @@
       "match": "(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(:))",
       "captures": {
         "1": {
-          "name": "variable.parameter.function.standalone.nix"
+          "name": "variable.parameter.function.standalone.nix variable.other.object.parameter.nix"
         },
         "2": {
           "patterns": [
@@ -1486,7 +1486,7 @@
           ]
         },
         "4": {
-          "name": "punctuation.definition.function.colon.nix"
+          "name": "punctuation.definition.function.colon.nix variable.other.object.parameter.nix"
         }
       }
     },
@@ -1875,10 +1875,10 @@
                       ]
                     },
                     "2": {
-                      "name": "variable.other.constant.nix"
+                      "name": "entity.other.attribute-name.nix"
                     },
                     "3": {
-                      "name": "variable.other.object.access.nix"
+                      "name": "variable.other.object.access.nix variable.parameter.nix"
                     },
                     "4": {
                       "name": "support.module.nix variable.language.special.builtins.nix"
@@ -1912,7 +1912,7 @@
                       "name": "punctuation.definition.url.address.nix"
                     },
                     "13": {
-                      "name": "variable.other.constant.last.nix variable.other.property.nix"
+                      "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                     },
                     "14": {
                       "name": "variable.other.object.property.nix"
@@ -1988,10 +1988,10 @@
                       "name": "comment.block.nix punctuation.definition.comment.end.nix"
                     },
                     "32": {
-                      "name": "variable.other.constant.nix"
+                      "name": "entity.other.attribute-name.nix"
                     },
                     "33": {
-                      "name": "variable.other.object.access.nix"
+                      "name": "variable.other.object.access.nix variable.parameter.nix"
                     },
                     "34": {
                       "name": "support.module.nix variable.language.special.builtins.nix"
@@ -2025,7 +2025,7 @@
                       "name": "punctuation.definition.url.address.nix"
                     },
                     "43": {
-                      "name": "variable.other.constant.last.nix variable.other.property.nix"
+                      "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                     },
                     "44": {
                       "name": "variable.other.object.property.nix"
@@ -2110,10 +2110,10 @@
               ]
             },
             "3": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "4": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "5": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -2147,7 +2147,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "14": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "15": {
               "name": "variable.other.object.property.nix"
@@ -2223,10 +2223,10 @@
               "name": "comment.block.nix punctuation.definition.comment.end.nix"
             },
             "33": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "34": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "35": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -2260,7 +2260,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "44": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "45": {
               "name": "variable.other.object.property.nix"
@@ -2320,10 +2320,10 @@
               "name": "keyword.operator.assignment.nix"
             },
             "59": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "60": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "61": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -2357,7 +2357,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "70": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "71": {
               "name": "variable.other.object.property.nix"
@@ -2433,10 +2433,10 @@
               "name": "comment.block.nix punctuation.definition.comment.end.nix"
             },
             "89": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "90": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "91": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -2470,7 +2470,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "100": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "101": {
               "name": "variable.other.object.property.nix"
@@ -2566,7 +2566,7 @@
           "end": "(?:(\\})((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?:(?:(@)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)))?)(:))",
           "beginCaptures": {
             "1": {
-              "name": "variable.parameter.function.nix"
+              "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
             },
             "2": {
               "name": "punctuation.vararg-ellipses.nix"
@@ -2660,7 +2660,7 @@
             },
             {
               "match": "(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))",
-              "name": "variable.parameter.function.nix"
+              "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
             },
             {
               "begin": "\\?",
@@ -3081,10 +3081,10 @@
                       ]
                     },
                     "2": {
-                      "name": "variable.other.constant.nix"
+                      "name": "entity.other.attribute-name.nix"
                     },
                     "3": {
-                      "name": "variable.other.object.access.nix"
+                      "name": "variable.other.object.access.nix variable.parameter.nix"
                     },
                     "4": {
                       "name": "support.module.nix variable.language.special.builtins.nix"
@@ -3118,7 +3118,7 @@
                       "name": "punctuation.definition.url.address.nix"
                     },
                     "13": {
-                      "name": "variable.other.constant.last.nix variable.other.property.nix"
+                      "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                     },
                     "14": {
                       "name": "variable.other.object.property.nix"
@@ -3194,10 +3194,10 @@
                       "name": "comment.block.nix punctuation.definition.comment.end.nix"
                     },
                     "32": {
-                      "name": "variable.other.constant.nix"
+                      "name": "entity.other.attribute-name.nix"
                     },
                     "33": {
-                      "name": "variable.other.object.access.nix"
+                      "name": "variable.other.object.access.nix variable.parameter.nix"
                     },
                     "34": {
                       "name": "support.module.nix variable.language.special.builtins.nix"
@@ -3231,7 +3231,7 @@
                       "name": "punctuation.definition.url.address.nix"
                     },
                     "43": {
-                      "name": "variable.other.constant.last.nix variable.other.property.nix"
+                      "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
                     },
                     "44": {
                       "name": "variable.other.object.property.nix"
@@ -3316,10 +3316,10 @@
               ]
             },
             "3": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "4": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "5": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -3353,7 +3353,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "14": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "15": {
               "name": "variable.other.object.property.nix"
@@ -3429,10 +3429,10 @@
               "name": "comment.block.nix punctuation.definition.comment.end.nix"
             },
             "33": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "34": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "35": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -3466,7 +3466,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "44": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "45": {
               "name": "variable.other.object.property.nix"
@@ -3526,10 +3526,10 @@
               "name": "keyword.operator.assignment.nix"
             },
             "59": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "60": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "61": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -3563,7 +3563,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "70": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "71": {
               "name": "variable.other.object.property.nix"
@@ -3639,10 +3639,10 @@
               "name": "comment.block.nix punctuation.definition.comment.end.nix"
             },
             "89": {
-              "name": "variable.other.constant.nix"
+              "name": "entity.other.attribute-name.nix"
             },
             "90": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "91": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -3676,7 +3676,7 @@
               "name": "punctuation.definition.url.address.nix"
             },
             "100": {
-              "name": "variable.other.constant.last.nix variable.other.property.nix"
+              "name": "variable.other.constant.last.nix variable.other.property.nix variable.parameter.nix"
             },
             "101": {
               "name": "variable.other.object.property.nix"
@@ -3772,7 +3772,7 @@
           "end": "(?:(\\})((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?:(?:(@)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)))?)(:))",
           "beginCaptures": {
             "1": {
-              "name": "variable.parameter.function.nix"
+              "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
             },
             "2": {
               "name": "punctuation.vararg-ellipses.nix"
@@ -3866,7 +3866,7 @@
             },
             {
               "match": "(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))",
-              "name": "variable.parameter.function.nix"
+              "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
             },
             {
               "begin": "\\?",
@@ -5081,7 +5081,7 @@
           "name": "punctuation.definition.dict.nix"
         },
         "68": {
-          "name": "variable.parameter.function.nix"
+          "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
         },
         "69": {
           "name": "variable.other.object.access.nix"
@@ -5140,10 +5140,10 @@
           ]
         },
         "75": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "76": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "77": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -5267,10 +5267,10 @@
                   "name": "comment.block.nix punctuation.definition.comment.end.nix"
                 },
                 "10": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "11": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "12": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -5948,13 +5948,13 @@
           "name": "variable.other.dirty.nix"
         },
         "168": {
-          "name": "variable.other.object.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         },
         "169": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "170": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "171": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -6488,10 +6488,10 @@
           "match": "(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))",
           "captures": {
             "1": {
-              "name": "variable.other.object.nix"
+              "name": "entity.name.function.object.method.nix"
             },
             "2": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "3": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -6904,10 +6904,10 @@
           "match": "(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:((?:(?:\\s*)(?:(?:\\/\\*)(?:(?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(?:\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))",
           "captures": {
             "1": {
-              "name": "variable.other.object.nix"
+              "name": "entity.name.function.object.method.nix"
             },
             "2": {
-              "name": "variable.other.object.access.nix"
+              "name": "variable.other.object.access.nix variable.parameter.nix"
             },
             "3": {
               "name": "support.module.nix variable.language.special.builtins.nix"
@@ -7022,7 +7022,7 @@
     },
     "parameter": {
       "match": "(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))",
-      "name": "variable.parameter.function.nix"
+      "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
     },
     "parentheses": {
       "begin": "\\(",
@@ -7061,10 +7061,10 @@
               "match": "(?:(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))))",
               "captures": {
                 "1": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "2": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "3": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -7178,10 +7178,10 @@
           ]
         },
         "8": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "9": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "10": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -7294,10 +7294,10 @@
           "name": "variable.other.property.nix"
         },
         "39": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "40": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "41": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -7425,7 +7425,7 @@
       "match": "((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?= *+:)",
       "captures": {
         "1": {
-          "name": "variable.parameter.function.nix"
+          "name": "variable.parameter.function.nix variable.other.object.parameter.nix"
         }
       }
     },
@@ -8032,7 +8032,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.object.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         }
       }
     },
@@ -8439,7 +8439,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.object.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         }
       }
     },
@@ -8503,10 +8503,10 @@
           ]
         },
         "7": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "8": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "9": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -8630,10 +8630,10 @@
                   "name": "comment.block.nix punctuation.definition.comment.end.nix"
                 },
                 "10": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "11": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "12": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -8771,10 +8771,10 @@
               "match": "(?:(?<!\\.)((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?!\\.)|(?<!\\.)((?:((?:(?<![a-zA-Z0-9_'])(?:builtins)(?![a-zA-Z0-9_\\-'])))|(?:(?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(?!then\\b|in\\b|else\\b|- |-$)(?:(?=\\{|\"|'|\\d|\\w|-[^>]|\\.\\/|\\.\\.\\/|\\/\\w|\\(|\\[|if\\b|let\\b|with\\b|rec\\b)|(?=((?:([a-zA-Z][a-zA-Z0-9_+\\-\\.]*:)([a-zA-Z0-9%$*!@&*_=+:'\\/?~\\-\\.:]+)))))))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if)))(?!\\.))|((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|(?:((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.))))))",
               "captures": {
                 "1": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "2": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "3": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -8856,10 +8856,10 @@
           ]
         },
         "1": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "2": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "3": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -8983,10 +8983,10 @@
                   "name": "comment.block.nix punctuation.definition.comment.end.nix"
                 },
                 "10": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "11": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "12": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -9151,10 +9151,10 @@
           ]
         },
         "7": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "8": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "9": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -9278,10 +9278,10 @@
                   "name": "comment.block.nix punctuation.definition.comment.end.nix"
                 },
                 "10": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "11": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "12": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
@@ -9959,13 +9959,13 @@
           "name": "variable.other.dirty.nix"
         },
         "100": {
-          "name": "variable.other.object.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         },
         "101": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "102": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "103": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -10110,10 +10110,10 @@
           ]
         },
         "7": {
-          "name": "variable.other.object.nix"
+          "name": "entity.name.function.object.method.nix"
         },
         "8": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "9": {
           "name": "support.module.nix variable.language.special.builtins.nix"
@@ -10237,10 +10237,10 @@
                   "name": "comment.block.nix punctuation.definition.comment.end.nix"
                 },
                 "10": {
-                  "name": "variable.other.object.nix"
+                  "name": "entity.name.function.object.method.nix"
                 },
                 "11": {
-                  "name": "variable.other.object.access.nix"
+                  "name": "variable.other.object.access.nix variable.parameter.nix"
                 },
                 "12": {
                   "name": "support.module.nix variable.language.special.builtins.nix"
