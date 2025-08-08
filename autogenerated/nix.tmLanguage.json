@@ -631,6 +631,10 @@
         },
         {
           "include": "#NIX_escape_character_single_quote"
+        },
+        {
+          "match": "\\}",
+          "name": "punctuation.section.shell.nix"
         }
       ]
     },
@@ -803,12 +807,12 @@
           "end": "\\}",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.shell.nix"
             }
           },
           "name": "meta.function.body.shell.nix",
@@ -823,12 +827,12 @@
           "end": "\\)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.shell.nix"
             }
           },
           "name": "meta.function.body.shell.nix",
@@ -1003,7 +1007,86 @@
     "SHELL_initial_context": {
       "patterns": [
         {
+          "include": "#SHELL_comment"
+        },
+        {
+          "include": "#SHELL_pipeline"
+        },
+        {
+          "include": "#SHELL_normal_statement_seperator"
+        },
+        {
+          "include": "#SHELL_logical_expression_double"
+        },
+        {
+          "include": "#SHELL_logical_expression_single"
+        },
+        {
+          "include": "#SHELL_assignment_statement"
+        },
+        {
+          "include": "#SHELL_case_statement"
+        },
+        {
+          "include": "#SHELL_for_statement"
+        },
+        {
+          "include": "#SHELL_loop"
+        },
+        {
+          "include": "#SHELL_function_definition"
+        },
+        {
+          "match": "\\}",
+          "name": "punctuation.section.shell.nix"
+        },
+        {
           "include": "#SHELL_command_statement"
+        },
+        {
+          "include": "#SHELL_line_continuation"
+        },
+        {
+          "include": "#SHELL_arithmetic_double"
+        },
+        {
+          "include": "#SHELL_misc_ranges"
+        },
+        {
+          "include": "#SHELL_variable"
+        },
+        {
+          "include": "#SHELL_interpolation"
+        },
+        {
+          "include": "#SHELL_heredoc"
+        },
+        {
+          "include": "#SHELL_herestring"
+        },
+        {
+          "include": "#SHELL_redirection"
+        },
+        {
+          "include": "#SHELL_pathname"
+        },
+        {
+          "include": "#SHELL_floating_keyword"
+        },
+        {
+          "include": "#SHELL_alias_statement"
+        },
+        {
+          "include": "#SHELL_normal_statement"
+        },
+        {
+          "include": "#SHELL_range_expansion"
+        },
+        {
+          "include": "#SHELL_string"
+        },
+        {
+          "include": "#SHELL_support"
         }
       ]
     },
@@ -7981,7 +8064,7 @@
           "name": "variable.other.dirty.nix"
         },
         "168": {
-          "name": "variable.other.object.nix variable.parameter.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         },
         "169": {
           "name": "entity.name.function.object.method.nix"
@@ -10062,7 +10145,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.object.nix variable.parameter.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         }
       }
     },
@@ -10469,7 +10552,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.object.nix variable.parameter.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         }
       }
     },
@@ -11989,7 +12072,7 @@
           "name": "variable.other.dirty.nix"
         },
         "100": {
-          "name": "variable.other.object.nix variable.parameter.nix"
+          "name": "variable.other.objec.nix variable.parameter.nix"
         },
         "101": {
           "name": "entity.name.function.object.method.nix"

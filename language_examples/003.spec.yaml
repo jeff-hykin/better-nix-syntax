@@ -1431,6 +1431,8 @@
     - punctuation.definition.string.single
 - source: '        import "'
 - source: '''''$'
+  scopes:
+    - constant.character.escape
 - source: '{nixos}/.." {'
 - source: '          inherit (cfg) config overlays localSystem crossSystem;'
 - source: '        }'
@@ -2091,6 +2093,8 @@
     - punctuation.definition.string.single
 - source: (import "
 - source: '''''$'
+  scopes:
+    - constant.character.escape
 - source: '{nixos}/../lib").lib.systems.examples.aarch64-multiplatform'
 - source: ''''''
   scopes:

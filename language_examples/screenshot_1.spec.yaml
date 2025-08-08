@@ -415,20 +415,38 @@
 - source: ''''''
   scopes:
     - punctuation.definition.string.single
-- source: '            echo '
+- source: echo
   scopesBegin:
     - source.shell
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
-- source: "\U0001F527 Entering the demo development shell"
+    - punctuation.definition.string.begin.shell
+- source: "\U0001F527"
+  scopesBegin:
+    - string.unquoted.argument.shell
+- source: Entering
+- source: the
+- source: demo
+- source: development
+- source: shell
+  scopesEnd:
+    - string.unquoted.argument.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
 - source: '#'
   scopesBegin:
     - comment.line.number-sign.shell
@@ -439,7 +457,7 @@
     - comment.line.number-sign.shell
 - source: export
   scopesBegin:
-    - meta.statement
+    - meta.statement.shell
     - meta.expression.assignment.modified.shell
   scopes:
     - storage.modifier.export.shell
@@ -463,31 +481,33 @@
     - keyword.operator.assignment.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
+    - punctuation.definition.string.begin.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.other.normal.shell.shell
 - source: PWD
   scopes:
     - variable.other.normal.shell
 - source: '/scripts:'
+  scopes:
+    - string.unquoted.argument.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.other.normal.shell.shell
 - source: PATH
   scopes:
     - variable.other.normal.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - meta.statement
+    - meta.statement.shell
     - meta.expression.assignment.modified.shell
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
 - source: my-helper
   scopesBegin:
     - meta.function.shell
@@ -502,30 +522,50 @@
 - source: '{'
   scopes:
     - meta.function.body.shell
-    - punctuation.definition.group
-    - punctuation.section.function.definition.shell
+    - punctuation.definition.group.shell
+    - punctuation.section.shell
   scopesEnd:
     - meta.function.shell
-- source: '              echo '
+- source: echo
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
-- source: "\U0001F9EA Running helper with args: "
+    - punctuation.definition.string.begin.shell
+- source: "\U0001F9EA"
+  scopesBegin:
+    - string.unquoted.argument.shell
+- source: Running
+- source: helper
+- source: with
+- source: 'args:'
+  scopesEnd:
+    - string.unquoted.argument.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.parameter.positional.all.shell.shell
 - source: '@'
   scopes:
     - variable.parameter.positional.all.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
-- source: '            }'
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
+- source: '}'
+  scopes:
+    - punctuation.section.shell
 - source: '#'
   scopesBegin:
     - comment.line.number-sign.shell
@@ -546,27 +586,58 @@
 - source: ' -n '
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
-- source: '$(command -v '
-- source: '"'
+    - punctuation.definition.string.begin.shell
+- source: $(
+  scopesBegin:
+    - meta.scope.subshell.shell
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.subshell.shell.single.shell
+- source: command
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
+- source: '-'
+  scopesBegin:
+    - string.unquoted.argument.shell
+  scopes:
+    - constant.other.option.dash.shell
+- source: v
+  scopes:
+    - constant.other.option.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
-- source: name_of_command
+    - string.unquoted.argument.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
-- source: )
+    - punctuation.definition.string.begin.shell
+- source: name_of_command
+  scopes:
+    - string.unquoted.argument.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
+- source: )
+  scopes:
+    - punctuation.definition.subshell.shell.single.shell
+  scopesEnd:
+    - meta.scope.subshell.shell
+- source: '"'
+  scopes:
+    - punctuation.definition.string.end.shell
+  scopesEnd:
+    - string.quoted.double.shell
 - source: ']'
   scopes:
     - punctuation.definition.logical-expression.shell
@@ -575,7 +646,13 @@
 - source: then
   scopes:
     - keyword.control.then.shell
-- source: '                echo '
+- source: echo
+  scopes:
+    - meta.statement.command.shell
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
 - source: fi
   scopes:
     - keyword.control.fi.shell
@@ -1344,7 +1421,7 @@
 - source: export
   scopesBegin:
     - source.shell
-    - meta.statement
+    - meta.statement.shell
     - meta.expression.assignment.modified.shell
   scopes:
     - storage.modifier.export.shell
@@ -1356,24 +1433,26 @@
     - keyword.operator.assignment.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
+    - punctuation.definition.string.begin.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.other.normal.shell.shell
 - source: PATH
   scopes:
     - variable.other.normal.shell
 - source: ':/usr/bin/'
+  scopes:
+    - string.unquoted.argument.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - meta.statement
+    - meta.statement.shell
     - meta.expression.assignment.modified.shell
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
 - source: '#'
   scopesBegin:
     - comment.line.number-sign.shell
@@ -1389,7 +1468,7 @@
     - comment.line.number-sign.shell
 - source: export
   scopesBegin:
-    - meta.statement
+    - meta.statement.shell
     - meta.expression.assignment.modified.shell
   scopes:
     - storage.modifier.export.shell
@@ -1401,24 +1480,26 @@
     - keyword.operator.assignment.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
+    - punctuation.definition.string.begin.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.other.normal.shell.shell
 - source: HOME
   scopes:
     - variable.other.normal.shell
 - source: /gems.ignore/
+  scopes:
+    - string.unquoted.argument.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - meta.statement
+    - meta.statement.shell
     - meta.expression.assignment.modified.shell
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
 - source: '#'
   scopesBegin:
     - comment.line.number-sign.shell
@@ -1439,21 +1520,21 @@
 - source: ' -d '
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
+    - punctuation.definition.string.begin.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.other.normal.shell.shell
 - source: VAR
   scopes:
     - variable.other.normal.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
 - source: ']'
   scopes:
     - punctuation.definition.logical-expression.shell
@@ -1462,30 +1543,69 @@
 - source: then
   scopes:
     - keyword.control.then.shell
-- source: '                  mkdir '
+- source: mkdir
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
+    - punctuation.definition.string.begin.shell
 - source: $
   scopes:
-    - punctuation.definition.variable
+    - punctuation.definition.variable.shell
     - variable.other.normal.shell.shell
 - source: GEM_HOME
   scopes:
     - variable.other.normal.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
 - source: '&'
   scopes:
     - punctuation.separator.statement.background.shell
-- source: '>/dev/null'
-- source: '                  bundix -l'
-- source: '                  bundler install'
+- source: '>'
+- source: /dev/null
+  scopesBegin:
+    - meta.statement.command.shell
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: bundix
+  scopesEnd:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: '-'
+  scopesBegin:
+    - string.unquoted.argument.shell
+  scopes:
+    - constant.other.option.dash.shell
+- source: l
+  scopes:
+    - constant.other.option.shell
+  scopesEnd:
+    - string.unquoted.argument.shell
+- source: bundler
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: install
+  scopes:
+    - meta.argument.shell
+    - string.unquoted.argument.shell
+  scopesEnd:
+    - meta.statement.command.shell
 - source: fi
   scopes:
     - keyword.control.fi.shell
@@ -1514,15 +1634,17 @@
 - source: ' -d '
 - source: '"'
   scopesBegin:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
   scopes:
-    - punctuation.definition.string.begin.shell.shell
+    - punctuation.definition.string.begin.shell
 - source: ./node_modules
+  scopes:
+    - string.unquoted.argument.shell
 - source: '"'
   scopes:
-    - punctuation.definition.string.end.shell.shell
+    - punctuation.definition.string.end.shell
   scopesEnd:
-    - string.quoted.double.shell.shell
+    - string.quoted.double.shell
 - source: ']'
   scopes:
     - punctuation.definition.logical-expression.shell
@@ -1534,7 +1656,19 @@
 - source: then
   scopes:
     - keyword.control.then.shell
-- source: '                  npm install'
+- source: npm
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: install
+  scopes:
+    - meta.argument.shell
+    - string.unquoted.argument.shell
+  scopesEnd:
+    - meta.statement.command.shell
 - source: fi
   scopes:
     - keyword.control.fi.shell

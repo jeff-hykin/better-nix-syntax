@@ -286,6 +286,8 @@
     - punctuation.definition.string.single
 - source: '      out='
 - source: '''''$'
+  scopes:
+    - constant.character.escape
 - source: '{outputs[out]}'
 - source: '      mkdir $out'
 - source: '      if [[ -n "$empty" ]]; then'

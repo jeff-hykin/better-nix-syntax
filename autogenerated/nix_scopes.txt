@@ -181,7 +181,6 @@ punctuation.section.bracket.curly.variable.begin.shell.nix
 punctuation.section.bracket.curly.variable.end.shell.nix
 punctuation.section.bracket.nix
 punctuation.section.embedded.nix
-punctuation.section.function.definition.shell.nix
 punctuation.section.parenthese.shell.nix
 punctuation.section.parentheses.nix
 punctuation.section.path.lookup.nix
@@ -190,6 +189,7 @@ punctuation.section.range.begin.shell.nix
 punctuation.section.range.end.shell.nix
 punctuation.section.regexp.nix
 punctuation.section.regexp.path.angle-brackets.nix
+punctuation.section.shell.nix
 punctuation.separator.assert.nix
 punctuation.separator.comma.nix
 punctuation.separator.default.nix
@@ -271,8 +271,8 @@ variable.other.external.nix
 variable.other.for.shell.nix
 variable.other.normal.shell.nix
 variable.other.normal.shell.shell.nix
+variable.other.objec.nix
 variable.other.object.access.nix
-variable.other.object.nix
 variable.other.object.parameter.nix
 variable.other.object.property.nix
 variable.other.property.last.nix

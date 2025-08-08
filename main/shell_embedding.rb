@@ -20,35 +20,40 @@ grammar = @grammar # this file is imported from main.rb
     # Contexts
     #
     #
+        dangling_bracket = Pattern.new(
+            match: /\}/,
+            tag_as: "punctuation.section.shell",
+        )
         # this naming thing is just a backwards compatibility thing. If all tests pass without it, it should be removed
         grammar[:SHELL_initial_context] = [
+                :SHELL_comment,
+                :SHELL_pipeline,
+                :SHELL_normal_statement_seperator,
+                :SHELL_logical_expression_double,
+                :SHELL_logical_expression_single,
+                :SHELL_assignment_statement,
+                :SHELL_case_statement,
+                :SHELL_for_statement,
+                :SHELL_loop,
+                :SHELL_function_definition,
+                dangling_bracket, # TODO: fix
                 :SHELL_command_statement,
-                # :SHELL_comment,
-                # :SHELL_pipeline,
-                # :SHELL_normal_statement_seperator,
-                # :SHELL_logical_expression_double,
-                # :SHELL_logical_expression_single,
-                # :SHELL_assignment_statement,
-                # :SHELL_case_statement,
-                # :SHELL_for_statement,
-                # :SHELL_loop,
-                # :SHELL_function_definition,
-                # :SHELL_line_continuation,
-                # :SHELL_arithmetic_double,
-                # :SHELL_misc_ranges,
-                # :SHELL_variable,
-                # :SHELL_interpolation,
-                # :SHELL_heredoc,
-                # :SHELL_herestring,
-                # :SHELL_redirection,
-                # :SHELL_pathname,
-                # :SHELL_floating_keyword,
-                # :SHELL_alias_statement,
-                # # :SHELL_custom_commands,
-                # :SHELL_normal_statement,
-                # :SHELL_range_expansion,
-                # :SHELL_string,
-                # :SHELL_support,
+                :SHELL_line_continuation,
+                :SHELL_arithmetic_double,
+                :SHELL_misc_ranges,
+                :SHELL_variable,
+                :SHELL_interpolation,
+                :SHELL_heredoc,
+                :SHELL_herestring,
+                :SHELL_redirection,
+                :SHELL_pathname,
+                :SHELL_floating_keyword,
+                :SHELL_alias_statement,
+                # :SHELL_custom_commands,
+                :SHELL_normal_statement,
+                :SHELL_range_expansion,
+                :SHELL_string,
+                :SHELL_support,
             ]
         grammar[:SHELL_boolean] = Pattern.new(
                 match: /\b(?:true|false)\b/,
@@ -266,11 +271,11 @@ grammar = @grammar # this file is imported from main.rb
                     tag_as: "meta.function.body.shell",
                     start_pattern: Pattern.new(
                         match: "{",
-                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.shell", # TODO:.function.definition
                     ),
                     end_pattern: Pattern.new(
                         match: "}",
-                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.shell", # TODO:.function.definition
                     ),
                     includes: [
                         :SHELL_initial_context,
@@ -280,11 +285,11 @@ grammar = @grammar # this file is imported from main.rb
                     tag_as: "meta.function.body.shell",
                     start_pattern: Pattern.new(
                         match: "(",
-                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.shell", # TODO:.function.definition
                     ),
                     end_pattern: Pattern.new(
                         match: ")",
-                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.shell", # TODO:.function.definition
                     ),
                     includes: [
                         :SHELL_initial_context,
@@ -632,6 +637,7 @@ grammar = @grammar # this file is imported from main.rb
                 :SHELL_variable,
                 :SHELL_simple_unquoted,
                 :NIX_escape_character_single_quote,
+                dangling_bracket, # TODO: fix
             ],
         )
         grammar[:SHELL_normal_assignment_statement] = PatternRange.new(
