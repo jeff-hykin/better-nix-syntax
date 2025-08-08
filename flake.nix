@@ -10,6 +10,7 @@
         home-manager.url = "github:nix-community/home-manager/release-25.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         xome.url = "github:jeff-hykin/xome";
+        xome.inputs.nixpkgs.follows = "nixpkgs";
         xome.inputs.home-manager.follows = "home-manager";
     };
     outputs = { self, nixpkgs, nixpkgsWithNodejs18, nixpkgsWithRuby, xome, ... }:
@@ -41,7 +42,6 @@
                     home.stateVersion = "25.05";
                     home.packages = [
                         # vital stuff
-                        pkgs.nix
                         pkgs.coreutils-full
                         
                         # optional stuff
