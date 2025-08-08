@@ -916,8 +916,8 @@ require_relative './shell_embedding.rb'
                 start_pattern: shell_hook_start,
                 end_pattern: Pattern.new(
                     tag_as: "punctuation.definition.string.single",
-                    match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'|\\./), # I'm not exactly sure what this lookAheadFor is for
-                ).then(
+                    match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'/),
+                ).maybe(
                     match: / *;/,
                     tag_as: "punctuation.terminator.statement",
                 ),
