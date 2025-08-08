@@ -216,7 +216,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -938,7 +938,7 @@
 - source: gotDeno2
   scopes:
     - meta.punctuation.section.condition
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: then
   scopes:
@@ -960,7 +960,7 @@
     - meta.punctuation.section.conditional
 - source: deno
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -1009,7 +1009,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1085,7 +1085,7 @@
     - punctuation.section.embedded
 - source: bash
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1112,7 +1112,7 @@
     - meta.assignment-start
 - source: _src
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1156,7 +1156,7 @@
     - punctuation.section.embedded
 - source: deno_
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1167,7 +1167,7 @@
     - punctuation.section.embedded
 - source: unzip
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1178,7 +1178,7 @@
     - punctuation.section.embedded
 - source: coreutils
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1205,7 +1205,7 @@
     - punctuation.section.embedded
 - source: deno_
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1219,7 +1219,7 @@
     - punctuation.section.embedded
 - source: libs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopesBegin:
@@ -1229,7 +1229,7 @@
     - punctuation.section.embedded
 - source: autopatchelf
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1253,7 +1253,7 @@
     - punctuation.section.embedded
 - source: deno_
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

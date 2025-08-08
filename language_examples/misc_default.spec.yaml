@@ -340,7 +340,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -587,7 +587,7 @@
     - punctuation.section.embedded
 - source: openssh
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -599,7 +599,7 @@
     - punctuation.section.embedded
 - source: perl
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -617,7 +617,7 @@
     - punctuation.section.embedded
 - source: xauth
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

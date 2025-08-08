@@ -271,8 +271,8 @@ variable.other.external.nix
 variable.other.for.shell.nix
 variable.other.normal.shell.nix
 variable.other.normal.shell.shell.nix
-variable.other.objec.nix
 variable.other.object.access.nix
+variable.other.object.nix
 variable.other.object.parameter.nix
 variable.other.object.property.nix
 variable.other.property.last.nix

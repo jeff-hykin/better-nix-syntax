@@ -258,7 +258,7 @@
     - punctuation.section.embedded
 - source: system
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -368,7 +368,7 @@
     - meta.assignment-start
 - source: pkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -386,7 +386,7 @@
     - meta.assignment-start
 - source: self
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -404,7 +404,7 @@
     - meta.assignment-start
 - source: system
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -518,7 +518,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -536,7 +536,7 @@
     - meta.assignment-start
 - source: nvs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:

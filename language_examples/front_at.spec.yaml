@@ -126,11 +126,11 @@
     - support.type.builtin.method.unsafeGetAttrPos
 - source: attrName
   scopesBegin:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: v
   scopesEnd:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -152,7 +152,7 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '=='
   scopes:
@@ -188,7 +188,7 @@
     - punctuation.section.embedded
 - source: prefix
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopesBegin:
@@ -297,7 +297,7 @@
   scopesBegin:
     - meta.punctuation.section.condition
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '?'
   scopes:
@@ -349,7 +349,7 @@
     - punctuation.section.embedded
 - source: prefix
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopesBegin:
@@ -462,7 +462,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '@'
 - source: '{'
@@ -674,7 +674,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: 'null'
   scopes:
@@ -709,7 +709,7 @@
     - string.quoted.double
 - source: throwIfNot
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '#'
   scopesBegin:
@@ -765,7 +765,7 @@
     - keyword.operator.==
 - source: outputs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -792,7 +792,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '"'
   scopesBegin:
@@ -838,7 +838,7 @@
     - string.quoted.double
 - source: args
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -898,7 +898,7 @@
     - meta.attribute-set
 - source: outputs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -926,7 +926,7 @@
     - string.quoted.double
 - source: derivation
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1017,7 +1017,7 @@
     - string.quoted.other
 - source: derivation
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1192,7 +1192,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: checked
   scopes:
@@ -1223,7 +1223,7 @@
     - entity.name.function.call
 - source: outputs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -1248,7 +1248,7 @@
     - punctuation.section.embedded
 - source: outputName
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1261,7 +1261,7 @@
     - keyword.operator.//
 - source: passthru
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1346,14 +1346,14 @@
 - source: cond
   scopes:
     - meta.punctuation.section.condition
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: then
   scopes:
     - keyword.control.then
 - source: value
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: else
   scopes:

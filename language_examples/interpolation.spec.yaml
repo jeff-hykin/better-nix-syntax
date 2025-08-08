@@ -38,7 +38,7 @@
     - punctuation.section.embedded
 - source: numS
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

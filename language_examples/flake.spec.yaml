@@ -147,7 +147,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -299,7 +299,7 @@
     - entity.name.function.method.call
 - source: systems
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -317,7 +317,7 @@
     - entity.name.function.call
 - source: system
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -449,7 +449,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -522,7 +522,7 @@
     - punctuation.section.parentheses
 - source: args
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: //
   scopes:
@@ -641,7 +641,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: self
   scopes:
@@ -655,7 +655,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '"'
   scopesBegin:
@@ -690,7 +690,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '"'
   scopesBegin:
@@ -757,14 +757,14 @@
     - punctuation.section.parentheses
 - source: self
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: rev
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -973,7 +973,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:

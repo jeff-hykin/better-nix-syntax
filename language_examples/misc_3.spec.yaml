@@ -343,7 +343,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -419,7 +419,7 @@
     - punctuation.section.embedded
 - source: bash
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -446,7 +446,7 @@
     - meta.assignment-start
 - source: _src
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -490,7 +490,7 @@
     - punctuation.section.embedded
 - source: deno
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -524,7 +524,7 @@
     - punctuation.section.embedded
 - source: deno
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

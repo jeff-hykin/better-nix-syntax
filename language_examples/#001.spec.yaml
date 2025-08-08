@@ -175,7 +175,7 @@
     - punctuation.section.embedded
 - source: pname
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -186,7 +186,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -318,7 +318,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -347,7 +347,7 @@
     - meta.assignment-start
 - source: testEqualDerivation
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '"'
   scopesBegin:
@@ -362,7 +362,7 @@
     - string.quoted.double
 - source: hello
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -572,7 +572,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

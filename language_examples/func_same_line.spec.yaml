@@ -244,7 +244,7 @@
     - punctuation.separator.default
 - source: executableName
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
   scopesEnd:
     - meta.default
@@ -342,5 +342,5 @@
     - meta.let.in.part1
 - source: unwrapped
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter

@@ -33,7 +33,7 @@
     - support.type.builtin.method.groupBy
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -91,7 +91,7 @@
     - entity.name.function.call
 - source: e
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -106,7 +106,7 @@
     - meta.let.in.part1
 - source: r
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: //
   scopes:
@@ -124,7 +124,7 @@
     - punctuation.section.embedded
 - source: key
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -147,7 +147,7 @@
     - punctuation.section.embedded
 - source: key
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

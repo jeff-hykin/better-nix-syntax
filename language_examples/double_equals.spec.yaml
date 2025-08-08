@@ -188,7 +188,7 @@
     - meta.assignment-start
 - source: rootPaths
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -253,7 +253,7 @@
     - meta.assignment-start
 - source: rootPaths
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '=='
   scopes:

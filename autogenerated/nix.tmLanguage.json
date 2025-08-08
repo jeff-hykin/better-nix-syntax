@@ -8064,7 +8064,7 @@
           "name": "variable.other.dirty.nix"
         },
         "168": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         },
         "169": {
           "name": "entity.name.function.object.method.nix"
@@ -10145,7 +10145,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         }
       }
     },
@@ -10552,7 +10552,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         }
       }
     },
@@ -12072,7 +12072,7 @@
           "name": "variable.other.dirty.nix"
         },
         "100": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         },
         "101": {
           "name": "entity.name.function.object.method.nix"

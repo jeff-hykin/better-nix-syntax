@@ -151,7 +151,7 @@
     - punctuation.section.parentheses
 - source: enableCrypt
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '->'
   scopes:
@@ -161,7 +161,7 @@
     - punctuation.section.parentheses
 - source: libxcrypt
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '!='
   scopes:
@@ -243,7 +243,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: 'null'
   scopes:
@@ -317,7 +317,7 @@
     - entity.name.function.method.call
 - source: libc
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -345,7 +345,7 @@
     - entity.name.function.method.call
 - source: libc
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -647,7 +647,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -774,7 +774,7 @@
     - entity.name.function.method.call
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '"'
   scopesBegin:
@@ -874,7 +874,7 @@
     - punctuation.section.parentheses
 - source: enableCrypt
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '&&'
   scopes:
@@ -897,7 +897,7 @@
     - punctuation.section.parentheses
 - source: libxcrypt
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1129,7 +1129,7 @@
     - entity.name.function.method.call
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: .
   scopesBegin:
@@ -1190,7 +1190,7 @@
 - source: crossCompiling
   scopes:
     - meta.punctuation.section.condition
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: then
   scopes:
@@ -1208,7 +1208,7 @@
     - punctuation.section.embedded
 - source: coreutils
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1323,7 +1323,7 @@
 - source: crossCompiling
   scopes:
     - meta.punctuation.section.condition
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: then
   scopes:
@@ -1455,7 +1455,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -1490,7 +1490,7 @@
     - punctuation.section.embedded
 - source: libcInc
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1508,7 +1508,7 @@
     - punctuation.section.embedded
 - source: libcLib
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -1572,7 +1572,7 @@
     - string.quoted.other
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -1663,7 +1663,7 @@
     - entity.name.function.method.call
 - source: enableThreading
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '"'
   scopesBegin:
@@ -1697,7 +1697,7 @@
     - keyword.operator.!
 - source: enableCrypt
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -1774,7 +1774,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -1914,7 +1914,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -1982,7 +1982,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -2003,7 +2003,7 @@
     - keyword.operator.!
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -2245,7 +2245,7 @@
     - keyword.operator.!
 - source: enableThreading
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -2373,7 +2373,7 @@
     - punctuation.section.embedded
 - source: perl
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -2617,7 +2617,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -3003,7 +3003,7 @@
     - entity.name.function.call
 - source: pkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -3092,7 +3092,7 @@
     - punctuation.section.embedded
 - source: libcInc
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3200,7 +3200,7 @@
     - entity.name.function.method.call
 - source: crossCompiling
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ''''''
   scopesBegin:
@@ -3214,7 +3214,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3226,7 +3226,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3240,7 +3240,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3260,7 +3260,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3273,7 +3273,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3284,7 +3284,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3295,7 +3295,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3860,7 +3860,7 @@
     - punctuation.section.embedded
 - source: crossVersion
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3936,7 +3936,7 @@
     - meta.assignment-start
 - source: crossVersion
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -4043,7 +4043,7 @@
     - punctuation.section.embedded
 - source: perl-cross-src
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -4088,7 +4088,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

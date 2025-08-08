@@ -261,7 +261,7 @@
     - meta.assignment-start
 - source: pname
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -288,7 +288,7 @@
     - punctuation.section.embedded
 - source: version
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

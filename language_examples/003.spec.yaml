@@ -147,7 +147,7 @@
     - support.type.builtin.method.isAttrs
 - source: x
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '||'
   scopes:
@@ -166,7 +166,7 @@
     - support.type.builtin.method.isFunction
 - source: x
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -219,7 +219,7 @@
     - support.type.builtin.method.isFunction
 - source: f
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
@@ -231,7 +231,7 @@
     - entity.name.function.call
 - source: x
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: else
   scopes:
@@ -240,7 +240,7 @@
     - meta.punctuation.section.conditional
 - source: f
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -295,7 +295,7 @@
     - entity.name.function.call
 - source: lhs_
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '{'
   scopesBegin:
@@ -341,7 +341,7 @@
     - entity.name.function.call
 - source: rhs_
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '{'
   scopesBegin:
@@ -384,11 +384,11 @@
     - entity.name.function.call
 - source: lhs
   scopesBegin:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: rhs
   scopesEnd:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: //
   scopes:
@@ -401,14 +401,14 @@
     - punctuation.section.parentheses
 - source: lhs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: packageOverrides
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -455,7 +455,7 @@
     - entity.name.function.method.call
 - source: pkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: //
   scopes:
@@ -506,14 +506,14 @@
     - punctuation.section.parentheses
 - source: rhs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
 - source: pkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -537,14 +537,14 @@
     - punctuation.section.parentheses
 - source: lhs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '?'
   scopes:
     - keyword.operator.?
 - source: perlPackageOverrides
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
@@ -591,7 +591,7 @@
     - entity.name.function.method.call
 - source: pkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: //
   scopes:
@@ -642,14 +642,14 @@
     - punctuation.section.parentheses
 - source: rhs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: )
   scopes:
     - punctuation.section.parentheses
 - source: pkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -793,7 +793,7 @@
     - entity.name.function.call
 - source: x
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
   scopesEnd:
     - meta.punctuation.section.condition
@@ -823,7 +823,7 @@
     - constant.numeric.integer
 - source: x
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: 'false'
   scopes:
@@ -844,7 +844,7 @@
     - entity.name.function.call
 - source: isConfig
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1285,7 +1285,7 @@
     - meta.punctuation.section.conditional
 - source: defaultPkgs
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1458,7 +1458,7 @@
     - meta.assignment-start
 - source: pkgsType
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1607,7 +1607,7 @@
     - meta.assignment-start
 - source: literalExpression
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ''''''
   scopesBegin:
@@ -1638,7 +1638,7 @@
     - meta.assignment-start
 - source: configType
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -1738,7 +1738,7 @@
     - meta.assignment-start
 - source: literalExpression
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ''''''
   scopesBegin:
@@ -1786,7 +1786,7 @@
     - entity.name.function.method.call
 - source: overlayType
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -2083,7 +2083,7 @@
     - meta.assignment-start
 - source: literalExpression
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ''''''
   scopesBegin:
@@ -2656,7 +2656,7 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -2767,7 +2767,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -2874,7 +2874,7 @@
     - entity.name.function.method.call
 - source: or
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: (
   scopes:
@@ -3095,14 +3095,14 @@
   scopesBegin:
     - meta.statement
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '=='
   scopes:
     - keyword.operator.==
 - source: pkgsSystem
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: ;
   scopes:
@@ -3131,7 +3131,7 @@
     - punctuation.section.embedded
 - source: pkgsSystem
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3142,7 +3142,7 @@
     - punctuation.section.embedded
 - source: nixosExpectedSystem
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -3153,7 +3153,7 @@
     - punctuation.section.embedded
 - source: nixosOption
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:

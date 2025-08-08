@@ -184,7 +184,7 @@
     - punctuation.section.embedded
 - source: system
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
@@ -204,7 +204,7 @@
     - punctuation.section.embedded
 - source: system
   scopes:
-    - variable.other.objec
+    - variable.other.object
     - variable.parameter
 - source: '}'
   scopes:
