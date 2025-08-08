@@ -22,32 +22,33 @@ grammar = @grammar # this file is imported from main.rb
     #
         # this naming thing is just a backwards compatibility thing. If all tests pass without it, it should be removed
         grammar[:SHELL_initial_context] = [
-                :SHELL_comment,
-                :SHELL_pipeline,
-                :SHELL_normal_statement_seperator,
-                :SHELL_logical_expression_double,
-                :SHELL_logical_expression_single,
-                :SHELL_assignment_statement,
-                :SHELL_case_statement,
-                :SHELL_for_statement,
-                :SHELL_loop,
-                :SHELL_function_definition,
-                :SHELL_line_continuation,
-                :SHELL_arithmetic_double,
-                :SHELL_misc_ranges,
-                :SHELL_variable,
-                :SHELL_interpolation,
-                :SHELL_heredoc,
-                :SHELL_herestring,
-                :SHELL_redirection,
-                :SHELL_pathname,
-                :SHELL_floating_keyword,
-                :SHELL_alias_statement,
-                # :SHELL_custom_commands,
-                :SHELL_normal_statement,
-                :SHELL_range_expansion,
-                :SHELL_string,
-                :SHELL_support,
+                :SHELL_command_statement,
+                # :SHELL_comment,
+                # :SHELL_pipeline,
+                # :SHELL_normal_statement_seperator,
+                # :SHELL_logical_expression_double,
+                # :SHELL_logical_expression_single,
+                # :SHELL_assignment_statement,
+                # :SHELL_case_statement,
+                # :SHELL_for_statement,
+                # :SHELL_loop,
+                # :SHELL_function_definition,
+                # :SHELL_line_continuation,
+                # :SHELL_arithmetic_double,
+                # :SHELL_misc_ranges,
+                # :SHELL_variable,
+                # :SHELL_interpolation,
+                # :SHELL_heredoc,
+                # :SHELL_herestring,
+                # :SHELL_redirection,
+                # :SHELL_pathname,
+                # :SHELL_floating_keyword,
+                # :SHELL_alias_statement,
+                # # :SHELL_custom_commands,
+                # :SHELL_normal_statement,
+                # :SHELL_range_expansion,
+                # :SHELL_string,
+                # :SHELL_support,
             ]
         grammar[:SHELL_boolean] = Pattern.new(
                 match: /\b(?:true|false)\b/,
@@ -134,22 +135,22 @@ grammar = @grammar # this file is imported from main.rb
         grammar[:SHELL_numeric_literal] = lookBehindFor(/=| |\t|^|\{|\(|\[/).then(
             Pattern.new(
                 match: /0[xX][0-9A-Fa-f]+/,
-                tag_as: "constant.numeric constant.numeric.hex.shell"
+                tag_as: "constant.numeric.shell constant.numeric.hex.shell"
             ).or(
                 match: /0\d+/,
-                tag_as: "constant.numeric constant.numeric.octal.shell"
+                tag_as: "constant.numeric.shell constant.numeric.octal.shell"
             ).or(
                 match: /\d{1,2}#[0-9a-zA-Z@_]+/,
-                tag_as: "constant.numeric constant.numeric.other.shell"
+                tag_as: "constant.numeric.shell constant.numeric.other.shell"
             ).or(
                 match: /-?\d+(?:\.\d+)/,
-                tag_as: "constant.numeric constant.numeric.decimal.shell"
+                tag_as: "constant.numeric.shell constant.numeric.decimal.shell"
             ).or(
                 match: /-?\d+(?:\.\d+)+/,
-                tag_as: "constant.numeric constant.numeric.version.shell"
+                tag_as: "constant.numeric.shell constant.numeric.version.shell"
             ).or(
                 match: /-?\d+/,
-                tag_as: "constant.numeric constant.numeric.integer.shell"
+                tag_as: "constant.numeric.shell constant.numeric.integer.shell"
             )
         ).lookAheadFor(/ |\t|$|\}|\)|;/)
         grammar[:SHELL_redirect_number] = lookBehindFor(/[ \t]/).then(
@@ -177,7 +178,7 @@ grammar = @grammar # this file is imported from main.rb
                 Pattern.new(/^/).or(/[ \t]++/)
             ).then(
                 Pattern.new(
-                    tag_as: "comment.line.number-sign meta.shebang.shell",
+                    tag_as: "comment.line.number-sign.shell meta.shebang.shell",
                     match: Pattern.new(
                         Pattern.new(
                             match: /#!/,
@@ -265,11 +266,11 @@ grammar = @grammar # this file is imported from main.rb
                     tag_as: "meta.function.body.shell",
                     start_pattern: Pattern.new(
                         match: "{",
-                        tag_as: "punctuation.definition.group punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
                     ),
                     end_pattern: Pattern.new(
                         match: "}",
-                        tag_as: "punctuation.definition.group punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
                     ),
                     includes: [
                         :SHELL_initial_context,
@@ -279,11 +280,11 @@ grammar = @grammar # this file is imported from main.rb
                     tag_as: "meta.function.body.shell",
                     start_pattern: Pattern.new(
                         match: "(",
-                        tag_as: "punctuation.definition.group punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
                     ),
                     end_pattern: Pattern.new(
                         match: ")",
-                        tag_as: "punctuation.definition.group punctuation.section.function.definition.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.section.function.definition.shell",
                     ),
                     includes: [
                         :SHELL_initial_context,
@@ -295,7 +296,7 @@ grammar = @grammar # this file is imported from main.rb
         
         simple_option = Pattern.new(
             match:/(?<!\w)-\w+\b/,
-            tag_as: "string.unquoted.argument constant.other.option.shell",
+            tag_as: "string.unquoted.argument.shell constant.other.option.shell",
         )
         grammar[:SHELL_modifiers] = modifier = Pattern.new(
             match: /(?<=^|;|&|[ \t])(?:#{@shell_tokens.representationsThat(:areModifiers).join("|")})(?=[ \t]|;|&|$)/,
@@ -314,7 +315,7 @@ grammar = @grammar # this file is imported from main.rb
                 ).then(
                     match: maybe("$").then(variable_name).or("@").or("*").or(
                         match: /-?\d+/,
-                        tag_as: "constant.numeric constant.numeric.integer.shell",
+                        tag_as: "constant.numeric.shell constant.numeric.integer.shell",
                     ),
                     tag_as: "variable.other.assignment.shell",
                 ).then(
@@ -418,7 +419,7 @@ grammar = @grammar # this file is imported from main.rb
         end
         
         grammar[:SHELL_continuation_of_double_quoted_command_name] = PatternRange.new(
-            tag_content_as: "meta.statement.command.name.continuation string.quoted.double entity.name.function.call entity.name.command",
+            tag_content_as: "meta.statement.command.name.continuation.shell string.quoted.double.shell entity.name.function.call.shell entity.name.command.shell",
             start_pattern: Pattern.new(
                 Pattern.new(
                     /\G/
@@ -426,7 +427,7 @@ grammar = @grammar # this file is imported from main.rb
             ),
             end_pattern: Pattern.new(
                 match: "\"",
-                tag_as: "string.quoted.double punctuation.definition.string.end.shell entity.name.function.call entity.name.command.shell",
+                tag_as: "string.quoted.double.shell punctuation.definition.string.end.shell entity.name.function.call.shell entity.name.command.shell",
             ),
             includes: [
                 Pattern.new(
@@ -439,7 +440,7 @@ grammar = @grammar # this file is imported from main.rb
         )
         
         grammar[:SHELL_continuation_of_single_quoted_command_name] = PatternRange.new(
-            tag_content_as: "meta.statement.command.name.continuation string.quoted.single entity.name.function.call entity.name.command",
+            tag_content_as: "meta.statement.command.name.continuation.shell string.quoted.single.shell entity.name.function.call.shell entity.name.command.shell",
             start_pattern: Pattern.new(
                 Pattern.new(
                     /\G/
@@ -447,7 +448,7 @@ grammar = @grammar # this file is imported from main.rb
             ),
             end_pattern: Pattern.new(
                 match: "\'",
-                tag_as: "string.quoted.single punctuation.definition.string.end.shell entity.name.function.call entity.name.command.shell",
+                tag_as: "string.quoted.single.shell punctuation.definition.string.end.shell entity.name.function.call.shell entity.name.command.shell",
             ),
         )
         
@@ -458,7 +459,7 @@ grammar = @grammar # this file is imported from main.rb
                     possible_command_start
                 ).then(
                     modifier.or(
-                        tag_as: "entity.name.function.call entity.name.command.shell",
+                        tag_as: "entity.name.function.call.shell entity.name.command.shell",
                         match: lookAheadToAvoid(/"|'|\\\n?$/).then(/[^!'"<> \t\n\r]+?/), # start of unquoted command
                         includes: [
                             Pattern.new(
@@ -488,10 +489,10 @@ grammar = @grammar # this file is imported from main.rb
             match: Pattern.new(/\'\'/).lookAheadFor(/\$|\'/),
         ),
         grammar[:SHELL_argument_context] = [
-            :NIX_escape_character_single_quote,
             :SHELL_range_expansion,
             generateUnquotedArugment["string.unquoted.argument.shell"],
             :SHELL_normal_context,
+            # :NIX_escape_character_single_quote,
         ]
         grammar[:SHELL_argument] = PatternRange.new(
             tag_as: "meta.argument.shell",
@@ -503,14 +504,14 @@ grammar = @grammar # this file is imported from main.rb
             ]
         )
         grammar[:SHELL_option] = PatternRange.new(
-            tag_content_as: "string.unquoted.argument constant.other.option",
+            tag_content_as: "string.unquoted.argument.shell constant.other.option.shell",
             start_pattern: Pattern.new(  
                 Pattern.new(/[ \t]++/).then(
                     match: /-/,
-                    tag_as: "string.unquoted.argument constant.other.option.dash.shell"
+                    tag_as: "string.unquoted.argument.shell constant.other.option.dash.shell"
                 ).then(
                     match: basic_possible_command_start,
-                    tag_as: "string.unquoted.argument constant.other.option.shell",
+                    tag_as: "string.unquoted.argument.shell constant.other.option.shell",
                 )
             ),
             end_pattern: lookAheadFor(/[ \t]/).or(command_end),
@@ -521,10 +522,10 @@ grammar = @grammar # this file is imported from main.rb
         grammar[:SHELL_simple_options] = zeroOrMoreOf(
             Pattern.new(/[ \t]++/).then(
                 match: /\-/,
-                tag_as: "string.unquoted.argument constant.other.option.dash.shell"
+                tag_as: "string.unquoted.argument.shell constant.other.option.dash.shell"
             ).then(
                 match: /\w+/,
-                tag_as: "string.unquoted.argument constant.other.option.shell"
+                tag_as: "string.unquoted.argument.shell constant.other.option.shell"
             )
         )
         
@@ -555,11 +556,11 @@ grammar = @grammar # this file is imported from main.rb
                 
                 Pattern.new(
                     match: any_builtin_control_flow,
-                    tag_as: "entity.name.function.call entity.name.command keyword.control.$match.shell",
+                    tag_as: "entity.name.function.call.shell entity.name.command.shell keyword.control.$match.shell",
                 ),
                 Pattern.new(
                     match: any_builtin_name.lookAheadToAvoid(/-/),
-                    tag_as: "entity.name.function.call entity.name.command support.function.builtin.shell",
+                    tag_as: "entity.name.function.call.shell entity.name.command.shell support.function.builtin.shell",
                 ),
                 :SHELL_variable,
                 
@@ -567,8 +568,8 @@ grammar = @grammar # this file is imported from main.rb
                 # unquoted parts of a command name
                 # 
                 Pattern.new(
-                    lookBehindToAvoid(/\w/).lookBehindFor(/\G|'|"|\}|\)/).then(
-                        tag_as: "entity.name.function.call entity.name.command.shell",
+                    lookBehindToAvoid(/\w/).lookBehindFor(/\G|\}|\)/).then(
+                        tag_as: "entity.name.function.call.shell entity.name.command.shell",
                         match: /[^ \n\t\r"'=;#$!&\|`\)\{<>]+/,
                     ),
                 ),
@@ -583,15 +584,15 @@ grammar = @grammar # this file is imported from main.rb
                         ).then(
                             maybe(
                                 match: /\$/,
-                                tag_as: "meta.statement.command.name.quoted punctuation.definition.string entity.name.function.call entity.name.command.shell",
+                                tag_as: "meta.statement.command.name.quoted.shell punctuation.definition.string.shell entity.name.function.call.shell entity.name.command.shell",
                             ).then(
                                 reference: "start_quote",
                                 match: Pattern.new(
                                     Pattern.new(
-                                        tag_as: "meta.statement.command.name.quoted string.quoted.double punctuation.definition.string.begin entity.name.function.call entity.name.command.shell",
+                                        tag_as: "meta.statement.command.name.quoted.shell string.quoted.double.shell punctuation.definition.string.begin.shell entity.name.function.call.shell entity.name.command.shell",
                                         match: /"/
                                     ).or(
-                                        tag_as: "meta.statement.command.name.quoted string.quoted.single punctuation.definition.string.begin entity.name.function.call entity.name.command.shell",
+                                        tag_as: "meta.statement.command.name.quoted.shell string.quoted.single.shell punctuation.definition.string.begin.shell entity.name.function.call.shell entity.name.command.shell",
                                         match: /'/,
                                     )
                                 )
@@ -613,7 +614,6 @@ grammar = @grammar # this file is imported from main.rb
             start_pattern: grammar[:SHELL_start_of_command],
             end_pattern: command_end,
             includes: [
-                :NIX_escape_character_single_quote,
                 # 
                 # Command Name Range
                 # 
@@ -629,6 +629,9 @@ grammar = @grammar # this file is imported from main.rb
                 # :SHELL_statement_context,
                 :SHELL_string,
                 :SHELL_heredoc,
+                :SHELL_variable,
+                :SHELL_simple_unquoted,
+                :NIX_escape_character_single_quote,
             ],
         )
         grammar[:SHELL_normal_assignment_statement] = PatternRange.new(
@@ -678,10 +681,10 @@ grammar = @grammar # this file is imported from main.rb
                 Pattern.new(
                     Pattern.new(
                         match: variable_name,
-                        tag_as: "variable.other.assignment.array entity.other.attribute-name.shell",
+                        tag_as: "variable.other.assignment.array.shell entity.other.attribute-name.shell",
                     ).then(
                         match: /\=/,
-                        tag_as: "keyword.operator.assignment punctuation.definition.assignment.shell",
+                        tag_as: "keyword.operator.assignment.shell punctuation.definition.assignment.shell",
                     )
                 ),
                 Pattern.new(
@@ -690,7 +693,7 @@ grammar = @grammar # this file is imported from main.rb
                         match: /\[/,
                     ).then(
                         match: /.+?/,
-                        tag_as: "string.unquoted entity.other.attribute-name.bracket.shell",
+                        tag_as: "string.unquoted.shell entity.other.attribute-name.bracket.shell",
                     ).then(
                         tag_as: "punctuation.definition.bracket.named-array.shell",
                         match: /\]/,
@@ -704,7 +707,7 @@ grammar = @grammar # this file is imported from main.rb
             ]
         )
         grammar[:SHELL_modified_assignment_statement] = PatternRange.new(
-            tag_as: "meta.statement meta.expression.assignment.modified.shell",
+            tag_as: "meta.statement.shell meta.expression.assignment.modified.shell",
             start_pattern: grammar[:SHELL_modifiers],
             end_pattern: command_end,
             includes: [
@@ -721,7 +724,7 @@ grammar = @grammar # this file is imported from main.rb
                         ).then(
                             match: maybe("$").then(variable_name).or("@").or("*").or(
                                 match: /-?\d+/,
-                                tag_as: "constant.numeric constant.numeric.integer.shell",
+                                tag_as: "constant.numeric.shell constant.numeric.integer.shell",
                             ),
                             tag_as: "variable.other.assignment.shell",
                         ).then(
@@ -754,23 +757,23 @@ grammar = @grammar # this file is imported from main.rb
         grammar[:SHELL_case_statement_context] = [
                 Pattern.new(
                     match: /\*/,
-                    tag_as: "variable.language.special.quantifier.star keyword.operator.quantifier.star punctuation.definition.arbitrary-repetition punctuation.definition.regex.arbitrary-repetition.shell"
+                    tag_as: "variable.language.special.quantifier.star.shell keyword.operator.quantifier.star.shell punctuation.definition.arbitrary-repetition.shell punctuation.definition.regex.arbitrary-repetition.shell"
                 ),
                 Pattern.new(
                     match: /\+/,
-                    tag_as: "variable.language.special.quantifier.plus keyword.operator.quantifier.plus punctuation.definition.arbitrary-repetition punctuation.definition.regex.arbitrary-repetition.shell"
+                    tag_as: "variable.language.special.quantifier.plus.shell keyword.operator.quantifier.plus.shell punctuation.definition.arbitrary-repetition.shell punctuation.definition.regex.arbitrary-repetition.shell"
                 ),
                 Pattern.new(
                     match: /\?/,
-                    tag_as: "variable.language.special.quantifier.question keyword.operator.quantifier.question punctuation.definition.arbitrary-repetition punctuation.definition.regex.arbitrary-repetition.shell"
+                    tag_as: "variable.language.special.quantifier.question.shell keyword.operator.quantifier.question.shell punctuation.definition.arbitrary-repetition.shell punctuation.definition.regex.arbitrary-repetition.shell"
                 ),
                 Pattern.new(
                     match: /@/,
-                    tag_as: "variable.language.special.at keyword.operator.at punctuation.definition.regex.at.shell",
+                    tag_as: "variable.language.special.at.shell keyword.operator.at.shell punctuation.definition.regex.at.shell",
                 ),
                 Pattern.new(
                     match: /\|/,
-                    tag_as: "keyword.operator.orvariable.language.special.or keyword.operator.alternation.ruby punctuation.definition.regex.alternation punctuation.separator.regex.alternation.shell"
+                    tag_as: "keyword.operator.orvariable.language.special.or.shell keyword.operator.alternation.ruby.shell punctuation.definition.regex.alternation.shell punctuation.separator.regex.alternation.shell"
                 ),
                 Pattern.new(
                     match: /\\./,
@@ -785,11 +788,11 @@ grammar = @grammar # this file is imported from main.rb
                     tag_as: "meta.parenthese.shell",
                     start_pattern: lookBehindFor(/\S/).then(
                         match: /\(/,
-                        tag_as: "punctuation.definition.group punctuation.definition.regex.group.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.definition.regex.group.shell",
                     ),
                     end_pattern: Pattern.new(
                         match: /\)/,
-                        tag_as: "punctuation.definition.group punctuation.definition.regex.group.shell",
+                        tag_as: "punctuation.definition.group.shell punctuation.definition.regex.group.shell",
                     ),
                     includes: [
                         :SHELL_case_statement_context,
@@ -815,7 +818,7 @@ grammar = @grammar # this file is imported from main.rb
                 :SHELL_string,
                 Pattern.new(
                     match: /[^) \t\n\[\?\*\|\@]/,
-                    tag_as: "string.unquoted.pattern string.regexp.unquoted.shell",
+                    tag_as: "string.unquoted.pattern.shell string.regexp.unquoted.shell",
                 ),
             ]
         grammar[:SHELL_while_statement] = [
@@ -1189,7 +1192,7 @@ grammar = @grammar # this file is imported from main.rb
             Pattern.new(
                 match: Pattern.new(
                     match: /\$/,
-                    tag_as: "punctuation.definition.variable #{tag}.shell"
+                    tag_as: "punctuation.definition.variable.shell #{tag}.shell"
                 ).then(
                     match: Pattern.new(regex_after_dollarsign).lookAheadToAvoid(/\w/),
                     tag_as: tag,
@@ -1257,19 +1260,19 @@ grammar = @grammar # this file is imported from main.rb
             generateVariable(/[-*#?$!0_]/, "variable.language.special.shell"),
             # positional but has {}'s
             PatternRange.new(
-                tag_content_as: "meta.parameter-expansion",
+                tag_content_as: "meta.parameter-expansion.shell",
                 start_pattern: Pattern.new(
                         match: Pattern.new(
                             match: /\$/,
-                            tag_as: "punctuation.definition.variable variable.parameter.positional.shell"
+                            tag_as: "punctuation.definition.variable.shell variable.parameter.positional.shell"
                         ).then(
                             match: /\{/,
-                            tag_as: "punctuation.section.bracket.curly.variable.begin punctuation.definition.variable variable.parameter.positional.shell",
+                            tag_as: "punctuation.section.bracket.curly.variable.begin.shell punctuation.definition.variable.shell variable.parameter.positional.shell",
                         ).then(std_space).lookAheadFor(/\d/)
                     ),
                 end_pattern: Pattern.new(
                         match: /\}/,
-                        tag_as: "punctuation.section.bracket.curly.variable.end punctuation.definition.variable variable.parameter.positional.shell",
+                        tag_as: "punctuation.section.bracket.curly.variable.end.shell punctuation.definition.variable.shell variable.parameter.positional.shell",
                     ),
                 includes: [
                     :SHELL_special_expansion,
@@ -1289,20 +1292,20 @@ grammar = @grammar # this file is imported from main.rb
             ),
             # Normal varible {}'s
             PatternRange.new(
-                tag_content_as: "meta.parameter-expansion",
+                tag_content_as: "meta.parameter-expansion.shell",
                 start_pattern: Pattern.new(
                         match: Pattern.new(
                             match: /\$/,
                             tag_as: "punctuation.definition.variable.shell"
                         ).then(
                             match: /\{/,
-                            tag_as: "punctuation.section.bracket.curly.variable.begin punctuation.definition.variable.shell",
+                            tag_as: "punctuation.section.bracket.curly.variable.begin.shell punctuation.definition.variable.shell",
                             
                         )
                     ),
                 end_pattern: Pattern.new(
                         match: /\}/,
-                        tag_as: "punctuation.section.bracket.curly.variable.end punctuation.definition.variable.shell",
+                        tag_as: "punctuation.section.bracket.curly.variable.end.shell punctuation.definition.variable.shell",
                     ),
                 includes: [
                     :SHELL_special_expansion,
@@ -1342,18 +1345,27 @@ grammar = @grammar # this file is imported from main.rb
                         :NIX_escape_character_single_quote,
                     ],
                 ),
+                # putting :NIX_escape_character_single_quote, should be the same as the following... but its not for some deep bad reason
+                Pattern.new(
+                    tag_as: "constant.character.escape.nix.shell",
+                    match: Pattern.new(/\'\'/).lookAheadFor(/\$|\'/),
+                ),
                 PatternRange.new(
                     tag_as: "string.quoted.single.shell",
                     start_pattern: Pattern.new(
                         match: "'",
                         tag_as: "punctuation.definition.string.begin.shell",
                     ),
+                    apply_end_pattern_last: true,
                     end_pattern: Pattern.new(
                         match: "'",
                         tag_as: "punctuation.definition.string.end.shell",
                     ),
                     includes: [
-                        :NIX_escape_character_single_quote,
+                        Pattern.new(
+                            tag_as: "constant.character.escape.nix.shell",
+                            match: Pattern.new(/\'\'/).lookAheadFor(/\$|\'/),
+                        ),
                     ],
                 ),
                 PatternRange.new(
@@ -1424,7 +1436,7 @@ grammar = @grammar # this file is imported from main.rb
                     [
                         # <<-"HEREDOC"
                         PatternRange.new(
-                            tag_content_as: "string.quoted.heredoc.indent.$3", # NOTE: the $3 should be $reference(delimiter) but the library is having issues with that
+                            tag_content_as: "string.quoted.heredoc.indent.$3.shell", # NOTE: the $3 should be $reference(delimiter) but the library is having issues with that
                             start_pattern: Pattern.new(
                                 Pattern.new(
                                     match: lookBehindToAvoid(/</).then(/<<-/),
@@ -1462,7 +1474,7 @@ grammar = @grammar # this file is imported from main.rb
                         ),
                         # <<"HEREDOC"
                         PatternRange.new(
-                            tag_content_as: "string.quoted.heredoc.no-indent.$3",
+                            tag_content_as: "string.quoted.heredoc.no-indent.$3.shell",
                             start_pattern: Pattern.new(
                                 Pattern.new(
                                     match: lookBehindToAvoid(/</).then(/<</).lookAheadToAvoid(/</),
@@ -1500,7 +1512,7 @@ grammar = @grammar # this file is imported from main.rb
                         ),
                         # <<-HEREDOC
                         PatternRange.new(
-                            tag_content_as: "string.unquoted.heredoc.indent.$2",
+                            tag_content_as: "string.unquoted.heredoc.indent.$2.shell",
                             start_pattern: Pattern.new(
                                 Pattern.new(
                                     match: lookBehindToAvoid(/</).then(/<<-/),
@@ -1534,7 +1546,7 @@ grammar = @grammar # this file is imported from main.rb
                         ),
                         # <<HEREDOC
                         PatternRange.new(
-                            tag_content_as: "string.unquoted.heredoc.no-indent.$2",
+                            tag_content_as: "string.unquoted.heredoc.no-indent.$2.shell",
                             start_pattern: Pattern.new(
                                 Pattern.new(
                                     match: lookBehindToAvoid(/</).then(/<</).lookAheadToAvoid(/</),

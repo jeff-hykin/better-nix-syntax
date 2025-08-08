@@ -18,9 +18,6 @@
           "name": "constant.character.escape.nix.shell.nix"
         },
         {
-          "include": "#NIX_escape_character_single_quote"
-        },
-        {
           "include": "#SHELL_range_expansion"
         },
         {
@@ -67,12 +64,12 @@
           "patterns": [
             {
               "match": "(?<!\\w)-\\w+\\b",
-              "name": "string.unquoted.argument.nix constant.other.option.shell.nix"
+              "name": "string.unquoted.argument.shell.nix constant.other.option.shell.nix"
             }
           ]
         },
         "3": {
-          "name": "string.unquoted.argument.nix constant.other.option.shell.nix"
+          "name": "string.unquoted.argument.shell.nix constant.other.option.shell.nix"
         },
         "4": {
           "name": "variable.other.assignment.shell.nix"
@@ -84,7 +81,7 @@
           "name": "variable.other.assignment.shell.nix"
         },
         "7": {
-          "name": "constant.numeric.nix constant.numeric.integer.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.integer.shell.nix"
         },
         "8": {
           "name": "punctuation.definition.array.access.shell.nix"
@@ -139,9 +136,6 @@
     },
     "SHELL_argument_context": {
       "patterns": [
-        {
-          "include": "#NIX_escape_character_single_quote"
-        },
         {
           "include": "#SHELL_range_expansion"
         },
@@ -279,7 +273,7 @@
           "name": "variable.other.assignment.shell.nix"
         },
         "4": {
-          "name": "constant.numeric.nix constant.numeric.integer.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.integer.shell.nix"
         },
         "5": {
           "name": "punctuation.definition.array.access.shell.nix"
@@ -310,10 +304,10 @@
           "match": "(?:((?<!\\w)(?:[a-zA-Z_0-9-]+)(?!\\w))(\\=))",
           "captures": {
             "1": {
-              "name": "variable.other.assignment.array.nix entity.other.attribute-name.shell.nix"
+              "name": "variable.other.assignment.array.shell.nix entity.other.attribute-name.shell.nix"
             },
             "2": {
-              "name": "keyword.operator.assignment.nix punctuation.definition.assignment.shell.nix"
+              "name": "keyword.operator.assignment.shell.nix punctuation.definition.assignment.shell.nix"
             }
           }
         },
@@ -324,7 +318,7 @@
               "name": "punctuation.definition.bracket.named-array.shell.nix"
             },
             "2": {
-              "name": "string.unquoted.nix entity.other.attribute-name.bracket.shell.nix"
+              "name": "string.unquoted.shell.nix entity.other.attribute-name.bracket.shell.nix"
             },
             "3": {
               "name": "punctuation.definition.bracket.named-array.shell.nix"
@@ -362,7 +356,7 @@
           "name": "storage.modifier.$1.shell.nix"
         },
         "2": {
-          "name": "entity.name.function.call.nix entity.name.command.shell.nix",
+          "name": "entity.name.function.call.shell.nix entity.name.command.shell.nix",
           "patterns": [
             {
               "match": "(?<!\\w)(?:continue|return|break)(?!\\w)",
@@ -463,23 +457,23 @@
       "patterns": [
         {
           "match": "\\*",
-          "name": "variable.language.special.quantifier.star.nix keyword.operator.quantifier.star.nix punctuation.definition.arbitrary-repetition.nix punctuation.definition.regex.arbitrary-repetition.shell.nix"
+          "name": "variable.language.special.quantifier.star.shell.nix keyword.operator.quantifier.star.shell.nix punctuation.definition.arbitrary-repetition.shell.nix punctuation.definition.regex.arbitrary-repetition.shell.nix"
         },
         {
           "match": "\\+",
-          "name": "variable.language.special.quantifier.plus.nix keyword.operator.quantifier.plus.nix punctuation.definition.arbitrary-repetition.nix punctuation.definition.regex.arbitrary-repetition.shell.nix"
+          "name": "variable.language.special.quantifier.plus.shell.nix keyword.operator.quantifier.plus.shell.nix punctuation.definition.arbitrary-repetition.shell.nix punctuation.definition.regex.arbitrary-repetition.shell.nix"
         },
         {
           "match": "\\?",
-          "name": "variable.language.special.quantifier.question.nix keyword.operator.quantifier.question.nix punctuation.definition.arbitrary-repetition.nix punctuation.definition.regex.arbitrary-repetition.shell.nix"
+          "name": "variable.language.special.quantifier.question.shell.nix keyword.operator.quantifier.question.shell.nix punctuation.definition.arbitrary-repetition.shell.nix punctuation.definition.regex.arbitrary-repetition.shell.nix"
         },
         {
           "match": "@",
-          "name": "variable.language.special.at.nix keyword.operator.at.nix punctuation.definition.regex.at.shell.nix"
+          "name": "variable.language.special.at.shell.nix keyword.operator.at.shell.nix punctuation.definition.regex.at.shell.nix"
         },
         {
           "match": "\\|",
-          "name": "keyword.operator.orvariable.language.special.or.nix keyword.operator.alternation.ruby.nix punctuation.definition.regex.alternation.nix punctuation.separator.regex.alternation.shell.nix"
+          "name": "keyword.operator.orvariable.language.special.or.shell.nix keyword.operator.alternation.ruby.shell.nix punctuation.definition.regex.alternation.shell.nix punctuation.separator.regex.alternation.shell.nix"
         },
         {
           "match": "\\\\.",
@@ -494,12 +488,12 @@
           "end": "\\)",
           "beginCaptures": {
             "1": {
-              "name": "punctuation.definition.group.nix punctuation.definition.regex.group.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.definition.regex.group.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.group.nix punctuation.definition.regex.group.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.definition.regex.group.shell.nix"
             }
           },
           "name": "meta.parenthese.shell.nix",
@@ -535,7 +529,7 @@
         },
         {
           "match": "[^) \\t\\n\\[\\?\\*\\|\\@]",
-          "name": "string.unquoted.pattern.nix string.regexp.unquoted.shell.nix"
+          "name": "string.unquoted.pattern.shell.nix string.regexp.unquoted.shell.nix"
         }
       ]
     },
@@ -550,20 +544,20 @@
       "patterns": [
         {
           "match": "(?<!\\w)(?:continue|return|break)(?!\\w)",
-          "name": "entity.name.function.call.nix entity.name.command.nix keyword.control.$0.shell.nix"
+          "name": "entity.name.function.call.shell.nix entity.name.command.shell.nix keyword.control.$0.shell.nix"
         },
         {
           "match": "(?<!\\w)(?:(?:unfunction|continue|autoload|unsetopt|bindkey|builtin|getopts|command|declare|unalias|history|unlimit|typeset|suspend|source|printf|unhash|disown|ulimit|return|which|alias|break|false|print|shift|times|umask|umask|unset|read|type|exec|eval|wait|echo|dirs|jobs|kill|hash|stat|exit|test|trap|true|let|set|pwd|cd|fg|bg|fc|:|\\.)(?!\\/))(?!\\w)(?!-)",
-          "name": "entity.name.function.call.nix entity.name.command.nix support.function.builtin.shell.nix"
+          "name": "entity.name.function.call.shell.nix entity.name.command.shell.nix support.function.builtin.shell.nix"
         },
         {
           "include": "#SHELL_variable"
         },
         {
-          "match": "(?:(?<!\\w)(?<=\\G|'|\"|\\}|\\))([^ \\n\\t\\r\"'=;&\\|`\\)\\{<>]+))",
+          "match": "(?:(?<!\\w)(?<=\\G|\\}|\\))([^ \\n\\t\\r\"'=;&\\|`\\)\\{<>]+))",
           "captures": {
             "1": {
-              "name": "entity.name.function.call.nix entity.name.command.shell.nix"
+              "name": "entity.name.function.call.shell.nix entity.name.command.shell.nix"
             }
           }
         },
@@ -572,15 +566,15 @@
           "end": "(?<!\\G)(?<=(?:\\2))",
           "beginCaptures": {
             "1": {
-              "name": "meta.statement.command.name.quoted.nix punctuation.definition.string.nix entity.name.function.call.nix entity.name.command.shell.nix"
+              "name": "meta.statement.command.name.quoted.shell.nix punctuation.definition.string.shell.nix entity.name.function.call.shell.nix entity.name.command.shell.nix"
             },
             "2": {
             },
             "3": {
-              "name": "meta.statement.command.name.quoted.nix string.quoted.double.nix punctuation.definition.string.begin.nix entity.name.function.call.nix entity.name.command.shell.nix"
+              "name": "meta.statement.command.name.quoted.shell.nix string.quoted.double.shell.nix punctuation.definition.string.begin.shell.nix entity.name.function.call.shell.nix entity.name.command.shell.nix"
             },
             "4": {
-              "name": "meta.statement.command.name.quoted.nix string.quoted.single.nix punctuation.definition.string.begin.nix entity.name.function.call.nix entity.name.command.shell.nix"
+              "name": "meta.statement.command.name.quoted.shell.nix string.quoted.single.shell.nix punctuation.definition.string.begin.shell.nix entity.name.function.call.shell.nix entity.name.command.shell.nix"
             }
           },
           "endCaptures": {
@@ -612,9 +606,6 @@
       "name": "meta.statement.command.shell.nix",
       "patterns": [
         {
-          "include": "#NIX_escape_character_single_quote"
-        },
-        {
           "include": "#SHELL_command_name_range"
         },
         {
@@ -631,6 +622,15 @@
         },
         {
           "include": "#SHELL_heredoc"
+        },
+        {
+          "include": "#SHELL_variable"
+        },
+        {
+          "include": "#SHELL_simple_unquoted"
+        },
+        {
+          "include": "#NIX_escape_character_single_quote"
         }
       ]
     },
@@ -638,7 +638,7 @@
       "match": "(?:(?:^|(?:[ \\t]++))(?:((?:(#!)(?:.*)))|((?:(#)(?:.*)))))",
       "captures": {
         "1": {
-          "name": "comment.line.number-sign.nix meta.shebang.shell.nix"
+          "name": "comment.line.number-sign.shell.nix meta.shebang.shell.nix"
         },
         "2": {
           "name": "punctuation.definition.comment.shebang.shell.nix"
@@ -658,10 +658,10 @@
       },
       "endCaptures": {
         "0": {
-          "name": "string.quoted.double.nix punctuation.definition.string.end.shell.nix entity.name.function.call.nix entity.name.command.shell.nix"
+          "name": "string.quoted.double.shell.nix punctuation.definition.string.end.shell.nix entity.name.function.call.shell.nix entity.name.command.shell.nix"
         }
       },
-      "contentName": "meta.statement.command.name.continuation string.quoted.double entity.name.function.call entity.name.command",
+      "contentName": "meta.statement.command.name.continuation.shell string.quoted.double.shell entity.name.function.call.shell entity.name.command.shell",
       "patterns": [
         {
           "match": "\\\\[\\$\\n`\"\\\\]",
@@ -682,10 +682,10 @@
       },
       "endCaptures": {
         "0": {
-          "name": "string.quoted.single.nix punctuation.definition.string.end.shell.nix entity.name.function.call.nix entity.name.command.shell.nix"
+          "name": "string.quoted.single.shell.nix punctuation.definition.string.end.shell.nix entity.name.function.call.shell.nix entity.name.command.shell.nix"
         }
       },
-      "contentName": "meta.statement.command.name.continuation string.quoted.single entity.name.function.call entity.name.command"
+      "contentName": "meta.statement.command.name.continuation.shell string.quoted.single.shell entity.name.function.call.shell entity.name.command.shell"
     },
     "SHELL_custom_command_names": {
       "patterns": [
@@ -803,12 +803,12 @@
           "end": "\\}",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.group.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.group.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
             }
           },
           "name": "meta.function.body.shell.nix",
@@ -823,12 +823,12 @@
           "end": "\\)",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.group.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.group.nix punctuation.section.function.definition.shell.nix"
+              "name": "punctuation.definition.group.shell.nix punctuation.section.function.definition.shell.nix"
             }
           },
           "name": "meta.function.body.shell.nix",
@@ -878,7 +878,7 @@
               "name": "punctuation.definition.string.heredoc.$0.shell.nix"
             }
           },
-          "contentName": "string.quoted.heredoc.indent.$3",
+          "contentName": "string.quoted.heredoc.indent.$3.shell",
           "patterns": [
 
           ]
@@ -915,7 +915,7 @@
               "name": "punctuation.definition.string.heredoc.delimiter.shell.nix"
             }
           },
-          "contentName": "string.quoted.heredoc.no-indent.$3",
+          "contentName": "string.quoted.heredoc.no-indent.$3.shell",
           "patterns": [
 
           ]
@@ -946,7 +946,7 @@
               "name": "punctuation.definition.string.heredoc.delimiter.shell.nix"
             }
           },
-          "contentName": "string.unquoted.heredoc.indent.$2",
+          "contentName": "string.unquoted.heredoc.indent.$2.shell",
           "patterns": [
             {
               "include": "#SHELL_double_quote_escape_char"
@@ -985,7 +985,7 @@
               "name": "punctuation.definition.string.heredoc.delimiter.shell.nix"
             }
           },
-          "contentName": "string.unquoted.heredoc.no-indent.$2",
+          "contentName": "string.unquoted.heredoc.no-indent.$2.shell",
           "patterns": [
             {
               "include": "#SHELL_double_quote_escape_char"
@@ -1003,79 +1003,7 @@
     "SHELL_initial_context": {
       "patterns": [
         {
-          "include": "#SHELL_comment"
-        },
-        {
-          "include": "#SHELL_pipeline"
-        },
-        {
-          "include": "#SHELL_normal_statement_seperator"
-        },
-        {
-          "include": "#SHELL_logical_expression_double"
-        },
-        {
-          "include": "#SHELL_logical_expression_single"
-        },
-        {
-          "include": "#SHELL_assignment_statement"
-        },
-        {
-          "include": "#SHELL_case_statement"
-        },
-        {
-          "include": "#SHELL_for_statement"
-        },
-        {
-          "include": "#SHELL_loop"
-        },
-        {
-          "include": "#SHELL_function_definition"
-        },
-        {
-          "include": "#SHELL_line_continuation"
-        },
-        {
-          "include": "#SHELL_arithmetic_double"
-        },
-        {
-          "include": "#SHELL_misc_ranges"
-        },
-        {
-          "include": "#SHELL_variable"
-        },
-        {
-          "include": "#SHELL_interpolation"
-        },
-        {
-          "include": "#SHELL_heredoc"
-        },
-        {
-          "include": "#SHELL_herestring"
-        },
-        {
-          "include": "#SHELL_redirection"
-        },
-        {
-          "include": "#SHELL_pathname"
-        },
-        {
-          "include": "#SHELL_floating_keyword"
-        },
-        {
-          "include": "#SHELL_alias_statement"
-        },
-        {
-          "include": "#SHELL_normal_statement"
-        },
-        {
-          "include": "#SHELL_range_expansion"
-        },
-        {
-          "include": "#SHELL_string"
-        },
-        {
-          "include": "#SHELL_support"
+          "include": "#SHELL_command_statement"
         }
       ]
     },
@@ -1230,11 +1158,11 @@
       },
       "endCaptures": {
       },
-      "name": "meta.statement.nix meta.expression.assignment.modified.shell.nix",
+      "name": "meta.statement.shell.nix meta.expression.assignment.modified.shell.nix",
       "patterns": [
         {
           "match": "(?<!\\w)-\\w+\\b",
-          "name": "string.unquoted.argument.nix constant.other.option.shell.nix"
+          "name": "string.unquoted.argument.shell.nix constant.other.option.shell.nix"
         },
         {
           "include": "#SHELL_array_value"
@@ -1252,7 +1180,7 @@
               "name": "variable.other.assignment.shell.nix"
             },
             "4": {
-              "name": "constant.numeric.nix constant.numeric.integer.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.integer.shell.nix"
             },
             "5": {
               "name": "punctuation.definition.array.access.shell.nix"
@@ -1267,22 +1195,22 @@
               "name": "keyword.operator.assignment.compound.shell.nix"
             },
             "9": {
-              "name": "constant.numeric.nix constant.numeric.hex.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.hex.shell.nix"
             },
             "10": {
-              "name": "constant.numeric.nix constant.numeric.octal.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.octal.shell.nix"
             },
             "11": {
-              "name": "constant.numeric.nix constant.numeric.other.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.other.shell.nix"
             },
             "12": {
-              "name": "constant.numeric.nix constant.numeric.decimal.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.decimal.shell.nix"
             },
             "13": {
-              "name": "constant.numeric.nix constant.numeric.version.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.version.shell.nix"
             },
             "14": {
-              "name": "constant.numeric.nix constant.numeric.integer.shell.nix"
+              "name": "constant.numeric.shell.nix constant.numeric.integer.shell.nix"
             }
           }
         },
@@ -1309,7 +1237,7 @@
           "name": "variable.other.assignment.shell.nix"
         },
         "4": {
-          "name": "constant.numeric.nix constant.numeric.integer.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.integer.shell.nix"
         },
         "5": {
           "name": "punctuation.definition.array.access.shell.nix"
@@ -1464,22 +1392,22 @@
       "match": "(?<==| |\\t|^|\\{|\\(|\\[)(?:(?:(?:(?:(?:(0[xX][0-9A-Fa-f]+)|(0\\d+))|(\\d{1,2}#[0-9a-zA-Z@_]+))|(-?\\d+(?:\\.\\d+)))|(-?\\d+(?:\\.\\d+)+))|(-?\\d+))(?= |\\t|$|\\}|\\)|;)",
       "captures": {
         "1": {
-          "name": "constant.numeric.nix constant.numeric.hex.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.hex.shell.nix"
         },
         "2": {
-          "name": "constant.numeric.nix constant.numeric.octal.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.octal.shell.nix"
         },
         "3": {
-          "name": "constant.numeric.nix constant.numeric.other.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.other.shell.nix"
         },
         "4": {
-          "name": "constant.numeric.nix constant.numeric.decimal.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.decimal.shell.nix"
         },
         "5": {
-          "name": "constant.numeric.nix constant.numeric.version.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.version.shell.nix"
         },
         "6": {
-          "name": "constant.numeric.nix constant.numeric.integer.shell.nix"
+          "name": "constant.numeric.shell.nix constant.numeric.integer.shell.nix"
         }
       }
     },
@@ -1488,15 +1416,15 @@
       "end": "(?:(?=[ \\t])|(?:(?=;|\\||&|\\n|\\)|\\`|\\{|\\}|[ \\t]*#|\\])(?<!\\\\)))",
       "beginCaptures": {
         "1": {
-          "name": "string.unquoted.argument.nix constant.other.option.dash.shell.nix"
+          "name": "string.unquoted.argument.shell.nix constant.other.option.dash.shell.nix"
         },
         "2": {
-          "name": "string.unquoted.argument.nix constant.other.option.shell.nix"
+          "name": "string.unquoted.argument.shell.nix constant.other.option.shell.nix"
         }
       },
       "endCaptures": {
       },
-      "contentName": "string.unquoted.argument constant.other.option",
+      "contentName": "string.unquoted.argument.shell constant.other.option.shell",
       "patterns": [
         {
           "include": "#SHELL_option_context"
@@ -1600,7 +1528,7 @@
           "name": "constant.numeric.integer.range.shell.nix"
         },
         "3": {
-          "name": "punctuation.definition.variable.nix variable.other.range.expansion.shell.shell.nix"
+          "name": "punctuation.definition.variable.shell.nix variable.other.range.expansion.shell.shell.nix"
         },
         "4": {
           "name": "variable.other.range.expansion.shell.nix"
@@ -1612,7 +1540,7 @@
           "name": "constant.numeric.integer.range.shell.nix"
         },
         "7": {
-          "name": "punctuation.definition.variable.nix variable.other.range.expansion.shell.shell.nix"
+          "name": "punctuation.definition.variable.shell.nix variable.other.range.expansion.shell.shell.nix"
         },
         "8": {
           "name": "variable.other.range.expansion.shell.nix"
@@ -1667,10 +1595,10 @@
               "match": "(?:[ \\t]++)(\\-)(\\w+)",
               "captures": {
                 "1": {
-                  "name": "string.unquoted.argument.nix constant.other.option.dash.shell.nix"
+                  "name": "string.unquoted.argument.shell.nix constant.other.option.dash.shell.nix"
                 },
                 "2": {
-                  "name": "string.unquoted.argument.nix constant.other.option.shell.nix"
+                  "name": "string.unquoted.argument.shell.nix constant.other.option.shell.nix"
                 }
               }
             }
@@ -1705,6 +1633,10 @@
           "name": "constant.character.escape.shell.nix"
         },
         {
+          "match": "(?:\\'\\')(?=\\$|\\')",
+          "name": "constant.character.escape.nix.shell.nix"
+        },
+        {
           "begin": "'",
           "end": "'",
           "beginCaptures": {
@@ -1720,9 +1652,11 @@
           "name": "string.quoted.single.shell.nix",
           "patterns": [
             {
-              "include": "#NIX_escape_character_single_quote"
+              "match": "(?:\\'\\')(?=\\$|\\')",
+              "name": "constant.character.escape.nix.shell.nix"
             }
-          ]
+          ],
+          "applyEndPatternLast": 1
         },
         {
           "begin": "\\$?\"",
@@ -1856,7 +1790,7 @@
           "match": "(?:(\\$)(\\@(?!\\w)))",
           "captures": {
             "1": {
-              "name": "punctuation.definition.variable.nix variable.parameter.positional.all.shell.shell.nix"
+              "name": "punctuation.definition.variable.shell.nix variable.parameter.positional.all.shell.shell.nix"
             },
             "2": {
               "name": "variable.parameter.positional.all.shell.nix"
@@ -1867,7 +1801,7 @@
           "match": "(?:(\\$)([0-9](?!\\w)))",
           "captures": {
             "1": {
-              "name": "punctuation.definition.variable.nix variable.parameter.positional.shell.shell.nix"
+              "name": "punctuation.definition.variable.shell.nix variable.parameter.positional.shell.shell.nix"
             },
             "2": {
               "name": "variable.parameter.positional.shell.nix"
@@ -1878,7 +1812,7 @@
           "match": "(?:(\\$)([-*#?$!0_](?!\\w)))",
           "captures": {
             "1": {
-              "name": "punctuation.definition.variable.nix variable.language.special.shell.shell.nix"
+              "name": "punctuation.definition.variable.shell.nix variable.language.special.shell.shell.nix"
             },
             "2": {
               "name": "variable.language.special.shell.nix"
@@ -1890,18 +1824,18 @@
           "end": "\\}",
           "beginCaptures": {
             "1": {
-              "name": "punctuation.definition.variable.nix variable.parameter.positional.shell.nix"
+              "name": "punctuation.definition.variable.shell.nix variable.parameter.positional.shell.nix"
             },
             "2": {
-              "name": "punctuation.section.bracket.curly.variable.begin.nix punctuation.definition.variable.nix variable.parameter.positional.shell.nix"
+              "name": "punctuation.section.bracket.curly.variable.begin.shell.nix punctuation.definition.variable.shell.nix variable.parameter.positional.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.bracket.curly.variable.end.nix punctuation.definition.variable.nix variable.parameter.positional.shell.nix"
+              "name": "punctuation.section.bracket.curly.variable.end.shell.nix punctuation.definition.variable.shell.nix variable.parameter.positional.shell.nix"
             }
           },
-          "contentName": "meta.parameter-expansion",
+          "contentName": "meta.parameter-expansion.shell",
           "patterns": [
             {
               "include": "#SHELL_special_expansion"
@@ -1936,15 +1870,15 @@
               "name": "punctuation.definition.variable.shell.nix"
             },
             "2": {
-              "name": "punctuation.section.bracket.curly.variable.begin.nix punctuation.definition.variable.shell.nix"
+              "name": "punctuation.section.bracket.curly.variable.begin.shell.nix punctuation.definition.variable.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.bracket.curly.variable.end.nix punctuation.definition.variable.shell.nix"
+              "name": "punctuation.section.bracket.curly.variable.end.shell.nix punctuation.definition.variable.shell.nix"
             }
           },
-          "contentName": "meta.parameter-expansion",
+          "contentName": "meta.parameter-expansion.shell",
           "patterns": [
             {
               "include": "#SHELL_special_expansion"
@@ -1971,7 +1905,7 @@
           "match": "(?:(\\$)((?:\\w+)(?!\\w)))",
           "captures": {
             "1": {
-              "name": "punctuation.definition.variable.nix variable.other.normal.shell.shell.nix"
+              "name": "punctuation.definition.variable.shell.nix variable.other.normal.shell.shell.nix"
             },
             "2": {
               "name": "variable.other.normal.shell.nix"
@@ -2359,7 +2293,7 @@
       "patterns": [
         {
           "begin": "(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:initContent|shellHook|buildCommand)(?![a-zA-Z0-9_\\-']))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\=)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(''))",
-          "end": "((?:'')(?!\\$|\\'|\\\\.))( *;)",
+          "end": "((?:'')(?!\\$|\\'))((?: *;)?)",
           "beginCaptures": {
             "1": {
               "patterns": [
@@ -2436,13 +2370,10 @@
               "include": "#interpolation"
             },
             {
-              "match": "(?:[^']''(?:\\$|\\')|(?!\\$\\{)[^'])++",
+              "match": "(?:(?:''['\\$])|\\$[^\\{]|'[^']|[^$'])++",
               "captures": {
                 "0": {
                   "patterns": [
-                    {
-                      "include": "#escape_character_single_quote"
-                    },
                     {
                       "include": "#SHELL_initial_context"
                     }
@@ -8050,7 +7981,7 @@
           "name": "variable.other.dirty.nix"
         },
         "168": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         },
         "169": {
           "name": "entity.name.function.object.method.nix"
@@ -9555,7 +9486,7 @@
     },
     "single_quote": {
       "begin": "''",
-      "end": "''",
+      "end": "''(?!'|\\$)",
       "beginCaptures": {
         "0": {
           "name": "string.quoted.single.nix punctuation.definition.string.single.nix"
@@ -9574,8 +9505,7 @@
         {
           "include": "#interpolation"
         }
-      ],
-      "applyEndPatternLast": 1
+      ]
     },
     "single_quote_inline": {
       "match": "(?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))",
@@ -10132,7 +10062,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         }
       }
     },
@@ -10539,7 +10469,7 @@
           "name": "variable.other.dirty.nix"
         },
         "4": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         }
       }
     },
@@ -12059,7 +11989,7 @@
           "name": "variable.other.dirty.nix"
         },
         "100": {
-          "name": "variable.other.objec.nix variable.parameter.nix"
+          "name": "variable.other.object.nix variable.parameter.nix"
         },
         "101": {
           "name": "entity.name.function.object.method.nix"

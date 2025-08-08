@@ -372,10 +372,9 @@ require_relative './shell_embedding.rb'
                                 tag_as: "string.quoted.single punctuation.definition.string.single",
                                 match: /''/,
                             ),
-                            apply_end_pattern_last: true,
                             end_pattern: Pattern.new(
                                 tag_as: "string.quoted.single punctuation.definition.string.single",
-                                match: /''/,
+                                match: /''(?!'|\$)/,
                             ),
                             includes: [
                                 :escape_character_single_quote,
@@ -405,7 +404,7 @@ require_relative './shell_embedding.rb'
                 tag_as: "variable.other.dirty",
                 match: Pattern.new(dirty_variable),
             ).or(
-                tag_as: "variable.other.objec variable.parameter",
+                tag_as: "variable.other.object variable.parameter",
                 match: Pattern.new(variable),
             )
         )
@@ -903,9 +902,9 @@ require_relative './shell_embedding.rb'
         )
         safe_shell_inject = Pattern.new(
             tag_as: "source.shell",
-            match: /(?:[^']''(?:\$|\')|(?!\$\{)[^'])++/,
+            match: /(?:(?:''['\$])|\$[^\{]|'[^']|[^$'])++/,
             includes: [
-                :escape_character_single_quote,
+                # :escape_character_single_quote,
                 :SHELL_initial_context,
             ]
         )
