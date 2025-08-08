@@ -431,7 +431,7 @@ grammar = @grammar # this file is imported from main.rb
             includes: [
                 Pattern.new(
                     match: /\\[\$\n`"\\]/,
-                    tag_as: "constant.character.escape.shell.shell",
+                    tag_as: "constant.character.escape.shell",
                 ),
                 :SHELL_variable,
                 :SHELL_interpolation,
@@ -483,9 +483,14 @@ grammar = @grammar # this file is imported from main.rb
             )
         )
         
+        grammar[:NIX_escape_character_single_quote] = Pattern.new(
+            tag_as: "constant.character.escape.nix.shell",
+            match: Pattern.new(/\'\'/).lookAheadFor(/\$|\'/),
+        ),
         grammar[:SHELL_argument_context] = [
+            :NIX_escape_character_single_quote,
             :SHELL_range_expansion,
-            generateUnquotedArugment["string.unquoted.argument"],
+            generateUnquotedArugment["string.unquoted.argument.shell"],
             :SHELL_normal_context,
         ]
         grammar[:SHELL_argument] = PatternRange.new(
@@ -608,6 +613,7 @@ grammar = @grammar # this file is imported from main.rb
             start_pattern: grammar[:SHELL_start_of_command],
             end_pattern: command_end,
             includes: [
+                :NIX_escape_character_single_quote,
                 # 
                 # Command Name Range
                 # 
@@ -768,7 +774,7 @@ grammar = @grammar # this file is imported from main.rb
                 ),
                 Pattern.new(
                     match: /\\./,
-                    tag_as: "constant.character.escape.shell.shell",
+                    tag_as: "constant.character.escape.shell",
                 ),
                 # this should only match the open paranethese at the very begining see https://github.com/jeff-hykin/better-shell-syntax/issues/
                 Pattern.new(
@@ -802,7 +808,7 @@ grammar = @grammar # this file is imported from main.rb
                     includes: [
                         Pattern.new(
                             match: /\\./,
-                            tag_as: "constant.character.escape.shell.shell",
+                            tag_as: "constant.character.escape.shell",
                         ),
                     ],
                 ),
@@ -1331,64 +1337,72 @@ grammar = @grammar # this file is imported from main.rb
             grammar[:SHELL_string] = [
                 Pattern.new(
                     match: /\\./,
-                    tag_as: "constant.character.escape.shell.shell",
+                    tag_as: "constant.character.escape.shell",
+                    includes: [
+                        :NIX_escape_character_single_quote,
+                    ],
                 ),
                 PatternRange.new(
-                    tag_as: "string.quoted.single.shell.shell",
+                    tag_as: "string.quoted.single.shell",
                     start_pattern: Pattern.new(
                         match: "'",
-                        tag_as: "punctuation.definition.string.begin.shell.shell",
+                        tag_as: "punctuation.definition.string.begin.shell",
                     ),
                     end_pattern: Pattern.new(
                         match: "'",
-                        tag_as: "punctuation.definition.string.end.shell.shell",
+                        tag_as: "punctuation.definition.string.end.shell",
                     ),
+                    includes: [
+                        :NIX_escape_character_single_quote,
+                    ],
                 ),
                 PatternRange.new(
-                    tag_as: "string.quoted.double.shell.shell",
+                    tag_as: "string.quoted.double.shell",
                     start_pattern: Pattern.new(
                         match:  /\$?"/,
-                        tag_as: "punctuation.definition.string.begin.shell.shell",
+                        tag_as: "punctuation.definition.string.begin.shell",
                     ),
                     end_pattern: Pattern.new(
-                        match: "\"",
-                        tag_as: "punctuation.definition.string.end.shell.shell",
+                        match: /"/,
+                        tag_as: "punctuation.definition.string.end.shell",
                     ),
                     includes: [
                         Pattern.new(
                             match: /\\[\$\n`"\\]/,
-                            tag_as: "constant.character.escape.shell.shell",
+                            tag_as: "constant.character.escape.shell",
                         ),
                         :SHELL_variable,
                         :SHELL_interpolation,
+                        :NIX_escape_character_single_quote,
                     ]
                 ),
                 PatternRange.new(
-                    tag_as: "string.quoted.single.dollar.shell.shell",
+                    tag_as: "string.quoted.single.dollar.shell",
                     start_pattern: Pattern.new(
                         match: /\$'/,
-                        tag_as: "punctuation.definition.string.begin.shell.shell",
+                        tag_as: "punctuation.definition.string.begin.shell",
                     ),
                     end_pattern: Pattern.new(
                         match: "'",
-                        tag_as: "punctuation.definition.string.end.shell.shell",
+                        tag_as: "punctuation.definition.string.end.shell",
                     ),
                     includes: [
+                        :NIX_escape_character_single_quote,
                         Pattern.new(
                             match: /\\(?:a|b|e|f|n|r|t|v|\\|')/,
-                            tag_as: "constant.character.escape.ansi-c.shell.shell",
+                            tag_as: "constant.character.escape.ansi-c.shell",
                         ),
                         Pattern.new(
                             match: /\\[0-9]{3}"/,
-                            tag_as: "constant.character.escape.octal.shell.shell",
+                            tag_as: "constant.character.escape.octal.shell",
                         ),
                         Pattern.new(
                             match: /\\x[0-9a-fA-F]{2}"/,
-                            tag_as: "constant.character.escape.hex.shell.shell",
+                            tag_as: "constant.character.escape.hex.shell",
                         ),
                         Pattern.new(
                             match: /\\c."/,
-                            tag_as: "constant.character.escape.control-char.shell.shell",
+                            tag_as: "constant.character.escape.control-char.shell",
                         )
                     ]
                 ),

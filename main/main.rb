@@ -301,6 +301,10 @@ require_relative './shell_embedding.rb'
                     )
                 )
                 
+                grammar[:escape_character_single_quote] = Pattern.new(
+                    tag_as: "constant.character.escape",
+                    match: /\'\'(?:\$|\')/,
+                )
                 grammar[:single_quote_inline] = Pattern.new(
                     tag_as: "string.quoted.single",
                     match: Pattern.new(
@@ -311,10 +315,7 @@ require_relative './shell_embedding.rb'
                             tag_as: "string.quoted.single",
                             match: zeroOrMoreOf(
                                 match: oneOf([
-                                    grammar[:escape_character_single_quote] = Pattern.new(
-                                        tag_as: "constant.character.escape",
-                                        match: /\'\'(?:\$|\')/,
-                                    ),
+                                    grammar[:escape_character_single_quote],
                                     lookAheadToAvoid(/\$\{/).then(/[^']/),
                                 ]),
                                 atomic: true,
@@ -629,7 +630,7 @@ require_relative './shell_embedding.rb'
                             # tag_as: "string.quoted.single",
                             match: zeroOrMoreOf(
                                 match: oneOf([
-                                    grammar[:escape_character_single_quote] = Pattern.new(
+                                    Pattern.new(
                                         # tag_as: "constant.character.escape",
                                         match: /\'\'(?:\$|\')/,
                                     ),
@@ -893,7 +894,7 @@ require_relative './shell_embedding.rb'
         )
         shell_hook_start = Pattern.new(
             std_space.then(
-                match: variableBounds[/initContent|shellHook/],
+                match: variableBounds[/initContent|shellHook|buildCommand/],
                 tag_as: "entity.other.attribute-name",
             ).then(std_space).then(assignment_operator).then(std_space).then(
                 tag_as: "punctuation.definition.string.single",
@@ -902,8 +903,9 @@ require_relative './shell_embedding.rb'
         )
         safe_shell_inject = Pattern.new(
             tag_as: "source.shell",
-            match: /(?:(?!\$\{)[^']|'[^'])++/,
+            match: /(?:[^']''(?:\$|\')|(?!\$\{)[^'])++/,
             includes: [
+                :escape_character_single_quote,
                 :SHELL_initial_context,
             ]
         )

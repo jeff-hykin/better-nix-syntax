@@ -11,6 +11,51 @@
     }
   ],
   "repository": {
+    "NIX_escape_character_single_quote": {
+      "patterns": [
+        {
+          "match": "(?:\\'\\')(?=\\$|\\')",
+          "name": "constant.character.escape.nix.shell.nix"
+        },
+        {
+          "include": "#NIX_escape_character_single_quote"
+        },
+        {
+          "include": "#SHELL_range_expansion"
+        },
+        {
+          "match": "(?:[ \\t]*+)((?:[^ \t\n>&;<>\\(\\)\\$`\\\\\"'<\\|]+)(?!>))",
+          "captures": {
+            "1": {
+              "name": "string.unquoted.argument.shell.nix",
+              "patterns": [
+                {
+                  "match": "\\*",
+                  "name": "variable.language.special.wildcard.shell.nix"
+                },
+                {
+                  "include": "#SHELL_variable"
+                },
+                {
+                  "include": "#SHELL_numeric_literal"
+                },
+                {
+                  "match": "(?<!\\w)(\\b(?:true|false)\\b)(?!\\w)",
+                  "captures": {
+                    "1": {
+                      "name": "constant.language.$1.shell.nix"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "include": "#SHELL_normal_context"
+        }
+      ]
+    },
     "SHELL_alias_statement": {
       "begin": "(?:(?:[ \\t]*+)(alias)(?:[ \\t]*+)((?:(?:((?<!\\w)-\\w+\\b)(?:[ \\t]*+))*))(?:(?:[ \\t]*+)(?:((?<!\\w)(?:[a-zA-Z_0-9-]+)(?!\\w))(?:(?:(\\[)((?:(?:(?:(?:\\$?)(?:(?<!\\w)(?:[a-zA-Z_0-9-]+)(?!\\w))|@)|\\*)|(-?\\d+)))(\\]))?))(?:(?:(\\=)|(\\+\\=))|(\\-\\=))))",
       "end": "(?:(?= |\\t|$)|(?:(?:(?:(;)|(&&))|(\\|\\|))|(&)))",
@@ -95,13 +140,16 @@
     "SHELL_argument_context": {
       "patterns": [
         {
+          "include": "#NIX_escape_character_single_quote"
+        },
+        {
           "include": "#SHELL_range_expansion"
         },
         {
           "match": "(?:[ \\t]*+)((?:[^ \t\n>&;<>\\(\\)\\$`\\\\\"'<\\|]+)(?!>))",
           "captures": {
             "1": {
-              "name": "string.unquoted.argument.nix",
+              "name": "string.unquoted.argument.shell.nix",
               "patterns": [
                 {
                   "match": "\\*",
@@ -435,7 +483,7 @@
         },
         {
           "match": "\\\\.",
-          "name": "constant.character.escape.shell.shell.nix"
+          "name": "constant.character.escape.shell.nix"
         },
         {
           "match": "(?<=\\tin| in| |\\t|;;)\\(",
@@ -478,7 +526,7 @@
           "patterns": [
             {
               "match": "\\\\.",
-              "name": "constant.character.escape.shell.shell.nix"
+              "name": "constant.character.escape.shell.nix"
             }
           ]
         },
@@ -564,6 +612,9 @@
       "name": "meta.statement.command.shell.nix",
       "patterns": [
         {
+          "include": "#NIX_escape_character_single_quote"
+        },
+        {
           "include": "#SHELL_command_name_range"
         },
         {
@@ -614,7 +665,7 @@
       "patterns": [
         {
           "match": "\\\\[\\$\\n`\"\\\\]",
-          "name": "constant.character.escape.shell.shell.nix"
+          "name": "constant.character.escape.shell.nix"
         },
         {
           "include": "#SHELL_variable"
@@ -1642,47 +1693,64 @@
       "patterns": [
         {
           "match": "\\\\.",
-          "name": "constant.character.escape.shell.shell.nix"
+          "captures": {
+            "0": {
+              "patterns": [
+                {
+                  "include": "#NIX_escape_character_single_quote"
+                }
+              ]
+            }
+          },
+          "name": "constant.character.escape.shell.nix"
         },
         {
           "begin": "'",
           "end": "'",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.shell.shell.nix"
+              "name": "punctuation.definition.string.begin.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.shell.shell.nix"
+              "name": "punctuation.definition.string.end.shell.nix"
             }
           },
-          "name": "string.quoted.single.shell.shell.nix"
+          "name": "string.quoted.single.shell.nix",
+          "patterns": [
+            {
+              "include": "#NIX_escape_character_single_quote"
+            }
+          ]
         },
         {
           "begin": "\\$?\"",
           "end": "\"",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.shell.shell.nix"
+              "name": "punctuation.definition.string.begin.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.shell.shell.nix"
+              "name": "punctuation.definition.string.end.shell.nix"
             }
           },
-          "name": "string.quoted.double.shell.shell.nix",
+          "name": "string.quoted.double.shell.nix",
           "patterns": [
             {
               "match": "\\\\[\\$\\n`\"\\\\]",
-              "name": "constant.character.escape.shell.shell.nix"
+              "name": "constant.character.escape.shell.nix"
             },
             {
               "include": "#SHELL_variable"
             },
             {
               "include": "#SHELL_interpolation"
+            },
+            {
+              "include": "#NIX_escape_character_single_quote"
             }
           ]
         },
@@ -1691,31 +1759,34 @@
           "end": "'",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.definition.string.begin.shell.shell.nix"
+              "name": "punctuation.definition.string.begin.shell.nix"
             }
           },
           "endCaptures": {
             "0": {
-              "name": "punctuation.definition.string.end.shell.shell.nix"
+              "name": "punctuation.definition.string.end.shell.nix"
             }
           },
-          "name": "string.quoted.single.dollar.shell.shell.nix",
+          "name": "string.quoted.single.dollar.shell.nix",
           "patterns": [
             {
+              "include": "#NIX_escape_character_single_quote"
+            },
+            {
               "match": "\\\\(?:a|b|e|f|n|r|t|v|\\\\|')",
-              "name": "constant.character.escape.ansi-c.shell.shell.nix"
+              "name": "constant.character.escape.ansi-c.shell.nix"
             },
             {
               "match": "\\\\[0-9]{3}\"",
-              "name": "constant.character.escape.octal.shell.shell.nix"
+              "name": "constant.character.escape.octal.shell.nix"
             },
             {
               "match": "\\\\x[0-9a-fA-F]{2}\"",
-              "name": "constant.character.escape.hex.shell.shell.nix"
+              "name": "constant.character.escape.hex.shell.nix"
             },
             {
               "match": "\\\\c.\"",
-              "name": "constant.character.escape.control-char.shell.shell.nix"
+              "name": "constant.character.escape.control-char.shell.nix"
             }
           ]
         }
@@ -2287,7 +2358,7 @@
     "assignment_statements": {
       "patterns": [
         {
-          "begin": "(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:initContent|shellHook)(?![a-zA-Z0-9_\\-']))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\=)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(''))",
+          "begin": "(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?<![a-zA-Z0-9_'])(?:initContent|shellHook|buildCommand)(?![a-zA-Z0-9_\\-']))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\=)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(''))",
           "end": "((?:'')(?!\\$|\\'|\\\\.))( *;)",
           "beginCaptures": {
             "1": {
@@ -2365,10 +2436,13 @@
               "include": "#interpolation"
             },
             {
-              "match": "(?:(?!\\$\\{)[^']|'[^'])++",
+              "match": "(?:[^']''(?:\\$|\\')|(?!\\$\\{)[^'])++",
               "captures": {
                 "0": {
                   "patterns": [
+                    {
+                      "include": "#escape_character_single_quote"
+                    },
                     {
                       "include": "#SHELL_initial_context"
                     }
@@ -6135,7 +6209,8 @@
       "match": "(?:\\\\.)"
     },
     "escape_character_single_quote": {
-      "match": "(?:\\'\\'(?:\\$|\\'))"
+      "match": "\\'\\'(?:\\$|\\')",
+      "name": "constant.character.escape.nix"
     },
     "if_then_else": {
       "begin": "(?:(?:(?:((?<![a-zA-Z0-9_'])(?:with)(?![a-zA-Z0-9_\\-']))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))((?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)))((?:(?:(?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))(?:((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(\\.)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))))*))((?:((?<![a-zA-Z0-9_'])(?:[a-zA-Z_][a-zA-Z0-9_\\-']*)(?![a-zA-Z0-9_\\-'])(?:(?![a-zA-Z0-9\\-_'])(?:(?<!inherit|assert|else|with|then|let|rec|in|if)|(?<=[a-zA-Z0-9\\-_']inherit|[a-zA-Z0-9\\-_']assert|[a-zA-Z0-9\\-_']else|[a-zA-Z0-9\\-_']with|[a-zA-Z0-9\\-_']then|[a-zA-Z0-9\\-_']let|[a-zA-Z0-9\\-_']rec|[a-zA-Z0-9\\-_']in|[a-zA-Z0-9\\-_']if))))|(?:(\")((?:(?:(?:\\\\.)|(?:(?!\\$\\{)[^\"]))*))(\"))|((?:('')((?:(?:(\\'\\'(?:\\$|\\'))|(?!\\$\\{)[^'])*))((?:'')(?!\\$|\\'|\\\\.)))))))))((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z))(;)((?:(?:(?:(?:\\s*)(?:(\\/\\*)((?:(?:(?:[^\\*]++)|(?:(?:\\*+)(?!\\/)))*+)(\\*\\/)))(?:\\s*))+)|(?:\\s++)|(?<=\\W)|(?=\\W)|^|(?:\\n?$)|\\A|\\Z)))?)((?<![a-zA-Z0-9_'])(?:if)(?![a-zA-Z0-9_\\-'])))",
