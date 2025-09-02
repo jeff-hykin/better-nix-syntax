@@ -518,7 +518,7 @@ require_relative './shell_embedding.rb'
         )
         inline_dot_access = std_space.then(dot_access).then(std_space)
         
-        attributeGenerator = ->(tag, paraentheses_before=false) do
+        attributeGenerator = ->(tag, parentheses_before=false) do
             return oneOf([
                 # standalone
                 lookBehindToAvoid(/\./).then(
@@ -535,7 +535,7 @@ require_relative './shell_embedding.rb'
                 ),
                 
                 # last attr as function call (method call)
-                (if paraentheses_before
+                (if parentheses_before
                     # if there was a leading parentheses, it changes what we assume is a method call
                     Pattern.new(
                         tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
@@ -767,19 +767,31 @@ require_relative './shell_embedding.rb'
     # 
     # keyworded values
     # 
+        with_operator = Pattern.new(
+            tag_as: "keyword.operator.with",
+            match: variableBounds[/with/],
+        )
+        semicolon_for_with_keyword = Pattern.new(
+            match: /;/,
+            tag_as: "punctuation.separator.with",
+        )
         grammar[:value_prefix] = value_prefix = Pattern.new(
-            Pattern.new(
-                tag_as: "keyword.operator.with",
-                match: variableBounds[/with/],
-            ).then(std_space).then(
+            with_operator.then(std_space).then(
                 tag_as: "meta.with",
                 match: namespace,
             ).then(
                 std_space
             ).then(
-                match: /;/,
-                tag_as: "punctuation.separator.with",
+                semicolon_for_with_keyword
             ).then(std_space)
+        )
+        grammar[:value_prefix_range] = PatternRange.new(
+            tag_as: "meta.with",
+            start_pattern: with_operator,
+            end_pattern: semicolon_for_with_keyword,
+            includes: [
+                :normal_context,
+            ],
         )
     
     # 
@@ -1274,7 +1286,6 @@ require_relative './shell_embedding.rb'
                 ),
             ),
             includes: [
-                :comments,
                 :normal_context,
             ]
         )
@@ -1304,6 +1315,7 @@ require_relative './shell_embedding.rb'
         grammar[:normal_context] = [
             :comments,
             :value_prefix,
+            :value_prefix_range,
             :double_quote,
             :single_quote,
             :url,
