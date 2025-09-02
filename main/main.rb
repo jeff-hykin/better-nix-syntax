@@ -428,7 +428,7 @@ require_relative './shell_embedding.rb'
             )
         )
         
-        function_call_lookahead = std_space.lookAheadToAvoid(/then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
+        function_call_lookahead = std_space.lookAheadToAvoid(/or\b|\+|\/|then\b|in\b|else\b|- |-$/).then(lookAheadFor(/\{|"|'|\d|\w|-[^>]|\.\/|\.\.\/|\/\w|\(|\[|if\b|let\b|with\b|rec\b/).or(lookAheadFor(grammar[:url])))
         builtin_attribute_tagger = lookBehindToAvoid(/[^ \t]builtins\./).lookBehindFor(/builtins\./).then(
             tag_as: "variable.language.special.method.$match support.type.builtin.property.$match",
             match: @tokens.that(:areBuiltinAttributes, !:areFunctions).lookAheadToAvoid(/[a-zA-Z0-9_\-']/),
@@ -516,7 +516,7 @@ require_relative './shell_embedding.rb'
         )
         inline_dot_access = std_space.then(dot_access).then(std_space)
         
-        attributeGenerator = ->(tag) do
+        attributeGenerator = ->(tag, paraentheses_before=false) do
             return oneOf([
                 # standalone
                 lookBehindToAvoid(/\./).then(
@@ -531,17 +531,28 @@ require_relative './shell_embedding.rb'
                     tag_as: "variable.other.object.access variable.parameter",
                     match: builtin.or(variable),
                 ),
-                # last method
-                Pattern.new(
-                    tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
-                    match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
-                ).then(function_call_lookahead),
+                
+                # last attr as function call (method call)
+                (if paraentheses_before
+                    # if there was a leading parentheses, it changes what we assume is a method call
+                    Pattern.new(
+                        tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
+                        match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
+                    ).then(lookAheadFor(/\s*$/).or(function_call_lookahead))
+                else
+                    # no leading parentheses makes us more conservative about what we assume is a method call
+                    Pattern.new(
+                        tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
+                        match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
+                    ).then(function_call_lookahead)
+                end),
                 
                 # last
                 Pattern.new(
                     tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last variable.other.property variable.parameter" end,
                     match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
                 ),
+                
                 # middle
                 Pattern.new(
                     tag_as: "variable.other.object.property",
@@ -561,11 +572,19 @@ require_relative './shell_embedding.rb'
         )
         
         attribute = attributeGenerator["object"]
+        attribute_with_leading_parentheses = attributeGenerator["object", true]
         # this should only be internally used
         attribute_chain = Pattern.new(
             attribute.zeroOrMoreOf(
                 inline_dot_access.then(
                     attribute
+                )
+            ).then(std_space)
+        )
+        attribute_chain_with_leading_parentheses = Pattern.new(
+            attribute_with_leading_parentheses.zeroOrMoreOf(
+                inline_dot_access.then(
+                    attribute_with_leading_parentheses
                 )
             ).then(std_space)
         )
@@ -673,51 +692,20 @@ require_relative './shell_embedding.rb'
             ])
         ])
         grammar[:variable_attrs_maybe_method] = Pattern.new(
-            # tag_as: "meta.variable_attrs_maybe_method",
-            # needs to definitely have attrs because maybe-function-call needs to be below var-with-attrs but above standalone-var
-            match: lookBehindToAvoid(/\./).then(
+            lookBehindToAvoid(/\./).then(
+                builtin.or(
                     tag_as: "variable.other.object.access",
                     match: variable,
-                ).then(inline_dot_access).then(attribute_chain),
-            # match: (
-            #     Pattern.new(
-            #         Pattern.new(
-            #             Pattern.new(variableBounds[/builtins/]),
-            #         ).or(
-            #             Pattern.new(external_variable),
-            #         ).or(
-            #             Pattern.new(dirty_variable),
-            #         ).or(
-            #             Pattern.new(variable),
-            #         )
-            #     ).then(std_space.then(match:".").then(std_space)).then(
-            #         taggles_attribute.zeroOrMoreOf(
-            #             std_space.then(match:".").then(std_space).then(
-            #                 taggles_attribute
-            #             )
-            #         ).then(std_space)
-            #     )
-            # ),
-            # includes: [
-            #     # method_pattern_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
-            #     # lookBehindToAvoid(".").then(
-            #     #     tag_as: "variable.other.object.access",
-            #     #     match: builtin,
-            #     # ), # "builtins" at the start
-            #     # builtin_attribute_tagger, # the attribute of builtins
-            #     # attribute, # first/middle/last tagging
-            #     :dot_access,
-            # ]
+                )
+            ).then(inline_dot_access).then(attribute_chain),
         )
         grammar[:variable_with_method_probably] = Pattern.new(
             lookBehindFor("(").then(
-                grammar[:variable_attrs_maybe_method]
-            ).then(inline_dot_access).then(
-                function_method
-                # .then(
-                #     function_call_lookahead.or(std_space.then(@end_of_line))
-                # )
-            ),
+                builtin.or(
+                    tag_as: "variable.other.object.access",
+                    match: variable,
+                )
+            ).then(inline_dot_access).then(attribute_chain_with_leading_parentheses),
         )
         
         grammar[:variable_or_function] = oneOf([
@@ -922,6 +910,10 @@ require_relative './shell_embedding.rb'
                 :SHELL_initial_context,
             ]
         )
+        at_symbol = Pattern.new(
+            tag_as: "punctuation.definition.arguments",
+            match: /@/,
+        )
         grammar[:assignment_statements] = [
             # shell hooks
             PatternRange.new(
@@ -1003,10 +995,7 @@ require_relative './shell_embedding.rb'
                 ),
                 includes: [
                     :normal_context,
-                    Pattern.new(
-                        tag_as: "punctuation.separator.input-aggregate",
-                        match: /@/,
-                    )
+                    at_symbol,
                 ]
             ),
             
@@ -1126,10 +1115,7 @@ require_relative './shell_embedding.rb'
                                 match: "}",
                                 tag_as: "punctuation.section.bracket",
                             ).then(std_space).maybe(
-                                Pattern.new(
-                                    tag_as: "punctuation.definition.arguments",
-                                    match: /@/,
-                                ).then(std_space).then(
+                                at_symbol.then(std_space).then(
                                     tag_as: "variable.language.arguments",
                                     match: variable,
                                 ).then(std_space)
