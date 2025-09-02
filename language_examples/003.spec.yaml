@@ -2764,7 +2764,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -2785,7 +2785,7 @@
     - punctuation.separator.dot-access
 - source: parse
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -2809,7 +2809,7 @@
     - punctuation.separator.dot-access
 - source: parse
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -2870,7 +2870,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -2891,7 +2891,7 @@
     - punctuation.separator.dot-access
 - source: parse
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -2915,7 +2915,7 @@
     - punctuation.separator.dot-access
 - source: parse
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: .
   scopes:
     - punctuation.separator.dot-access

@@ -632,16 +632,16 @@
 - source: self
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: lastModifiedDate
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
-    - keyword.operator.or
+    - variable.other.object
+    - variable.parameter
 - source: self
   scopes:
     - variable.other.object.access
@@ -651,7 +651,7 @@
     - punctuation.separator.dot-access
 - source: lastModified
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -685,7 +685,7 @@
     - punctuation.separator.dot-access
 - source: shortRev
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or

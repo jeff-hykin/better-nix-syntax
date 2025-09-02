@@ -466,7 +466,7 @@
     - variable.parameter
 - source: '@'
   scopes:
-    - punctuation.separator.input-aggregate
+    - punctuation.definition.arguments
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -667,16 +667,16 @@
 - source: derivation
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
-    - keyword.operator.or
+    - variable.other.object
+    - variable.parameter
 - source: 'null'
   scopes:
     - constant.language.null
@@ -754,7 +754,6 @@
 - source: derivation
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -790,7 +789,7 @@
     - punctuation.separator.dot-access
 - source: name
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -1189,7 +1188,7 @@
     - punctuation.separator.dot-access
 - source: meta
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or

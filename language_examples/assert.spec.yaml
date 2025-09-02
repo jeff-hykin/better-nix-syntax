@@ -238,7 +238,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -960,8 +960,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -969,7 +967,7 @@
     - punctuation.separator.dot-access
 - source: filter
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -986,8 +984,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -995,9 +991,7 @@
     - punctuation.separator.dot-access
 - source: match
   scopes:
-    - variable.language.special.property.match
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.match
+    - entity.name.function.method
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1135,8 +1129,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1144,9 +1136,7 @@
     - punctuation.separator.dot-access
 - source: attrNames
   scopes:
-    - variable.language.special.property.attrNames
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.attrNames
+    - entity.name.function.method
 - source: content
   scopes:
     - variable.other.object
@@ -1701,8 +1691,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1710,9 +1698,7 @@
     - punctuation.separator.dot-access
 - source: removeAttrs
   scopes:
-    - variable.language.special.property.removeAttrs
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.removeAttrs
+    - entity.name.function.method
 - source: args
   scopes:
     - variable.other.object

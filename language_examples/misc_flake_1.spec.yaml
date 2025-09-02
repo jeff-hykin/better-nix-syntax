@@ -283,20 +283,17 @@
 - source: pkgs
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: callPackage
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -304,9 +301,7 @@
     - punctuation.separator.dot-access
 - source: import
   scopes:
-    - variable.language.special.property.import
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.import
+    - entity.name.function.method
 - source: .
   scopesBegin:
     - string.unquoted.path

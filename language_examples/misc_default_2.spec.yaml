@@ -240,7 +240,7 @@
     - punctuation.separator.dot-access
 - source: libc
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -1544,8 +1544,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -1553,9 +1551,7 @@
     - punctuation.separator.dot-access
 - source: match
   scopes:
-    - variable.language.special.property.match
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.match
+    - entity.name.function.method
 - source: ''''''
   scopesBegin:
     - string.quoted.other
@@ -2613,7 +2609,7 @@
     - punctuation.separator.dot-access
 - source: perlPackageOverrides
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -3644,7 +3640,6 @@
 - source: stdenv
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access

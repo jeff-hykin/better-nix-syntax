@@ -28,13 +28,10 @@
     - punctuation.separator.dot-access
 - source: groupBy
   scopes:
-    - variable.language.special.property.groupBy
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.groupBy
+    - variable.other.object.property
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: (
   scopes:
     - punctuation.section.parentheses

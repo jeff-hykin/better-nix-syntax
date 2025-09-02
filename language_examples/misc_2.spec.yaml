@@ -726,13 +726,12 @@
 - source: lib
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: attrByPath
   scopes:
-    - entity.name.function.method.call
+    - entity.name.function.method
 - source: '['
   scopesBegin:
     - meta.list
@@ -4291,8 +4290,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -4300,9 +4297,7 @@
     - punctuation.separator.dot-access
 - source: genericClosure
   scopes:
-    - variable.language.special.property.genericClosure
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.genericClosure
+    - entity.name.function.method
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket
@@ -4615,8 +4610,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -4624,9 +4617,7 @@
     - punctuation.separator.dot-access
 - source: filter
   scopes:
-    - variable.language.special.property.filter
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.filter
+    - entity.name.function.method
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -4981,14 +4972,13 @@
     - entity.name.function.method
 - source: or
   scopes:
-    - keyword.operator.or
+    - variable.other.object
+    - variable.parameter
 - source: '['
   scopesBegin:
-    - meta.list
     - punctuation.definition.list
 - source: ']'
   scopesEnd:
-    - meta.list
     - punctuation.definition.list
 - source: )
   scopes:
@@ -5016,14 +5006,13 @@
     - entity.name.function.method
 - source: or
   scopes:
-    - keyword.operator.or
+    - variable.other.object
+    - variable.parameter
 - source: '['
   scopesBegin:
-    - meta.list
     - punctuation.definition.list
 - source: ']'
   scopesEnd:
-    - meta.list
     - punctuation.definition.list
 - source: )
   scopesBegin:

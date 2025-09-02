@@ -99,26 +99,24 @@
 - source: _core
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: import
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: (
   scopes:
     - punctuation.section.parentheses
 - source: _core
   scopes:
     - variable.other.object.access
-    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
 - source: fetchTarball
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -868,8 +866,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -877,9 +873,7 @@
     - punctuation.separator.dot-access
 - source: compareVersions
   scopes:
-    - variable.language.special.property.compareVersions
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.compareVersions
+    - entity.name.function.method
 - source: '"'
   scopesBegin:
     - string.quoted.double

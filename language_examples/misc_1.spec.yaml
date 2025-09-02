@@ -2400,13 +2400,10 @@
     - punctuation.separator.dot-access
 - source: attrValues
   scopes:
-    - variable.language.special.property.attrValues
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.attrValues
+    - variable.other.object.property
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -2590,9 +2587,7 @@
     - punctuation.separator.dot-access
 - source: catAttrs
   scopes:
-    - variable.language.special.property.catAttrs
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.catAttrs
+    - variable.other.object.property
 - source: or
   scopes:
     - variable.other.object
@@ -4258,9 +4253,7 @@
     - punctuation.separator.dot-access
 - source: mapAttrs
   scopes:
-    - variable.language.special.property.mapAttrs
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.mapAttrs
+    - variable.other.object.property
 - source: or
   scopes:
     - variable.other.object
@@ -5329,7 +5322,7 @@
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -5599,8 +5592,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -5608,9 +5599,7 @@
     - punctuation.separator.dot-access
 - source: substring
   scopes:
-    - variable.language.special.property.substring
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.substring
+    - entity.name.function.method
 - source: '33'
   scopes:
     - constant.numeric.integer
@@ -6198,13 +6187,10 @@
     - punctuation.separator.dot-access
 - source: zipAttrsWith
   scopes:
-    - variable.language.special.property.zipAttrsWith
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.zipAttrsWith
+    - variable.other.object.property
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -7470,7 +7456,7 @@
     - punctuation.separator.dot-access
 - source: out
   scopes:
-    - variable.other.property.last
+    - variable.other.object.property
 - source: or
   scopes:
     - keyword.operator.or
@@ -8257,8 +8243,6 @@
     - punctuation.section.parentheses
 - source: builtins
   scopes:
-    - variable.other.object.access
-    - variable.parameter
     - support.module
     - variable.language.special.builtins
 - source: .
@@ -8266,9 +8250,7 @@
     - punctuation.separator.dot-access
 - source: attrNames
   scopes:
-    - variable.language.special.property.attrNames
-    - entity.name.function.call.builtin
-    - support.type.builtin.method.attrNames
+    - entity.name.function.method
 - source: intersection
   scopes:
     - variable.other.object
