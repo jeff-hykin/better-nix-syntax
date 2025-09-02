@@ -423,6 +423,8 @@ require_relative './shell_embedding.rb'
                 tag_as: "variable.other.dirty",
                 match: Pattern.new(dirty_variable),
             ).or(
+                grammar[:or_operator]
+            ).or(
                 tag_as: "variable.other.object variable.parameter",
                 match: Pattern.new(variable),
             )
