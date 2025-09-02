@@ -1,0 +1,4647 @@
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: inherit
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: builtins
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: currentSystem
+  scopesBegin:
+    - entity.other.attribute-name
+- source: elemAt
+- source: filter
+- source: fromJSON
+- source: mapAttrs
+- source: match
+- source: readFile
+- source: substring
+  scopesEnd:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: getFlake
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: name
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: with
+  scopesBegin:
+    - meta.with
+  scopes:
+    - keyword.operator.with
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: fromJSON
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: readFile
+  scopes:
+    - entity.name.function.call
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+  scopes:
+    - punctuation.definition.relative
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: flake.lock
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: nodes
+  scopes:
+    - variable.other.property
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: name
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: locked
+  scopes:
+    - variable.other.property.last
+- source: ;
+  scopes:
+    - punctuation.separator.with
+  scopesEnd:
+    - meta.with
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: rev
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: outPath
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fetchTarball
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.fetchTarball
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: url
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - meta.statement
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'https://github.com/'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: owner
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: repo
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /archive/
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: rev
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .tar.gz
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: sha256
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: narHash
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: system
+  scopesBegin:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: currentSystem
+  scopes:
+    - variable.other.object
+    - variable.parameter
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: pkgs
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: import
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: getFlake
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nixpkgs
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: localSystem
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '{'
+  scopesBegin:
+    - meta.statement
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: system
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.default
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: lib
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: lib
+  scopes:
+    - variable.other.property.last
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: rust-analyzer-src
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: getFlake
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-analyzer-src
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - meta.default
+    - string.quoted.double
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: rust-analyzer-rev
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: substring
+  scopes:
+    - entity.name.function.call
+- source: '0'
+  scopesBegin:
+    - constant.numeric.integer
+- source: '7'
+  scopesEnd:
+    - constant.numeric.integer
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: rust-analyzer-src
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: rev
+  scopes:
+    - variable.other.property.last
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '0000000'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+  scopesEnd:
+    - meta.default
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: inherit
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: lib
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: attrVals
+  scopesBegin:
+    - entity.other.attribute-name
+- source: filterAttrs
+- source: findFirst
+- source: foldl
+- source: importJSON
+- source: importTOML
+- source: maintainers
+- source: mapAttrs'
+- source: mapNullable
+- source: nameValuePair
+- source: optionalString
+- source: optionals
+- source: pathIsRegularFile
+- source: unique
+- source: zipAttrsWith
+  scopesEnd:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: v
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: stdenv
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: buildPlatform
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: rust
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: rustcTarget
+  scopes:
+    - variable.other.property.last
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: combine'
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: callPackage
+  scopes:
+    - entity.name.function.method.call
+- source: ./
+  scopesBegin:
+    - constant.other.path.relative
+  scopes:
+    - punctuation.definition.path.relative
+    - storage.type.modifier
+- source: lib
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: combine.nix
+  scopesEnd:
+    - constant.other.path.relative
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '{'
+  scopesBegin:
+    - punctuation.definition.dict
+- source: '}'
+  scopesEnd:
+    - punctuation.definition.dict
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: mkToolchain
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: callPackage
+  scopes:
+    - entity.name.function.method.call
+- source: ./
+  scopesBegin:
+    - constant.other.path.relative
+  scopes:
+    - punctuation.definition.path.relative
+    - storage.type.modifier
+- source: lib
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: mk-toolchain.nix
+  scopesEnd:
+    - constant.other.path.relative
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: '{'
+  scopesBegin:
+    - punctuation.definition.dict
+- source: '}'
+  scopesEnd:
+    - punctuation.definition.dict
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: nightlyToolchains
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: mapAttrs
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: _
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: mapAttrs
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: profile
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: mkToolchain
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-nightly-'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: profile
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: importJSON
+  scopes:
+    - entity.name.function.call
+- source: ./
+  scopesBegin:
+    - constant.other.path.relative
+  scopes:
+    - punctuation.definition.path.relative
+    - storage.type.modifier
+- source: data
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: nightly.json
+  scopesEnd:
+    - constant.other.path.relative
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromManifest'
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: suffix
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: manifest
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: toolchain
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: mkToolchain
+  scopes:
+    - entity.name.function.call
+- source: suffix
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: manifest
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: date
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: components
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: mapAttrs
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: _
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: src
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: src
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: url
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: sha256
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: src
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: hash
+  scopes:
+    - variable.other.property.last
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: filterAttrs
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: _
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: src
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: src
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: available
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: src
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: available
+  scopes:
+    - variable.other.property.last
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: mapAttrs
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: _
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: pkg
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: pkg
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: target
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '*'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: pkg
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: target
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: manifest
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pkg
+  scopes:
+    - variable.other.property.last
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: toolchain
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: mapAttrs'
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: k
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: v
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: nameValuePair
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: k
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: Toolchain
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: toolchain
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: withComponents
+  scopes:
+    - entity.name.function.method
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: filter
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: component
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: toolchain
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: component
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: manifest
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: profiles
+  scopes:
+    - variable.other.property.last
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: manifest
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromManifestFile'
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: name
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: file
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: fromManifest'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: name
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: importTOML
+  scopes:
+    - entity.name.function.call
+- source: file
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: toolchainOf'
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: root
+  scopesBegin:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'https://static.rust-lang.org/dist'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - meta.default
+    - string.quoted.double
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: channel
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: nightly
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - meta.default
+    - string.quoted.double
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: date
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: sha256
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.default
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: url
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: root
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopesBegin:
+    - punctuation.section.embedded
+- source: '${'
+  scopesEnd:
+    - punctuation.section.embedded
+- source: optionalString
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: date
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: date
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /channel-rust-
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: channel
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .toml
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: fromManifestFile'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: channel
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: (
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - punctuation.section.parentheses
+- source: sha256
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: builtins
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+    - support.module
+    - variable.language.special.builtins
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: fetchurl
+  scopes:
+    - variable.language.special.property.fetchurl
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.fetchurl
+- source: url
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: fetchurl
+  scopes:
+    - variable.language.special.property.fetchurl
+    - entity.name.function.call.builtin
+    - support.type.builtin.method.fetchurl
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: url
+  scopesBegin:
+    - entity.other.attribute-name
+- source: sha256
+  scopesEnd:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromToolchainName'
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: name
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: sha256
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: mapNullable
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: matches
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: target'
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: elemAt
+  scopes:
+    - entity.name.function.call
+- source: matches
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '5'
+  scopes:
+    - constant.numeric.integer
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: toolchainOf'
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: target'
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: target'
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: sha256
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: channel
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: elemAt
+  scopes:
+    - entity.name.function.call
+- source: matches
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '0'
+  scopes:
+    - constant.numeric.integer
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: date
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: elemAt
+  scopes:
+    - entity.name.function.call
+- source: matches
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '3'
+  scopes:
+    - constant.numeric.integer
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: match
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '^(stable|beta|nightly|[[:digit:]]+'
+- source: \.
+- source: '[[:digit:]]+('
+- source: \.
+- source: >-
+    [[:digit:]]+)?)(-([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}))?(-([-[:alnum:]]+))?
+- source: \n
+- source: '?$'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: name
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromToolchainFile'
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: file
+  scopesBegin:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: dir
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.default
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: sha256
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.default
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: text
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: readFile
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: file
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: dir
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: findFirst
+  scopes:
+    - entity.name.function.call
+- source: pathIsRegularFile
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: throw
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: 'No rust toolchain file found in '
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: dir
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: dir
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /rust-toolchain
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: dir
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /rust-toolchain.toml
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: else
+  scopes:
+    - keyword.control.else
+- source: if
+  scopes:
+    - keyword.control.if
+- source: file
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '!='
+  scopes:
+    - keyword.operator.!=
+- source: 'null'
+  scopes:
+    - constant.language.null
+- source: '&&'
+  scopes:
+    - keyword.operator.&&
+- source: dir
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: file
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: throw
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: One and only one of `file` and `dir` should be specified
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: toolchain
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromToolchainName'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: text
+  scopes:
+    - entity.name.function.call
+- source: sha256
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: toolchain
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '=='
+  scopes:
+    - keyword.operator.==
+- source: 'null'
+  scopes:
+    - constant.language.null
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: t
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: fromTOML
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.fromTOML
+- source: text
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: toolchain
+  scopes:
+    - variable.other.property
+    - variable.other.property.last
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: if
+  scopesBegin:
+    - meta.punctuation.section.conditional
+  scopes:
+    - keyword.control.if
+- source: t
+  scopesBegin:
+    - meta.punctuation.section.condition
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: path
+  scopes:
+    - variable.other.object
+    - variable.parameter
+  scopesEnd:
+    - meta.punctuation.section.condition
+- source: then
+  scopes:
+    - keyword.control.then
+- source: throw
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.throw
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: fenix doesn't support toolchain.path
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: toolchain
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromToolchainName'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: t
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: channel
+  scopes:
+    - entity.name.function.method.call
+- source: sha256
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: combine'
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: t
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: channel
+  scopes:
+    - variable.other.property.last
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: attrVals
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: filter
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: component
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: toolchain
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '?'
+  scopes:
+    - keyword.operator.?
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: component
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: unique
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: toolchain
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: manifest
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: profiles
+  scopes:
+    - entity.name.function.method
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: t
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: profile
+  scopes:
+    - variable.other.property.last
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: default
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: ++
+  scopes:
+    - keyword.operator.++
+- source: t
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: components
+  scopes:
+    - variable.other.property.last
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: '['
+  scopesBegin:
+    - meta.list
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - meta.list
+    - punctuation.definition.list
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: toolchain
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ++
+  scopes:
+    - keyword.operator.++
+- source: map
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: fromManifest'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: t
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: channel
+  scopes:
+    - variable.other.property.last
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: toolchain
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: manifest
+  scopes:
+    - variable.other.property.last
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: rust-std
+  scopes:
+    - variable.other.property
+    - variable.other.property.last
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: t
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: targets
+  scopes:
+    - variable.other.property.last
+- source: or
+  scopes:
+    - keyword.operator.or
+- source: '['
+  scopesBegin:
+    - punctuation.definition.list
+- source: ']'
+  scopesEnd:
+    - punctuation.definition.list
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: )
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: else
+  scopes:
+    - keyword.control.else
+  scopesEnd:
+    - meta.punctuation.section.conditional
+- source: toolchain
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: defaultToolchain
+  scopes:
+    - variable.other.property.last
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: mkToolchains
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: channel
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: manifest
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: importJSON
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: .
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+  scopes:
+    - punctuation.definition.relative
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: data
+  scopesEnd:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: channel
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .json
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: mapAttrs
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: _
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: '${'
+  scopesBegin:
+    - meta.attribute-set
+    - meta.statement.dynamic-attr
+  scopes:
+    - punctuation.section.embedded
+- source: channel
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: fromManifest'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: channel
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: manifest
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement.dynamic-attr
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: manifest
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: pkg
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: rust-std
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: target
+  scopes:
+    - variable.other.property.last
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: nightlyToolchains
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: rec
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - storage.modifier
+- source: '{'
+  scopes:
+    - punctuation.section.bracket
+- source: combine
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: combine'
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-mixed
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromManifest
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromManifest'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromManifestFile
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromManifestFile'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: toolchainOf
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: toolchainOf'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromToolchainFile
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromToolchainFile'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromToolchainName
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: name
+  scopesBegin:
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: ','
+  scopes:
+    - punctuation.separator.comma
+- source: sha256
+  scopes:
+    - variable.parameter.function
+    - variable.other.object.parameter
+- source: '?'
+  scopesBegin:
+    - meta.default
+  scopes:
+    - punctuation.separator.default
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - meta.default
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.punctuation.section.function
+    - meta.punctuation.section.parameters
+- source: fromToolchainName'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: name
+  scopes:
+    - entity.name.function.call
+- source: sha256
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: stable
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromManifest'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-stable'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: importJSON
+  scopes:
+    - entity.name.function.call
+- source: ./
+  scopesBegin:
+    - constant.other.path.relative
+  scopes:
+    - punctuation.definition.path.relative
+    - storage.type.modifier
+- source: data
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: stable.json
+  scopesEnd:
+    - constant.other.path.relative
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: beta
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromManifest'
+  scopes:
+    - entity.name.function.call
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-beta'
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: importJSON
+  scopes:
+    - entity.name.function.call
+- source: ./
+  scopesBegin:
+    - constant.other.path.relative
+  scopes:
+    - punctuation.definition.path.relative
+    - storage.type.modifier
+- source: data
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: beta.json
+  scopesEnd:
+    - constant.other.path.relative
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: targets
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: collectedTargets
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: zipAttrsWith
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.zipAttrsWith
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: _
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: foldl
+  scopes:
+    - entity.name.function.call
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: x
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: 'y'
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: x
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: 'y'
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '{'
+  scopesBegin:
+    - punctuation.definition.dict
+- source: '}'
+  scopesEnd:
+    - punctuation.definition.dict
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: mkToolchains
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: stable
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopesBegin:
+    - punctuation.section.parentheses
+- source: (
+  scopesEnd:
+    - punctuation.section.parentheses
+- source: mkToolchains
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: beta
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: nightlyToolchains
+  scopes:
+    - entity.name.function.object.method
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: mapAttrs
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: target
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: v
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: //
+  scopes:
+    - keyword.operator.//
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: fromManifest
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromManifest'
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromManifestFile
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromManifestFile'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - string.quoted.double
+    - punctuation.definition.string.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: toolchainOf
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: toolchainOf'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: fromToolchainFile
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: fromToolchainFile'
+  scopes:
+    - entity.name.function.call
+- source: target
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: collectedTargets
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: rust-analyzer
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: (
+  scopes:
+    - punctuation.section.parentheses
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: makeRustPlatform
+  scopes:
+    - entity.name.function.method
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: inherit
+  scopesBegin:
+    - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: (
+  scopesBegin:
+    - meta.source
+  scopes:
+    - punctuation.separator.source
+- source: nightlyToolchains
+  scopes:
+    - entity.name.namespace
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: minimal
+  scopes:
+    - entity.name.namespace
+- source: )
+  scopes:
+    - punctuation.separator.source
+  scopesEnd:
+    - meta.source
+- source: cargo
+  scopesBegin:
+    - entity.other.attribute-name
+- source: rustc
+  scopesEnd:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: )
+  scopes:
+    - punctuation.section.parentheses
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: buildRustPackage
+  scopes:
+    - variable.other.property
+    - entity.name.function.method
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: pname
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - meta.statement
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-analyzer-nightly
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: version
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rust-analyzer-rev
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: src
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rust-analyzer-src
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: cargoLock
+  scopesBegin:
+    - meta.assignment-start
+    - meta.attribute-key
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: lockFile
+  scopes:
+    - variable.other.constant.last
+    - variable.other.property
+    - variable.parameter
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rust-analyzer-src
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: +
+  scopes:
+    - keyword.operator.+
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: /Cargo.lock
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: cargoBuildFlags
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: '-p'
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: rust-analyzer
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: buildInputs
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: with
+  scopes:
+    - keyword.operator.with
+- source: pkgs
+  scopes:
+    - meta.with
+    - entity.name.namespace
+- source: ;
+  scopes:
+    - punctuation.separator.with
+- source: optionals
+  scopes:
+    - entity.name.function.call
+- source: stdenv
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: isDarwin
+  scopes:
+    - entity.name.function.method.call
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: libiconv
+  scopes:
+    - entity.name.function.object.method
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: doCheck
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'false'
+  scopes:
+    - constant.language.boolean.false
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: CARGO_INCREMENTAL
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '0'
+  scopes:
+    - constant.numeric.integer
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopesBegin:
+    - comment.line
+  scopes:
+    - punctuation.definition.comment
+- source: ' ensure `rust-analyzer` is built in release mode https://github.com/rust-lang/rust-analyzer/blob/8772b865c913afd1510f69649f238b0f31eace3d/crates/rust-analyzer/build.rs#L9'
+  scopesEnd:
+    - comment.line
+- source: CFG_RELEASE
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '1'
+  scopes:
+    - constant.numeric.integer
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: RUST_ANALYZER_REV
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rust-analyzer-rev
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: meta
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: maintainers
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: with
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - keyword.operator.with
+- source: maintainers
+  scopes:
+    - meta.with
+    - entity.name.namespace
+- source: ;
+  scopes:
+    - punctuation.separator.with
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: figsoda
+  scopes:
+    - entity.name.function.object.method
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: mainProgram
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-analyzer
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: rust-analyzer-vscode-extension
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: setDefault
+  scopesBegin:
+    - meta.let.in.part1
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: k
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: v
+  scopes:
+    - variable.parameter.function.standalone
+    - variable.other.object.parameter
+- source: ':'
+  scopes:
+    - punctuation.definition.function.colon
+    - variable.other.object.parameter
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '                            .contributes.configuration |= map(if .properties."rust-analyzer.'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: k
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '" != null then .properties."rust-analyzer.'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: k
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '".default = "'
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: v
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '" end)'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: vscode-utils
+  scopes:
+    - variable.other.object.property
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: buildVscodeExtension
+  scopes:
+    - entity.name.function.method.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
+- source: pname
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - meta.statement
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-analyzer
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: name
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-analyzer-
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: rust-analyzer-rev
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: version
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: rust-analyzer-rev
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: src
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: ./
+  scopesBegin:
+    - constant.other.path.relative
+  scopes:
+    - punctuation.definition.path.relative
+    - storage.type.modifier
+- source: data
+  scopesBegin:
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: /
+  scopes:
+    - punctuation.definition.path
+    - storage.type.modifier
+- source: rust-analyzer-vsix.zip
+  scopesEnd:
+    - constant.other.path.relative
+    - string.unquoted.path
+    - punctuation.section.regexp
+    - punctuation.section.path
+    - storage.type.modifier
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: vscodeExtName
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-analyzer
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: vscodeExtPublisher
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: The Rust Programming Language
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: vscodeExtUniqueId
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: rust-lang.rust-analyzer
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: nativeBuildInputs
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: with
+  scopes:
+    - keyword.operator.with
+- source: pkgs
+  scopes:
+    - meta.with
+    - entity.name.namespace
+- source: ;
+  scopes:
+    - punctuation.separator.with
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: jq
+  scopesBegin:
+    - entity.name.function.object.method
+- source: moreutils
+  scopesEnd:
+    - entity.name.function.object.method
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: postPatch
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: ''''''
+  scopesBegin:
+    - string.quoted.other
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+- source: '                            jq -e '''
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: setDefault
+  scopes:
+    - entity.name.function.call
+- source: '"'
+  scopesBegin:
+    - string.quoted.double
+  scopes:
+    - punctuation.definition.string.double
+- source: server.path
+- source: '"'
+  scopesBegin:
+    - punctuation.definition.string.double
+- source: '"'
+  scopesEnd:
+    - punctuation.definition.string.double
+- source: '${'
+  scopes:
+    - punctuation.section.embedded
+- source: rust-analyzer
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: /bin/rust-analyzer
+- source: '"'
+  scopes:
+    - punctuation.definition.string.double
+  scopesEnd:
+    - string.quoted.double
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: '                            '' package.json | sponge package.json'
+- source: ''''''
+  scopes:
+    - string.quoted.single
+    - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: meta
+  scopesBegin:
+    - meta.assignment-start
+    - meta.attribute-key
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: maintainers
+  scopes:
+    - variable.other.constant.last
+    - variable.other.property
+    - variable.parameter
+  scopesEnd:
+    - meta.attribute-key
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: with
+  scopes:
+    - keyword.operator.with
+- source: maintainers
+  scopes:
+    - meta.with
+    - entity.name.namespace
+- source: ;
+  scopes:
+    - punctuation.separator.with
+- source: '['
+  scopesBegin:
+    - meta.list
+  scopes:
+    - punctuation.definition.list
+- source: figsoda
+  scopes:
+    - entity.name.function.object.method
+- source: ']'
+  scopes:
+    - punctuation.definition.list
+  scopesEnd:
+    - meta.list
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '}'
+  scopes:
+    - punctuation.section.bracket

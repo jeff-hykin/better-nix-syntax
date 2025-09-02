@@ -1920,7 +1920,7 @@
     - punctuation.separator.dot-access
 - source: prefix
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -1972,7 +1972,7 @@
     - punctuation.separator.dot-access
 - source: postfix
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -2023,7 +2023,7 @@
     - punctuation.separator.dot-access
 - source: val
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -7041,7 +7041,7 @@
     - punctuation.separator.dot-access
 - source: supportedSystems
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -7201,11 +7201,10 @@
     - punctuation.separator.dot-access
 - source: outputShell
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '{'
   scopesBegin:
     - punctuation.definition.dict
@@ -7256,11 +7255,10 @@
     - punctuation.separator.dot-access
 - source: outputPackage
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '{'
   scopesBegin:
     - punctuation.definition.dict
@@ -7311,11 +7309,10 @@
     - punctuation.separator.dot-access
 - source: outputApp
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '{'
   scopesBegin:
     - punctuation.definition.dict
@@ -8000,7 +7997,7 @@
     - punctuation.separator.dot-access
 - source: derivation
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -8046,11 +8043,10 @@
     - punctuation.separator.dot-access
 - source: derivation
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'null'
   scopes:
     - constant.language.null
@@ -8134,7 +8130,7 @@
     - punctuation.separator.dot-access
 - source: asBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -8164,7 +8160,7 @@
     - punctuation.separator.dot-access
 - source: asNativeBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -8194,7 +8190,7 @@
     - punctuation.separator.dot-access
 - source: asPropagatedBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -8224,7 +8220,7 @@
     - punctuation.separator.dot-access
 - source: asDevShellInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -8254,7 +8250,7 @@
     - punctuation.separator.dot-access
 - source: asAppInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -10492,11 +10488,10 @@
     - punctuation.separator.dot-access
 - source: config
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '{'
   scopesBegin:
     - punctuation.definition.dict
@@ -10799,7 +10794,7 @@
     - punctuation.separator.dot-access
 - source: onlyIf
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -11193,7 +11188,7 @@
     - punctuation.separator.dot-access
 - source: asBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -11217,11 +11212,10 @@
     - punctuation.separator.dot-access
 - source: asNativeBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'false'
   scopes:
     - constant.language.boolean.false
@@ -11242,11 +11236,10 @@
     - punctuation.separator.dot-access
 - source: asPropagatedBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'false'
   scopes:
     - constant.language.boolean.false
@@ -11332,7 +11325,7 @@
     - punctuation.separator.dot-access
 - source: asNativeBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -11416,7 +11409,7 @@
     - punctuation.separator.dot-access
 - source: asPropagatedBuildInput
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or

@@ -28,7 +28,7 @@
     - punctuation.separator.dot-access
 - source: groupBy
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or

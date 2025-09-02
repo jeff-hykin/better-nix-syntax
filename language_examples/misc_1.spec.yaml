@@ -2400,7 +2400,7 @@
     - punctuation.separator.dot-access
 - source: attrValues
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -2587,11 +2587,10 @@
     - punctuation.separator.dot-access
 - source: catAttrs
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -4253,11 +4252,10 @@
     - punctuation.separator.dot-access
 - source: mapAttrs
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -5322,7 +5320,7 @@
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -6187,7 +6185,7 @@
     - punctuation.separator.dot-access
 - source: zipAttrsWith
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -7456,7 +7454,7 @@
     - punctuation.separator.dot-access
 - source: out
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or

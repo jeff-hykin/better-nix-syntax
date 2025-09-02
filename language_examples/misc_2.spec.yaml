@@ -4972,8 +4972,7 @@
     - entity.name.function.method
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '['
   scopesBegin:
     - punctuation.definition.list
@@ -5006,8 +5005,7 @@
     - entity.name.function.method
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '['
   scopesBegin:
     - punctuation.definition.list

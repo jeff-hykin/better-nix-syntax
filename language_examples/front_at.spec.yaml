@@ -672,11 +672,10 @@
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'null'
   scopes:
     - constant.language.null
@@ -789,7 +788,7 @@
     - punctuation.separator.dot-access
 - source: name
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -1188,7 +1187,7 @@
     - punctuation.separator.dot-access
 - source: meta
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or

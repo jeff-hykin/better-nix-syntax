@@ -551,6 +551,7 @@ require_relative './shell_embedding.rb'
                 
                 # last
                 Pattern.new(
+                    # TODO: clean up this logic and run tests on different themes
                     tag_as: if tag == "object" then "variable.other.property.last" else "variable.other.#{tag}.last variable.other.property variable.parameter" end,
                     match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
                 ),

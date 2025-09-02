@@ -2764,7 +2764,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
@@ -2870,7 +2870,7 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - variable.other.object.property
+    - variable.other.property.last
 - source: or
   scopes:
     - keyword.operator.or
