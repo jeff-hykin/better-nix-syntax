@@ -185,6 +185,13 @@ require_relative './shell_embedding.rb'
         
         grammar[:number] = grammar[:integer].or(grammar[:decimal])
         
+        # I don't know why but its burned me in the past
+        # TODO: expand the scope to the full defintion (I havent checked the spec on this one yet) probably based on url
+        grammar[:unquoted_string_literal] = Pattern.new(
+            match: variableBounds[/[a-zA-Z_]+:/],
+            tag_as: "string.unquoted",
+        )
+        
         # 
         # file path and URLs
         # 
@@ -259,6 +266,11 @@ require_relative './shell_embedding.rb'
             
             grammar[:url] = Pattern.new(
                 tag_as: "constant.other.url",
+                should_fully_match: [
+                    "https://github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz",
+                    "https://yew.rs/docs/tutorial",
+                    "http://localhost:8080",
+                ],
                 match: Pattern.new(
                     Pattern.new(
                         match: /[a-zA-Z][a-zA-Z0-9_+\-\.]*:/,
@@ -991,6 +1003,10 @@ require_relative './shell_embedding.rb'
                 ),
                 includes: [
                     :normal_context,
+                    Pattern.new(
+                        tag_as: "punctuation.separator.input-aggregate",
+                        match: /@/,
+                    )
                 ]
             ),
             
@@ -1302,6 +1318,7 @@ require_relative './shell_embedding.rb'
             :value_prefix,
             :double_quote,
             :single_quote,
+            :url,
             :list,
             :brackets,
             :parentheses,
@@ -1311,6 +1328,7 @@ require_relative './shell_embedding.rb'
             :path_literal_angle_brackets,
             :relative_path_literal,
             :absolute_path_literal,
+            :system_path_literal,
             :operators,
             :basic_function,
             :inline_value,

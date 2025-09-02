@@ -194,6 +194,7 @@ punctuation.separator.assert.nix
 punctuation.separator.comma.nix
 punctuation.separator.default.nix
 punctuation.separator.dot-access.nix
+punctuation.separator.input-aggregate.nix
 punctuation.separator.regex.alternation.shell.nix
 punctuation.separator.source.nix
 punctuation.separator.statement.and.shell.nix

@@ -5952,6 +5952,8 @@
     - variable.other.object
     - variable.parameter
 - source: '@'
+  scopes:
+    - punctuation.separator.input-aggregate
 - source: '{'
   scopesBegin:
     - meta.punctuation.section.bracket

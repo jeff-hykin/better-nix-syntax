@@ -3305,6 +3305,10 @@
           "patterns": [
             {
               "include": "#normal_context"
+            },
+            {
+              "match": "@",
+              "name": "punctuation.separator.input-aggregate.nix"
             }
           ]
         },
