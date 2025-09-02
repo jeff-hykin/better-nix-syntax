@@ -638,11 +638,10 @@
     - punctuation.separator.dot-access
 - source: lastModifiedDate
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: self
   scopes:
     - variable.other.object.access
@@ -652,11 +651,10 @@
     - punctuation.separator.dot-access
 - source: lastModified
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -687,11 +685,10 @@
     - punctuation.separator.dot-access
 - source: shortRev
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '"'
   scopesBegin:
     - string.quoted.double

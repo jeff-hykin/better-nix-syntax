@@ -3486,7 +3486,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: nul
   scopes:
     - variable.other.object
@@ -5329,11 +5329,10 @@
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'null'
   scopes:
     - constant.language.null
@@ -7221,7 +7220,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: value
   scopes:
     - variable.other.object
@@ -7461,7 +7460,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: pkg
   scopes:
     - variable.other.object.access
@@ -7471,13 +7470,12 @@
     - punctuation.separator.dot-access
 - source: out
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
-  scopesBegin:
-    - variable.other.object
-    - variable.parameter
+  scopes:
+    - keyword.operator.or
 - source: pkg
-  scopesEnd:
+  scopes:
     - variable.other.object
     - variable.parameter
 - source: else

@@ -671,11 +671,10 @@
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'null'
   scopes:
     - constant.language.null
@@ -789,11 +788,10 @@
     - punctuation.separator.dot-access
 - source: name
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: '"'
   scopesBegin:
     - string.quoted.double
@@ -1189,11 +1187,10 @@
     - punctuation.separator.dot-access
 - source: meta
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: checked
   scopes:
     - variable.other.object.access

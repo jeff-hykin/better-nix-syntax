@@ -1078,7 +1078,7 @@
     - punctuation.section.embedded
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: default
   scopes:
     - variable.other.object
@@ -4981,7 +4981,7 @@
     - entity.name.function.method
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: '['
   scopesBegin:
     - meta.list
@@ -5016,7 +5016,7 @@
     - entity.name.function.method
 - source: or
   scopes:
-    - entity.name.function.call
+    - keyword.operator.or
 - source: '['
   scopesBegin:
     - meta.list

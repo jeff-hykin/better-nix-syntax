@@ -227,6 +227,7 @@ string.unquoted.argument.shell
 string.unquoted.argument.shell.nix
 string.unquoted.heredoc.indent.$2.shell
 string.unquoted.heredoc.no-indent.$2.shell
+string.unquoted.nix
 string.unquoted.path.nix
 string.unquoted.pattern.shell.nix
 string.unquoted.shell.nix

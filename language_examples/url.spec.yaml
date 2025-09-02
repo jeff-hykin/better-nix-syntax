@@ -1,0 +1,124 @@
+- source: let
+  scopesBegin:
+    - meta.punctuation.section.let
+  scopes:
+    - keyword.control.let
+- source: '#'
+  scopesBegin:
+    - meta.let.in.part1
+    - comment.line
+  scopes:
+    - punctuation.definition.comment
+- source: ' x is a string ... for some reason'
+  scopesEnd:
+    - comment.line
+- source: x
+  scopesBegin:
+    - meta.statement
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'a:'
+  scopesBegin:
+    - constant.other.url
+  scopes:
+    - punctuation.definition.url.protocol
+- source: a
+  scopes:
+    - punctuation.definition.url.address
+  scopesEnd:
+    - constant.other.url
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: c
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'https:'
+  scopesBegin:
+    - constant.other.url
+  scopes:
+    - punctuation.definition.url.protocol
+- source: >-
+    //github.com/NixOS/nixpkgs/archive/a71323f68d4377d12c04a5410e214495ec598d4c.tar.gz
+  scopes:
+    - punctuation.definition.url.address
+  scopesEnd:
+    - constant.other.url
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: b
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'https:'
+  scopesBegin:
+    - constant.other.url
+  scopes:
+    - punctuation.definition.url.protocol
+- source: //yew.rs/docs/tutorial
+  scopes:
+    - punctuation.definition.url.address
+  scopesEnd:
+    - constant.other.url
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+- source: d
+  scopesBegin:
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: 'http:'
+  scopesBegin:
+    - constant.other.url
+  scopes:
+    - punctuation.definition.url.protocol
+- source: '//localhost:8080'
+  scopes:
+    - punctuation.definition.url.address
+  scopesEnd:
+    - constant.other.url
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: in
+  scopes:
+    - keyword.control.in
+  scopesEnd:
+    - meta.punctuation.section.let
+    - meta.let.in.part1
+- source: x
+  scopes:
+    - variable.other.object
+    - variable.parameter

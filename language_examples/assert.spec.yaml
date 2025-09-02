@@ -238,11 +238,10 @@
     - punctuation.separator.dot-access
 - source: system
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: builtins
   scopes:
     - variable.other.object.access

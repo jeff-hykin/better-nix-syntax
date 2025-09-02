@@ -240,11 +240,10 @@
     - punctuation.separator.dot-access
 - source: libc
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: 'null'
   scopes:
     - constant.language.null
@@ -2614,11 +2613,10 @@
     - punctuation.separator.dot-access
 - source: perlPackageOverrides
   scopes:
-    - entity.name.function.method.call
+    - variable.other.property.last
 - source: or
   scopes:
-    - variable.other.object
-    - variable.parameter
+    - keyword.operator.or
 - source: (
   scopes:
     - punctuation.section.parentheses
