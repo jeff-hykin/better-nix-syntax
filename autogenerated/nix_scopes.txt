@@ -239,12 +239,12 @@ support.type.builtin.method.$37.nix
 support.type.builtin.property.$1.nix
 support.type.builtin.property.$108.nix
 support.type.builtin.property.$120.nix
-support.type.builtin.property.$135.nix
+support.type.builtin.property.$136.nix
 support.type.builtin.property.$18.nix
 support.type.builtin.property.$40.nix
 support.type.builtin.property.$52.nix
 support.type.builtin.property.$6.nix
-support.type.builtin.property.$67.nix
+support.type.builtin.property.$68.nix
 support.type.builtin.top-level.nix
 variable.language.arguments.nix
 variable.language.special.at.shell.nix

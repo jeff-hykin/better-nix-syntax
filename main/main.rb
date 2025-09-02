@@ -388,7 +388,14 @@ require_relative './shell_embedding.rb'
                 default_string_blocks = generateStringBlock[]
                 grammar[:double_quote] = default_string_blocks[0]
                 grammar[:single_quote] = default_string_blocks[1]
-        
+    #
+    # operator hacks
+    #
+        # this one is, unfortunately, special
+        grammar[:or_operator] = Pattern.new(
+            tag_as: "keyword.operator.or",
+            match: /\bor\b/,
+        )    
     # 
     # variables
     # 
@@ -443,7 +450,7 @@ require_relative './shell_embedding.rb'
                 lookBehindFor(/\./).then(std_space).then(
                     tag_as: "entity.name.function.method.call",
                     match: variable,
-                ),
+                ).lookAheadToAvoid(/\s+or\b/),
                 
                 lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
                     tag_as: "entity.name.function.call support.type.builtin.top-level support.type.builtin.property.$match",
@@ -460,9 +467,11 @@ require_relative './shell_embedding.rb'
                     match: dirty_variable,
                 ),
                 
-                lookBehindToAvoid(/\)|"|\d|\s/).then(std_space).then(
-                    tag_as: "entity.name.function.call",
-                    match: variable,
+                lookBehindToAvoid(/\)|"|\d|\s|\./).then(std_space).then(
+                    grammar[:or_operator].or(
+                        tag_as: "entity.name.function.call",
+                        match: variable,
+                    )
                 ),
             ]).then(function_call_lookahead)
         )
@@ -513,7 +522,7 @@ require_relative './shell_embedding.rb'
                 # last method
                 Pattern.new(
                     tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
-                    match: variable.lookAheadToAvoid(/\./), # .or(interpolated_attribut),
+                    match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
                 ).then(function_call_lookahead),
                 
                 # last
@@ -561,12 +570,13 @@ require_relative './shell_embedding.rb'
             ]
         )
         
+        function_method = Pattern.new(
+            tag_as: "entity.name.function.method",
+            match: variable,
+        ).lookAheadToAvoid(/\./)
         method_pattern_tagger = builtin_method_tagger.or(
             oneOf([
-                Pattern.new(
-                    tag_as: "entity.name.function.method",
-                    match: variable,
-                ),
+                function_method,
                 grammar[:double_quote_inline],
                 grammar[:single_quote_inline],
             ]).then(function_call_lookahead)
@@ -691,10 +701,7 @@ require_relative './shell_embedding.rb'
             lookBehindFor("(").then(
                 grammar[:variable_attrs_maybe_method]
             ).then(inline_dot_access).then(
-                Pattern.new(
-                    tag_as: "entity.name.function.method",
-                    match: variable,
-                )
+                function_method
                 # .then(
                 #     function_call_lookahead.or(std_space.then(@end_of_line))
                 # )
@@ -753,11 +760,6 @@ require_relative './shell_embedding.rb'
         grammar[:operators] = Pattern.new(
             tag_as: "keyword.operator.$match",
             match: @tokens.that(:areOperators),
-        )
-        # this one is, unfortunately, special
-        grammar[:or_operator] = Pattern.new(
-            tag_as: "keyword.operator.or",
-            match: /\bor\b/,
         )
     
     # 
@@ -1190,7 +1192,7 @@ require_relative './shell_embedding.rb'
         grammar[:if_then_else] =  PatternRange.new(
             tag_as: "meta.punctuation.section.conditional",
             start_pattern: Pattern.new(
-                maybe(value_prefix).then(
+                maybe(value_prefix).lookBehindToAvoid(/\./).then(
                     match: variableBounds[/if/],
                     tag_as: "keyword.control.if",
                 ),

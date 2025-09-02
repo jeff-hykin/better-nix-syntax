@@ -2,7 +2,7 @@
     "name": "better-nix-syntax",
     "displayName": "Better Nix Syntax",
     "description": "An enhanced version of Nix Syntax highlighting",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "icon": "icon.png",
     "author": {
         "name": "Jeff Hykin"
