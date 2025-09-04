@@ -1663,6 +1663,8 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: buildPhase
   scopesBegin:
     - meta.assignment-start
@@ -1676,29 +1678,225 @@
     - meta.assignment-start
 - source: ''''''
   scopesBegin:
-    - string.quoted.other
+    - string.quoted.other.shell
   scopes:
     - string.quoted.single
     - punctuation.definition.string.single
-- source: '                                    { echo "------------------------------------------------------------";'
-- source: '                                        echo " WARNING: the existence of this path is not guaranteed.";'
-- source: '                                        echo " It is an internal implementation detail for pkgs.mkShell.";'
-- source: '                                        echo "------------------------------------------------------------";'
-- source: '                                        echo;'
-- source: '                                        # Record all build inputs as runtime dependencies'
-- source: '                                        export;'
-- source: '                                    } >> "$out"'
+- source: '{'
+  scopesBegin:
+    - source.shell
+    - meta.scope.group.shell
+  scopes:
+    - punctuation.definition.group.shell
+- source: echo
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
+- source: '"'
+  scopesBegin:
+    - meta.argument.shell
+    - string.quoted.double.shell
+  scopes:
+    - punctuation.definition.string.begin.shell
+- source: '------------------------------------------------------------'
+  scopes:
+    - string.unquoted.argument.shell
+- source: '"'
+  scopes:
+    - punctuation.definition.string.end.shell
+  scopesEnd:
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
+- source: ;
+  scopes:
+    - punctuation.terminator.statement.semicolon.shell
+  scopesEnd:
+    - meta.scope.group.shell
+- source: echo
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
+- source: '"'
+  scopesBegin:
+    - meta.argument.shell
+    - string.quoted.double.shell
+  scopes:
+    - punctuation.definition.string.begin.shell
+- source: 'WARNING:'
+  scopesBegin:
+    - string.unquoted.argument.shell
+- source: the
+- source: existence
+- source: of
+- source: this
+- source: path
+- source: is
+- source: not
+- source: guaranteed.
+  scopesEnd:
+    - string.unquoted.argument.shell
+- source: '"'
+  scopes:
+    - punctuation.definition.string.end.shell
+  scopesEnd:
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
+- source: ;
+  scopes:
+    - punctuation.terminator.statement.semicolon.shell
+- source: echo
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
+- source: '"'
+  scopesBegin:
+    - meta.argument.shell
+    - string.quoted.double.shell
+  scopes:
+    - punctuation.definition.string.begin.shell
+- source: It
+  scopesBegin:
+    - string.unquoted.argument.shell
+- source: is
+- source: an
+- source: internal
+- source: implementation
+- source: detail
+- source: for
+- source: pkgs.mkShell.
+  scopesEnd:
+    - string.unquoted.argument.shell
+- source: '"'
+  scopes:
+    - punctuation.definition.string.end.shell
+  scopesEnd:
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
+- source: ;
+  scopes:
+    - punctuation.terminator.statement.semicolon.shell
+- source: echo
+  scopesBegin:
+    - meta.statement.command.shell
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
+- source: '"'
+  scopesBegin:
+    - meta.argument.shell
+    - string.quoted.double.shell
+  scopes:
+    - punctuation.definition.string.begin.shell
+- source: '------------------------------------------------------------'
+  scopes:
+    - string.unquoted.argument.shell
+- source: '"'
+  scopes:
+    - punctuation.definition.string.end.shell
+  scopesEnd:
+    - meta.statement.command.shell
+    - meta.argument.shell
+    - string.quoted.double.shell
+- source: ;
+  scopes:
+    - punctuation.terminator.statement.semicolon.shell
+- source: echo
+  scopes:
+    - meta.statement.command.shell
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+    - support.function.builtin.shell
+- source: ;
+  scopes:
+    - punctuation.terminator.statement.semicolon.shell
+- source: '#'
+  scopesBegin:
+    - comment.line.number-sign.shell
+  scopes:
+    - punctuation.definition.comment.shell
+- source: ' Record all build inputs as runtime dependencies'
+  scopesEnd:
+    - comment.line.number-sign.shell
+- source: export
+  scopes:
+    - meta.statement.command.shell
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: ;
+  scopes:
+    - punctuation.terminator.statement.semicolon.shell
+- source: '}'
+  scopes:
+    - punctuation.section.shell
+- source: ' >>'
+- source: '"'
+  scopesBegin:
+    - meta.statement.command.shell
+    - meta.statement.command.name.shell
+  scopes:
+    - meta.statement.command.name.quoted.shell
+    - string.quoted.double.shell
+    - punctuation.definition.string.begin.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: $
+  scopesBegin:
+    - meta.statement.command.name.continuation.shell
+    - string.quoted.double.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+  scopes:
+    - punctuation.definition.variable.shell
+    - variable.other.normal.shell.shell
+- source: out
+  scopes:
+    - variable.other.normal.shell
+  scopesEnd:
+    - meta.statement.command.name.continuation.shell
+    - string.quoted.double.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: '"'
+  scopes:
+    - string.quoted.double.shell
+    - punctuation.definition.string.end.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+  scopesEnd:
+    - source.shell
+    - meta.statement.command.shell
+    - meta.statement.command.name.shell
 - source: ''''''
   scopes:
     - string.quoted.single
     - punctuation.definition.string.single
   scopesEnd:
-    - string.quoted.other
+    - string.quoted.other.shell
 - source: ;
   scopes:
     - punctuation.terminator.statement
 - source: preferLocalBuild
   scopesBegin:
+    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -6794,14 +6992,20 @@
     - comment.line
 - source: initContent
   scopesBegin:
-    - string.quoted.single
+    - meta.assignment-start
   scopes:
+    - meta.attribute-key
     - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: ''''''
+  scopesBegin:
+    - string.quoted.other.shell
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
 - source: '#'
   scopesBegin:
@@ -6849,12 +7053,13 @@
     - string.quoted.double.shell
 - source: ''''''
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other.shell
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - string.quoted.single
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -12366,14 +12571,20 @@
     - meta.statement
 - source: initContent
   scopesBegin:
-    - string.quoted.single
+    - meta.assignment-start
   scopes:
+    - meta.attribute-key
     - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: ''''''
+  scopesBegin:
+    - string.quoted.other.shell
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
 - source: setopt
   scopesBegin:
@@ -12672,12 +12883,13 @@
     - entity.name.command.shell
 - source: ''''''
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other.shell
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - string.quoted.single
 - source: '}'
   scopes:
     - punctuation.section.bracket
@@ -14102,14 +14314,20 @@
     - comment.line
 - source: shellHook
   scopesBegin:
-    - string.quoted.single
+    - meta.assignment-start
   scopes:
+    - meta.attribute-key
     - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: ''''''
+  scopesBegin:
+    - string.quoted.other.shell
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
 - source: export
   scopesBegin:
@@ -14805,12 +15023,13 @@
     - meta.argument.shell
 - source: ''''''
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other.shell
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - string.quoted.single
 - source: '}'
   scopes:
     - punctuation.section.bracket

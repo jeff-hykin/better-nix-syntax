@@ -499,14 +499,20 @@
     - meta.statement
 - source: buildCommand
   scopesBegin:
-    - string.quoted.single
+    - meta.assignment-start
   scopes:
+    - meta.attribute-key
     - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
 - source: ''''''
+  scopesBegin:
+    - string.quoted.other.shell
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
 - source: mkdir
   scopesBegin:
@@ -779,12 +785,13 @@
     - meta.argument.shell
 - source: ''''''
   scopes:
+    - string.quoted.single
     - punctuation.definition.string.single
+  scopesEnd:
+    - string.quoted.other.shell
 - source: ;
   scopes:
     - punctuation.terminator.statement
-  scopesEnd:
-    - string.quoted.single
 - source: '}'
   scopes:
     - punctuation.section.bracket

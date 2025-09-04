@@ -217,6 +217,8 @@ string.quoted.double.shell.nix
 string.quoted.heredoc.indent.$3.shell
 string.quoted.heredoc.no-indent.$3.shell
 string.quoted.other.nix
+string.quoted.other.shell
+string.quoted.other.shell.nix
 string.quoted.single.dollar.shell.nix
 string.quoted.single.nix
 string.quoted.single.shell

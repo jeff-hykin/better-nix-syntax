@@ -911,9 +911,9 @@ require_relative './shell_embedding.rb'
         shell_hook_start = Pattern.new(
             std_space.then(
                 match: variableBounds[/initContent|shellHook|buildCommand|buildPhase|installPhase/],
-                tag_as: "entity.other.attribute-name",
-            ).then(std_space).then(assignment_operator).then(std_space).then(
-                tag_as: "punctuation.definition.string.single",
+                tag_as: "meta.assignment-start meta.attribute-key entity.other.attribute-name",
+            ).then(std_space).then(tag_as: "meta.assignment-start", match: assignment_operator).then(std_space).then(
+                tag_as: "string.quoted.other.shell string.quoted.single punctuation.definition.string.single",
                 match: /''/,
             )
         )
@@ -932,10 +932,10 @@ require_relative './shell_embedding.rb'
         grammar[:assignment_statements] = [
             # shell hooks
             PatternRange.new(
-                tag_as: "string.quoted.single",
+                tag_content_as: "string.quoted.other.shell",
                 start_pattern: shell_hook_start,
                 end_pattern: Pattern.new(
-                    tag_as: "punctuation.definition.string.single",
+                    tag_as: "string.quoted.other.shell string.quoted.single punctuation.definition.string.single",
                     match: Pattern.new(/''/).lookAheadToAvoid(/\$|\'/),
                 ).maybe(
                     match: / *;/,
