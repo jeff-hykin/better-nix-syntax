@@ -910,7 +910,7 @@ require_relative './shell_embedding.rb'
         )
         shell_hook_start = Pattern.new(
             std_space.then(
-                match: variableBounds[/initContent|shellHook|buildCommand/],
+                match: variableBounds[/initContent|shellHook|buildCommand|buildPhase|installPhase/],
                 tag_as: "entity.other.attribute-name",
             ).then(std_space).then(assignment_operator).then(std_space).then(
                 tag_as: "punctuation.definition.string.single",

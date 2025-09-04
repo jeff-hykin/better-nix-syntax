@@ -661,37 +661,83 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
 - source: installPhase
   scopesBegin:
-    - meta.assignment-start
+    - string.quoted.single
   scopes:
-    - meta.attribute-key
     - entity.other.attribute-name
 - source: '='
   scopes:
     - keyword.operator.assignment
-  scopesEnd:
-    - meta.assignment-start
 - source: ''''''
+  scopes:
+    - punctuation.definition.string.single
+- source: runHook
   scopesBegin:
-    - string.quoted.other
+    - source.shell
+    - meta.statement.command.shell
   scopes:
-    - string.quoted.single
-    - punctuation.definition.string.single
-- source: '    runHook preInstall'
-- source: '    ./vncinstall $out/bin $out/share/man'
-- source: '    runHook postInstall'
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: preInstall
+  scopes:
+    - meta.argument.shell
+    - string.unquoted.argument.shell
+- source: ./vncinstall
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: $
+  scopesBegin:
+    - meta.argument.shell
+  scopes:
+    - punctuation.definition.variable.shell
+    - variable.other.normal.shell.shell
+- source: out
+  scopes:
+    - variable.other.normal.shell
+- source: /bin
+  scopes:
+    - string.unquoted.argument.shell
+- source: $
+  scopes:
+    - punctuation.definition.variable.shell
+    - variable.other.normal.shell.shell
+- source: out
+  scopes:
+    - variable.other.normal.shell
+- source: /share/man
+  scopes:
+    - string.unquoted.argument.shell
+  scopesEnd:
+    - meta.argument.shell
+- source: runHook
+  scopes:
+    - meta.statement.command.name.shell
+    - entity.name.function.call.shell
+    - entity.name.command.shell
+- source: postInstall
+  scopes:
+    - meta.argument.shell
+    - string.unquoted.argument.shell
+  scopesEnd:
+    - source.shell
+    - meta.statement.command.shell
 - source: ''''''
   scopes:
-    - string.quoted.single
     - punctuation.definition.string.single
-  scopesEnd:
-    - string.quoted.other
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - string.quoted.single
 - source: postInstall
   scopesBegin:
+    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
