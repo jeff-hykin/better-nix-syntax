@@ -480,7 +480,7 @@
     - punctuation.separator.dot-access
 - source: rev
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -2760,7 +2760,7 @@
     - punctuation.separator.dot-access
 - source: targets
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -3854,8 +3854,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -4596,8 +4595,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access

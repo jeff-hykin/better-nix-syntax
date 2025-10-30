@@ -576,7 +576,6 @@ require_relative './shell_embedding.rb'
         end
         
         attributeGenerator = ->(is_assignment: false, parentheses_before:false, no_method_allowed:false, generate_chain:false) do
-            patterns = []
             
             # this is only done to help differentiate them visually. It has nothing to do with constant VS object, and
             # (unfortunately) everything to do with theme's having a highlight differences for those names and not
@@ -589,31 +588,41 @@ require_relative './shell_embedding.rb'
             
             
             # 
-            # standalone function call
+            # standalone
             # 
-            if ! no_method_allowed # AKA "if inside a list context"
-                patterns.push(
-                    lookBehindToAvoid(/\./).then(
-                        tag_as: if tag == "object" then "entity.name.function.#{tag}.method" else "entity.other.attribute-name" end,
-                        should_fully_match: [ "zipListsWith'" ],
-                        should_not_partial_match: ["in", "let", "if"],
-                        match: variable,
-                    ).lookAheadToAvoid(/\./)
-                )
-            end
+            standalone_variable = lookBehindToAvoid(/\./).then(
+                tag_as: if is_assignment then "entity.other.attribute-name" else "variable.other.object variable.parameter" end,
+                should_fully_match: [ "zipListsWith'" ],
+                should_not_partial_match: ["in", "let", "if"],
+                match: variable,
+            ).lookAheadToAvoid(/\./)
+            
+            standalone_function = (
+                if parentheses_before
+                    Pattern.new(
+                        tag_as: "entity.name.function.method",
+                        match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
+                    ).then(lookAheadFor(/\s*$/).or(function_call_lookahead))
+                else
+                    Pattern.new(
+                        tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
+                        match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
+                    ).then(function_call_lookahead)
+                end
+            )
+            
+            standalone_thing = (
+                if is_assignment || no_method_allowed
+                    standalone_variable
+                else
+                    standalone_function.or(standalone_variable)
+                end
+            )
             
             the_attr = oneOf([
-                *patterns,
-                
-                # only attr
-                lookBehindToAvoid(/\./).then(
-                    tag_as: "variable.other.object variable.parameter",
-                    match: builtin.or(variable),
-                ).lookAheadToAvoid(/\./),
-                
                 # first attr in chain
                 lookBehindToAvoid(/\./).then(
-                    tag_as: "variable.other.object.access variable.parameter",
+                    tag_as: if is_assignment then "entity.other.attribute-name" else "variable.other.object.access variable.parameter" end,
                     match: builtin.or(variable),
                 ),
                 
@@ -624,12 +633,16 @@ require_relative './shell_embedding.rb'
                 return the_attr
             else
                 # attr chain
-                return Pattern.new(
-                    the_attr.zeroOrMoreOf(
+                return standalone_thing.or(
+                    match: the_attr.zeroOrMoreOf(
                         inline_dot_access.then(
                             the_attr
                         )
-                    ).then(std_space)
+                    ).then(std_space),
+                    includes: [
+                        the_attr,
+                        :dot_access,
+                    ]
                 )
             end
         end
@@ -646,29 +659,6 @@ require_relative './shell_embedding.rb'
         attribute_chain_no_method_call = attributeGenerator[generate_chain:true, no_method_allowed:true]
         attribute_chain_with_leading_parentheses = attributeGenerator[generate_chain:true, parentheses_before:true]
         
-        # this is used for lists where spaces separate elements (e.g. no method calls)
-        grammar[:variable_maybe_attrs_no_method] = Pattern.new(
-            match: attribute_chain,
-            includes: [
-                lookBehindToAvoid(".").then(builtin), # I think this is redundant, probably should be removed
-                builtin_attribute_tagger, # I think this is redundant, probably should be removed
-                builtin_method_tagger, # I think this is redundant, probably should be removed
-                attribute_no_method, # first/middle/last tagging
-                :dot_access,
-            ]
-        )
-        
-        function_method = Pattern.new(
-            tag_as: "entity.name.function.method",
-            match: variable,
-        ).lookAheadToAvoid(/\./)
-        method_pattern_tagger = builtin_method_tagger.or(
-            oneOf([
-                function_method,
-                grammar[:double_quote_inline],
-                grammar[:single_quote_inline],
-            ]).then(function_call_lookahead)
-        )
         # this is needed because maybe-function-call needs to be below var-with-attrs but above standalone-var
         grammar[:standalone_variable] = lookBehindToAvoid(".").then(grammar[:variable]).lookAheadToAvoid(".")
         # this can be used everywhere except lists and attribute assignment
@@ -888,11 +878,11 @@ require_relative './shell_embedding.rb'
                     :relative_path_literal,
                     :absolute_path_literal,
                     # :operators,                   # not allowed in :list_context (needs parentheses)
-                    :or_operator, # for some reason... this one is allowed in list contexts
+                    :or_operator,                   # for some reason... this one is allowed in list contexts
                     # :basic_function,              # not allowed in :list_context (needs parentheses)
                     # :inline_value,                # not allowed in :list_context because of the value_prefix
-                    :literal,                        # partial substitute for :inline_value
-                    :variable_maybe_attrs_no_method, # partial substitute for :inline_value
+                    :literal,                       # partial substitute for :inline_value
+                    attribute_chain_no_method_call,
                     :interpolation,
                     # attribute_no_method,
                     :dot_access, # these would be redundant except that interpolation causes variable_or_function not to match 

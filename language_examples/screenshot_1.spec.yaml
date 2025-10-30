@@ -52,8 +52,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -89,8 +88,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -125,8 +123,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -333,8 +330,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -759,8 +755,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -796,8 +791,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -832,8 +826,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1289,8 +1282,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1317,8 +1309,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1345,8 +1336,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1381,8 +1371,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access

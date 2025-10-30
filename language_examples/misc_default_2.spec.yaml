@@ -3647,7 +3647,7 @@
     - punctuation.separator.dot-access
 - source: buildPlatform
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: '!='
   scopes:
     - keyword.operator.!=

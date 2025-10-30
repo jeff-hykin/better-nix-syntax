@@ -2669,7 +2669,7 @@
     - punctuation.definition.list
 - source: s
   scopes:
-    - variable.other.object
+    - variable.other.object.access
     - variable.parameter
 - source: .
   scopes:

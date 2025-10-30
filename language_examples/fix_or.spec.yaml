@@ -52,8 +52,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -89,8 +88,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -125,8 +123,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -161,8 +158,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -197,8 +193,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -245,8 +240,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6057,8 +6051,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6297,8 +6290,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6345,8 +6337,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6381,8 +6372,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6417,8 +6407,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6874,8 +6863,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6902,8 +6890,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6930,8 +6917,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6966,8 +6952,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -7416,7 +7401,7 @@
     - punctuation.separator.dot-access
 - source: outputShell
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -7471,7 +7456,7 @@
     - punctuation.separator.dot-access
 - source: outputPackage
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -7526,7 +7511,7 @@
     - punctuation.separator.dot-access
 - source: outputApp
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -8261,7 +8246,7 @@
     - punctuation.separator.dot-access
 - source: derivation
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -9279,7 +9264,7 @@
     - punctuation.separator.dot-access
 - source: outputShell
   scopes:
-    - variable.other.object.property
+    - entity.name.function.method
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -9323,7 +9308,7 @@
     - punctuation.separator.dot-access
 - source: outputPackage
   scopes:
-    - variable.other.object.property
+    - entity.name.function.method
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -9938,6 +9923,8 @@
   scopes:
     - meta.attribute-key
     - entity.other.attribute-name
+    - support.module
+    - variable.language.special.builtins
 - source: '='
   scopes:
     - keyword.operator.assignment
@@ -10575,7 +10562,7 @@
     - punctuation.separator.dot-access
 - source: gitHubInfo
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: )
   scopes:
     - punctuation.section.parentheses
@@ -10710,7 +10697,7 @@
     - punctuation.separator.dot-access
 - source: config
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -11451,7 +11438,7 @@
     - punctuation.separator.dot-access
 - source: asNativeBuildInput
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -11476,7 +11463,7 @@
     - punctuation.separator.dot-access
 - source: asPropagatedBuildInput
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -12088,8 +12075,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -12125,8 +12111,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -12177,8 +12162,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -12372,8 +12356,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -12400,8 +12383,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -13203,8 +13185,7 @@
     - meta.assignment-start
     - meta.attribute-key
   scopes:
-    - variable.other.object.access
-    - variable.parameter
+    - entity.other.attribute-name
 - source: .
   scopes:
     - punctuation.separator.dot-access

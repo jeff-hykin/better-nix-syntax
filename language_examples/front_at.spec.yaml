@@ -673,7 +673,7 @@
     - punctuation.separator.dot-access
 - source: type
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: or
   scopes:
     - keyword.operator.or
@@ -760,7 +760,7 @@
     - punctuation.separator.dot-access
 - source: outputs
   scopes:
-    - variable.other.property.last
+    - entity.name.function.method
 - source: '=='
   scopes:
     - keyword.operator.==
