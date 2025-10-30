@@ -706,7 +706,7 @@ require_relative './shell_embedding.rb'
         grammar[:variable_attrs_maybe_method] = Pattern.new(
             lookBehindToAvoid(/\./).then(
                 builtin.or(
-                    tag_as: "variable.other.object.access",
+                    tag_as: "variable.other.object.access variable.parameter",
                     match: variable,
                 )
             ).then(inline_dot_access).then(attribute_chain),
@@ -714,7 +714,7 @@ require_relative './shell_embedding.rb'
         grammar[:variable_with_method_probably] = Pattern.new(
             lookBehindFor("(").then(
                 builtin.or(
-                    tag_as: "variable.other.object.access",
+                    tag_as: "variable.other.object.access variable.parameter",
                     match: variable,
                 )
             ).then(inline_dot_access).then(attribute_chain_with_leading_parentheses),

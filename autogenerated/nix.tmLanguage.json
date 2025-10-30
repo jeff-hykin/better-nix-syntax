@@ -7308,7 +7308,7 @@
           "name": "support.module.nix variable.language.special.builtins.nix"
         },
         "70": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "71": {
           "patterns": [
@@ -10660,7 +10660,7 @@
           "name": "support.module.nix variable.language.special.builtins.nix"
         },
         "2": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "3": {
           "patterns": [
@@ -11311,7 +11311,7 @@
           "name": "support.module.nix variable.language.special.builtins.nix"
         },
         "2": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "3": {
           "patterns": [
@@ -12223,7 +12223,7 @@
           "name": "support.module.nix variable.language.special.builtins.nix"
         },
         "2": {
-          "name": "variable.other.object.access.nix"
+          "name": "variable.other.object.access.nix variable.parameter.nix"
         },
         "3": {
           "patterns": [

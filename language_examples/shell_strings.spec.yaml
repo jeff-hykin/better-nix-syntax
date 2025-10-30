@@ -99,6 +99,7 @@
 - source: _core
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -111,6 +112,7 @@
 - source: _core
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -451,6 +453,7 @@
 - source: _pkgs
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access

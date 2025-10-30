@@ -1207,6 +1207,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1223,6 +1224,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1235,6 +1237,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1593,6 +1596,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6102,6 +6106,7 @@
 - source: xome
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -6217,6 +6222,7 @@
 - source: home-manager
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -7401,6 +7407,7 @@
 - source: systemSuperStruct
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -7455,6 +7462,7 @@
 - source: systemSuperStruct
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -7509,6 +7517,7 @@
 - source: systemSuperStruct
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -8243,6 +8252,7 @@
 - source: each
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -9260,6 +9270,7 @@
 - source: systemSuperStruct
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -9303,6 +9314,7 @@
 - source: systemSuperStruct
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -10554,6 +10566,7 @@
 - source: eachWarehouse
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -10688,6 +10701,7 @@
 - source: eachWarehouse
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -11428,6 +11442,7 @@
 - source: each
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -11452,6 +11467,7 @@
 - source: each
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -11980,6 +11996,7 @@
 - source: vixBuilder
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -13374,6 +13391,7 @@
 - source: vixBuilder
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -13603,6 +13621,7 @@
 - source: home-manager
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -13652,6 +13671,7 @@
 - source: home
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -13709,6 +13729,7 @@
 - source: home
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access

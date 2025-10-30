@@ -726,6 +726,7 @@
 - source: lib
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -4958,6 +4959,7 @@
 - source: item
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -4991,6 +4993,7 @@
 - source: item
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access

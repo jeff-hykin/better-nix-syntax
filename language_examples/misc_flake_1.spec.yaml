@@ -283,6 +283,7 @@
 - source: pkgs
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access

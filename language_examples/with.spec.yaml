@@ -474,6 +474,7 @@
 - source: rust-analyzer-src
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -1238,6 +1239,7 @@
 - source: toolchain
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -2587,6 +2589,7 @@
 - source: toolchain
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -2751,6 +2754,7 @@
 - source: t
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -3699,6 +3703,7 @@
 - source: pkgs
   scopes:
     - variable.other.object.access
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
