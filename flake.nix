@@ -1,5 +1,5 @@
 {
-    description = "My Project";
+    description = "Better Nix Syntax";
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
         # nixpkgs.url = "github:NixOS/nixpkgs/6f884c2#nodejs-slim";
@@ -38,7 +38,7 @@
                 {
                     # for home-manager examples, see: https://deepwiki.com/nix-community/home-manager/5-configuration-examples
                     # all home-manager options: https://nix-community.github.io/home-manager/options.xhtml
-                    home.homeDirectory = "/tmp/virtual_homes/xome_simple";
+                    home.homeDirectory = "/tmp/virtual_homes/better_nix_syntax";
                     home.stateVersion = "25.05";
                     home.packages = [
                         # vital stuff
