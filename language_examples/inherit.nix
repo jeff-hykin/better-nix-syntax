@@ -1,4 +1,5 @@
 {
+  b  = import nixpkgs {inherit system;};
   inherit a;
   inherit a b c;
   inherit (callPackage) a;

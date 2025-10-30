@@ -886,7 +886,7 @@ require_relative './shell_embedding.rb'
             tag_as: "meta.assignment-start",
             match: Pattern.new(
                 Pattern.new(
-                    lookBehindToAvoid(/[^ \t]/).lookAheadFor(/inherit\b/)
+                    lookBehindToAvoid(/[^ \t\{;]/).lookAheadFor(/inherit\b/)
                 ).or(
                     normal_attr_assignment,
                 )

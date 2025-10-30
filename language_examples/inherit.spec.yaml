@@ -3,9 +3,61 @@
     - meta.punctuation.section.bracket
   scopes:
     - punctuation.section.bracket
+- source: b
+  scopesBegin:
+    - meta.attribute-set
+    - meta.assignment-start
+  scopes:
+    - meta.attribute-key
+    - entity.other.attribute-name
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+  scopesEnd:
+    - meta.assignment-start
+- source: import
+  scopesBegin:
+    - meta.statement
+  scopes:
+    - entity.name.function.call
+    - support.type.builtin.top-level
+    - support.type.builtin.property.import
+- source: nixpkgs
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+  scopes:
+    - punctuation.section.bracket
 - source: inherit
   scopesBegin:
     - meta.attribute-set
+    - meta.inherit
+  scopes:
+    - keyword.other.inherit
+- source: system
+  scopes:
+    - entity.other.attribute-name
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.inherit
+- source: '}'
+  scopes:
+    - punctuation.section.bracket
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - meta.attribute-set
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: inherit
+  scopesBegin:
     - meta.inherit
   scopes:
     - keyword.other.inherit
