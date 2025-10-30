@@ -1,6 +1,14 @@
 require 'ruby_grammar_builder'
 grammar = @grammar # this file is imported from main.rb
 
+if grammar == nil
+    raise <<~HEREDOC
+        
+        
+        Don't run the shell_embedding.rb directly. Run main.rb which imports shell_embedding.rb
+    HEREDOC
+end
+
 # 
 # 
 # 
@@ -391,7 +399,7 @@ grammar = @grammar # this file is imported from main.rb
         
         grammar[:SHELL_floating_keyword] = [
             Pattern.new(
-                match: /(?<=^|;|&| |\t)(?:then|elif|else|done|end|do|if|fi)(?= |\t|;|&|$)/,
+                match: /(?<=^|;|&| |\t)(?:then|elif|else|done|end|do|if|fi|while|case|esac)(?= |\t|;|&|$)/,
                 tag_as: "keyword.control.$match.shell",
             ),
             # modifier

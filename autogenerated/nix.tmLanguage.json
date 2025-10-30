@@ -708,7 +708,7 @@
     "SHELL_floating_keyword": {
       "patterns": [
         {
-          "match": "(?<=^|;|&| |\\t)(?:then|elif|else|done|end|do|if|fi)(?= |\\t|;|&|$)",
+          "match": "(?<=^|;|&| |\\t)(?:then|elif|else|done|end|do|if|fi|while|case|esac)(?= |\\t|;|&|$)",
           "name": "keyword.control.$0.shell.nix"
         }
       ]
