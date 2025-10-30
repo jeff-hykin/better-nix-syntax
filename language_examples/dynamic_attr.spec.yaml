@@ -70,8 +70,70 @@
 - source: ;
   scopes:
     - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement
+- source: '#'
+  scopesBegin:
+    - comment.line
+  scopes:
+    - punctuation.definition.comment
+- source: ' case 1'
+  scopesEnd:
+    - comment.line
+- source: devShells
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: '${'
+  scopesBegin:
+    - meta.statement.dynamic-attr
+  scopes:
+    - punctuation.section.embedded
+- source: system
+  scopes:
+    - variable.other.object
+    - variable.parameter
+- source: '}'
+  scopes:
+    - punctuation.section.embedded
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: default
+  scopes:
+    - variable.other.property.last
+- source: '='
+  scopes:
+    - keyword.operator.assignment
+- source: pkgs
+  scopes:
+    - variable.other.object.access
+    - variable.parameter
+- source: .
+  scopes:
+    - punctuation.separator.dot-access
+- source: mkShell
+  scopes:
+    - entity.name.function.method.call
+- source: '{'
+  scopesBegin:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: '}'
+  scopesEnd:
+    - meta.punctuation.section.bracket
+    - punctuation.section.bracket
+- source: ;
+  scopes:
+    - punctuation.terminator.statement
+  scopesEnd:
+    - meta.statement.dynamic-attr
 - source: outputs
   scopesBegin:
+    - meta.statement
     - meta.assignment-start
   scopes:
     - meta.attribute-key
@@ -177,6 +239,8 @@
     - variable.other.object.access
     - variable.parameter
 - source: .
+  scopes:
+    - punctuation.separator.dot-access
 - source: '${'
   scopesBegin:
     - meta.statement.dynamic-attr

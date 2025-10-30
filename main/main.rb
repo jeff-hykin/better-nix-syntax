@@ -520,22 +520,8 @@ require_relative './shell_embedding.rb'
         )
         inline_dot_access = std_space.then(dot_access).then(std_space)
         
-        attributeGenerator = ->(tag, parentheses_before=false) do
+        middleAttributeGenerator = ->(tag, parentheses_before=false) do
             return oneOf([
-                # standalone
-                lookBehindToAvoid(/\./).then(
-                    tag_as: if tag == "object" then "entity.name.function.#{tag}.method" else "entity.other.attribute-name" end,
-                    should_fully_match: [ "zipListsWith'" ],
-                    should_not_partial_match: ["in", "let", "if"],
-                    match: variable,
-                ).lookAheadToAvoid(/\./),
-                
-                # first
-                lookBehindToAvoid(/\./).then(
-                    tag_as: "variable.other.object.access variable.parameter",
-                    match: builtin.or(variable),
-                ),
-                
                 # last attr as function call (method call)
                 (if parentheses_before
                     # if there was a leading parentheses, it changes what we assume is a method call
@@ -568,7 +554,28 @@ require_relative './shell_embedding.rb'
             ])
         end
         
+        attributeGenerator = ->(tag, parentheses_before=false) do
+            return oneOf([
+                # standalone
+                lookBehindToAvoid(/\./).then(
+                    tag_as: if tag == "object" then "entity.name.function.#{tag}.method" else "entity.other.attribute-name" end,
+                    should_fully_match: [ "zipListsWith'" ],
+                    should_not_partial_match: ["in", "let", "if"],
+                    match: variable,
+                ).lookAheadToAvoid(/\./),
+                
+                # first
+                lookBehindToAvoid(/\./).then(
+                    tag_as: "variable.other.object.access variable.parameter",
+                    match: builtin.or(variable),
+                ),
+                
+                *middleAttributeGenerator[tag, parentheses_before],
+            ])
+        end
+        
         grammar[:attribute_assignment] = attribute_assignment = attributeGenerator["constant"]
+        grammar[:attribute_after_dynamic_assignment] = middleAttributeGenerator["object"] # needed to fix case 1 of language_examples/dynamic_attr.nix
         # NOTE: does not handle interpolation
         attribute_assignment_chain = attribute_assignment.zeroOrMoreOf(
             inline_dot_access.then(
@@ -1030,6 +1037,8 @@ require_relative './shell_embedding.rb'
                 ),
                 includes: [
                     :interpolation,
+                    :attribute_after_dynamic_assignment,
+                    :dot_access,
                     PatternRange.new(
                         start_pattern: assignment_operator,
                         end_pattern: lookAheadFor(/;/),
@@ -1056,6 +1065,7 @@ require_relative './shell_embedding.rb'
                 includes: [
                     :double_quote,
                     :single_quote,
+                    :dot_access,
                     PatternRange.new(
                         start_pattern: assignment_operator,
                         end_pattern: lookAheadFor(/;/),
@@ -1117,6 +1127,7 @@ require_relative './shell_embedding.rb'
                         includes: [
                             :comments,
                             :assignment_statements,
+                            :dot_access, # this is a hack to kinda fix dynamic_attr assignments
                         ],
                     ),
                     # 
