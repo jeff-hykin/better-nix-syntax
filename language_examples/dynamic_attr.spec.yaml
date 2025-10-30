@@ -104,7 +104,9 @@
     - punctuation.separator.dot-access
 - source: default
   scopes:
-    - variable.other.property.last
+    - variable.other.constant.last
+    - variable.other.property
+    - variable.parameter
 - source: '='
   scopes:
     - keyword.operator.assignment

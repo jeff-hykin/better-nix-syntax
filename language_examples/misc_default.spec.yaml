@@ -537,7 +537,8 @@
     - punctuation.definition.list
 - source: zlib
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: libjpeg
 - source: imake
 - source: gccmakedep
@@ -549,7 +550,8 @@
 - source: xauth
 - source: openssh
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list

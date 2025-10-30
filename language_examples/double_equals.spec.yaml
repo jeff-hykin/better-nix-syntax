@@ -228,10 +228,12 @@
     - punctuation.definition.list
 - source: coreutils
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: jq
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list

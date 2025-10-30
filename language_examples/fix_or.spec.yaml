@@ -1617,7 +1617,8 @@
     - punctuation.definition.list
 - source: attrs
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -3606,7 +3607,8 @@
     - punctuation.definition.list
 - source: keyGettingMerged
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -5135,7 +5137,8 @@
     - punctuation.definition.list
 - source: keyGettingMerged
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list

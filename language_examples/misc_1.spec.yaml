@@ -1212,7 +1212,8 @@
     - punctuation.section.parentheses
 - source: attrValues
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: (
   scopes:
     - punctuation.section.parentheses
@@ -2668,7 +2669,8 @@
     - punctuation.definition.list
 - source: s
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: .
   scopes:
     - punctuation.separator.dot-access
@@ -3628,7 +3630,8 @@
     - punctuation.definition.list
 - source: attrs
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -5044,7 +5047,8 @@
     - punctuation.definition.list
 - source: name
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -5083,7 +5087,8 @@
     - punctuation.definition.list
 - source: name
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -6507,7 +6512,8 @@
     - punctuation.definition.list
 - source: 'n'
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -6638,10 +6644,12 @@
     - punctuation.definition.list
 - source: rhs
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: lhs
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -7078,10 +7086,12 @@
     - punctuation.definition.list
 - source: pattern
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: attrs
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list

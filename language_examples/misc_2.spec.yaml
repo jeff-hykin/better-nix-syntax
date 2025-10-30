@@ -1463,7 +1463,8 @@
     - punctuation.definition.list
 - source: name
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -1542,7 +1543,8 @@
     - punctuation.definition.list
 - source: name
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -2277,7 +2279,8 @@
     - punctuation.definition.list
 - source: x
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -2669,7 +2672,8 @@
     - punctuation.definition.list
 - source: x
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -3329,7 +3333,8 @@
     - punctuation.definition.list
 - source: key
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -3355,7 +3360,8 @@
     - punctuation.definition.list
 - source: x
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -3752,7 +3758,8 @@
     - punctuation.definition.list
 - source: 'y'
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -6480,10 +6487,12 @@
     - punctuation.definition.list
 - source: x
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: 'y'
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: (
   scopes:
     - punctuation.section.parentheses

@@ -372,7 +372,8 @@
     - punctuation.definition.list
 - source: curl
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: xorg
   scopes:
     - variable.other.object.access
@@ -405,10 +406,12 @@
     - variable.other.property.last
 - source: avahiWithLibdnssdCompat
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: qtbase
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -435,10 +438,12 @@
     - punctuation.definition.list
 - source: cmake
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: wrapGAppsHook
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -517,7 +522,8 @@
     - punctuation.definition.list
 - source: openssl
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list

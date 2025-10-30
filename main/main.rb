@@ -520,22 +520,43 @@ require_relative './shell_embedding.rb'
         )
         inline_dot_access = std_space.then(dot_access).then(std_space)
         
-        middleAttributeGenerator = ->(tag, parentheses_before=false) do
+        middleAttributeGenerator = ->(is_assignment: false, parentheses_before:false, no_method_allowed:false) do
+            # this is only done to help differentiate them visually. It has nothing to do with constant VS object, and
+            # (unfortunately) everything to do with theme's having a highlight differences for those names and not
+            # many other (more accurate) names
+            if is_assignment
+                tag = "constant"
+            else
+                tag = "object"
+            end
+        
+            patterns = []
+            # 
+            # last attr as function call
+            # 
+            method_is_allowed = ! no_method_allowed
+            if method_is_allowed
+                if parentheses_before
+                    # if there was a leading parentheses, it changes what we assume is a method call
+                    patterns.push(
+                        Pattern.new(
+                            tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
+                            match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
+                        ).then(lookAheadFor(/\s*$/).or(function_call_lookahead))
+                    )
+                else
+                    patterns.push(
+                        Pattern.new(
+                            tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
+                            match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
+                        ).then(function_call_lookahead)
+                    )
+                end
+            end
+            
             return oneOf([
                 # last attr as function call (method call)
-                (if parentheses_before
-                    # if there was a leading parentheses, it changes what we assume is a method call
-                    Pattern.new(
-                        tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
-                        match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
-                    ).then(lookAheadFor(/\s*$/).or(function_call_lookahead))
-                else
-                    # no leading parentheses makes us more conservative about what we assume is a method call
-                    Pattern.new(
-                        tag_as: if tag == "object" then "entity.name.function.method" else "entity.name.function.#{tag}.method" end,
-                        match: variable.lookAheadToAvoid(/\.|\s+or\b/), # .or(interpolated_attribut),
-                    ).then(function_call_lookahead)
-                end),
+                *patterns,
                 
                 # last
                 Pattern.new(
@@ -554,61 +575,85 @@ require_relative './shell_embedding.rb'
             ])
         end
         
-        attributeGenerator = ->(tag, parentheses_before=false) do
-            return oneOf([
-                # standalone
+        attributeGenerator = ->(is_assignment: false, parentheses_before:false, no_method_allowed:false, generate_chain:false) do
+            patterns = []
+            
+            # this is only done to help differentiate them visually. It has nothing to do with constant VS object, and
+            # (unfortunately) everything to do with theme's having a highlight differences for those names and not
+            # many other (more accurate) names
+            if is_assignment
+                tag = "constant"
+            else
+                tag = "object"
+            end
+            
+            
+            # 
+            # standalone function call
+            # 
+            if ! no_method_allowed # AKA "if inside a list context"
+                patterns.push(
+                    lookBehindToAvoid(/\./).then(
+                        tag_as: if tag == "object" then "entity.name.function.#{tag}.method" else "entity.other.attribute-name" end,
+                        should_fully_match: [ "zipListsWith'" ],
+                        should_not_partial_match: ["in", "let", "if"],
+                        match: variable,
+                    ).lookAheadToAvoid(/\./)
+                )
+            end
+            
+            the_attr = oneOf([
+                *patterns,
+                
+                # only attr
                 lookBehindToAvoid(/\./).then(
-                    tag_as: if tag == "object" then "entity.name.function.#{tag}.method" else "entity.other.attribute-name" end,
-                    should_fully_match: [ "zipListsWith'" ],
-                    should_not_partial_match: ["in", "let", "if"],
-                    match: variable,
+                    tag_as: "variable.other.object variable.parameter",
+                    match: builtin.or(variable),
                 ).lookAheadToAvoid(/\./),
                 
-                # first
+                # first attr in chain
                 lookBehindToAvoid(/\./).then(
                     tag_as: "variable.other.object.access variable.parameter",
                     match: builtin.or(variable),
                 ),
                 
-                *middleAttributeGenerator[tag, parentheses_before],
+                *middleAttributeGenerator[is_assignment:is_assignment, parentheses_before:parentheses_before, no_method_allowed:no_method_allowed],
             ])
+            
+            if ! generate_chain
+                return the_attr
+            else
+                # attr chain
+                return Pattern.new(
+                    the_attr.zeroOrMoreOf(
+                        inline_dot_access.then(
+                            the_attr
+                        )
+                    ).then(std_space)
+                )
+            end
         end
         
-        grammar[:attribute_assignment] = attribute_assignment = attributeGenerator["constant"]
-        grammar[:attribute_after_dynamic_assignment] = middleAttributeGenerator["object"] # needed to fix case 1 of language_examples/dynamic_attr.nix
-        # NOTE: does not handle interpolation
-        attribute_assignment_chain = attribute_assignment.zeroOrMoreOf(
-            inline_dot_access.then(
-                attribute_assignment
-            )
-        )
+        attribute = attributeGenerator[]
+        attribute_with_leading_parentheses = attributeGenerator[parentheses_before:true]
+        attribute_no_method = attributeGenerator[no_method_allowed: true]
+        grammar[:attribute_assignment] = attributeGenerator[is_assignment:true]
+        grammar[:attribute_after_dynamic_assignment] = middleAttributeGenerator[is_assignment:true] # needed to fix case 1 of language_examples/dynamic_attr.nix
         
-        attribute = attributeGenerator["object"]
-        attribute_with_leading_parentheses = attributeGenerator["object", true]
-        # this should only be internally used
-        attribute_chain = Pattern.new(
-            attribute.zeroOrMoreOf(
-                inline_dot_access.then(
-                    attribute
-                )
-            ).then(std_space)
-        )
-        attribute_chain_with_leading_parentheses = Pattern.new(
-            attribute_with_leading_parentheses.zeroOrMoreOf(
-                inline_dot_access.then(
-                    attribute_with_leading_parentheses
-                )
-            ).then(std_space)
-        )
+        # NOTE: chain does not handle interpolation e.g. `a.${b}.c` Interpolation is basically <chain><interpolation><chain> and some hacks
+        attribute_chain = attributeGenerator[generate_chain:true]
+        attribute_chain_assignment = attributeGenerator[generate_chain:true, is_assignment:true]
+        attribute_chain_no_method_call = attributeGenerator[generate_chain:true, no_method_allowed:true]
+        attribute_chain_with_leading_parentheses = attributeGenerator[generate_chain:true, parentheses_before:true]
         
         # this is used for lists where spaces separate elements (e.g. no method calls)
         grammar[:variable_maybe_attrs_no_method] = Pattern.new(
             match: attribute_chain,
             includes: [
-                lookBehindToAvoid(".").then(builtin), # "builtins" at the start
-                builtin_attribute_tagger, # the attribute of builtins
-                builtin_method_tagger, # even though its a method, it can be treated as an attribute (higher order function-type-stuff)
-                attribute, # first/middle/last tagging
+                lookBehindToAvoid(".").then(builtin), # I think this is redundant, probably should be removed
+                builtin_attribute_tagger, # I think this is redundant, probably should be removed
+                builtin_method_tagger, # I think this is redundant, probably should be removed
+                attribute_no_method, # first/middle/last tagging
                 :dot_access,
             ]
         )
@@ -829,7 +874,28 @@ require_relative './shell_embedding.rb'
                     tag_as: "punctuation.definition.list",
                 ),
                 includes: [
-                    :list_context,
+                    :comments,
+                    # :value_prefix,                # not allowed in :list_context (needs parentheses)
+                    :double_quote,
+                    :single_quote,
+                    :list,
+                    :brackets, # NOTE: this matched func-or-attrset but in :list_context only attrset is valid (e.g. could be improved in future)
+                    :parentheses,
+                    # :if_then_else,                # not allowed in :list_context (needs parentheses)
+                    # :let_in_statement,            # not allowed in :list_context (needs parentheses)
+                    # :assert,                      # not allowed in :list_context (needs parentheses)
+                    :path_literal_angle_brackets,
+                    :relative_path_literal,
+                    :absolute_path_literal,
+                    # :operators,                   # not allowed in :list_context (needs parentheses)
+                    :or_operator, # for some reason... this one is allowed in list contexts
+                    # :basic_function,              # not allowed in :list_context (needs parentheses)
+                    # :inline_value,                # not allowed in :list_context because of the value_prefix
+                    :literal,                        # partial substitute for :inline_value
+                    :variable_maybe_attrs_no_method, # partial substitute for :inline_value
+                    :interpolation,
+                    # attribute_no_method,
+                    :dot_access, # these would be redundant except that interpolation causes variable_or_function not to match 
                 ]
             ),
         ]
@@ -886,7 +952,7 @@ require_relative './shell_embedding.rb'
         end
         
         normal_attr_assignment = assignmentOf[
-            attribute_assignment_chain
+            attribute_chain_assignment
         ]
         
         assignment_start = Pattern.new(
@@ -914,7 +980,7 @@ require_relative './shell_embedding.rb'
                 /\$\{/, # start of a dynamic attribute
             ).or(
                 # normal attribute, then start of a dynamic attribute
-                attribute_assignment_chain.then(inline_dot_access).then(/\$\{/) 
+                attribute_chain_assignment.then(inline_dot_access).then(/\$\{/) 
             )
         )
         shell_hook_start = Pattern.new(
@@ -986,7 +1052,7 @@ require_relative './shell_embedding.rb'
                             :normal_context,
                         ],
                     ),
-                    attribute_assignment,
+                    :attribute_assignment,
                 ]
             ),
             
@@ -1346,30 +1412,6 @@ require_relative './shell_embedding.rb'
             :operators,
             :basic_function,
             :inline_value,
-            :interpolation,
-            attribute,  # these would be redundant except that interpolation causes variable_or_function not to match 
-            :dot_access, # these would be redundant except that interpolation causes variable_or_function not to match 
-        ]
-        grammar[:list_context] = [
-            :comments,
-            # :value_prefix,                # not allowed in :list_context (needs parentheses)
-            :double_quote,
-            :single_quote,
-            :list,
-            :brackets, # NOTE: this matched func-or-attrset but in :list_context only attrset is valid (e.g. could be improved in future)
-            :parentheses,
-            # :if_then_else,                # not allowed in :list_context (needs parentheses)
-            # :let_in_statement,            # not allowed in :list_context (needs parentheses)
-            # :assert,                      # not allowed in :list_context (needs parentheses)
-            :path_literal_angle_brackets,
-            :relative_path_literal,
-            :absolute_path_literal,
-            # :operators,                   # not allowed in :list_context (needs parentheses)
-            :or_operator, # for some reason... this one is allowed in list contexts
-            # :basic_function,              # not allowed in :list_context (needs parentheses)
-            # :inline_value,                # not allowed in :list_context because of the value_prefix
-            :literal,                        # partial substitute for :inline_value
-            :variable_maybe_attrs_no_method, # partial substitute for :inline_value
             :interpolation,
             attribute,  # these would be redundant except that interpolation causes variable_or_function not to match 
             :dot_access, # these would be redundant except that interpolation causes variable_or_function not to match 

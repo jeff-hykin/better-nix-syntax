@@ -3513,7 +3513,8 @@
     - punctuation.section.parentheses
 - source: nightlyToolchains
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -3974,7 +3975,8 @@
     - punctuation.definition.list
 - source: libiconv
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -4110,7 +4112,8 @@
     - punctuation.definition.list
 - source: figsoda
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -4509,10 +4512,12 @@
     - punctuation.definition.list
 - source: jq
   scopesBegin:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: moreutils
   scopesEnd:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
@@ -4625,7 +4630,8 @@
     - punctuation.definition.list
 - source: figsoda
   scopes:
-    - entity.name.function.object.method
+    - variable.other.object
+    - variable.parameter
 - source: ']'
   scopes:
     - punctuation.definition.list
