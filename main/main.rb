@@ -1,6 +1,8 @@
+require 'json'
+require 'yaml'
+require 'fileutils'
+require 'pathname'
 require 'ruby_grammar_builder'
-require 'walk_up'
-require_relative walk_up_until("paths.rb")
 require_relative './tokens.rb'
 
 # 
